@@ -225,7 +225,7 @@ export default function Navbar() {
                                     <div className="w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
                                 </div>
                                 <a
-                                    href="tel:+919876543210"
+                                    href="tel:+917678134697"
                                     className="block w-full bg-red-600 text-white text-center py-3 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors"
                                 >
                                     <Phone size={20} className="inline mr-2" />
