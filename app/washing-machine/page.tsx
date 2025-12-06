@@ -259,7 +259,7 @@ export default function WashingMachinePage() {
         { name: 'Samsung', logo: 'https://tse3.mm.bing.net/th/id/OIP.JknWfu1eKiHE6O5z5gZWCgHaEK?pid=Api&P=0&h=180' },
         { name: 'Whirlpool', logo: 'https://logos-world.net/wp-content/uploads/2022/12/Whirlpool-Symbol.png' },
         { name: 'IFB', logo: 'https://tse2.mm.bing.net/th/id/OIP.YcMTuv_IS_NsTleS4L12TwHaHa?pid=Api&P=0&h=180' },
-        { name: 'Bosch', logo: 'https://e7.pngegg.com/pngimages/1006/243/png-clipart-logo-robert-bosch-gmbh-alternator-product-electric-battery-bosch-text-trademark-thumbnail.png' },
+        { name: 'Bosch', logo: 'https://tse1.mm.bing.net/th/id/OIP.Vfu1qcbvjpFAEe7WDjLc2QHaEK?pid=Api&P=0&h=180' },
         { name: 'Haier', logo: 'https://tse3.mm.bing.net/th/id/OIP.yKPctZu_OlIuX4NOC3WzMgHaFc?pid=Api&P=0&h=180' },
         { name: 'Panasonic', logo: 'https://tse2.mm.bing.net/th/id/OIP.T1CzRle2_dGeHPOxtC8YLwHaEK?pid=Api&P=0&h=180' },
         { name: 'Godrej', logo: 'https://tse2.mm.bing.net/th/id/OIP._ykE6VDsZQdn_E5dRCL-yAHaHa?pid=Api&P=0&h=180' },
