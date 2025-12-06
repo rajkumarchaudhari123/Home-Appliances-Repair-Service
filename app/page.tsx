@@ -576,12 +576,8 @@ export default function HomePage() {
 
           {/* Features */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 sm:p-6 hover:bg-white/20 transition-colors">
-              <div className="text-2xl sm:text-3xl font-bold mb-2 text-yellow-300">✓ Free</div>
-              <div className="text-white/90 text-sm sm:text-base">Diagnosis on First Visit</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 sm:p-6 hover:bg-white/20 transition-colors">
-            </div>
+
+
             <div className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 sm:p-6 hover:bg-white/20 transition-colors">
               <div className="text-2xl sm:text-3xl font-bold mb-2 text-yellow-300">30 Min</div>
               <div className="text-white/90 text-sm sm:text-base">Average Response Time</div>
