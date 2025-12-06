@@ -187,7 +187,7 @@ export default function HomePage() {
   // Service areas
   const serviceAreas = [
     'Chandigarh', 'Panchkula', 'Mohali', 'Zirakpur', 'Kharar',
-    'Derabassi', 'New Chandigarh', 'Banur', 'Kalka', 'Baddi'
+    'Derabassi', 'New Chandigarh'
   ];
 
   return (
