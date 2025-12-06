@@ -553,7 +553,7 @@ export default function HomePage() {
             Need Appliance Repair? <span className="text-yellow-300">We're Here to Help!</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-2xl mx-auto text-white/90">
-            Get instant service booking with our 24/7 customer support. Free diagnosis on first visit.
+            Get instant service booking with our 24/7 customer support.  ₹ 299 visit.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-8 sm:mb-12">
@@ -581,8 +581,6 @@ export default function HomePage() {
               <div className="text-white/90 text-sm sm:text-base">Diagnosis on First Visit</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 sm:p-6 hover:bg-white/20 transition-colors">
-              <div className="text-2xl sm:text-3xl font-bold mb-2 text-yellow-300">90 Days</div>
-              <div className="text-white/90 text-sm sm:text-base">Warranty on Repairs</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 sm:p-6 hover:bg-white/20 transition-colors">
               <div className="text-2xl sm:text-3xl font-bold mb-2 text-yellow-300">30 Min</div>
