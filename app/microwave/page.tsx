@@ -255,7 +255,7 @@ export default function MicrowaveOvenPage() {
         { name: 'Whirlpool', logo: 'https://logos-world.net/wp-content/uploads/2022/12/Whirlpool-Symbol.png' },
         { name: 'IFB', logo: 'https://tse2.mm.bing.net/th/id/OIP.YcMTuv_IS_NsTleS4L12TwHaHa?pid=Api&P=0&h=180' },
         { name: 'Panasonic', logo: 'https://tse2.mm.bing.net/th/id/OIP.C-w3dvIgGs4VdwPciqHwgwAAAA?pid=Api&P=0&h=180' },
-        { name: 'Godrej', logo: 'https://tse4.mm.bing.net/th/id/OIP.7v6q6q6q6q6q6q6q6q6q6qHaHa?pid=Api&P=0&h=180' },
+        { name: 'Godrej', logo: 'https://tse2.mm.bing.net/th/id/OIP._ykE6VDsZQdn_E5dRCL-yAHaHa?pid=Api&P=0&h=180' },
         { name: 'Haier', logo: 'https://tse3.mm.bing.net/th/id/OIP.yKPctZu_OlIuX4NOC3WzMgHaFc?pid=Api&P=0&h=180' },
         { name: 'Bajaj', logo: 'https://tse3.mm.bing.net/th/id/OIP.igoFQE5zWYrBm2sQZlLD7QHaCi?pid=Api&P=0&h=180' },
         { name: 'Prestige', logo: 'https://img.freepik.com/free-vector/elegant-ornamental-logo_1057-2027.jpg' },

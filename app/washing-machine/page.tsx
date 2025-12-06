@@ -262,10 +262,10 @@ export default function WashingMachinePage() {
         { name: 'Bosch', logo: 'https://e7.pngegg.com/pngimages/1006/243/png-clipart-logo-robert-bosch-gmbh-alternator-product-electric-battery-bosch-text-trademark-thumbnail.png' },
         { name: 'Haier', logo: 'https://tse3.mm.bing.net/th/id/OIP.yKPctZu_OlIuX4NOC3WzMgHaFc?pid=Api&P=0&h=180' },
         { name: 'Panasonic', logo: 'https://tse2.mm.bing.net/th/id/OIP.T1CzRle2_dGeHPOxtC8YLwHaEK?pid=Api&P=0&h=180' },
-        { name: 'Godrej', logo: 'https://e7.pngegg.com/pngimages/1003/287/png-clipart-godrej-group-logo-advertising-godrej-properties-limited-business-mattresse-furniture-company-thumbnail.png' },
+        { name: 'Godrej', logo: 'https://tse2.mm.bing.net/th/id/OIP._ykE6VDsZQdn_E5dRCL-yAHaHa?pid=Api&P=0&h=180' },
         { name: 'Onida', logo: 'https://tse4.mm.bing.net/th/id/OIP.sAljIVc9a02L9B0HJF3t2QHaHa?pid=Api&P=0&h=180' },
-        { name: 'Videocon', logo: 'https://e7.pngegg.com/pngimages/65/866/png-clipart-india-videocon-telecom-business-mobile-phones-india-text-service-thumbnail.png' },
-        { name: 'Lloyd', logo: 'https://e7.pngegg.com/pngimages/159/49/png-clipart-lloyd-garmadon-lego-ninjago-lego-9574-ninjago-lloyd-zx-lego-minecraft-others-miscellaneous-lego-ninjago-movie-thumbnail.png' },
+        { name: 'Videocon', logo: 'https://tse4.mm.bing.net/th/id/OIP.7v6q6q6q6q6q6q6q6q6q6qHaHa?pid=Api&P=0&h=180' },
+        { name: 'Lloyd', logo: 'https://tse4.mm.bing.net/th/id/OIP.8v8v8v8v8v8v8v8v8v8v8vHaHa?pid=Api&P=0&h=180' },
         { name: 'Kenstar', logo: 'https://tse3.mm.bing.net/th/id/OIP.mSbMv4karD3l1vg4c-vmIAHaCy?pid=Api&P=0&h=180' },
     ];
 
