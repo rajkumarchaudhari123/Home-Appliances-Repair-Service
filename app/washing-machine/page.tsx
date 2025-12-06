@@ -264,8 +264,8 @@ export default function WashingMachinePage() {
         { name: 'Panasonic', logo: 'https://tse2.mm.bing.net/th/id/OIP.T1CzRle2_dGeHPOxtC8YLwHaEK?pid=Api&P=0&h=180' },
         { name: 'Godrej', logo: 'https://tse2.mm.bing.net/th/id/OIP._ykE6VDsZQdn_E5dRCL-yAHaHa?pid=Api&P=0&h=180' },
         { name: 'Onida', logo: 'https://tse4.mm.bing.net/th/id/OIP.sAljIVc9a02L9B0HJF3t2QHaHa?pid=Api&P=0&h=180' },
-        { name: 'Videocon', logo: 'https://tse4.mm.bing.net/th/id/OIP.7v6q6q6q6q6q6q6q6q6q6qHaHa?pid=Api&P=0&h=180' },
-        { name: 'Lloyd', logo: 'https://tse4.mm.bing.net/th/id/OIP.8v8v8v8v8v8v8v8v8v8v8vHaHa?pid=Api&P=0&h=180' },
+        { name: 'Videocon', logo: 'https://tse2.mm.bing.net/th/id/OIP.pYJJBvTAvl28KM3F1SvSeQHaEK?pid=Api&P=0&h=180' },
+        { name: 'Lloyd', logo: 'https://tse2.mm.bing.net/th/id/OIP.uLSKwjFl0fNusy3uQxdUXAHaEu?pid=Api&P=0&h=180' },
         { name: 'Kenstar', logo: 'https://tse3.mm.bing.net/th/id/OIP.mSbMv4karD3l1vg4c-vmIAHaCy?pid=Api&P=0&h=180' },
     ];
 
