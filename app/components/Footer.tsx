@@ -44,17 +44,13 @@ export default function Footer() {
         { name: 'Home', href: '/' },
         { name: 'About Us', href: '/about' },
         { name: 'Services', href: '/services' },
-        { name: 'Pricing', href: '/pricing' },
-        { name: 'Blog', href: '/blog' },
         { name: 'Contact', href: '/contact' },
     ];
 
     // Services Links
     const serviceLinks = [
         { name: 'Refrigerator Repair', href: '/services/refrigerator' },
-        { name: 'AC Repair & Service', href: '/services/ac' },
         { name: 'Washing Machine Repair', href: '/services/washing-machine' },
-        { name: 'TV Repair', href: '/services/tv' },
         { name: 'Microwave Repair', href: '/services/microwave' },
         { name: 'Water Purifier Service', href: '/services/water-purifier' },
     ];
@@ -85,7 +81,6 @@ export default function Footer() {
         { icon: <Shield size={20} />, text: 'ISO Certified' },
         { icon: <Award size={20} />, text: 'Best Service Award 2024' },
         { icon: <Users size={20} />, text: '5000+ Happy Customers' },
-        { icon: <CheckCircle size={20} />, text: '90 Days Warranty' },
     ];
 
     return (
@@ -117,7 +112,7 @@ export default function Footer() {
 
                         <p className="text-gray-300 leading-relaxed">
                             Your trusted partner for all home appliance repairs.
-                            24/7 emergency service with 90 days warranty on every repair.
+                            24/7 emergency .
                         </p>
 
                         <div className="space-y-4">

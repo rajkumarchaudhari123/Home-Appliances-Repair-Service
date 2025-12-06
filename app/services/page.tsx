@@ -86,38 +86,8 @@ export default function AllServicesPage() {
                 'Control panel issues'
             ]
         },
-        {
-            id: 'tv',
-            name: 'TV & Home Theater',
-            icon: <Tv size={24} />,
-            color: 'from-purple-500 to-indigo-500',
-            heroImage: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=1170&auto=format&fit=crop',
-            description: 'Expert TV repair for LED, LCD, OLED, and Smart TVs',
-            commonProblems: [
-                'No picture',
-                'No sound',
-                'Power issues',
-                'Remote not working',
-                'Display problems',
-                'Smart features not working'
-            ]
-        },
-        {
-            id: 'ac',
-            name: 'Air Conditioner',
-            icon: <Wind size={24} />,
-            color: 'from-sky-500 to-blue-500',
-            heroImage: 'https://images.unsplash.com/photo-1562273138-f86be8ec1ac0?q=80&w=1170&auto=format&fit=crop',
-            description: 'AC repair, installation, and maintenance services',
-            commonProblems: [
-                'Not cooling',
-                'Water leakage',
-                'No power',
-                'Noisy operation',
-                'Remote issues',
-                'Gas refilling needed'
-            ]
-        },
+
+
         {
             id: 'refrigerator',
             name: 'Refrigerator',
@@ -213,10 +183,10 @@ export default function AllServicesPage() {
             ],
             brands: ['LG', 'Samsung', 'Whirlpool', 'IFB', 'Bosch', 'Panasonic', 'Haier', 'Godrej', 'Onida', 'Videocon'],
             pricing: [
-                { service: 'Motor Repair', price: '₹1,500 - ₹4,000', warranty: '90 days' },
-                { service: 'Drain Pump', price: '₹800 - ₹2,000', warranty: '90 days' },
-                { service: 'Control Panel', price: '₹1,000 - ₹3,000', warranty: '90 days' },
-                { service: 'Drum Bearing', price: '₹2,000 - ₹5,000', warranty: '180 days' },
+                { service: 'Motor Repair', price: '₹1,500 - ₹4,000' },
+                { service: 'Drain Pump', price: '₹800 - ₹2,000' },
+                { service: 'Control Panel', price: '₹1,000 - ₹3,000' },
+                { service: 'Drum Bearing', price: '₹2,000 - ₹5,000' },
             ]
         },
         'tv': {
@@ -278,10 +248,10 @@ export default function AllServicesPage() {
             ],
             brands: ['Samsung', 'LG', 'Sony', 'Panasonic', 'TCL', 'Mi', 'OnePlus', 'Vu', 'Thomson', 'Realme'],
             pricing: [
-                { service: 'LED Panel', price: '₹3,000 - ₹8,000', warranty: '180 days' },
-                { service: 'Power Board', price: '₹1,500 - ₹3,500', warranty: '90 days' },
-                { service: 'Main Board', price: '₹2,000 - ₹5,000', warranty: '90 days' },
-                { service: 'T-Con Board', price: '₹1,500 - ₹3,000', warranty: '90 days' },
+                { service: 'LED Panel', price: '₹3,000 - ₹8,000' },
+                { service: 'Power Board', price: '₹1,500 - ₹3,500' },
+                { service: 'Main Board', price: '₹2,000 - ₹5,000' },
+                { service: 'T-Con Board', price: '₹1,500 - ₹3,000' },
             ]
         },
         'ac': {
@@ -343,10 +313,10 @@ export default function AllServicesPage() {
             ],
             brands: ['Daikin', 'LG', 'Samsung', 'Voltas', 'Blue Star', 'Carrier', 'Hitachi', 'Panasonic', 'Mitsubishi', 'Haier'],
             pricing: [
-                { service: 'Gas Refilling', price: '₹1,500 - ₹3,500', warranty: '30 days' },
-                { service: 'PCB Repair', price: '₹2,000 - ₹4,500', warranty: '90 days' },
-                { service: 'Compressor', price: '₹4,000 - ₹8,000', warranty: '180 days' },
-                { service: 'Fan Motor', price: '₹1,500 - ₹3,500', warranty: '90 days' },
+                { service: 'Gas Refilling', price: '₹1,500 - ₹3,500' },
+                { service: 'PCB Repair', price: '₹2,000 - ₹4,500' },
+                { service: 'Compressor', price: '₹4,000 - ₹8,000' },
+                { service: 'Fan Motor', price: '₹1,500 - ₹3,500' },
             ]
         },
         'refrigerator': {
@@ -408,10 +378,10 @@ export default function AllServicesPage() {
             ],
             brands: ['LG', 'Samsung', 'Whirlpool', 'Godrej', 'Haier', 'Panasonic', 'Voltas', 'Hitachi', 'Mitsubishi', 'Carrier'],
             pricing: [
-                { service: 'Compressor', price: '₹4,000 - ₹8,000', warranty: '180 days' },
-                { service: 'Gas Refilling', price: '₹1,500 - ₹3,000', warranty: '30 days' },
-                { service: 'Thermostat', price: '₹800 - ₹2,000', warranty: '90 days' },
-                { service: 'Main Board', price: '₹2,000 - ₹4,000', warranty: '90 days' },
+                { service: 'Compressor', price: '₹4,000 - ₹8,000' },
+                { service: 'Gas Refilling', price: '₹1,500 - ₹3,000' },
+                { service: 'Thermostat', price: '₹800 - ₹2,000' },
+                { service: 'Main Board', price: '₹2,000 - ₹4,000' },
             ]
         },
         'microwave': {
@@ -473,10 +443,15 @@ export default function AllServicesPage() {
             ],
             brands: ['Samsung', 'LG', 'Whirlpool', 'IFB', 'Panasonic', 'Godrej', 'Haier', 'Morphy Richards', 'Bajaj', 'Prestige'],
             pricing: [
-                { service: 'Magnetron', price: '₹1,500 - ₹3,500', warranty: '180 days' },
-                { service: 'High Voltage', price: '₹1,000 - ₹2,500', warranty: '90 days' },
-                { service: 'Control Panel', price: '₹800 - ₹2,000', warranty: '90 days' },
-                { service: 'Door Mechanism', price: '₹500 - ₹1,500', warranty: '90 days' },
+                { service: 'Magnetron', price: '₹1,500 - ₹3,500' },
+                {
+                    service: 'High Voltage', price: '₹1,000 - ₹2,500'
+                },
+
+                {
+                    service: 'Control Panel', price: '₹800 - ₹2,000'
+                },
+                { service: 'Door Mechanism', price: '₹500 - ₹1,500' },
             ]
         }
     };
@@ -575,8 +550,8 @@ export default function AllServicesPage() {
                                     setActiveTab('problems');
                                 }}
                                 className={`relative overflow-hidden rounded-2xl p-6 text-center transition-all duration-300 transform hover:scale-105 ${activeService === service.id
-                                        ? `bg-gradient-to-r ${service.color} text-white shadow-xl`
-                                        : 'bg-white text-gray-700 shadow-lg hover:shadow-xl'
+                                    ? `bg-gradient-to-r ${service.color} text-white shadow-xl`
+                                    : 'bg-white text-gray-700 shadow-lg hover:shadow-xl'
                                     }`}
                             >
                                 <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${activeService === service.id ? 'bg-white/20' : 'bg-blue-50'
@@ -654,8 +629,8 @@ export default function AllServicesPage() {
                                         key={tab.id}
                                         onClick={() => setActiveTab(tab.id)}
                                         className={`px-4 md:px-6 py-3 rounded-xl font-medium text-sm md:text-base whitespace-nowrap transition-all duration-300 flex items-center gap-2 ${activeTab === tab.id
-                                                ? 'bg-blue-600 text-white shadow-md'
-                                                : 'text-gray-700 hover:bg-white hover:text-blue-600'
+                                            ? 'bg-blue-600 text-white shadow-md'
+                                            : 'text-gray-700 hover:bg-white hover:text-blue-600'
                                             }`}
                                     >
                                         <span>{tab.icon}</span>
@@ -691,10 +666,10 @@ export default function AllServicesPage() {
                                                         <div className="flex justify-between items-start mb-2">
                                                             <h4 className="text-lg font-bold text-gray-900">{problem.title}</h4>
                                                             <span className={`px-2 py-1 rounded text-xs font-semibold ${problem.severity === 'High'
-                                                                    ? 'bg-red-100 text-red-700'
-                                                                    : problem.severity === 'Medium'
-                                                                        ? 'bg-yellow-100 text-yellow-700'
-                                                                        : 'bg-green-100 text-green-700'
+                                                                ? 'bg-red-100 text-red-700'
+                                                                : problem.severity === 'Medium'
+                                                                    ? 'bg-yellow-100 text-yellow-700'
+                                                                    : 'bg-green-100 text-green-700'
                                                                 }`}>
                                                                 {problem.severity}
                                                             </span>
@@ -795,7 +770,6 @@ export default function AllServicesPage() {
                                                         <div key={index} className="flex items-center justify-between p-4 bg-white rounded-xl border border-blue-100 hover:border-blue-300 transition-colors">
                                                             <div>
                                                                 <div className="font-semibold text-gray-900">{item.service}</div>
-                                                                <div className="text-sm text-gray-600 mt-1">Warranty: {item.warranty}</div>
                                                             </div>
                                                             <div className="text-xl font-bold text-blue-600">{item.price}</div>
                                                         </div>
@@ -806,7 +780,7 @@ export default function AllServicesPage() {
                                                     <div className="flex items-center gap-3">
                                                         <Info size={20} className="text-blue-600" />
                                                         <p className="text-sm text-gray-700">
-                                                            * Prices include labor, parts, and GST. Free diagnosis if repair not done.
+                                                            * Prices include labor, parts, and GST.
                                                         </p>
                                                     </div>
                                                 </div>
@@ -854,7 +828,7 @@ export default function AllServicesPage() {
                                                             </li>
                                                             <li className="flex items-center">
                                                                 <CheckCircle size={16} className="text-green-300 mr-3" />
-                                                                30 days warranty
+                                                                30 days "
                                                             </li>
                                                         </ul>
                                                         <div className="text-2xl font-bold text-yellow-300">₹999</div>
@@ -900,27 +874,19 @@ export default function AllServicesPage() {
                                             </div>
                                             <h4 className="font-bold text-gray-900 mb-3">Genuine Parts</h4>
                                             <p className="text-gray-600">
-                                                We use only OEM or high-quality spare parts with warranty.
+                                                We use only OEM or high-quality spare parts with ".
                                             </p>
                                         </div>
 
-                                        <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-200">
-                                            <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                                                <Users size={24} className="text-blue-600" />
-                                            </div>
-                                            <h4 className="font-bold text-gray-900 mb-3">Free Diagnosis</h4>
-                                            <p className="text-gray-600">
-                                                No charge for inspection if you don't proceed with repair.
-                                            </p>
-                                        </div>
+
 
                                         <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-200">
                                             <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                                                 <Wrench size={24} className="text-blue-600" />
                                             </div>
-                                            <h4 className="font-bold text-gray-900 mb-3">Warranty on Repairs</h4>
+                                            <h4 className="font-bold text-gray-900 mb-3">" on Repairs</h4>
                                             <p className="text-gray-600">
-                                                90-180 days warranty on all repairs depending on the component.
+                                                90-180 days " on all repairs depending on the component.
                                             </p>
                                         </div>
 
@@ -1139,8 +1105,8 @@ export default function AllServicesPage() {
                                                             <CheckCircle size={16} className="text-blue-600" />
                                                         </div>
                                                         <div>
-                                                            <div className="font-medium text-gray-900">Warranty</div>
-                                                            <p className="text-sm text-gray-600">90-180 days warranty on repairs</p>
+                                                            <div className="font-medium text-gray-900">"</div>
+                                                            <p className="text-sm text-gray-600">90-180 days " on repairs</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1171,8 +1137,8 @@ export default function AllServicesPage() {
                                     key={service.id}
                                     onClick={() => setActiveService(service.id)}
                                     className={`px-6 py-3 rounded-xl font-medium transition-all ${activeService === service.id
-                                            ? 'bg-white text-blue-600 shadow-lg'
-                                            : 'bg-white/20 text-white hover:bg-white/30'
+                                        ? 'bg-white text-blue-600 shadow-lg'
+                                        : 'bg-white/20 text-white hover:bg-white/30'
                                         }`}
                                 >
                                     {service.name}

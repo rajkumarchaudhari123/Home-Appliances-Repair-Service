@@ -114,7 +114,7 @@ export default function WashingMachinePage() {
         {
             step: 4,
             title: 'Testing',
-            description: 'Test run to ensure proper functioning. 90 days warranty provided.',
+            description: 'Test run to ensure proper functioning. ',
             time: '15-20 mins',
             icon: '✅'
         },
@@ -160,25 +160,21 @@ export default function WashingMachinePage() {
             service: 'Motor Repair',
             price: '₹2,000 - ₹4,500',
             includes: ['Motor testing', 'Repair/Replacement', 'Installation'],
-            warranty: '120 days'
         },
         {
             service: 'Drain Pump Repair',
             price: '₹1,200 - ₹2,500',
             includes: ['Pump cleaning', 'Impeller check', 'Seal replacement'],
-            warranty: '90 days'
         },
         {
             service: 'PCB Repair',
             price: '₹2,500 - ₹5,000',
             includes: ['Circuit testing', 'Component repair', 'Programming'],
-            warranty: '90 days'
         },
         {
             service: 'General Service',
             price: '₹600 - ₹1,200',
             includes: ['Deep cleaning', 'Lubrication', 'Performance check'],
-            warranty: '30 days'
         },
     ];
 
@@ -218,7 +214,7 @@ export default function WashingMachinePage() {
 
                             <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
                                 Fast, reliable washing machine repairs for all brands and models.
-                                Our certified technicians fix spin, drain, motor, and all other issues with 90 days warranty.
+                                Our certified technicians fix spin, drain, motor, and all other issues.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4">
@@ -248,7 +244,6 @@ export default function WashingMachinePage() {
                                 </div>
                                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
                                     <div className="text-xl md:text-2xl font-bold text-yellow-300">90 Days</div>
-                                    <div className="text-blue-200 text-sm">Warranty</div>
                                 </div>
                                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
                                     <div className="text-xl md:text-2xl font-bold text-yellow-300">4.8/5</div>
@@ -264,7 +259,7 @@ export default function WashingMachinePage() {
                         <div className="relative">
                             <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-2 shadow-2xl">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1622470953794-aa9c8277f0c5?q=80&w=1170&auto=format&fit=crop"
+                                    src="https://images.unsplash.com/photo-1632923565835-6582b54f2105?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     alt="Washing Machine Repair"
                                     width={600}
                                     height={400}
@@ -302,14 +297,14 @@ export default function WashingMachinePage() {
                             { id: 'process', label: 'Repair Process', icon: '🔧' },
                             { id: 'pricing', label: 'Service Pricing', icon: '💰' },
                             { id: 'brands', label: 'Brands We Service', icon: '🏷️' },
-                            { id: 'booking', label: 'Book Service', icon: '📅' },
+                            // { id: 'booking', label: 'Book Service', icon: '📅' },
                         ].map((tab) => (
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`px-4 md:px-6 py-3 rounded-xl font-medium text-sm md:text-base whitespace-nowrap transition-all duration-300 flex items-center gap-2 ${activeTab === tab.id
-                                        ? 'bg-blue-600 text-white shadow-lg'
-                                        : 'text-gray-700 hover:bg-white hover:text-blue-600'
+                                    ? 'bg-blue-600 text-white shadow-lg'
+                                    : 'text-gray-700 hover:bg-white hover:text-blue-600'
                                     }`}
                             >
                                 <span>{tab.icon}</span>
@@ -348,10 +343,10 @@ export default function WashingMachinePage() {
                                                 <div className="flex justify-between items-start mb-2">
                                                     <h3 className="text-lg font-bold text-gray-900">{problem.title}</h3>
                                                     <span className={`px-2 py-1 rounded text-xs font-semibold ${problem.severity === 'High'
-                                                            ? 'bg-red-100 text-red-700'
-                                                            : problem.severity === 'Medium'
-                                                                ? 'bg-yellow-100 text-yellow-700'
-                                                                : 'bg-green-100 text-green-700'
+                                                        ? 'bg-red-100 text-red-700'
+                                                        : problem.severity === 'Medium'
+                                                            ? 'bg-yellow-100 text-yellow-700'
+                                                            : 'bg-green-100 text-green-700'
                                                         }`}>
                                                         {problem.severity}
                                                     </span>
@@ -572,7 +567,6 @@ export default function WashingMachinePage() {
                                             <Shield size={24} className="text-blue-600" />
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-gray-900 mb-2">90 Days Warranty</h4>
                                             <p className="text-gray-600 text-sm">On all repairs and genuine spare parts</p>
                                         </div>
                                     </div>
@@ -653,7 +647,6 @@ export default function WashingMachinePage() {
                                                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                                                     <div className="flex items-center text-sm">
                                                         <Shield size={16} className="text-green-500 mr-2" />
-                                                        <span className="font-medium">Warranty: {service.warranty}</span>
                                                     </div>
                                                     <a
                                                         href="tel:+917678134697"

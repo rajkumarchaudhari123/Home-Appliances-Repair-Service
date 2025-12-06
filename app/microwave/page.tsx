@@ -166,28 +166,24 @@ export default function MicrowaveOvenPage() {
             service: 'Magnetron Repair',
             price: '₹1,500 - ₹3,500',
             includes: ['Magnetron testing', 'Replacement', 'Safety testing'],
-            warranty: '180 days',
             note: 'Most common repair'
         },
         {
             service: 'High Voltage Repair',
             price: '₹1,000 - ₹2,500',
             includes: ['Capacitor replacement', 'Diode check', 'Transformer test'],
-            warranty: '90 days',
             note: 'Power issues'
         },
         {
             service: 'Control Panel',
             price: '₹800 - ₹2,000',
             includes: ['Membrane repair', 'PCB fixing', 'Display replacement'],
-            warranty: '90 days',
             note: 'Button/display issues'
         },
         {
             service: 'Door Mechanism',
             price: '₹500 - ₹1,500',
             includes: ['Latch repair', 'Hinge fixing', 'Seal replacement'],
-            warranty: '90 days',
             note: 'Door safety issues'
         },
     ];
@@ -198,7 +194,7 @@ export default function MicrowaveOvenPage() {
             name: 'Rajesh Kumar',
             rating: 5,
             date: '2 days ago',
-            comment: 'Expert service! My microwave stopped heating. Technician came same day, diagnosed magnetron issue and fixed it with 6 months warranty. Highly recommended!',
+            comment: 'Expert service! My microwave stopped heating. Technician came same day, diagnosed magnetron issue and fixed . Highly recommended!',
             location: 'Delhi'
         },
         {
@@ -261,7 +257,7 @@ export default function MicrowaveOvenPage() {
 
                             <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
                                 Fast, safe, and reliable microwave oven repairs by certified technicians.
-                                We fix heating, power, sparking, and all other issues with 180 days warranty on magnetron repairs.
+                                We fix heating, power, sparking, and all other issues on magnetron repairs.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4">
@@ -302,7 +298,7 @@ export default function MicrowaveOvenPage() {
                         <div className="relative">
                             <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-2 shadow-2xl">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1616569078186-1e3c1b97a4ee?q=80&w=1170&auto=format&fit=crop"
+                                    src="https://images.unsplash.com/photo-1655354438845-561bc349a1a4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     alt="Microwave Oven Repair"
                                     width={600}
                                     height={400}
@@ -347,8 +343,8 @@ export default function MicrowaveOvenPage() {
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`px-4 md:px-6 py-3 rounded-xl font-medium text-sm md:text-base whitespace-nowrap transition-all duration-300 flex items-center gap-2 ${activeTab === tab.id
-                                        ? 'bg-blue-600 text-white shadow-lg'
-                                        : 'text-gray-700 hover:bg-white hover:text-blue-600'
+                                    ? 'bg-blue-600 text-white shadow-lg'
+                                    : 'text-gray-700 hover:bg-white hover:text-blue-600'
                                     }`}
                             >
                                 <span>{tab.icon}</span>
@@ -387,10 +383,10 @@ export default function MicrowaveOvenPage() {
                                                 <div className="flex justify-between items-start mb-2">
                                                     <h3 className="text-lg font-bold text-gray-900">{problem.title}</h3>
                                                     <span className={`px-2 py-1 rounded text-xs font-semibold ${problem.severity === 'High'
-                                                            ? 'bg-red-100 text-red-700'
-                                                            : problem.severity === 'Medium'
-                                                                ? 'bg-yellow-100 text-yellow-700'
-                                                                : 'bg-green-100 text-green-700'
+                                                        ? 'bg-red-100 text-red-700'
+                                                        : problem.severity === 'Medium'
+                                                            ? 'bg-yellow-100 text-yellow-700'
+                                                            : 'bg-green-100 text-green-700'
                                                         }`}>
                                                         {problem.severity}
                                                     </span>
@@ -693,7 +689,6 @@ export default function MicrowaveOvenPage() {
                                                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                                                     <div className="flex items-center text-sm">
                                                         <Shield size={16} className="text-green-500 mr-2" />
-                                                        <span className="font-medium">Warranty: {service.warranty}</span>
                                                     </div>
                                                     <a
                                                         href="tel:+917678134697"
@@ -816,8 +811,7 @@ export default function MicrowaveOvenPage() {
                                                 <Clock size={24} className="text-blue-500" />
                                             </div>
                                             <div>
-                                                <h4 className="font-bold text-gray-900 mb-2">Warranty on Parts</h4>
-                                                <p className="text-gray-600">Up to 180 days warranty on magnetron and major parts</p>
+                                                <p className="text-gray-600">  magnetron and major parts</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1148,7 +1142,7 @@ export default function MicrowaveOvenPage() {
                         </h2>
                         <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
                             High voltage and radiation risks require professional handling.
-                            Our certified technicians ensure safe, reliable repairs with warranty.
+                            Our certified technicians ensure safe, reliable repairs .
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a

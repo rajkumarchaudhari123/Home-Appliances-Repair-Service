@@ -104,8 +104,8 @@ export default function RefrigeratorPage() {
         },
         {
             step: 4,
-            title: 'Testing & Warranty',
-            description: 'We test the repair thoroughly and provide 90 days service warranty.',
+            title: 'Testing & "',
+            description: 'We test the repair thoroughly and provide best  service ".',
             time: '15-20 mins',
             icon: '✅'
         },
@@ -123,25 +123,21 @@ export default function RefrigeratorPage() {
             service: 'Gas Charging',
             price: '₹1,500 - ₹2,500',
             includes: ['Gas refill', 'Leak testing', 'Pressure check'],
-            warranty: '90 days'
         },
         {
             service: 'Compressor Repair',
             price: '₹3,000 - ₹6,000',
             includes: ['Diagnosis', 'Repair/Replacement', 'Testing'],
-            warranty: '120 days'
         },
         {
             service: 'PCB Repair',
             price: '₹2,000 - ₹4,000',
             includes: ['Circuit testing', 'Component replacement', 'Calibration'],
-            warranty: '90 days'
         },
         {
             service: 'General Service',
             price: '₹800 - ₹1,500',
             includes: ['Cleaning', 'Basic maintenance', 'Performance check'],
-            warranty: '30 days'
         },
     ];
 
@@ -181,7 +177,7 @@ export default function RefrigeratorPage() {
 
                             <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
                                 Fast, reliable, and affordable refrigerator repair services by certified technicians.
-                                Serving all major brands with 90 days warranty on every repair.
+                                Serving all major brands .
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4">
@@ -207,7 +203,7 @@ export default function RefrigeratorPage() {
                         <div className="relative">
                             <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-2 shadow-2xl">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=1170&auto=format&fit=crop"
+                                    src="https://images.unsplash.com/photo-1716193696093-9c54b6a290e5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     alt="Refrigerator Repair"
                                     width={600}
                                     height={400}
@@ -224,8 +220,6 @@ export default function RefrigeratorPage() {
                                         <div className="text-xs md:text-sm">Response Time</div>
                                     </div>
                                     <div className="text-center border-x border-gray-200">
-                                        <div className="text-2xl font-bold text-blue-600">90 Days</div>
-                                        <div className="text-xs md:text-sm">Warranty</div>
                                     </div>
                                     <div className="text-center">
                                         <div className="text-2xl font-bold text-blue-600">4.9/5</div>
@@ -256,14 +250,14 @@ export default function RefrigeratorPage() {
                             { id: 'process', label: 'Repair Process', icon: '🛠️' },
                             { id: 'pricing', label: 'Service Pricing', icon: '💰' },
                             { id: 'brands', label: 'Brands We Service', icon: '🏷️' },
-                            { id: 'booking', label: 'Book Service', icon: '📅' },
+                            // { id: 'booking', label: 'Book Service', icon: '📅' },
                         ].map((tab) => (
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`px-4 md:px-6 py-3 rounded-xl font-medium text-sm md:text-base whitespace-nowrap transition-all duration-300 flex items-center gap-2 ${activeTab === tab.id
-                                        ? 'bg-blue-600 text-white shadow-lg'
-                                        : 'text-gray-700 hover:bg-white hover:text-blue-600'
+                                    ? 'bg-blue-600 text-white shadow-lg'
+                                    : 'text-gray-700 hover:bg-white hover:text-blue-600'
                                     }`}
                             >
                                 <span>{tab.icon}</span>
@@ -303,10 +297,10 @@ export default function RefrigeratorPage() {
                                                 <div className="flex justify-between items-start mb-2">
                                                     <h3 className="text-lg font-bold text-gray-900">{problem.title}</h3>
                                                     <span className={`px-2 py-1 rounded text-xs font-semibold ${problem.severity === 'High'
-                                                            ? 'bg-red-100 text-red-700'
-                                                            : problem.severity === 'Medium'
-                                                                ? 'bg-yellow-100 text-yellow-700'
-                                                                : 'bg-green-100 text-green-700'
+                                                        ? 'bg-red-100 text-red-700'
+                                                        : problem.severity === 'Medium'
+                                                            ? 'bg-yellow-100 text-yellow-700'
+                                                            : 'bg-green-100 text-green-700'
                                                         }`}>
                                                         {problem.severity}
                                                     </span>
@@ -395,7 +389,6 @@ export default function RefrigeratorPage() {
                                         <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                             <Shield size={28} className="text-blue-600" />
                                         </div>
-                                        <h4 className="font-bold text-gray-900 mb-2">90 Days Warranty</h4>
                                         <p className="text-gray-600 text-sm">On all repairs and spare parts</p>
                                     </div>
                                     <div className="text-center">
@@ -452,7 +445,6 @@ export default function RefrigeratorPage() {
                                             <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                                                 <div className="flex items-center text-sm">
                                                     <Shield size={16} className="text-green-500 mr-2" />
-                                                    <span className="font-medium">Warranty: {service.warranty}</span>
                                                 </div>
                                                 <a
                                                     href="tel:+917678134697"

@@ -83,13 +83,7 @@ export default function AboutPage() {
             color: 'from-orange-500 to-amber-500',
             description: 'Quick response'
         },
-        {
-            icon: <Shield size={28} />,
-            value: '90 Days',
-            label: 'Service Warranty',
-            color: 'from-purple-500 to-pink-500',
-            description: 'Warranty period'
-        },
+
         {
             icon: <Trophy size={28} />,
             value: '4.9/5',
@@ -132,9 +126,9 @@ export default function AboutPage() {
         {
             icon: <Heart size={32} />,
             title: 'Customer Love',
-            description: 'Your satisfaction is our success. 90 days warranty on all repairs.',
+            description: 'Your satisfaction is our success. ',
             color: 'from-red-500 to-rose-500',
-            points: ['90 days warranty', 'Follow-up calls', 'Happy customers']
+            points: [ 'Follow-up calls', 'Happy customers']
         },
         {
             icon: <Lightbulb size={32} />,
@@ -258,7 +252,7 @@ export default function AboutPage() {
 
                         <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
                             Serving Chandigarh with expert appliance repairs since 2015.
-                            <span className="block text-yellow-200 font-semibold mt-2">5000+ repairs • 98% satisfaction • 90-day warranty</span>
+                            <span className="block text-yellow-200 font-semibold mt-2">5000+ repairs • 98% satisfaction </span>
                         </p>
 
                         {/* Quick Stats */}
@@ -404,7 +398,6 @@ export default function AboutPage() {
                                         { icon: <Clock size={20} />, title: 'Same Day Service', desc: 'Most repairs completed on the same day' },
                                         { icon: <Tool size={20} />, title: 'Genuine Parts', desc: 'We use only genuine/OEM spare parts' },
                                         { icon: <DollarSign size={20} />, title: 'Best Price', desc: 'Competitive pricing with no hidden charges' },
-                                        { icon: <Shield size={20} />, title: '90 Days Warranty', desc: 'Comprehensive warranty on all repairs' },
                                         { icon: <Headphones size={20} />, title: '24/7 Support', desc: 'Round-the-clock customer support' },
                                     ].map((item, index) => (
                                         <div key={index} className="flex items-start bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-colors">
@@ -687,8 +680,8 @@ export default function AboutPage() {
                                 name: 'Amit Kumar',
                                 location: 'Panchkula',
                                 rating: 5,
-                                comment: 'TV display issue resolved perfectly. Got 90 days warranty on service. Will definitely call again if needed.',
-                                service: 'TV Repair'
+                                comment: 'Washing-machine  display issue resolved perfectly. . Will definitely call again if needed.',
+                                service: 'washing-machine Repair'
                             }
                         ].map((review, index) => (
                             <div
@@ -754,7 +747,7 @@ export default function AboutPage() {
                     <div className="mt-12 text-center">
                         <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3">
                             <Flag size={20} className="text-yellow-300" />
-                            <span className="font-semibold">🎯 Free home service available in all areas</span>
+                            <span className="font-semibold">🎯 299rs visit  home service available in all areas</span>
                         </div>
                     </div>
                 </div>
@@ -790,20 +783,8 @@ export default function AboutPage() {
 
                     {/* Guarantee Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-                            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Shield size={24} className="text-green-300" />
-                            </div>
-                            <div className="text-2xl font-bold mb-2">✓ Free Diagnosis</div>
-                            <div className="text-blue-100">No charge if repair not done</div>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-                            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Trophy size={24} className="text-yellow-300" />
-                            </div>
-                            <div className="text-2xl font-bold mb-2">90 Days Warranty</div>
-                            <div className="text-blue-100">On all parts and service</div>
-                        </div>
+
+
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
                             <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <Clock size={24} className="text-blue-300" />

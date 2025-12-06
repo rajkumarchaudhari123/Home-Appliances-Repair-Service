@@ -41,10 +41,10 @@ export default function Navbar() {
             icon: <Wrench size={18} />,
             submenu: [
                 { name: 'Refrigerator Repair', href: '/refrigerator' },
-                { name: 'AC Repair & Service', href: '/ac' },
+                // { name: 'AC Repair & Service', href: '/ac' },
                 { name: 'Washing Machine Repair', href: '/washing-machine' },
-                { name: 'TV Repair', href: '/tv' },
-                { name: 'Microwave Repair', href: '/microwave' },
+                // { name: 'TV Repair', href: '/tv' },
+                { name: 'Microwave Oven Repair', href: '/microwave' },
                 { name: 'All Services', href: '/services' },
             ]
         },

@@ -60,8 +60,6 @@ export default function ContactPage() {
     }>>([]);
     const [offers, setOffers] = useState([
         { id: 1, title: '20% OFF', desc: 'First Time Customers', icon: <Tag />, color: 'from-purple-500 to-pink-500' },
-        { id: 2, title: 'Free', desc: 'Diagnosis & Estimate', icon: <Gift />, color: 'from-blue-500 to-cyan-500' },
-        { id: 3, title: '90 Days', desc: 'Service Warranty', icon: <Shield />, color: 'from-green-500 to-emerald-500' },
         { id: 4, title: 'Same Day', desc: 'Service Available', icon: <Zap />, color: 'from-orange-500 to-red-500' }
     ]);
 
@@ -93,11 +91,8 @@ export default function ContactPage() {
 
     const services = [
         { id: 'refrigerator', name: 'Refrigerator Repair', icon: <Home size={24} />, color: 'bg-cyan-500' },
-        { id: 'ac', name: 'AC Repair & Service', icon: <Wind size={24} />, color: 'bg-sky-500' },
         { id: 'washing-machine', name: 'Washing Machine', icon: <RefreshCw size={24} />, color: 'bg-blue-500' },
-        { id: 'tv', name: 'TV Repair', icon: <Tv size={24} />, color: 'bg-indigo-500' },
         { id: 'microwave', name: 'Microwave Oven', icon: <Microwave size={24} />, color: 'bg-orange-500' },
-        { id: 'water-purifier', name: 'Water Purifier', icon: <Droplets size={24} />, color: 'bg-teal-500' },
     ];
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -226,7 +221,7 @@ export default function ContactPage() {
 
                         <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
                             Connect with certified technicians for all your appliance repairs.
-                            <span className="block text-yellow-200 font-semibold mt-2">Same-day service • Free diagnosis • 90-day warranty</span>
+                            <span className="block text-yellow-200 font-semibold mt-2">Same-day service • Free diagnosis • </span>
                         </p>
 
                         {/* Stats Grid */}
@@ -689,7 +684,6 @@ export default function ContactPage() {
                                                                     <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
                                                                         <BadgeCheck size={20} className="text-green-600" />
                                                                     </div>
-                                                                    <div className="text-sm font-semibold text-green-700">90 Days Warranty</div>
                                                                 </div>
                                                                 <div className="text-center">
                                                                     <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
@@ -911,8 +905,8 @@ export default function ContactPage() {
                             {
                                 name: 'Rahul Sharma',
                                 rating: 5,
-                                comment: 'AC repair was excellent! Technician arrived on time and fixed the cooling issue within an hour. Highly recommended!',
-                                service: 'AC Repair'
+                                comment: 'Microwave oven repair was excellent! Technician arrived on time and fixed the cooling issue within an hour. Highly recommended!',
+                                service: 'Microwave oven Repair'
                             },
                             {
                                 name: 'Priya Singh',
@@ -923,8 +917,8 @@ export default function ContactPage() {
                             {
                                 name: 'Amit Kumar',
                                 rating: 5,
-                                comment: 'TV display issue resolved perfectly. Got 90 days warranty on service. Will definitely call again if needed.',
-                                service: 'TV Repair'
+                                comment: 'Refrigerator display issue resolved perfectly. . Will definitely call again if needed.',
+                                service: 'Refrigerator Repair'
                             }
                         ].map((review, index) => (
                             <div
@@ -963,7 +957,7 @@ export default function ContactPage() {
                     </h2>
                     <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
                         Don't wait! Get instant service booking with our 24/7 customer support.
-                        <span className="block text-yellow-200 font-semibold mt-2">Free diagnosis • Same-day service • 90-day warranty</span>
+                        <span className="block text-yellow-200 font-semibold mt-2">Free diagnosis • Same-day service </span>
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
