@@ -1,7 +1,7 @@
 // app/services/microwave-oven/page.tsx
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -29,96 +29,198 @@ import {
     Battery,
     Search,
     MapPin,
-    Mail
+    Mail,
+    Flame,
+    Fan,
+    Cpu,
+    Wind,
+    Droplet,
+    ShieldCheck,
+    Award,
+    TrendingUp,
+    Heart,
+    BatteryCharging,
+    Smartphone,
+    Menu,
+    X,
+    Shield as ShieldIcon,
+    Thermometer as ThermometerIcon,
+    Zap as ZapIcon,
+    ChefHat,
+    Timer,
+    Gauge,
+    BatteryFull,
+    Smartphone as SmartphoneIcon,
+    Wifi,
+    Radio
 } from 'lucide-react';
 
 export default function MicrowaveOvenPage() {
     const [activeTab, setActiveTab] = useState('problems');
+    const [isMobile, setIsMobile] = useState(false);
     const [isBookingSubmitted, setIsBookingSubmitted] = useState(false);
+
+    // Check mobile on mount
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     // Common Problems
     const problems = [
         {
-            icon: <Power size={24} />,
+            icon: <Power size={20} />,
             title: 'Not Heating',
-            description: 'Microwave runs but doesn\'t heat food',
-            symptoms: ['Turntable works', 'Light turns on', 'No heating', 'Cold food'],
+            description: 'Microwave runs but food remains cold',
+            symptoms: ['Turntable spins', 'Light works', 'No heat', 'Cold food after cycle'],
             fixTime: '1-2 hours',
             severity: 'High',
-            commonCause: 'Magnetron failure'
+            commonCause: 'Magnetron failure, high voltage issues',
+            gradient: 'from-red-500 to-orange-500'
         },
         {
-            icon: <Zap size={24} />,
+            icon: <Zap size={20} />,
             title: 'No Power',
-            description: 'Microwave won\'t turn on at all',
-            symptoms: ['No display', 'No light', 'Dead controls', 'Complete failure'],
+            description: 'Microwave completely dead, no response',
+            symptoms: ['No display', 'No lights', 'No sounds', 'Circuit breaker trips'],
             fixTime: '1-2 hours',
             severity: 'High',
-            commonCause: 'Power supply or fuse issue'
+            commonCause: 'Power supply, fuse, main board failure',
+            gradient: 'from-blue-500 to-cyan-500'
         },
         {
-            icon: <Sparkles size={24} />,
-            title: 'Spark Inside',
-            description: 'Sparks or arcing inside microwave',
-            symptoms: ['Visible sparks', 'Burning smell', 'Loud crackling', 'Damage marks'],
+            icon: <Sparkles size={20} />,
+            title: 'Sparks Inside',
+            description: 'Visible sparking or arcing during operation',
+            symptoms: ['Blue sparks', 'Burning smell', 'Loud crackling', 'Damage marks'],
             fixTime: '1-2 hours',
             severity: 'High',
-            commonCause: 'Waveguide cover damaged'
+            commonCause: 'Waveguide cover damaged, metal objects',
+            gradient: 'from-purple-500 to-pink-500'
         },
         {
-            icon: <RotateCw size={24} />,
+            icon: <RotateCw size={20} />,
             title: 'Turntable Issues',
-            description: 'Turntable not rotating properly',
-            symptoms: ['Not rotating', 'Stuck turntable', 'Uneven rotation', 'Noise'],
+            description: 'Turntable not rotating or stuck',
+            symptoms: ['Stuck turntable', 'Uneven rotation', 'Grinding noise', 'Motor hum'],
             fixTime: '30-60 mins',
             severity: 'Medium',
-            commonCause: 'Motor or roller issue'
+            commonCause: 'Turntable motor, roller guide, obstruction',
+            gradient: 'from-green-500 to-emerald-500'
         },
         {
-            icon: <Settings size={24} />,
+            icon: <Smartphone size={20} />,
             title: 'Control Panel Fault',
-            description: 'Buttons not working or display issues',
-            symptoms: ['Unresponsive buttons', 'Display errors', 'Random beeping', 'Settings lost'],
+            description: 'Buttons unresponsive or display errors',
+            symptoms: ['Dead touchpad', 'Display flickers', 'Random beeping', 'Error codes'],
             fixTime: '1-2 hours',
             severity: 'Medium',
-            commonCause: 'Membrane or PCB failure'
+            commonCause: 'Membrane switch, PCB failure, moisture',
+            gradient: 'from-indigo-500 to-purple-500'
         },
         {
-            icon: <AlertTriangle size={24} />,
+            icon: <AlertTriangle size={20} />,
             title: 'Door Problems',
-            description: 'Door not closing properly',
-            symptoms: ['Door won\'t latch', 'Gap in seal', 'Safety switch issue', 'Handle broken'],
+            description: 'Door won\'t close or seal properly',
+            symptoms: ['Door won\'t latch', 'Gap in seal', 'Handle broken', 'Safety switch'],
             fixTime: '1 hour',
             severity: 'High',
-            commonCause: 'Door latch or hinge failure'
+            commonCause: 'Door latch, hinge, interlock switch',
+            gradient: 'from-yellow-500 to-amber-500'
+        },
+        {
+            icon: <Fan size={20} />,
+            title: 'Loud Noise',
+            description: 'Unusual loud sounds during operation',
+            symptoms: ['Humming/vibration', 'Grinding noise', 'Buzzing sound', 'Rattling'],
+            fixTime: '1-2 hours',
+            severity: 'Medium',
+            commonCause: 'Cooling fan, magnetron fan, loose parts',
+            gradient: 'from-teal-500 to-cyan-500'
+        },
+        {
+            icon: <Thermometer size={20} />,
+            title: 'Overheating',
+            description: 'Microwave gets too hot or shuts off',
+            symptoms: ['Trips circuit', 'Automatic shutoff', 'Excessive heat', 'Burn marks'],
+            fixTime: '1.5-2 hours',
+            severity: 'High',
+            commonCause: 'Cooling system, ventilation blocked',
+            gradient: 'from-orange-500 to-red-500'
         },
     ];
 
-    // Microwave Types
+    // Microwave Types with detailed info
     const microwaveTypes = [
         {
             type: 'Solo Microwave',
-            image: 'https://images.unsplash.com/photo-1616569078186-1e3c1b97a4ee?q=80&w=1170&auto=format&fit=crop',
-            features: ['Basic functions', 'Affordable', 'Simple operation'],
-            commonIssues: ['Magnetron failure', 'Turntable motor', 'Power supply']
+            image: 'https://images.unsplash.com/photo-1655354439159-3a839b079786?q=80&w=693&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            features: [
+                'Basic microwave heating',
+                'Simple timer controls',
+                'Most affordable',
+                'Compact size',
+                'Energy efficient'
+            ],
+            commonIssues: ['Magnetron failure', 'Turntable motor', 'Power supply', 'Timer issues'],
+            pros: ['Affordable', 'Easy to use', 'Compact', 'Low maintenance'],
+            cons: ['Basic features only', 'No grill/bake', 'Manual defrost'],
+            brands: ['Bajaj', 'Prestige', 'Panasonic', 'LG', 'Samsung'],
+            gradient: 'from-blue-500 to-cyan-500',
+            icon: <Zap size={20} />
         },
         {
             type: 'Grill Microwave',
             image: 'https://images.unsplash.com/photo-1649264191931-9235c8dd03ef?q=80&w=1169&auto=format&fit=crop',
-            features: ['Grill function', 'Browning', 'Crisping'],
-            commonIssues: ['Heating element', 'Grill fan', 'Dual function issues']
+            features: [
+                'Microwave + grill function',
+                'Browning & crisping',
+                'Grill rack included',
+                'Dual heating',
+                'Better cooking'
+            ],
+            commonIssues: ['Grill element', 'Heating coil', 'Dual control', 'Fan motor'],
+            pros: ['Grill function', 'Better browning', 'Versatile', 'Good value'],
+            cons: ['Higher cost', 'More maintenance', 'Complex repair'],
+            brands: ['IFB', 'Samsung', 'LG', 'Whirlpool', 'Haier'],
+            gradient: 'from-orange-500 to-red-500',
+            icon: <Flame size={20} />
         },
         {
             type: 'Convection Microwave',
             image: 'https://images.unsplash.com/photo-1740803292349-c7e53f7125b2?q=80&w=1202&auto=format&fit=crop',
-            features: ['Baking', 'Roasting', 'Multi-function'],
-            commonIssues: ['Convection fan', 'Heater coil', 'Temperature sensor']
+            features: [
+                'Microwave + convection oven',
+                'Baking & roasting',
+                'Temperature control',
+                'Multiple racks',
+                'Professional results'
+            ],
+            commonIssues: ['Convection fan', 'Heating element', 'Thermostat', 'Control board'],
+            pros: ['Multi-function', 'Baking capability', 'Professional cooking', 'Versatile'],
+            cons: ['Expensive', 'Complex repair', 'Power hungry'],
+            brands: ['IFB', 'Samsung', 'LG', 'Panasonic', 'Bosch'],
+            gradient: 'from-purple-500 to-pink-500',
+            icon: <Fan size={20} />
         },
         {
             type: 'Smart Microwave',
-            image: 'https://images.unsplash.com/photo-1606811841687-b1c0d60d2bf2?q=80&w=1170&auto=format&fit=crop',
-            features: ['Wi-Fi enabled', 'App control', 'Preset programs'],
-            commonIssues: ['PCB board', 'Display panel', 'Software issues']
+            image: 'https://images.unsplash.com/photo-1640270287737-42c9a15db98f?q=80&w=1137&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            features: [
+                'Wi-Fi connectivity',
+                'App control',
+                'Voice commands',
+                'Auto programs',
+                'Sensor cooking'
+            ],
+            commonIssues: ['PCB board', 'Display panel', 'Wi-Fi module', 'Software glitches'],
+            pros: ['Smart features', 'App integration', 'Auto cooking', 'Modern'],
+            cons: ['Very expensive', 'Complex electronics', 'Repair costs'],
+            brands: ['LG ThinQ', 'Samsung SmartThings', 'IFB Neptune', 'Haier Smart'],
+            gradient: 'from-indigo-500 to-purple-500',
+            icon: <SmartphoneIcon size={20} />
         },
     ];
 
@@ -126,191 +228,247 @@ export default function MicrowaveOvenPage() {
     const repairSteps = [
         {
             step: 1,
-            title: 'Safety Check',
-            description: 'Complete safety inspection and discharge of capacitor.',
-            time: '15-20 mins',
-            icon: '⚠️'
+            title: 'Safety & Inspection',
+            description: 'Complete safety check and capacitor discharge. Visual inspection for damage.',
+            time: '20-30 mins',
+            icon: '⚠️',
+            color: 'bg-gradient-to-r from-red-500 to-orange-500',
+            details: ['Capacitor discharge', 'Visual inspection', 'Safety protocol', 'Power check']
         },
         {
             step: 2,
             title: 'Diagnosis',
-            description: 'Thorough testing with professional microwave testers.',
-            time: '20-30 mins',
-            icon: '🔍'
+            description: 'Professional testing with microwave analyzers to identify exact fault.',
+            time: '30-45 mins',
+            icon: '🔍',
+            color: 'bg-gradient-to-r from-blue-500 to-cyan-500',
+            details: ['Electrical testing', 'Component testing', 'Performance analysis', 'Error codes']
         },
         {
             step: 3,
-            title: 'Component Repair',
-            description: 'Safe repair using genuine parts and proper tools.',
+            title: 'Professional Repair',
+            description: 'Safe repair using genuine parts and specialized microwave tools.',
             time: '1-3 hours',
-            icon: '🔧'
+            icon: '🔧',
+            color: 'bg-gradient-to-r from-green-500 to-emerald-500',
+            details: ['Genuine parts', 'Specialized tools', 'Safe procedures', 'Quality work']
         },
         {
             step: 4,
-            title: 'Testing',
-            description: 'Complete testing for radiation leakage and heating.',
-            time: '15-20 mins',
-            icon: '✅'
+            title: 'Testing & Safety Check',
+            description: 'Complete radiation leakage test and performance verification.',
+            time: '20-30 mins',
+            icon: '✅',
+            color: 'bg-gradient-to-r from-purple-500 to-pink-500',
+            details: ['Radiation test', 'Heating test', 'Safety check', 'Customer demo']
         },
     ];
 
     // Brands We Service
     const brands = [
-        'Samsung', 'LG', 'Whirlpool', 'IFB', 'Panasonic', 'Godrej',
-        'Haier', 'Morphy Richards', 'Bajaj', 'Prestige', 'Philips', 'Kenstar'
+        { name: 'Samsung', logo: '⚡', color: 'from-blue-500 to-cyan-500' },
+        { name: 'LG', logo: '🎯', color: 'from-red-500 to-pink-500' },
+        { name: 'Whirlpool', logo: '🌀', color: 'from-green-500 to-teal-500' },
+        { name: 'IFB', logo: '🏆', color: 'from-purple-500 to-indigo-500' },
+        { name: 'Panasonic', logo: '🎵', color: 'from-blue-400 to-blue-600' },
+        { name: 'Godrej', logo: '🏠', color: 'from-green-600 to-green-800' },
+        { name: 'Haier', logo: '🌊', color: 'from-blue-600 to-blue-800' },
+        { name: 'Bajaj', logo: '⚡', color: 'from-yellow-500 to-orange-500' },
+        { name: 'Prestige', logo: '👑', color: 'from-red-600 to-pink-600' },
+        { name: 'Morphy Richards', logo: '🍳', color: 'from-purple-400 to-pink-400' },
+        { name: 'Philips', logo: '💡', color: 'from-blue-300 to-cyan-300' },
+        { name: 'Kenstar', logo: '⭐', color: 'from-yellow-400 to-yellow-600' },
     ];
 
     // Pricing
     const pricing = [
         {
-            service: 'Magnetron Repair',
+            service: 'Magnetron Repair/Replace',
+            price: '₹2,000 - ₹4,500',
+            includes: ['Magnetron testing', 'Replacement', 'Safety testing', 'Radiation check'],
+            time: '2-3 hours',
+            warranty: '90 days',
+            popular: true,
+            gradient: 'from-red-500 to-orange-500'
+        },
+        {
+            service: 'High Voltage System',
+            price: '₹1,200 - ₹3,000',
+            includes: ['Capacitor replacement', 'Diode check', 'Transformer test', 'Wiring'],
+            time: '1.5-2 hours',
+            warranty: '90 days',
+            popular: false,
+            gradient: 'from-blue-500 to-cyan-500'
+        },
+        {
+            service: 'Control Board/Panel',
             price: '₹1,500 - ₹3,500',
-            includes: ['Magnetron testing', 'Replacement', 'Safety testing'],
-            note: 'Most common repair'
+            includes: ['Circuit diagnosis', 'Component repair', 'Display fix', 'Testing'],
+            time: '2-2.5 hours',
+            warranty: '90 days',
+            popular: true,
+            gradient: 'from-purple-500 to-pink-500'
         },
         {
-            service: 'High Voltage Repair',
-            price: '₹1,000 - ₹2,500',
-            includes: ['Capacitor replacement', 'Diode check', 'Transformer test'],
-            note: 'Power issues'
-        },
-        {
-            service: 'Control Panel',
-            price: '₹800 - ₹2,000',
-            includes: ['Membrane repair', 'PCB fixing', 'Display replacement'],
-            note: 'Button/display issues'
-        },
-        {
-            service: 'Door Mechanism',
-            price: '₹500 - ₹1,500',
-            includes: ['Latch repair', 'Hinge fixing', 'Seal replacement'],
-            note: 'Door safety issues'
+            service: 'Complete Service',
+            price: '₹600 - ₹1,500',
+            includes: ['Deep cleaning', 'Performance check', 'Safety inspection', 'Testing'],
+            time: '1-1.5 hours',
+            warranty: '30 days',
+            popular: false,
+            gradient: 'from-green-500 to-emerald-500'
         },
     ];
 
-    // Customer Reviews
-    const reviews = [
-        {
-            name: 'Rajesh Kumar',
-            rating: 5,
-            date: '2 days ago',
-            comment: 'Expert service! My microwave stopped heating. Technician came same day, diagnosed magnetron issue and fixed . Highly recommended!',
-            location: 'Delhi'
-        },
-        {
-            name: 'Priya Sharma',
-            rating: 5,
-            date: '1 week ago',
-            comment: 'Sparks in my microwave scared me. Technician explained the waveguide cover issue, replaced it safely. Professional and courteous service.',
-            location: 'Mumbai'
-        },
-        {
-            name: 'Amit Patel',
-            rating: 5,
-            date: '3 days ago',
-            comment: 'Turntable was not rotating. Fixed in 30 minutes! Reasonable price and they tested for radiation leakage too. Good job!',
-            location: 'Bangalore'
-        }
+    // Stats
+    const stats = [
+        { value: '1500+', label: 'Microwaves Repaired', icon: <Wrench size={20} />, color: 'text-blue-400' },
+        { value: '4.9/5', label: 'Customer Rating', icon: <Star size={20} />, color: 'text-yellow-400' },
+        { value: '30 Min', label: 'Avg Response Time', icon: <Clock size={20} />, color: 'text-green-400' },
+        { value: '100%', label: 'Safety Record', icon: <ShieldCheck size={20} />, color: 'text-purple-400' },
+    ];
+
+    // Safety warnings
+    const safetyWarnings = [
+        '⚡ High voltage capacitors can store up to 4000 volts even when unplugged',
+        '⚠️ Microwave radiation requires proper sealing and testing',
+        '🔥 Never operate microwave with damaged door or seal',
+        '🔧 Only certified technicians should open microwave units'
     ];
 
     // Booking Form Handler
     const handleBookingSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Here you would typically send the data to your backend
         setIsBookingSubmitted(true);
-        setTimeout(() => setIsBookingSubmitted(false), 5000);
+        setTimeout(() => setIsBookingSubmitted(false), 8000);
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50">
+        <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-red-50">
+            {/* Floating WhatsApp Button - Mobile Only */}
+            <a
+                href="https://wa.me/917678134697"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="fixed bottom-6 right-6 z-50 md:hidden bg-gradient-to-r from-green-500 to-emerald-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 animate-bounce-slow"
+            >
+                <span className="text-xl">💬</span>
+            </a>
 
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-blue-500 via-red-500 to-blue-600 text-white overflow-hidden">
-                {/* Background Pattern */}
+            <section className="relative overflow-hidden bg-gradient-to-br from-red-600 via-orange-600 to-red-700 text-white">
+                {/* Animated Background */}
                 <div className="absolute inset-0">
-                    <div className="absolute top-10 left-10 w-64 h-64 bg-blue-400 rounded-full opacity-20 animate-pulse"></div>
-                    <div className="absolute bottom-10 right-10 w-96 h-96 bg-red-400 rounded-full opacity-20 animate-pulse delay-1000"></div>
+                    <div className="absolute top-10 left-10 w-64 h-64 bg-red-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow"></div>
+                    <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow delay-1000"></div>
                 </div>
 
-                <div className="relative container mx-auto px-4 py-12 md:py-20">
+                <div className="relative container mx-auto px-4 sm:px-6 py-8 md:py-16 lg:py-20">
                     {/* Back Button */}
-                    <div className="mb-6">
+                    <div className="mb-4 sm:mb-6">
                         <Link
                             href="/services"
-                            className="inline-flex items-center text-blue-100 hover:text-white transition-colors"
+                            className="inline-flex items-center text-red-100 hover:text-white transition-colors group text-sm sm:text-base"
                         >
-                            <ArrowLeft size={18} className="mr-2" />
+                            <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
                             Back to All Services
                         </Link>
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-                        <div>
-                            <div className="inline-flex items-center px-4 py-2 bg-white/20 rounded-full mb-6 backdrop-blur-sm">
-                                <Microwave size={18} className="mr-2" />
-                                <span>Expert Microwave Repair Service</span>
+                    <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
+                        {/* Left Content */}
+                        <div className="space-y-4 sm:space-y-6">
+                            {/* Badge */}
+                            <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-white/20 backdrop-blur-sm rounded-full animate-pulse-once">
+                                <Sparkles size={14} className="mr-2" />
+                                <span className="text-xs sm:text-sm font-medium">Certified Microwave Repair</span>
                             </div>
 
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                                Professional <span className="text-yellow-300">Microwave Oven</span> Repair Service
+                            {/* Main Heading */}
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                                Professional <span className="text-yellow-300 drop-shadow-lg">Microwave Oven</span> Repair
                             </h1>
 
-                            <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
-                                Fast, safe, and reliable microwave oven repairs by certified technicians.
-                                We fix heating, power, sparking, and all other issues on magnetron repairs.
+                            {/* Description */}
+                            <p className="text-base sm:text-lg md:text-xl text-red-100 leading-relaxed">
+                                Expert repair services for all microwave types - Solo, Grill, Convection & Smart.
+                                Safe, certified repairs with radiation leakage testing included.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row gap-4">
+                            {/* CTA Buttons */}
+                            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                                 <a
                                     href="tel:+917678134697"
-                                    className="group bg-white text-blue-600 px-6 md:px-8 py-4 rounded-xl font-semibold text-base md:text-lg flex items-center justify-center gap-2 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                                    className="group bg-white text-red-700 px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg flex items-center justify-center gap-2 hover:bg-red-50 transition-all duration-300 transform hover:scale-[1.02] shadow-lg active:scale-95"
                                 >
-                                    <Phone size={22} />
-                                    <span>Call Microwave Expert</span>
-                                    <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+                                    <Phone size={20} />
+                                    <span>Emergency Call Now</span>
+                                    <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
                                 </a>
 
                                 <button
                                     onClick={() => {
                                         setActiveTab('booking');
-                                        document.getElementById('booking-section')?.scrollIntoView({ behavior: 'smooth' });
+                                        setTimeout(() => {
+                                            document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+                                        }, 100);
                                     }}
-                                    className="group bg-transparent border-2 border-white text-white px-6 md:px-8 py-4 rounded-xl font-semibold text-base md:text-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-all duration-300"
+                                    className="group bg-transparent border-2 border-white text-white px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-all duration-300 active:scale-95"
                                 >
                                     <Calendar size={20} />
                                     <span>Book Service</span>
                                 </button>
                             </div>
 
-                            {/* Warning Banner */}
-                            <div className="mt-8 p-4 bg-yellow-500/20 backdrop-blur-sm rounded-xl border border-yellow-400/30">
-                                <div className="flex items-start">
-                                    <AlertTriangle size={20} className="text-yellow-300 mr-3 mt-1" />
-                                    <div>
-                                        <p className="text-yellow-100 text-sm font-medium">
-                                            ⚠️ Never attempt DIY microwave repair. High voltage capacitors can retain lethal charge even when unplugged.
-                                        </p>
+                            {/* Stats Grid */}
+                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4">
+                                {stats.map((stat, index) => (
+                                    <div
+                                        key={index}
+                                        className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 text-center hover:bg-white/20 transition-colors animate-fade-in"
+                                        style={{ animationDelay: `${index * 100}ms` }}
+                                    >
+                                        <div className="flex items-center justify-center gap-2 mb-1">
+                                            <div className={stat.color}>
+                                                {stat.icon}
+                                            </div>
+                                            <div className="text-lg sm:text-xl md:text-2xl font-bold text-yellow-300">
+                                                {stat.value}
+                                            </div>
+                                        </div>
+                                        <div className="text-red-200 text-xs sm:text-sm">{stat.label}</div>
                                     </div>
-                                </div>
+                                ))}
                             </div>
                         </div>
 
-                        <div className="relative">
-                            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-2 shadow-2xl">
-                                <Image
-                                    src="https://images.unsplash.com/photo-1655354438845-561bc349a1a4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                    alt="Microwave Oven Repair"
-                                    width={600}
-                                    height={400}
-                                    className="w-full h-auto rounded-2xl"
-                                    priority
-                                />
-                            </div>
+                        {/* Right Image */}
+                        <div className="relative mt-6 lg:mt-0">
+                            <div className="relative">
+                                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-2 shadow-2xl transform hover:scale-[1.01] transition-transform duration-700">
+                                    <Image
+                                        src="https://images.unsplash.com/photo-1655354438845-561bc349a1a4?q=80&w=687&auto=format&fit=crop"
+                                        alt="Microwave Oven Repair"
+                                        width={600}
+                                        height={400}
+                                        className="w-full h-[250px] sm:h-[350px] md:h-[400px] object-cover rounded-xl sm:rounded-2xl"
+                                        priority
+                                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 50vw"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 via-transparent to-transparent rounded-xl sm:rounded-2xl"></div>
+                                </div>
 
-                            {/* Safety Badge */}
-                            <div className="absolute -top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-full font-bold shadow-lg animate-pulse">
-                                <Shield size={16} className="inline mr-2" />
-                                Certified Safe Repair
+                                {/* Safety Badge */}
+                                <div className="absolute -top-2 right-2 sm:-top-3 sm:right-3 bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-bold shadow-lg animate-pulse text-xs sm:text-sm">
+                                    <Shield size={14} className="inline mr-1 sm:mr-2" />
+                                    Certified Safety
+                                </div>
+
+                                {/* Floating Badge */}
+                                <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-3 sm:p-4 rounded-xl shadow-lg animate-float-left hidden sm:block">
+                                    <ShieldCheck size={20} className="mb-1" />
+                                    <div className="text-xs sm:text-sm font-bold">Radiation<br />Testing</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -318,86 +476,100 @@ export default function MicrowaveOvenPage() {
 
                 {/* Wave Divider */}
                 <div className="absolute bottom-0 left-0 right-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full h-16 md:h-24">
-                        <path fill="#ffedd5" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full h-12 sm:h-16 md:h-20">
+                        <path fill="#fef3c7" fillOpacity="1" d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,74.7C1120,75,1280,53,1360,42.7L1440,32L1440,320L1392,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
                     </svg>
                 </div>
             </section>
 
             {/* Main Content */}
-            <div className="container mx-auto px-4 py-12 md:py-20 -mt-4">
+            <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16 -mt-4">
 
-                {/* Tabs Navigation */}
-                <div className="flex overflow-x-auto mb-8 md:mb-12 scrollbar-hide">
-                    <div className="flex space-x-1 bg-white/50 backdrop-blur-sm rounded-2xl p-1 shadow-sm">
-                        {[
-                            { id: 'problems', label: 'Common Problems', icon: '⚠️' },
-                            { id: 'types', label: 'Microwave Types', icon: '🍲' },
-                            { id: 'process', label: 'Repair Process', icon: '🔧' },
-                            { id: 'pricing', label: 'Service Pricing', icon: '💰' },
-                            { id: 'brands', label: 'Brands We Service', icon: '🏷️' },
-                            { id: 'reviews', label: 'Customer Reviews', icon: '⭐' },
-                            { id: 'booking', label: 'Book Service', icon: '📅' },
-                        ].map((tab) => (
-                            <button
-                                key={tab.id}
-                                onClick={() => setActiveTab(tab.id)}
-                                className={`px-4 md:px-6 py-3 rounded-xl font-medium text-sm md:text-base whitespace-nowrap transition-all duration-300 flex items-center gap-2 ${activeTab === tab.id
-                                    ? 'bg-blue-600 text-white shadow-lg'
-                                    : 'text-gray-700 hover:bg-white hover:text-blue-600'
-                                    }`}
-                            >
-                                <span>{tab.icon}</span>
-                                <span>{tab.label}</span>
-                            </button>
-                        ))}
+                {/* Safety Warning Banner */}
+                <div className="mb-6 sm:mb-8 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-xl p-4 sm:p-6 shadow-lg">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                        <AlertTriangle size={20} className="text-yellow-300 flex-shrink-0 mt-1" />
+                        <div>
+                            <h3 className="font-bold text-sm sm:text-base md:text-lg mb-2">⚠️ HIGH VOLTAGE WARNING</h3>
+                            <p className="text-white/90 text-xs sm:text-sm">
+                                Microwave capacitors store lethal voltage even when unplugged. NEVER attempt DIY repair.
+                                Only certified technicians should handle internal components.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Tabs Navigation - Mobile Optimized */}
+                <div className="relative mb-6 sm:mb-8 md:mb-12">
+                    <div className="flex overflow-x-auto pb-4 scrollbar-hide md:justify-center">
+                        <div className="flex space-x-1 bg-white/50 backdrop-blur-sm rounded-2xl p-1">
+                            {[
+                                { id: 'problems', label: 'Problems', icon: '⚠️', color: 'from-red-500 to-orange-500' },
+                                { id: 'types', label: 'Types', icon: '🍲', color: 'from-blue-500 to-cyan-500' },
+                                { id: 'process', label: 'Process', icon: '🔧', color: 'from-green-500 to-emerald-500' },
+                                { id: 'pricing', label: 'Pricing', icon: '💰', color: 'from-yellow-500 to-amber-500' },
+                                { id: 'brands', label: 'Brands', icon: '🏷️', color: 'from-purple-500 to-pink-500' },
+                            ].map((tab) => (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => setActiveTab(tab.id)}
+                                    className={`px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 rounded-xl font-medium text-sm sm:text-base whitespace-nowrap transition-all duration-300 flex items-center gap-2 ${activeTab === tab.id
+                                        ? `bg-gradient-to-r ${tab.color} text-white shadow-lg scale-[1.02]`
+                                        : 'text-gray-700 hover:bg-white hover:text-red-600'
+                                        }`}
+                                >
+                                    <span>{tab.icon}</span>
+                                    <span>{tab.label}</span>
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                    {/* Scroll hint for mobile */}
+                    <div className="md:hidden text-center text-gray-500 text-xs mt-2 animate-pulse">
+                        ← Scroll for more tabs →
                     </div>
                 </div>
 
                 {/* Tab Content */}
-                <div className="mt-8">
+                <div className="mt-6 sm:mt-8">
 
                     {/* Common Problems Tab */}
                     {activeTab === 'problems' && (
                         <div className="animate-fade-in">
-                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                                Common <span className="text-blue-600">Microwave Problems</span>
-                            </h2>
-                            <p className="text-gray-600 mb-8 max-w-3xl">
-                                These are the most frequent microwave oven issues. Our certified technicians safely repair all types of microwave problems.
-                            </p>
+                            <div className="text-center sm:text-left mb-6 sm:mb-8">
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                                    Common <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">Problems & Solutions</span>
+                                </h2>
+                                <p className="text-gray-600 max-w-3xl text-sm sm:text-base">
+                                    These are the most frequent microwave oven issues we fix daily. Our certified technicians handle all repairs safely.
+                                </p>
+                            </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                                 {problems.map((problem, index) => (
                                     <div
                                         key={index}
-                                        className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200 group"
+                                        className={`bg-gradient-to-br ${problem.gradient} text-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] group animate-fade-in`}
+                                        style={{ animationDelay: `${index * 100}ms` }}
                                     >
-                                        <div className="flex items-start gap-4">
-                                            <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                                                <div className="text-blue-600">
-                                                    {problem.icon}
-                                                </div>
+                                        <div className="flex items-start gap-3 sm:gap-4">
+                                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+                                                {problem.icon}
                                             </div>
                                             <div className="flex-1">
                                                 <div className="flex justify-between items-start mb-2">
-                                                    <h3 className="text-lg font-bold text-gray-900">{problem.title}</h3>
-                                                    <span className={`px-2 py-1 rounded text-xs font-semibold ${problem.severity === 'High'
-                                                        ? 'bg-red-100 text-red-700'
-                                                        : problem.severity === 'Medium'
-                                                            ? 'bg-yellow-100 text-yellow-700'
-                                                            : 'bg-green-100 text-green-700'
-                                                        }`}>
+                                                    <h3 className="text-lg sm:text-xl font-bold">{problem.title}</h3>
+                                                    <span className="px-2 py-1 rounded text-xs font-bold bg-white/20 backdrop-blur-sm">
                                                         {problem.severity}
                                                     </span>
                                                 </div>
-                                                <p className="text-gray-600 mb-3">{problem.description}</p>
+                                                <p className="text-white/90 mb-3 text-sm sm:text-base">{problem.description}</p>
 
                                                 <div className="mb-3">
-                                                    <h4 className="text-sm font-semibold text-gray-700 mb-2">Symptoms:</h4>
-                                                    <div className="flex flex-wrap gap-2">
+                                                    <h4 className="font-semibold mb-2 text-sm sm:text-base">Symptoms:</h4>
+                                                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                                                         {problem.symptoms.map((symptom, i) => (
-                                                            <span key={i} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">
+                                                            <span key={i} className="px-2 py-1 bg-white/20 rounded-full text-xs">
                                                                 {symptom}
                                                             </span>
                                                         ))}
@@ -405,24 +577,26 @@ export default function MicrowaveOvenPage() {
                                                 </div>
 
                                                 <div className="mb-4">
-                                                    <h4 className="text-sm font-semibold text-gray-700 mb-1">Common Cause:</h4>
-                                                    <p className="text-gray-600 text-sm">{problem.commonCause}</p>
+                                                    <h4 className="font-semibold mb-1 text-sm sm:text-base">Common Cause:</h4>
+                                                    <p className="text-white/80 text-sm">{problem.commonCause}</p>
                                                 </div>
 
-                                                <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                                                    <div className="flex items-center text-sm text-gray-600">
-                                                        <Clock size={16} className="mr-2" />
-                                                        Fix time: {problem.fixTime}
+                                                <div className="flex items-center justify-between pt-3 border-t border-white/20">
+                                                    <div className="flex items-center text-sm">
+                                                        <Clock size={14} className="mr-2" />
+                                                        {problem.fixTime}
                                                     </div>
                                                     <button
                                                         onClick={() => {
                                                             setActiveTab('booking');
-                                                            document.getElementById('booking-section')?.scrollIntoView({ behavior: 'smooth' });
+                                                            setTimeout(() => {
+                                                                document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+                                                            }, 100);
                                                         }}
-                                                        className="text-blue-600 font-medium hover:text-blue-700 text-sm flex items-center gap-1"
+                                                        className="text-white font-medium hover:text-yellow-200 text-sm flex items-center gap-1"
                                                     >
                                                         Book Repair
-                                                        <ArrowRight size={16} />
+                                                        <ChevronRight size={14} />
                                                     </button>
                                                 </div>
                                             </div>
@@ -431,33 +605,25 @@ export default function MicrowaveOvenPage() {
                                 ))}
                             </div>
 
-                            {/* Safety Warning */}
-                            <div className="mt-12 bg-gradient-to-r from-red-50 to-blue-50 rounded-3xl p-6 md:p-8 border border-red-200">
-                                <div className="flex flex-col md:flex-row items-center gap-6">
-                                    <div className="flex-shrink-0">
-                                        <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
-                                            <AlertTriangle size={32} className="text-red-600" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-bold text-gray-900 mb-4">⚠️ Important Safety Warning</h3>
-                                        <div className="grid md:grid-cols-2 gap-4">
-                                            <div className="bg-white rounded-xl p-4 border border-red-100">
-                                                <h4 className="font-bold text-gray-900 mb-2 text-red-600">High Voltage Danger</h4>
-                                                <p className="text-gray-600 text-sm">
-                                                    Microwave capacitors store up to 4000 volts even when unplugged.
-                                                    Only certified technicians should handle internal components.
-                                                </p>
+                            {/* Safety Tips */}
+                            <div className="mt-8 sm:mt-12 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border border-red-200">
+                                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">🔒 Microwave Safety Tips</h3>
+                                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                                    {safetyWarnings.map((warning, index) => (
+                                        <div
+                                            key={index}
+                                            className="bg-white rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-[1.02] animate-fade-in"
+                                            style={{ animationDelay: `${300 + index * 100}ms` }}
+                                        >
+                                            <div className="flex items-center gap-3 mb-3">
+                                                <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                                                    <AlertTriangle size={20} className="text-red-600" />
+                                                </div>
+                                                <h4 className="font-bold text-gray-900 text-sm sm:text-base">Safety Tip</h4>
                                             </div>
-                                            <div className="bg-white rounded-xl p-4 border border-red-100">
-                                                <h4 className="font-bold text-gray-900 mb-2 text-red-600">Radiation Safety</h4>
-                                                <p className="text-gray-600 text-sm">
-                                                    Proper sealing is crucial. Our technicians use specialized tools to test for
-                                                    microwave leakage after every repair.
-                                                </p>
-                                            </div>
+                                            <p className="text-gray-600 text-sm">{warning}</p>
                                         </div>
-                                    </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
@@ -466,49 +632,81 @@ export default function MicrowaveOvenPage() {
                     {/* Microwave Types Tab */}
                     {activeTab === 'types' && (
                         <div className="animate-fade-in">
-                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                                Types of <span className="text-blue-600">Microwave Ovens</span>
-                            </h2>
-                            <p className="text-gray-600 mb-8 max-w-3xl">
-                                We repair all types of microwave ovens. Each type has specific components and common repair needs.
-                            </p>
+                            <div className="text-center sm:text-left mb-6 sm:mb-8">
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                                    Types of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">Microwave Ovens</span>
+                                </h2>
+                                <p className="text-gray-600 max-w-3xl text-sm sm:text-base">
+                                    We repair all types of microwave ovens. Each type has unique features, common issues, and specific repair methods.
+                                </p>
+                            </div>
 
-                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                            <div className="grid md:grid-cols-2 gap-6 mb-8 sm:mb-12">
                                 {microwaveTypes.map((microwave, index) => (
-                                    <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-gray-100">
-                                        <div className="relative h-48 overflow-hidden">
+                                    <div
+                                        key={index}
+                                        className="bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-gray-100"
+                                    >
+                                        {/* Image Header */}
+                                        <div className="relative h-48 sm:h-56 overflow-hidden">
                                             <Image
                                                 src={microwave.image}
                                                 alt={microwave.type}
                                                 fill
-                                                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 50vw"
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                            <div className="absolute bottom-4 left-4">
-                                                <h3 className="text-xl font-bold text-white">{microwave.type}</h3>
+                                            <div className={`absolute inset-0 bg-gradient-to-t ${microwave.gradient} opacity-80`}></div>
+                                            <div className="absolute bottom-4 left-4 right-4">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                                                        {microwave.icon}
+                                                    </div>
+                                                    <h3 className="text-xl font-bold text-white">{microwave.type}</h3>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className="p-6">
+
+                                        {/* Content */}
+                                        <div className="p-4 sm:p-6">
+                                            {/* Features */}
                                             <div className="mb-4">
-                                                <h4 className="font-semibold text-gray-900 mb-2 text-blue-600">Features:</h4>
-                                                <ul className="space-y-1">
-                                                    {microwave.features.map((feature, i) => (
+                                                <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                                                    <CheckCircle size={16} className="text-green-500" />
+                                                    Key Features
+                                                </h4>
+                                                <ul className="space-y-2">
+                                                    {microwave.features.slice(0, 3).map((feature, i) => (
                                                         <li key={i} className="flex items-center text-sm text-gray-600">
-                                                            <CheckCircle size={14} className="text-green-500 mr-2" />
+                                                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></div>
                                                             {feature}
                                                         </li>
                                                     ))}
                                                 </ul>
                                             </div>
-                                            <div>
-                                                <h4 className="font-semibold text-gray-900 mb-2 text-blue-600">Common Issues:</h4>
-                                                <div className="flex flex-wrap gap-2">
+
+                                            {/* Common Issues */}
+                                            <div className="mb-4">
+                                                <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                                                    <AlertTriangle size={16} className="text-red-500" />
+                                                    Common Issues
+                                                </h4>
+                                                <div className="flex flex-wrap gap-1.5">
                                                     {microwave.commonIssues.map((issue, i) => (
-                                                        <span key={i} className="px-3 py-1 bg-red-50 text-red-700 rounded-full text-xs">
+                                                        <span key={i} className="px-2 py-1 bg-red-50 text-red-700 rounded-full text-xs">
                                                             {issue}
                                                         </span>
                                                     ))}
                                                 </div>
+                                            </div>
+
+                                            {/* Brands */}
+                                            <div>
+                                                <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                                                    <Award size={16} className="text-blue-500" />
+                                                    Popular Brands
+                                                </h4>
+                                                <p className="text-gray-600 text-sm">{microwave.brands.join(', ')}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -516,37 +714,31 @@ export default function MicrowaveOvenPage() {
                             </div>
 
                             {/* Components We Repair */}
-                            <div className="bg-gradient-to-r from-blue-50 to-red-50 rounded-3xl p-6 md:p-8 border border-blue-200">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-6">Microwave Components We Repair</h3>
-                                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-                                    <div className="text-center">
-                                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-200">
-                                            <Zap size={28} className="text-blue-600" />
+                            <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8">
+                                <h3 className="text-xl sm:text-2xl font-bold mb-6">🔧 Microwave Components We Repair</h3>
+                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+                                    {[
+                                        { part: 'Magnetron', icon: <Zap size={24} />, desc: 'Generates microwaves' },
+                                        { part: 'High Voltage', icon: <Battery size={24} />, desc: 'Capacitor, diode' },
+                                        { part: 'Control Board', icon: <Cpu size={24} />, desc: 'Main PCB, display' },
+                                        { part: 'Turntable', icon: <RotateCw size={24} />, desc: 'Motor, rollers' },
+                                        { part: 'Door System', icon: <ShieldIcon size={24} />, desc: 'Latch, interlock' },
+                                        { part: 'Cooling Fan', icon: <Fan size={24} />, desc: 'Magnetron fan' },
+                                        { part: 'Heating Element', icon: <ThermometerIcon size={24} />, desc: 'Grill/Convection' },
+                                        { part: 'Waveguide', icon: <Radio size={24} />, desc: 'Microwave guide' },
+                                    ].map((item, index) => (
+                                        <div
+                                            key={index}
+                                            className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-white/20 transition-colors animate-fade-in"
+                                            style={{ animationDelay: `${index * 100}ms` }}
+                                        >
+                                            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                                {item.icon}
+                                            </div>
+                                            <h4 className="font-bold text-lg mb-1">{item.part}</h4>
+                                            <p className="text-red-100 text-xs">{item.desc}</p>
                                         </div>
-                                        <h4 className="font-bold text-lg text-gray-900">Magnetron</h4>
-                                        <p className="text-gray-600 text-sm">Generates microwaves for heating</p>
-                                    </div>
-                                    <div className="text-center">
-                                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-200">
-                                            <Battery size={28} className="text-blue-600" />
-                                        </div>
-                                        <h4 className="font-bold text-lg text-gray-900">High Voltage System</h4>
-                                        <p className="text-gray-600 text-sm">Capacitor, diode, transformer</p>
-                                    </div>
-                                    <div className="text-center">
-                                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-200">
-                                            <Settings size={28} className="text-blue-600" />
-                                        </div>
-                                        <h4 className="font-bold text-lg text-gray-900">Control Board</h4>
-                                        <p className="text-gray-600 text-sm">Timer, settings, display</p>
-                                    </div>
-                                    <div className="text-center">
-                                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-200">
-                                            <RotateCw size={28} className="text-blue-600" />
-                                        </div>
-                                        <h4 className="font-bold text-lg text-gray-900">Turntable System</h4>
-                                        <p className="text-gray-600 text-sm">Motor, rollers, guide</p>
-                                    </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
@@ -555,31 +747,48 @@ export default function MicrowaveOvenPage() {
                     {/* Repair Process Tab */}
                     {activeTab === 'process' && (
                         <div className="animate-fade-in">
-                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                                Our <span className="text-blue-600">Safe Repair Process</span>
-                            </h2>
+                            <div className="text-center sm:text-left mb-6 sm:mb-8">
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                                    Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500">Safe Repair Process</span>
+                                </h2>
+                                <p className="text-gray-600 max-w-3xl text-sm sm:text-base">
+                                    We follow a strict 4-step safety process for all microwave repairs. Your safety is our priority.
+                                </p>
+                            </div>
 
-                            <div className="relative mb-12">
-                                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {/* Process Steps */}
+                            <div className="relative mb-8 sm:mb-12">
+                                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                                     {repairSteps.map((step) => (
                                         <div key={step.step} className="relative">
-                                            <div className="bg-white rounded-2xl p-6 shadow-lg h-full border border-gray-100">
-                                                <div className="flex items-center gap-4 mb-4">
-                                                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">
+                                            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg h-full hover:shadow-xl transition-all duration-300 group">
+                                                <div className="flex items-center gap-3 sm:gap-4 mb-4">
+                                                    <div className={`w-10 h-10 sm:w-12 sm:h-12 ${step.color} rounded-lg sm:rounded-xl flex items-center justify-center text-lg sm:text-xl`}>
                                                         {step.icon}
                                                     </div>
-                                                    <div className="text-3xl font-bold text-blue-600">0{step.step}</div>
+                                                    <div className="text-2xl sm:text-3xl font-bold text-red-600">0{step.step}</div>
                                                 </div>
-                                                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                                                <p className="text-gray-600 mb-4">{step.description}</p>
-                                                <div className="flex items-center text-sm text-blue-600 font-medium">
-                                                    <Clock size={16} className="mr-2" />
+                                                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{step.title}</h3>
+                                                <p className="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">{step.description}</p>
+                                                <div className="mb-3 sm:mb-4">
+                                                    <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Includes:</h4>
+                                                    <ul className="space-y-1">
+                                                        {step.details.map((detail, i) => (
+                                                            <li key={i} className="flex items-center text-gray-600 text-xs sm:text-sm">
+                                                                <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2"></div>
+                                                                {detail}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                                <div className="flex items-center text-sm text-red-600 font-medium">
+                                                    <Clock size={14} className="mr-2" />
                                                     Time: {step.time}
                                                 </div>
                                             </div>
                                             {step.step < 4 && (
                                                 <div className="hidden lg:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
-                                                    <ArrowRight size={24} className="text-gray-300" />
+                                                    <ArrowRight size={20} className="text-gray-300" />
                                                 </div>
                                             )}
                                         </div>
@@ -588,63 +797,62 @@ export default function MicrowaveOvenPage() {
                             </div>
 
                             {/* Why Choose Us */}
-                            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-lg border border-gray-100">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Our Microwave Repair Service?</h3>
-                                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl">
-                                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <Shield size={24} className="text-blue-600" />
+                            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-gray-100">
+                                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">⭐ Why Choose Our Microwave Repair Service?</h3>
+                                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                                    {[
+                                        {
+                                            title: 'Certified Safety',
+                                            desc: 'Technicians certified in microwave safety procedures',
+                                            icon: <ShieldCheck size={20} />,
+                                            color: 'from-red-500 to-orange-500'
+                                        },
+                                        {
+                                            title: 'Radiation Testing',
+                                            desc: 'Complete radiation leakage test after every repair',
+                                            icon: <ZapIcon size={20} />,
+                                            color: 'from-blue-500 to-cyan-500'
+                                        },
+                                        {
+                                            title: 'Same Day Service',
+                                            desc: 'Most repairs completed within hours',
+                                            icon: <Clock size={20} />,
+                                            color: 'from-green-500 to-emerald-500'
+                                        },
+                                        {
+                                            title: 'Free Diagnosis',
+                                            desc: 'No charge if you don\'t proceed with repair',
+                                            icon: <CheckCircle size={20} />,
+                                            color: 'from-purple-500 to-pink-500'
+                                        },
+                                        {
+                                            title: 'Genuine Parts',
+                                            desc: 'We use only OEM or certified spare parts',
+                                            icon: <Wrench size={20} />,
+                                            color: 'from-yellow-500 to-amber-500'
+                                        },
+                                        {
+                                            title: '24/7 Emergency',
+                                            desc: 'Available for urgent microwave repairs',
+                                            icon: <Phone size={20} />,
+                                            color: 'from-indigo-500 to-purple-500'
+                                        },
+                                    ].map((feature, index) => (
+                                        <div
+                                            key={index}
+                                            className={`bg-gradient-to-br ${feature.color} text-white rounded-xl p-4 sm:p-5 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]`}
+                                        >
+                                            <div className="flex items-start gap-3">
+                                                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                    {feature.icon}
+                                                </div>
+                                                <div>
+                                                    <h4 className="font-bold text-lg mb-1">{feature.title}</h4>
+                                                    <p className="text-white/90 text-sm">{feature.desc}</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 mb-2">Certified Safety</h4>
-                                            <p className="text-gray-600 text-sm">Technicians certified in microwave safety and repair</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl">
-                                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <Clock size={24} className="text-blue-600" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 mb-2">Same Day Service</h4>
-                                            <p className="text-gray-600 text-sm">Most repairs completed within hours</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl">
-                                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <CheckCircle size={24} className="text-blue-600" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 mb-2">Free Diagnosis</h4>
-                                            <p className="text-gray-600 text-sm">No charge if you don't proceed with repair</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl">
-                                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <Wrench size={24} className="text-blue-600" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 mb-2">Genuine Parts</h4>
-                                            <p className="text-gray-600 text-sm">We use only OEM or high-quality spare parts</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl">
-                                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <Thermometer size={24} className="text-blue-600" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 mb-2">Leakage Testing</h4>
-                                            <p className="text-gray-600 text-sm">Radiation leakage test after every repair</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl">
-                                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <Users size={24} className="text-blue-600" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 mb-2">Expert Technicians</h4>
-                                            <p className="text-gray-600 text-sm">Specialized in microwave repair for 5+ years</p>
-                                        </div>
-                                    </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
@@ -653,46 +861,63 @@ export default function MicrowaveOvenPage() {
                     {/* Pricing Tab */}
                     {activeTab === 'pricing' && (
                         <div className="animate-fade-in">
-                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                                Service <span className="text-blue-600">Pricing</span>
-                            </h2>
-                            <p className="text-gray-600 mb-8 max-w-3xl">
-                                Transparent pricing with safety-first approach. All repairs include radiation leakage testing.
-                            </p>
+                            <div className="text-center sm:text-left mb-6 sm:mb-8">
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                                    Service <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-amber-500">Pricing</span>
+                                </h2>
+                                <p className="text-gray-600 max-w-3xl text-sm sm:text-base">
+                                    Transparent pricing with safety-first approach. All repairs include radiation leakage testing.
+                                </p>
+                            </div>
 
-                            <div className="grid lg:grid-cols-3 gap-8">
+                            <div className="grid lg:grid-cols-3 gap-6">
                                 {/* Pricing Cards */}
                                 <div className="lg:col-span-2">
-                                    <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                                         {pricing.map((service, index) => (
-                                            <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                                            <div
+                                                key={index}
+                                                className={`bg-gradient-to-br ${service.gradient} text-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01] animate-fade-in`}
+                                                style={{ animationDelay: `${index * 100}ms` }}
+                                            >
                                                 <div className="flex justify-between items-start mb-4">
                                                     <div>
-                                                        <h3 className="text-xl font-bold text-gray-900">{service.service}</h3>
-                                                        <div className="text-sm text-gray-500 mt-1">{service.note}</div>
+                                                        <h3 className="text-lg sm:text-xl font-bold">{service.service}</h3>
+                                                        {service.popular && (
+                                                            <span className="inline-block px-2 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold mt-1">
+                                                                ⭐ POPULAR
+                                                            </span>
+                                                        )}
                                                     </div>
-                                                    <div className="text-2xl font-bold text-blue-600">{service.price}</div>
+                                                    <div className="text-xl sm:text-2xl font-bold">{service.price}</div>
                                                 </div>
 
                                                 <div className="mb-4">
-                                                    <h4 className="text-sm font-semibold text-gray-700 mb-2">Includes:</h4>
+                                                    <h4 className="font-semibold mb-2 text-sm sm:text-base">Includes:</h4>
                                                     <ul className="space-y-2">
                                                         {service.includes.map((item, i) => (
-                                                            <li key={i} className="flex items-center text-gray-600">
-                                                                <CheckCircle size={16} className="text-green-500 mr-3" />
-                                                                {item}
+                                                            <li key={i} className="flex items-center text-white/90">
+                                                                <CheckCircle size={14} className="mr-2 text-green-300" />
+                                                                <span className="text-sm">{item}</span>
                                                             </li>
                                                         ))}
                                                     </ul>
                                                 </div>
 
-                                                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                                                    <div className="flex items-center text-sm">
-                                                        <Shield size={16} className="text-green-500 mr-2" />
+                                                <div className="flex items-center justify-between pt-4 border-t border-white/20">
+                                                    <div className="flex items-center gap-3">
+                                                        <div className="flex items-center text-sm">
+                                                            <Clock size={14} className="mr-1" />
+                                                            {service.time}
+                                                        </div>
+                                                        <div className="flex items-center text-sm">
+                                                            <ShieldCheck size={14} className="mr-1" />
+                                                            {service.warranty}
+                                                        </div>
                                                     </div>
                                                     <a
                                                         href="tel:+917678134697"
-                                                        className="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                                                        className="bg-white text-red-700 px-4 py-2 rounded-lg font-medium hover:bg-red-50 transition-colors text-sm"
                                                     >
                                                         Book Now
                                                     </a>
@@ -703,54 +928,64 @@ export default function MicrowaveOvenPage() {
                                 </div>
 
                                 {/* Additional Services */}
-                                <div className="bg-gradient-to-br from-blue-600 to-red-600 text-white rounded-3xl p-8 shadow-2xl">
-                                    <h3 className="text-2xl font-bold mb-6">Safety & Additional Services</h3>
+                                <div className="bg-gradient-to-br from-purple-600 to-pink-600 text-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-2xl">
+                                    <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">✨ Additional Services</h3>
 
-                                    <div className="space-y-6">
-                                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                                            <h4 className="font-bold text-lg mb-3 text-yellow-300">Leakage Testing</h4>
-                                            <ul className="space-y-3 text-blue-100">
-                                                <li className="flex items-center">
-                                                    <CheckCircle size={16} className="text-green-300 mr-3" />
-                                                    Radiation safety check
+                                    <div className="space-y-4 sm:space-y-6">
+                                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5">
+                                            <h4 className="font-bold text-lg mb-3">Radiation Testing</h4>
+                                            <ul className="space-y-2 text-purple-100 mb-4">
+                                                <li className="flex items-center text-sm">
+                                                    <CheckCircle size={14} className="text-green-300 mr-2" />
+                                                    Complete safety check
                                                 </li>
-                                                <li className="flex items-center">
-                                                    <CheckCircle size={16} className="text-green-300 mr-3" />
+                                                <li className="flex items-center text-sm">
+                                                    <CheckCircle size={14} className="text-green-300 mr-2" />
                                                     Seal integrity test
                                                 </li>
-                                                <li className="flex items-center">
-                                                    <CheckCircle size={16} className="text-green-300 mr-3" />
+                                                <li className="flex items-center text-sm">
+                                                    <CheckCircle size={14} className="text-green-300 mr-2" />
                                                     Certification provided
                                                 </li>
                                             </ul>
-                                            <div className="mt-4 text-xl font-bold text-yellow-300">₹300</div>
+                                            <div className="text-xl font-bold text-yellow-300">₹300</div>
                                         </div>
 
-                                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                                            <h4 className="font-bold text-lg mb-3 text-yellow-300">Annual Maintenance</h4>
-                                            <ul className="space-y-3 text-blue-100">
-                                                <li className="flex items-center">
-                                                    <CheckCircle size={16} className="text-green-300 mr-3" />
-                                                    Complete cleaning
+                                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5">
+                                            <h4 className="font-bold text-lg mb-3">Annual Maintenance</h4>
+                                            <ul className="space-y-2 text-purple-100 mb-4">
+                                                <li className="flex items-center text-sm">
+                                                    <CheckCircle size={14} className="text-green-300 mr-2" />
+                                                    Deep cleaning service
                                                 </li>
-                                                <li className="flex items-center">
-                                                    <CheckCircle size={16} className="text-green-300 mr-3" />
-                                                    Performance check
+                                                <li className="flex items-center text-sm">
+                                                    <CheckCircle size={14} className="text-green-300 mr-2" />
+                                                    Performance optimization
                                                 </li>
-                                                <li className="flex items-center">
-                                                    <CheckCircle size={16} className="text-green-300 mr-3" />
+                                                <li className="flex items-center text-sm">
+                                                    <CheckCircle size={14} className="text-green-300 mr-2" />
                                                     Safety inspection
                                                 </li>
                                             </ul>
-                                            <div className="mt-4 text-xl font-bold text-yellow-300">₹499/year</div>
+                                            <div className="text-xl font-bold text-yellow-300">₹499/year</div>
                                         </div>
 
                                         <a
                                             href="tel:+917678134697"
-                                            className="block bg-white text-blue-600 py-4 rounded-xl text-center font-bold text-lg hover:bg-blue-50 transition-colors shadow-lg"
+                                            className="block bg-white text-purple-700 py-3 sm:py-4 rounded-xl text-center font-bold text-sm sm:text-base hover:bg-purple-50 transition-colors shadow-lg"
                                         >
-                                            Get Safety Inspection
+                                            📞 Get Safety Quote
                                         </a>
+
+                                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mt-4">
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <ShieldCheck size={20} />
+                                                <h5 className="font-bold">Free Safety Check</h5>
+                                            </div>
+                                            <p className="text-purple-100 text-sm">
+                                                With every repair booking
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -760,370 +995,60 @@ export default function MicrowaveOvenPage() {
                     {/* Brands Tab */}
                     {activeTab === 'brands' && (
                         <div className="animate-fade-in">
-                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                                Brands We <span className="text-blue-600">Service</span>
-                            </h2>
-                            <p className="text-gray-600 mb-8 max-w-3xl">
-                                We repair all major microwave oven brands with genuine spare parts and safety-first approach.
-                            </p>
+                            <div className="text-center sm:text-left mb-6 sm:mb-8">
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                                    Brands We <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Service</span>
+                                </h2>
+                                <p className="text-gray-600 max-w-3xl text-sm sm:text-base">
+                                    We repair all major microwave oven brands with genuine spare parts and safety-first approach.
+                                </p>
+                            </div>
 
-                            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-lg mb-8 border border-gray-100">
-                                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                            {/* Brands Grid */}
+                            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg mb-6 sm:mb-8">
+                                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
                                     {brands.map((brand, index) => (
                                         <div
                                             key={index}
-                                            className="bg-gray-50 hover:bg-blue-50 rounded-xl p-4 text-center transition-colors border border-gray-100 hover:border-blue-200 group"
+                                            className={`bg-gradient-to-br ${brand.color} text-white rounded-xl p-3 sm:p-4 text-center transition-all duration-300 transform hover:scale-[1.05] hover:shadow-xl animate-fade-in`}
+                                            style={{ animationDelay: `${index * 50}ms` }}
                                         >
-                                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-sm group-hover:scale-110 transition-transform">
-                                                <Microwave size={20} className="text-blue-600" />
-                                            </div>
-                                            <div className="font-semibold text-gray-900">{brand}</div>
+                                            <div className="text-2xl sm:text-3xl mb-2">{brand.logo}</div>
+                                            <span className="font-bold text-sm sm:text-base">{brand.name}</span>
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
-                            {/* Spare Parts Info */}
-                            <div className="grid md:grid-cols-2 gap-8">
-                                <div className="bg-gradient-to-br from-blue-50 to-red-50 rounded-3xl p-8 border border-blue-200">
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Spare Parts Advantage</h3>
-                                    <div className="space-y-6">
-                                        <div className="flex items-start gap-4">
-                                            <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0 border border-blue-200">
-                                                <CheckCircle size={24} className="text-green-500" />
-                                            </div>
-                                            <div>
-                                                <h4 className="font-bold text-gray-900 mb-2">Genuine OEM Parts</h4>
-                                                <p className="text-gray-600">We use only authentic spare parts from manufacturers</p>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-start gap-4">
-                                            <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0 border border-blue-200">
-                                                <Shield size={24} className="text-blue-500" />
-                                            </div>
-                                            <div>
-                                                <h4 className="font-bold text-gray-900 mb-2">Quality Assurance</h4>
-                                                <p className="text-gray-600">All parts are tested for safety and performance</p>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-start gap-4">
-                                            <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0 border border-blue-200">
-                                                <Clock size={24} className="text-blue-500" />
-                                            </div>
-                                            <div>
-                                                <p className="text-gray-600">  magnetron and major parts</p>
-                                            </div>
+                            {/* Service Areas */}
+                            <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8">
+                                <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
+                                    <div>
+                                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">📍 Service Areas</h3>
+                                        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                                            {['Chandigarh', 'Panchkula', 'Mohali', 'Zirakpur', 'Kharar', 'Derabassi', 'New Chandigarh', 'Banur'].map((city, index) => (
+                                                <div
+                                                    key={index}
+                                                    className="flex items-center bg-white rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-shadow"
+                                                >
+                                                    <Home size={18} className="text-red-600 mr-2 sm:mr-3" />
+                                                    <span className="font-medium text-gray-900 text-sm sm:text-base">{city}</span>
+                                                </div>
+                                            ))}
                                         </div>
                                     </div>
-                                </div>
 
-                                <div className="bg-gradient-to-br from-blue-600 to-red-600 text-white rounded-3xl p-8">
-                                    <h3 className="text-2xl font-bold mb-6">📞 Immediate Assistance</h3>
-                                    <div className="space-y-6">
-                                        <a href="tel:+917678134697" className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors">
-                                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                                <Phone size={24} className="text-blue-600" />
-                                            </div>
-                                            <div>
-                                                <div className="font-bold text-lg">Call Microwave Expert</div>
-                                                <div className="text-blue-100">+91 7678 1346 97</div>
-                                            </div>
+                                    <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg">
+                                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">🚨 Urgent Microwave Repair?</h3>
+                                        <a
+                                            href="tel:+917678134697"
+                                            className="block bg-gradient-to-r from-red-500 to-orange-500 text-white py-3 sm:py-4 rounded-xl text-center font-bold text-base sm:text-lg mb-4 hover:from-red-600 hover:to-orange-600 transition-all transform hover:scale-[1.02] shadow-lg"
+                                        >
+                                            Emergency Call Now
                                         </a>
-                                        <div className="p-4 bg-white/10 rounded-xl">
-                                            <div className="font-bold mb-2">Service Hours:</div>
-                                            <div className="text-blue-100">Mon-Sun: 8 AM - 9 PM</div>
-                                            <div className="text-blue-100">Emergency: 24/7 Available</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    )}
-
-                    {/* Customer Reviews Tab */}
-                    {activeTab === 'reviews' && (
-                        <div className="animate-fade-in">
-                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                                Customer <span className="text-blue-600">Reviews</span>
-                            </h2>
-
-                            <div className="grid md:grid-cols-3 gap-6 mb-12">
-                                {reviews.map((review, index) => (
-                                    <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                                        <div className="flex items-center justify-between mb-4">
-                                            <div>
-                                                <div className="font-bold text-gray-900">{review.name}</div>
-                                                <div className="flex items-center text-sm text-gray-500">
-                                                    <MapPin size={12} className="mr-1" />
-                                                    {review.location}
-                                                </div>
-                                            </div>
-                                            <div className="flex items-center">
-                                                {[...Array(5)].map((_, i) => (
-                                                    <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
-                                                ))}
-                                            </div>
-                                        </div>
-                                        <p className="text-gray-600 mb-4">{review.comment}</p>
-                                        <div className="text-sm text-gray-500">{review.date}</div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* Ratings Summary */}
-                            <div className="bg-gradient-to-r from-blue-50 to-red-50 rounded-3xl p-8 border border-blue-200 mb-8">
-                                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                                    <div className="text-center">
-                                        <div className="text-5xl font-bold text-gray-900">4.9/5</div>
-                                        <div className="flex items-center justify-center my-2">
-                                            {[...Array(5)].map((_, i) => (
-                                                <Star key={i} size={20} className="fill-yellow-500 text-yellow-500" />
-                                            ))}
-                                        </div>
-                                        <div className="text-gray-600">Based on 1,247 reviews</div>
-                                    </div>
-                                    <div className="flex-1 max-w-md">
-                                        <div className="space-y-2">
-                                            {[5, 4, 3, 2, 1].map((rating) => (
-                                                <div key={rating} className="flex items-center">
-                                                    <div className="w-8 text-gray-700 font-medium">{rating}★</div>
-                                                    <div className="flex-1 mx-4 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                                        <div
-                                                            className="h-full bg-blue-500"
-                                                            style={{ width: `${rating === 5 ? '92%' : rating === 4 ? '6%' : '2%'}` }}
-                                                        ></div>
-                                                    </div>
-                                                    <div className="w-12 text-gray-600 text-sm">
-                                                        {rating === 5 ? '92%' : rating === 4 ? '6%' : '2%'}
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    )}
-
-                    {/* Booking Tab */}
-                    {activeTab === 'booking' && (
-                        <div id="booking-section" className="animate-fade-in">
-                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                                Book <span className="text-blue-600">Microwave Repair</span>
-                            </h2>
-
-                            <div className="grid lg:grid-cols-2 gap-8">
-                                {/* Booking Form */}
-                                <div className="bg-white rounded-3xl p-6 md:p-8 shadow-lg border border-gray-100">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-6">Schedule Your Repair</h3>
-
-                                    {isBookingSubmitted ? (
-                                        <div className="text-center py-12">
-                                            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                                <CheckCircle size={40} className="text-green-500" />
-                                            </div>
-                                            <h4 className="text-2xl font-bold text-gray-900 mb-4">Booking Confirmed!</h4>
-                                            <p className="text-gray-600 mb-6">
-                                                Our microwave expert will call you within 15 minutes to confirm the appointment.
-                                            </p>
-                                            <div className="bg-blue-50 rounded-xl p-4 mb-6">
-                                                <div className="font-bold text-gray-900 mb-2">Emergency Contact:</div>
-                                                <a href="tel:+917678134697" className="text-blue-600 font-bold text-lg">
-                                                    +91 7678 1346 97
-                                                </a>
-                                            </div>
-                                            <button
-                                                onClick={() => setIsBookingSubmitted(false)}
-                                                className="text-blue-600 font-medium hover:text-blue-700"
-                                            >
-                                                Book another service
-                                            </button>
-                                        </div>
-                                    ) : (
-                                        <form onSubmit={handleBookingSubmit} className="space-y-6">
-                                            <div className="grid md:grid-cols-2 gap-6">
-                                                <div>
-                                                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                        Your Name *
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        required
-                                                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                                        placeholder="Enter your name"
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                        Phone Number *
-                                                    </label>
-                                                    <input
-                                                        type="tel"
-                                                        required
-                                                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                                        placeholder="Enter your phone number"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                    Email Address
-                                                </label>
-                                                <input
-                                                    type="email"
-                                                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                                    placeholder="Enter your email"
-                                                />
-                                            </div>
-
-                                            <div>
-                                                <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                    Full Address *
-                                                </label>
-                                                <textarea
-                                                    required
-                                                    rows={3}
-                                                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
-                                                    placeholder="Enter your complete address"
-                                                />
-                                            </div>
-
-                                            <div className="grid md:grid-cols-2 gap-6">
-                                                <div>
-                                                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                        Microwave Brand *
-                                                    </label>
-                                                    <select
-                                                        required
-                                                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                                    >
-                                                        <option value="">Select brand</option>
-                                                        {brands.map((brand) => (
-                                                            <option key={brand} value={brand}>{brand}</option>
-                                                        ))}
-                                                        <option value="other">Other</option>
-                                                    </select>
-                                                </div>
-                                                <div>
-                                                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                        Problem Type *
-                                                    </label>
-                                                    <select
-                                                        required
-                                                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                                    >
-                                                        <option value="">Select problem</option>
-                                                        {problems.map((problem) => (
-                                                            <option key={problem.title} value={problem.title}>{problem.title}</option>
-                                                        ))}
-                                                        <option value="other">Other issue</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                    Preferred Date & Time *
-                                                </label>
-                                                <div className="grid md:grid-cols-2 gap-4">
-                                                    <input
-                                                        type="date"
-                                                        required
-                                                        min={new Date().toISOString().split('T')[0]}
-                                                        className="px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                                    />
-                                                    <select
-                                                        required
-                                                        className="px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                                    >
-                                                        <option value="">Select time slot</option>
-                                                        <option value="9-12">9:00 AM - 12:00 PM</option>
-                                                        <option value="12-3">12:00 PM - 3:00 PM</option>
-                                                        <option value="3-6">3:00 PM - 6:00 PM</option>
-                                                        <option value="6-9">6:00 PM - 9:00 PM</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                    Additional Details (Optional)
-                                                </label>
-                                                <textarea
-                                                    rows={2}
-                                                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
-                                                    placeholder="Describe the issue or special instructions"
-                                                />
-                                            </div>
-
-                                            <button
-                                                type="submit"
-                                                className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-colors shadow-lg"
-                                            >
-                                                Book Microwave Repair
-                                            </button>
-
-                                            <p className="text-center text-sm text-gray-500">
-                                                By booking, you agree to our terms of service. Our expert will call to confirm.
-                                            </p>
-                                        </form>
-                                    )}
-                                </div>
-
-                                {/* Booking Info */}
-                                <div className="space-y-6">
-                                    <div className="bg-gradient-to-br from-blue-600 to-red-600 text-white rounded-3xl p-8">
-                                        <h3 className="text-2xl font-bold mb-6">⚡ Same-Day Service</h3>
-                                        <div className="space-y-6">
-                                            <div className="flex items-start gap-4">
-                                                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                                    <Clock size={24} className="text-blue-600" />
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-lg mb-2">Fast Response</h4>
-                                                    <p className="text-blue-100">Technician dispatched within 2 hours in emergency cases</p>
-                                                </div>
-                                            </div>
-                                            <div className="flex items-start gap-4">
-                                                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                                    <Shield size={24} className="text-blue-600" />
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-lg mb-2">Safety First</h4>
-                                                    <p className="text-blue-100">All technicians certified in microwave safety procedures</p>
-                                                </div>
-                                            </div>
-                                            <div className="flex items-start gap-4">
-                                                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                                    <CheckCircle size={24} className="text-blue-600" />
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-lg mb-2">Free Diagnosis</h4>
-                                                    <p className="text-blue-100">No charge for inspection if you don't proceed with repair</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-                                        <h3 className="text-xl font-bold text-gray-900 mb-6">📞 Need Immediate Help?</h3>
-                                        <div className="space-y-4">
-                                            <a href="tel:+917678134697" className="block">
-                                                <div className="flex items-center justify-center gap-3 bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-colors">
-                                                    <Phone size={24} />
-                                                    Call Microwave Expert Now
-                                                </div>
-                                            </a>
-                                            <div className="text-center text-gray-600">OR</div>
-                                            <a href="https://wa.me/917678134697" target="_blank" rel="noopener noreferrer" className="block">
-                                                <div className="flex items-center justify-center gap-3 bg-green-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition-colors">
-                                                    💬 WhatsApp Us
-                                                </div>
-                                            </a>
-                                            <div className="text-center text-sm text-gray-500 mt-4">
-                                                Available 24/7 for emergency microwave repairs
-                                            </div>
+                                        <div className="text-center text-gray-600">
+                                            <Clock size={16} className="inline mr-2" />
+                                            <span className="text-sm sm:text-base">Average response time: 30 minutes</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1131,42 +1056,54 @@ export default function MicrowaveOvenPage() {
                         </div>
                     )}
                 </div>
-            </div>
 
-            {/* Footer CTA */}
-            <div className="bg-gradient-to-r from-blue-600 to-red-600 text-white">
-                <div className="container mx-auto px-4 py-12 md:py-16">
-                    <div className="text-center">
-                        <h2 className="text-2xl md:text-4xl font-bold mb-6">
-                            Don't Risk DIY Microwave Repair
-                        </h2>
-                        <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                            High voltage and radiation risks require professional handling.
-                            Our certified technicians ensure safe, reliable repairs .
+                {/* Booking Section */}
+                <div id="booking" className="mt-12 sm:mt-16 md:mt-20 bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8">
+                    <div className="text-center mb-6 sm:mb-8">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">Ready to Fix Your Microwave?</h2>
+                        <p className="text-red-100 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+                            Get safe, certified microwave repair with radiation testing included. Emergency service available.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a
-                                href="tel:+917678134697"
-                                className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
-                            >
-                                Call Expert Now
-                            </a>
-                            <button
-                                onClick={() => {
-                                    setActiveTab('booking');
-                                    document.getElementById('booking-section')?.scrollIntoView({ behavior: 'smooth' });
-                                }}
-                                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all duration-300"
-                            >
-                                Book Online
-                            </button>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a
+                            href="tel:+917678134697"
+                            className="bg-white text-red-700 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-red-50 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl flex items-center justify-center gap-3"
+                        >
+                            <Phone size={20} />
+                            Emergency Call Now
+                        </a>
+                        <a
+                            href="https://wa.me/917678134697"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl flex items-center justify-center gap-3"
+                        >
+                            <span>💬</span>
+                            WhatsApp Expert
+                        </a>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 max-w-3xl mx-auto">
+                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                            <div className="text-xl sm:text-2xl font-bold mb-2 text-yellow-300">✓ Free</div>
+                            <div className="text-red-100 text-sm">Safety Check</div>
+                        </div>
+                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                            <div className="text-xl sm:text-2xl font-bold mb-2 text-yellow-300">Same Day</div>
+                            <div className="text-red-100 text-sm">Service</div>
+                        </div>
+                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                            <div className="text-xl sm:text-2xl font-bold mb-2 text-yellow-300">Radiation</div>
+                            <div className="text-red-100 text-sm">Testing</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Add some custom styles for animations */}
-            <style jsx>{`
+            {/* Animation Styles */}
+            <style jsx global>{`
         @keyframes fade-in {
           from {
             opacity: 0;
@@ -1177,15 +1114,85 @@ export default function MicrowaveOvenPage() {
             transform: translateY(0);
           }
         }
-        .animate-fade-in {
-          animation: fade-in 0.5s ease-out;
+        
+        @keyframes pulse-once {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.05);
+          }
         }
+        
+        @keyframes pulse-slow {
+          0%, 100% {
+            opacity: 0.15;
+          }
+          50% {
+            opacity: 0.3;
+          }
+        }
+        
+        @keyframes bounce-slow {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+        
+        @keyframes float-left {
+          0%, 100% {
+            transform: translateY(0) translateX(0);
+          }
+          50% {
+            transform: translateY(-8px) translateX(-4px);
+          }
+        }
+        
+        .animate-fade-in {
+          opacity: 0;
+          animation: fade-in 0.5s ease-out forwards;
+        }
+        
+        .animate-pulse-once {
+          animation: pulse-once 2s ease-in-out;
+        }
+        
+        .animate-pulse-slow {
+          animation: pulse-slow 4s ease-in-out infinite;
+        }
+        
+        .animate-bounce-slow {
+          animation: bounce-slow 2s ease-in-out infinite;
+        }
+        
+        .animate-float-left {
+          animation: float-left 3s ease-in-out infinite;
+        }
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
         }
+        
+        /* Hide scrollbar for IE, Edge and Firefox */
         .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+        }
+        
+        /* Touch optimization */
+        @media (hover: none) and (pointer: coarse) {
+          button, a {
+            min-height: 44px;
+            min-width: 44px;
+          }
+          
+          .active\:scale-95:active {
+            transform: scale(0.95);
+          }
         }
       `}</style>
         </div>
