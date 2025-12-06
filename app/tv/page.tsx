@@ -224,7 +224,7 @@ export default function TVPage() {
 
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <a
-                                    href="tel:+917678134697"
+                                    href="tel:+91 98108 78908"
                                     className="group bg-white text-gray-900 px-6 md:px-8 py-4 rounded-xl font-semibold text-base md:text-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
                                 >
                                     <Phone size={22} />
@@ -309,8 +309,8 @@ export default function TVPage() {
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`px-4 md:px-6 py-3 rounded-xl font-medium text-sm md:text-base whitespace-nowrap transition-all duration-300 flex items-center gap-2 ${activeTab === tab.id
-                                        ? 'bg-cyan-600 text-white shadow-lg'
-                                        : 'text-gray-300 hover:bg-white/10 hover:text-white'
+                                    ? 'bg-cyan-600 text-white shadow-lg'
+                                    : 'text-gray-300 hover:bg-white/10 hover:text-white'
                                     }`}
                             >
                                 <span>{tab.icon}</span>
@@ -349,10 +349,10 @@ export default function TVPage() {
                                                 <div className="flex justify-between items-start mb-2">
                                                     <h3 className="text-lg font-bold text-white">{problem.title}</h3>
                                                     <span className={`px-2 py-1 rounded text-xs font-semibold ${problem.severity === 'High'
-                                                            ? 'bg-red-900/30 text-red-400 border border-red-800'
-                                                            : problem.severity === 'Medium'
-                                                                ? 'bg-yellow-900/30 text-yellow-400 border border-yellow-800'
-                                                                : 'bg-green-900/30 text-green-400 border border-green-800'
+                                                        ? 'bg-red-900/30 text-red-400 border border-red-800'
+                                                        : problem.severity === 'Medium'
+                                                            ? 'bg-yellow-900/30 text-yellow-400 border border-yellow-800'
+                                                            : 'bg-green-900/30 text-green-400 border border-green-800'
                                                         }`}>
                                                         {problem.severity}
                                                     </span>
@@ -657,7 +657,7 @@ export default function TVPage() {
                                                         <span className="font-medium text-gray-300">Warranty: {service.warranty}</span>
                                                     </div>
                                                     <a
-                                                        href="tel:+917678134697"
+                                                        href="tel:+91 98108 78908"
                                                         className="bg-cyan-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-cyan-700 transition-colors"
                                                     >
                                                         Book Now
@@ -712,7 +712,7 @@ export default function TVPage() {
                                         </div>
 
                                         <a
-                                            href="tel:+917678134697"
+                                            href="tel:+91 98108 78908"
                                             className="block bg-white text-gray-900 py-4 rounded-xl text-center font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
                                         >
                                             Get Custom Quote
@@ -767,7 +767,7 @@ export default function TVPage() {
                                     <div className="bg-gradient-to-r from-cyan-900/30 to-blue-900/30 rounded-2xl p-6 shadow-lg border border-cyan-500/20">
                                         <h3 className="text-xl font-bold text-white mb-4">Need Urgent TV Repair?</h3>
                                         <a
-                                            href="tel:+917678134697"
+                                            href="tel:+91 98108 78908"
                                             className="block bg-red-600 text-white py-4 rounded-xl text-center font-bold text-lg mb-4 hover:bg-red-700 transition-colors"
                                         >
                                             Emergency Call Now
@@ -797,16 +797,16 @@ export default function TVPage() {
 
                                         <div className="grid md:grid-cols-3 gap-6 mb-8">
                                             <a
-                                                href="tel:+917678134697"
+                                                href="tel:+91 98108 78908"
                                                 className="bg-cyan-600 text-white p-6 rounded-2xl hover:bg-cyan-700 transition-colors text-center group border border-cyan-500/30"
                                             >
                                                 <Phone size={32} className="mx-auto mb-4 group-hover:scale-110 transition-transform" />
                                                 <div className="text-2xl font-bold">Call Now</div>
-                                                <div className="text-cyan-100 mt-2">+91 76781 34697</div>
+                                                <div className="text-cyan-100 mt-2"> +91 9810878908</div>
                                             </a>
 
                                             <a
-                                                href="https://wa.me/917678134697"
+                                                href="https://wa.me/91 98108 78908"
                                                 className="bg-green-600 text-white p-6 rounded-2xl hover:bg-green-700 transition-colors text-center group border border-green-500/30"
                                             >
                                                 <div className="text-4xl mb-4">💬</div>

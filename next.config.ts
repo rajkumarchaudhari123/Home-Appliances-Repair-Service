@@ -8,6 +8,7 @@ const nextConfig = {
         hostname: "images.unsplash.com",
         pathname: "/**",
       },
+
       // Bing Images
       {
         protocol: "https",
@@ -27,6 +28,55 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "tse4.mm.bing.net",
+        pathname: "/**",
+      },
+
+      // PngEgg
+      {
+        protocol: "https",
+        hostname: "e7.pngegg.com",
+        pathname: "/**",
+      },
+
+      // Wikipedia
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        pathname: "/**",
+      },
+
+      // Blue Star
+      {
+        protocol: "https",
+        hostname: "www.bluestarindia.com",
+        pathname: "/**",
+      },
+
+      // Lloyd
+      {
+        protocol: "https",
+        hostname: "www.lloydindia.com",
+        pathname: "/**",
+      },
+
+      // PNGIMG
+      {
+        protocol: "https",
+        hostname: "pngimg.com",
+        pathname: "/**",
+      },
+
+      // ⭐ Logowik (LG logo source)
+      {
+        protocol: "https",
+        hostname: "logowik.com",
+        pathname: "/**",
+      },
+
+      // ⭐ Freepik (ornamental logo error)
+      {
+        protocol: "https",
+        hostname: "img.freepik.com",
         pathname: "/**",
       },
     ],

@@ -128,7 +128,7 @@ export default function AboutPage() {
             title: 'Customer Love',
             description: 'Your satisfaction is our success. ',
             color: 'from-red-500 to-rose-500',
-            points: [ 'Follow-up calls', 'Happy customers']
+            points: ['Follow-up calls', 'Happy customers']
         },
         {
             icon: <Lightbulb size={32} />,
@@ -272,17 +272,10 @@ export default function AboutPage() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a
-                                href="/contact"
-                                className="group bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-2xl"
-                            >
-                                <Calendar size={22} />
-                                Book Service Now
-                                <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-                            </a>
+
 
                             <a
-                                href="tel:+917678134697"
+                                href="tel:+91 98108 78908"
                                 className="group bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
                             >
                                 <Phone size={22} />
@@ -765,20 +758,14 @@ export default function AboutPage() {
 
                     <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
                         <a
-                            href="tel:+917678134697"
+                            href="tel:+91 98108 78908"
                             className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center gap-3"
                         >
                             <Phone size={24} />
-                            Call Now: +91 76781 34697
+                            Call Now:  +91 9810878908
                         </a>
 
-                        <a
-                            href="/contact"
-                            className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center gap-3"
-                        >
-                            <Calendar size={24} />
-                            Book Online Instantly
-                        </a>
+
                     </div>
 
                     {/* Guarantee Cards */}

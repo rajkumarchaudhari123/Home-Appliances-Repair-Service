@@ -121,7 +121,7 @@ export default function Footer() {
                                 </div>
                                 <div>
                                     <div className="text-sm text-gray-400">Call Us Anytime</div>
-                                    <div className="font-bold">+91 7678134697  </div>
+                                    <div className="font-bold">+91  98108 78908  </div>
                                 </div>
                             </a>
 
@@ -261,14 +261,14 @@ export default function Footer() {
                         </div>
 
                         <a
-                            href="tel:+917678134697"
+                            href="tel:+91 98108 78908"
                             className="block w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white text-center py-3 rounded-xl font-bold text-lg mb-4 transition-all duration-300 transform hover:scale-105 shadow-lg"
                         >
                             Emergency Call Now
                         </a>
 
                         <a
-                            href="https://wa.me/917678134697  "
+                            href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                             className="flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-semibold transition-all duration-300"
                         >
                             <MessageSquare size={20} />
@@ -350,7 +350,7 @@ export default function Footer() {
 
             {/* Floating WhatsApp Button */}
             <a
-                href="https://wa.me/917678134697"
+                href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                 className="fixed bottom-6 right-6 z-40 bg-green-600 text-white p-4 rounded-full shadow-2xl hover:bg-green-700 transition-all duration-300 transform hover:scale-110 animate-bounce-slow"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -363,7 +363,7 @@ export default function Footer() {
 
             {/* Floating Call Button */}
             <a
-                href="tel:+917678134697  "
+                href="tel:+91 98108 78908  "
                 className="fixed bottom-24 right-6 z-40 bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-110"
             >
                 <Phone size={28} />

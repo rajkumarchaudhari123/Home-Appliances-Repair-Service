@@ -153,18 +153,12 @@ export default function ContactPage() {
     const emergencyContacts = [
         {
             title: '📱 24/7 Emergency Hotline',
-            number: '+91 76781 34697',
+            number: ' +91 9810878908',
             description: 'Immediate assistance for urgent repairs',
             color: 'from-red-500 to-orange-500',
             icon: <Phone size={28} className="text-white" />
-        },
-        {
-            title: '💬 WhatsApp Priority Support',
-            number: '+91 76781 34697',
-            description: 'Instant chat with technicians',
-            color: 'from-green-500 to-emerald-500',
-            icon: <MessageSquare size={28} className="text-white" />
-        },
+        }
+        ,
         {
             title: '📧 Email Support',
             number: 'support@appliancerepair.com',
@@ -323,7 +317,7 @@ export default function ContactPage() {
                                         </p>
                                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                             <a
-                                                href="tel:+917678134697"
+                                                href="tel:+91 98108 78908"
                                                 className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg"
                                             >
                                                 📞 Call Now for Immediate Assistance
@@ -823,7 +817,7 @@ export default function ContactPage() {
                             {/* Quick Action Buttons */}
                             <div className="mt-8 space-y-3">
                                 <a
-                                    href="https://wa.me/917678134697"
+                                    href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3.5 rounded-xl font-semibold hover:from-green-600 hover:to-emerald-700 transition-all transform hover:scale-105 shadow-lg"
@@ -832,7 +826,7 @@ export default function ContactPage() {
                                     Start WhatsApp Chat
                                 </a>
                                 <a
-                                    href="tel:+917678134697"
+                                    href="tel:+919810878908"
                                     className="flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white py-3.5 rounded-xl font-semibold hover:from-blue-600 hover:to-cyan-700 transition-all transform hover:scale-105 shadow-lg"
                                 >
                                     <Phone size={20} />
@@ -962,19 +956,13 @@ export default function ContactPage() {
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
-                            href="tel:+917678134697"
+                            href="tel:+919810878908"
                             className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center gap-3"
                         >
                             <Phone size={24} />
-                            Call Now: +91 76781 34697
+                            Call Now:  +91 9810878908
                         </a>
-                        <a
-                            href="#"
-                            onClick={() => setCurrentStep(1)}
-                            className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105 shadow-2xl"
-                        >
-                            Book Online Instantly
-                        </a>
+
                     </div>
                 </div>
             </div>

@@ -65,8 +65,8 @@ export default function Navbar() {
                     <div className="flex items-center space-x-6">
                         <div className="flex items-center gap-2">
                             <Phone size={16} />
-                            <a href="tel:+917678134697  " className="hover:text-yellow-300 transition-colors">
-                                +91 76781 34697
+                            <a href="tel:+91 98108 78908  " className="hover:text-yellow-300 transition-colors">
+                                +91 9810878908
                             </a>
                         </div>
                         <div className="flex items-center gap-2">
@@ -163,7 +163,7 @@ export default function Navbar() {
 
                             {/* WhatsApp Button */}
                             <a
-                                href="https://wa.me/917678134697  "
+                                href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                                 className="hidden md:flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -180,7 +180,7 @@ export default function Navbar() {
                                 <Phone size={18} />
                                 <div>
                                     <div className="text-xs">Call Now</div>
-                                    <div className="font-bold text-sm">+91 76781 34697</div>
+                                    <div className="font-bold text-sm"> +91 9810878908</div>
                                 </div>
                             </a>
 
@@ -225,7 +225,7 @@ export default function Navbar() {
                                     <div className="w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
                                 </div>
                                 <a
-                                    href="tel:+917678134697"
+                                    href="tel:+91 98108 78908"
                                     className="block w-full bg-red-600 text-white text-center py-3 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors"
                                 >
                                     <Phone size={20} className="inline mr-2" />
@@ -280,7 +280,7 @@ export default function Navbar() {
                             {/* Mobile Action Buttons */}
                             <div className="mt-8 grid grid-cols-2 gap-3">
                                 <a
-                                    href="https://wa.me/917678134697"
+                                    href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                                     className="flex items-center justify-center space-x-2 bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors"
                                 >
                                     <MessageSquare size={18} />

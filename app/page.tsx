@@ -241,16 +241,16 @@ export default function HomePage() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
-                  href="tel:+917678134697"
+                  href="tel:+91 98108 78908"
                   className="group bg-white text-blue-600 px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg flex items-center justify-center gap-2 hover:bg-blue-50 transition-all duration-300 transform hover:scale-[1.02] shadow-lg active:scale-95"
                 >
                   <Phone size={20} />
-                  <span>Call Now: +91 76781 34697</span>
+                  <span>Call Now:  +91 9810878908</span>
                   <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
                 </a>
 
                 <a
-                  href="https://wa.me/917678134697"
+                  href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                   className="group bg-green-500 text-white px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg flex items-center justify-center gap-2 hover:bg-green-600 transition-all duration-300 transform hover:scale-[1.02] shadow-lg active:scale-95"
                 >
                   <span>WhatsApp Us</span>
@@ -558,7 +558,7 @@ export default function HomePage() {
 
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-8 sm:mb-12">
             <a
-              href="tel:+917678134697"
+              href="tel:+91 98108 78908"
               className="group bg-white text-blue-600 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl flex items-center justify-center gap-3 active:scale-95"
             >
               <Phone size={20} />
@@ -566,7 +566,7 @@ export default function HomePage() {
             </a>
 
             <a
-              href="https://wa.me/917678134697"
+              href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
               className="group bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl active:scale-95 flex items-center justify-center gap-3"
             >
               <span>WhatsApp Now</span>

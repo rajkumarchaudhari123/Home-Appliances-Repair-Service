@@ -21,7 +21,8 @@ import {
     Users,
     Star,
     ChevronRight,
-    ArrowLeft
+    ArrowLeft,
+    MapPin
 } from 'lucide-react';
 
 export default function RefrigeratorPage() {
@@ -104,40 +105,58 @@ export default function RefrigeratorPage() {
         },
         {
             step: 4,
-            title: 'Testing & "',
-            description: 'We test the repair thoroughly and provide best  service ".',
+            title: 'Testing & Quality Check',
+            description: 'We test the repair thoroughly and provide best service guarantee.',
             time: '15-20 mins',
             icon: '✅'
         },
     ];
 
-    // Brands We Service
+    // Brands We Service with logo URLs
     const brands = [
-        'LG', 'Samsung', 'Whirlpool', 'Godrej', 'Haier', 'Voltas',
-        'Panasonic', 'Hitachi', 'Daikin', 'Blue Star', 'Carrier', 'IFB'
+        { name: 'LG', logo: 'https://e7.pngegg.com/pngimages/796/910/png-clipart-lg-corp-lg-g2-logo-lg-electronics-lg-miscellaneous-text-thumbnail.png' },
+        { name: 'Samsung', logo: 'https://e7.pngegg.com/pngimages/990/838/png-clipart-samsung-electronics-samsung-galaxy-samsung-logo-text-logo-thumbnail.png' },
+        { name: 'Whirlpool', logo: 'https://e7.pngegg.com/pngimages/469/276/png-clipart-whirlpool-corporation-home-appliance-washing-machines-brand-maytag-others-thumbnail.png' },
+        { name: 'Godrej', logo: 'https://e7.pngegg.com/pngimages/1003/287/png-clipart-godrej-group-logo-advertising-godrej-properties-limited-business-mattresse-furniture-company-thumbnail.png' },
+        { name: 'Haier', logo: 'https://e7.pngegg.com/pngimages/592/697/png-clipart-brand-haier-electronics-refrigerator-home-appliance-refrigerator-blue-electronics-thumbnail.png' },
+        { name: 'Voltas', logo: 'https://e7.pngegg.com/pngimages/1002/349/png-clipart-logo-air-conditioning-voltas-evaporative-cooler-refrigeration-business-text-people-thumbnail.png' },
+        { name: 'Panasonic', logo: 'https://e7.pngegg.com/pngimages/726/161/png-clipart-panasonic-logo-panasonic-logo-slogan-business-watermark-purple-blue-thumbnail.png' },
+        { name: 'Hitachi', logo: 'https://e7.pngegg.com/pngimages/853/59/png-clipart-hitachi-construction-machinery-hitachi-chemical-company-ltd-otcmkts-hchmy-industry-hitachi-text-trademark-thumbnail.png' },
+        { name: 'Daikin', logo: 'https://e7.pngegg.com/pngimages/268/393/png-clipart-daikin-air-conditioning-heating-system-service-others-blue-text-thumbnail.png' },
+        { name: 'Blue Star', logo: 'https://e7.pngegg.com/pngimages/918/728/png-clipart-badge-chase-bank-patrol-drawing-paw-patrol-blue-and-yellow-star-logo-miscellaneous-emblem-thumbnail.png' },
+        { name: 'Carrier', logo: 'https://e7.pngegg.com/pngimages/733/35/png-clipart-carrier-corporation-air-conditioning-hvac-logo-carrier-turn-to-the-experts-business-blue-company-thumbnail.png' },
+        { name: 'IFB', logo: 'https://e7.pngegg.com/pngimages/291/103/png-clipart-logo-ifb-point-ifb-home-appliances-brand-logo-ifb-point-thumbnail.png' },
     ];
 
-    // Pricing
-    const pricing = [
+    // Testimonials
+    const testimonials = [
         {
-            service: 'Gas Charging',
-            price: '₹1,500 - ₹2,500',
-            includes: ['Gas refill', 'Leak testing', 'Pressure check'],
+            name: 'Rohit Verma',
+            location: 'Chandigarh, Sector 35',
+            rating: 5,
+            comment: 'My LG refrigerator stopped cooling suddenly. Called these guys and they arrived within 45 minutes. Technician was professional, diagnosed the compressor issue, and fixed it in 2 hours. Great service!',
+            date: '15 Nov 2024'
         },
         {
-            service: 'Compressor Repair',
-            price: '₹3,000 - ₹6,000',
-            includes: ['Diagnosis', 'Repair/Replacement', 'Testing'],
+            name: 'Priya Sharma',
+            location: 'Mohali, Phase 7',
+            rating: 5,
+            comment: 'Excellent service! My Samsung fridge was leaking water. The technician arrived on time, identified the blocked drain pipe issue, and fixed it completely. Very reasonable charges.',
+            date: '10 Nov 2024'
         },
         {
-            service: 'PCB Repair',
-            price: '₹2,000 - ₹4,000',
-            includes: ['Circuit testing', 'Component replacement', 'Calibration'],
+            name: 'Amit Patel',
+            location: 'Panchkula, Sector 5',
+            rating: 5,
+            comment: 'Professional team and honest pricing. My 8-year old Whirlpool fridge compressor needed replacement. They gave me multiple options and completed the work efficiently.',
+            date: '5 Nov 2024'
         },
         {
-            service: 'General Service',
-            price: '₹800 - ₹1,500',
-            includes: ['Cleaning', 'Basic maintenance', 'Performance check'],
+            name: 'Sunita Mehta',
+            location: 'Zirakpur',
+            rating: 5,
+            comment: 'Very satisfied with the service. The technician was knowledgeable and courteous. Fixed my refrigerator thermostat issue in just 1 hour. Will definitely recommend!',
+            date: '28 Oct 2024'
         },
     ];
 
@@ -177,12 +196,12 @@ export default function RefrigeratorPage() {
 
                             <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
                                 Fast, reliable, and affordable refrigerator repair services by certified technicians.
-                                Serving all major brands .
+                                Serving all major brands across Tricity.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <a
-                                    href="tel:+917678134697"
+                                    href="tel:+919810878908"
                                     className="group bg-white text-blue-700 px-6 md:px-8 py-4 rounded-xl font-semibold text-base md:text-lg flex items-center justify-center gap-2 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
                                 >
                                     <Phone size={22} />
@@ -190,13 +209,13 @@ export default function RefrigeratorPage() {
                                     <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
                                 </a>
 
-                                <a
-                                    href="#booking"
-                                    className="group bg-transparent border-2 border-white text-white px-6 md:px-8 py-4 rounded-xl font-semibold text-base md:text-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-all duration-300"
-                                >
-                                    <Calendar size={20} />
-                                    <span>Book Service</span>
-                                </a>
+                                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 px-6 flex items-center justify-center">
+                                    <div className="text-center">
+                                        <div className="text-lg font-bold">Visit Charge</div>
+                                        <div className="text-2xl font-bold text-yellow-300">₹299</div>
+                                        <div className="text-sm text-blue-200">(Included in repair)</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -220,6 +239,8 @@ export default function RefrigeratorPage() {
                                         <div className="text-xs md:text-sm">Response Time</div>
                                     </div>
                                     <div className="text-center border-x border-gray-200">
+                                        <div className="text-2xl font-bold text-blue-600">₹299</div>
+                                        <div className="text-xs md:text-sm">Visit Charge</div>
                                     </div>
                                     <div className="text-center">
                                         <div className="text-2xl font-bold text-blue-600">4.9/5</div>
@@ -248,8 +269,8 @@ export default function RefrigeratorPage() {
                         {[
                             { id: 'problems', label: 'Common Problems', icon: '⚠️' },
                             { id: 'process', label: 'Repair Process', icon: '🛠️' },
-                            { id: 'pricing', label: 'Service Pricing', icon: '💰' },
                             { id: 'brands', label: 'Brands We Service', icon: '🏷️' },
+                            { id: 'testimonials', label: 'Testimonials', icon: '⭐' },
                             // { id: 'booking', label: 'Book Service', icon: '📅' },
                         ].map((tab) => (
                             <button
@@ -323,13 +344,9 @@ export default function RefrigeratorPage() {
                                                         <Clock size={16} className="mr-2" />
                                                         Fix time: {problem.fixTime}
                                                     </div>
-                                                    <a
-                                                        href="#booking"
-                                                        className="text-blue-600 font-medium hover:text-blue-700 text-sm flex items-center gap-1"
-                                                    >
-                                                        Book Repair
-                                                        <ArrowRight size={16} />
-                                                    </a>
+                                                    <span className="text-blue-600 font-medium text-sm">
+                                                        Call for expert solution
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -389,6 +406,7 @@ export default function RefrigeratorPage() {
                                         <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                             <Shield size={28} className="text-blue-600" />
                                         </div>
+                                        <h4 className="font-bold text-gray-900 mb-2">Service Warranty</h4>
                                         <p className="text-gray-600 text-sm">On all repairs and spare parts</p>
                                     </div>
                                     <div className="text-center">
@@ -402,100 +420,17 @@ export default function RefrigeratorPage() {
                                         <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                             <CheckCircle size={28} className="text-blue-600" />
                                         </div>
-                                        <h4 className="font-bold text-gray-900 mb-2">Free Diagnosis</h4>
-                                        <p className="text-gray-600 text-sm">On first visit, no hidden charges</p>
+
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    )}
 
-                    {/* Pricing Tab */}
-                    {activeTab === 'pricing' && (
-                        <div className="animate-fade-in">
-                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                                Service <span className="text-blue-600">Pricing</span>
-                            </h2>
-                            <p className="text-gray-600 mb-8 max-w-3xl">
-                                Transparent pricing with no hidden charges. Prices may vary based on model and severity of issue.
-                            </p>
-
-                            <div className="grid md:grid-cols-2 gap-8">
-                                {/* Pricing Cards */}
-                                <div className="space-y-6">
-                                    {pricing.map((service, index) => (
-                                        <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                                            <div className="flex justify-between items-start mb-4">
-                                                <h3 className="text-xl font-bold text-gray-900">{service.service}</h3>
-                                                <div className="text-2xl font-bold text-blue-600">{service.price}</div>
-                                            </div>
-
-                                            <div className="mb-4">
-                                                <h4 className="text-sm font-semibold text-gray-700 mb-2">Includes:</h4>
-                                                <ul className="space-y-2">
-                                                    {service.includes.map((item, i) => (
-                                                        <li key={i} className="flex items-center text-gray-600">
-                                                            <CheckCircle size={16} className="text-green-500 mr-3" />
-                                                            {item}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-
-                                            <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                                                <div className="flex items-center text-sm">
-                                                    <Shield size={16} className="text-green-500 mr-2" />
-                                                </div>
-                                                <a
-                                                    href="tel:+917678134697"
-                                                    className="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors"
-                                                >
-                                                    Book Now
-                                                </a>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* Emergency Service Card */}
-                                <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-3xl p-8 shadow-2xl">
-                                    <div className="text-center mb-8">
-                                        <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                            <AlertCircle size={36} className="text-yellow-300" />
-                                        </div>
-                                        <h3 className="text-2xl font-bold mb-2">Emergency Service</h3>
-                                        <p className="text-blue-100">Available 24/7 for urgent repairs</p>
-                                    </div>
-
-                                    <div className="space-y-6">
-                                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                                            <h4 className="font-bold text-lg mb-3">Free Diagnosis</h4>
-                                            <ul className="space-y-2 text-blue-100">
-                                                <li className="flex items-center">
-                                                    <CheckCircle size={16} className="mr-3 text-green-300" />
-                                                    Thorough inspection
-                                                </li>
-                                                <li className="flex items-center">
-                                                    <CheckCircle size={16} className="mr-3 text-green-300" />
-                                                    No charge if you don't proceed
-                                                </li>
-                                                <li className="flex items-center">
-                                                    <CheckCircle size={16} className="mr-3 text-green-300" />
-                                                    Transparent cost estimate
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <a
-                                            href="tel:+917678134697"
-                                            className="block bg-white text-blue-700 py-4 rounded-xl text-center font-bold text-lg hover:bg-blue-50 transition-colors shadow-lg"
-                                        >
-                                            Emergency Call: +91 76781 34697
-                                        </a>
-
-                                        <div className="text-center text-sm text-blue-200">
-                                            <Clock size={16} className="inline mr-2" />
-                                            30 minutes average response time
+                                <div className="mt-8 pt-8 border-t border-gray-100">
+                                    <div className="bg-gradient-to-r from-blue-50 to-white rounded-2xl p-6 text-center">
+                                        <h4 className="text-xl font-bold text-gray-900 mb-3">Special Offer</h4>
+                                        <div className="text-3xl font-bold text-blue-600 mb-2">Visit Charge: ₹299</div>
+                                        <p className="text-gray-600">(Fully refundable if you proceed with repair)</p>
+                                        <div className="mt-4 text-sm text-gray-500">
+                                            *Free diagnosis included | *Transparent pricing
                                         </div>
                                     </div>
                                 </div>
@@ -518,14 +453,38 @@ export default function RefrigeratorPage() {
                                     {brands.map((brand, index) => (
                                         <div
                                             key={index}
-                                            className="bg-gray-50 hover:bg-blue-50 rounded-xl p-4 text-center transition-colors border border-gray-100 hover:border-blue-200"
+                                            className="bg-gray-50 hover:bg-blue-50 rounded-xl p-4 text-center transition-colors border border-gray-100 hover:border-blue-200 group"
                                         >
-                                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-sm">
-                                                <Wrench size={20} className="text-blue-600" />
+                                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-sm overflow-hidden">
+                                                <div className="relative w-10 h-10 flex items-center justify-center">
+                                                    <Image
+                                                        src={brand.logo}
+                                                        alt={`${brand.name} logo`}
+                                                        width={40}
+                                                        height={40}
+                                                        className="object-contain max-h-8"
+                                                        onError={(e) => {
+                                                            const target = e.target as HTMLImageElement;
+                                                            target.style.display = 'none';
+                                                            target.parentElement!.innerHTML = '<Wrench size={20} className="text-blue-600" />';
+                                                        }}
+                                                    />
+                                                </div>
                                             </div>
-                                            <span className="font-semibold text-gray-900">{brand}</span>
+                                            <span className="font-semibold text-gray-900 group-hover:text-blue-600">{brand.name}</span>
                                         </div>
                                     ))}
+                                </div>
+
+                                <div className="mt-8 text-center">
+                                    <p className="text-gray-600 mb-4">Don't see your brand? Contact us anyway!</p>
+                                    <a
+                                        href="tel:+919810878908"
+                                        className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors"
+                                    >
+                                        <Phone size={20} className="mr-2" />
+                                        Call to check service for your brand
+                                    </a>
                                 </div>
                             </div>
 
@@ -534,20 +493,95 @@ export default function RefrigeratorPage() {
                                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Service Areas</h3>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                                     {['Chandigarh', 'Panchkula', 'Mohali', 'Zirakpur', 'Kharar', 'Derabassi', 'New Chandigarh'].map((city, index) => (
-                                        <div key={index} className="flex items-center bg-white rounded-xl p-4 shadow-sm">
-                                            <Home size={20} className="text-blue-600 mr-3" />
+                                        <div key={index} className="flex items-center bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                                            <MapPin size={20} className="text-blue-600 mr-3" />
                                             <span className="font-medium text-gray-900">{city}</span>
                                         </div>
                                     ))}
                                 </div>
-                                <div className="mt-6 text-center">
-                                    <a
-                                        href="tel:+917678134697"
-                                        className="inline-flex items-center text-blue-600 font-bold hover:text-blue-700"
-                                    >
-                                        <Phone size={20} className="mr-2" />
-                                        Call to check service in your area
-                                    </a>
+                                <div className="mt-8 text-center">
+                                    <div className="inline-flex items-center bg-yellow-50 text-yellow-800 px-6 py-4 rounded-2xl">
+                                        <Clock size={20} className="mr-2" />
+                                        <div>
+                                            <div className="font-bold">Visit Charge: ₹299</div>
+                                            <div className="text-sm">(Applicable in all service areas)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Testimonials Tab */}
+                    {activeTab === 'testimonials' && (
+                        <div className="animate-fade-in">
+                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                                Customer <span className="text-blue-600">Testimonials</span>
+                            </h2>
+                            <p className="text-gray-600 mb-8 max-w-3xl">
+                                Hear what our satisfied customers have to say about our refrigerator repair services.
+                            </p>
+
+                            <div className="grid md:grid-cols-2 gap-6">
+                                {testimonials.map((testimonial, index) => (
+                                    <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                                        <div className="flex items-start justify-between mb-4">
+                                            <div>
+                                                <h3 className="text-lg font-bold text-gray-900">{testimonial.name}</h3>
+                                                <p className="text-gray-600 text-sm">{testimonial.location}</p>
+                                            </div>
+                                            <div className="text-sm text-gray-500">{testimonial.date}</div>
+                                        </div>
+
+                                        <div className="flex mb-4">
+                                            {[...Array(5)].map((_, i) => (
+                                                <Star
+                                                    key={i}
+                                                    size={18}
+                                                    className={`${i < testimonial.rating
+                                                        ? 'fill-yellow-400 text-yellow-400'
+                                                        : 'fill-gray-200 text-gray-200'
+                                                        }`}
+                                                />
+                                            ))}
+                                        </div>
+
+                                        <blockquote className="text-gray-700 italic mb-6">
+                                            "{testimonial.comment}"
+                                        </blockquote>
+
+                                        <div className="flex items-center pt-4 border-t border-gray-100">
+                                            <Wrench size={16} className="text-blue-600 mr-2" />
+                                            <span className="text-sm text-gray-600">Refrigerator Repair Service</span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Overall Rating */}
+                            <div className="mt-8 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-3xl p-8">
+                                <div className="text-center">
+                                    <div className="text-5xl font-bold mb-2">4.9/5</div>
+                                    <div className="flex justify-center mb-4">
+                                        {[...Array(5)].map((_, i) => (
+                                            <Star key={i} size={24} className="fill-yellow-300 text-yellow-300" />
+                                        ))}
+                                    </div>
+                                    <p className="text-lg mb-4">Based on 500+ customer reviews</p>
+                                    <div className="flex justify-center space-x-4">
+                                        <div className="text-center">
+                                            <div className="text-2xl font-bold">98%</div>
+                                            <div className="text-blue-200">Satisfaction Rate</div>
+                                        </div>
+                                        <div className="text-center">
+                                            <div className="text-2xl font-bold">95%</div>
+                                            <div className="text-blue-200">On-Time Service</div>
+                                        </div>
+                                        <div className="text-center">
+                                            <div className="text-2xl font-bold">99%</div>
+                                            <div className="text-blue-200">First Fix Success</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -568,68 +602,83 @@ export default function RefrigeratorPage() {
 
                                         <div className="grid md:grid-cols-2 gap-6 mb-8">
                                             <a
-                                                href="tel:+917678134697"
-                                                className="bg-blue-600 text-white p-6 rounded-2xl hover:bg-blue-700 transition-colors text-center"
+                                                href="tel:+919810878908"
+                                                className="bg-blue-600 text-white p-6 rounded-2xl hover:bg-blue-700 transition-colors text-center group"
                                             >
                                                 <Phone size={32} className="mx-auto mb-4" />
-                                                <div className="text-2xl font-bold">+91 76781 34697</div>
+                                                <div className="text-2xl font-bold">+91 98108 78908</div>
                                                 <div className="text-blue-100 mt-2">Call for Appointment</div>
+                                                <div className="text-sm text-blue-200 mt-2">(30 mins response time)</div>
                                             </a>
 
                                             <a
-                                                href="https://wa.me/917678134697"
-                                                className="bg-green-600 text-white p-6 rounded-2xl hover:bg-green-700 transition-colors text-center"
+                                                href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="bg-green-600 text-white p-6 rounded-2xl hover:bg-green-700 transition-colors text-center group"
                                             >
                                                 <div className="text-4xl mb-4">💬</div>
                                                 <div className="text-2xl font-bold">WhatsApp</div>
                                                 <div className="text-green-100 mt-2">Chat with Expert</div>
+                                                <div className="text-sm text-green-200 mt-2">(Instant response)</div>
                                             </a>
                                         </div>
 
                                         <div className="bg-blue-50 rounded-2xl p-6">
-                                            <h4 className="font-bold text-gray-900 mb-4">Service Hours</h4>
-                                            <div className="space-y-3">
-                                                <div className="flex justify-between items-center">
-                                                    <span className="text-gray-600">Monday - Friday</span>
-                                                    <span className="font-semibold text-gray-900">8:00 AM - 10:00 PM</span>
+                                            <div className="flex items-center justify-between mb-4">
+                                                <h4 className="font-bold text-gray-900">Service Charges</h4>
+                                                <div className="text-2xl font-bold text-blue-600">₹299</div>
+                                            </div>
+                                            <div className="space-y-3 text-sm text-gray-600">
+                                                <div className="flex justify-between">
+                                                    <span>Visit Charge</span>
+                                                    <span className="font-medium">₹299</span>
                                                 </div>
-                                                <div className="flex justify-between items-center">
-                                                    <span className="text-gray-600">Saturday - Sunday</span>
-                                                    <span className="font-semibold text-gray-900">9:00 AM - 9:00 PM</span>
+                                                <div className="flex justify-between">
+                                                    <span>Free Diagnosis</span>
+                                                    <span className="text-green-600 font-medium">Included</span>
                                                 </div>
-                                                <div className="flex justify-between items-center pt-3 border-t border-blue-100">
-                                                    <span className="text-blue-600 font-bold">Emergency Service</span>
-                                                    <span className="font-bold text-blue-600">24/7 Available</span>
+                                                <div className="pt-3 border-t border-blue-100">
+                                                    <div className="flex justify-between font-bold text-gray-900">
+                                                        <span>If you proceed with repair:</span>
+                                                        <span className="text-blue-600">₹299 will be adjusted</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    {/* Testimonial */}
+                                    {/* Service Hours */}
                                     <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-3xl p-6 md:p-8 shadow-lg">
-                                        <div className="flex items-center mb-6">
-                                            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
-                                                <Star size={24} className="text-yellow-300" />
-                                            </div>
-                                            <div>
-                                                <h4 className="text-xl font-bold">Customer Review</h4>
-                                                <div className="flex">
-                                                    {[...Array(5)].map((_, i) => (
-                                                        <Star key={i} size={16} className="fill-yellow-300 text-yellow-300" />
-                                                    ))}
+                                        <h3 className="text-xl font-bold mb-6">Service Hours</h3>
+                                        <div className="grid md:grid-cols-2 gap-6">
+                                            <div className="space-y-4">
+                                                <h4 className="font-bold text-lg">Regular Service</h4>
+                                                <div className="space-y-2">
+                                                    <div className="flex justify-between">
+                                                        <span>Monday - Friday</span>
+                                                        <span className="font-bold">8:00 AM - 10:00 PM</span>
+                                                    </div>
+                                                    <div className="flex justify-between">
+                                                        <span>Saturday - Sunday</span>
+                                                        <span className="font-bold">9:00 AM - 9:00 PM</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <blockquote className="text-lg italic mb-4">
-                                            "My LG refrigerator stopped cooling suddenly. Called these guys and they arrived within 45 minutes.
-                                            Technician was professional, diagnosed the compressor issue, and fixed it in 2 hours.
-                                            Great service and reasonable pricing!"
-                                        </blockquote>
-                                        <div className="flex items-center">
-                                            <div className="w-10 h-10 bg-blue-300 rounded-full mr-3"></div>
-                                            <div>
-                                                <div className="font-bold">Rohit Verma</div>
-                                                <div className="text-blue-200 text-sm">Chandigarh, Sector 35</div>
+                                            <div className="space-y-4">
+                                                <h4 className="font-bold text-lg text-yellow-300">Emergency Service</h4>
+                                                <div className="space-y-2">
+                                                    <div className="flex justify-between">
+                                                        <span>24/7 Available</span>
+                                                        <span className="font-bold">All Days</span>
+                                                    </div>
+                                                    <a
+                                                        href="tel:+919810878908"
+                                                        className="inline-block bg-white text-blue-700 px-4 py-2 rounded-lg font-bold hover:bg-blue-50 transition-colors"
+                                                    >
+                                                        Emergency: +91 98108 78908
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -637,7 +686,13 @@ export default function RefrigeratorPage() {
 
                                 {/* Booking Form */}
                                 <div className="bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-gray-100">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-6">Schedule Service</h3>
+                                    <div className="text-center mb-6">
+                                        <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+                                            <Calendar size={32} className="text-blue-600" />
+                                        </div>
+                                        <h3 className="text-xl font-bold text-gray-900">Schedule Service</h3>
+                                        <p className="text-gray-600 mt-2">Fill the form and we'll call you in 30 mins</p>
+                                    </div>
 
                                     <form className="space-y-4">
                                         <div>
@@ -661,12 +716,23 @@ export default function RefrigeratorPage() {
                                         </div>
 
                                         <div>
+                                            <label className="block text-gray-700 mb-2">Address *</label>
+                                            <input
+                                                type="text"
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                                placeholder="Full address with landmark"
+                                                required
+                                            />
+                                        </div>
+
+                                        <div>
                                             <label className="block text-gray-700 mb-2">Refrigerator Brand</label>
                                             <select className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
                                                 <option>Select Brand</option>
                                                 {brands.map((brand) => (
-                                                    <option key={brand}>{brand}</option>
+                                                    <option key={brand.name}>{brand.name}</option>
                                                 ))}
+                                                <option>Other</option>
                                             </select>
                                         </div>
 
@@ -684,24 +750,51 @@ export default function RefrigeratorPage() {
                                             <input
                                                 type="date"
                                                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                                required
                                             />
                                         </div>
 
                                         <button
                                             type="submit"
-                                            className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-colors shadow-lg"
+                                            className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors"
                                         >
                                             Book Service Now
                                         </button>
 
                                         <p className="text-gray-500 text-sm text-center">
-                                            Our team will call you within 30 minutes to confirm
+                                            * ₹299 visit charge applicable | Free diagnosis included
                                         </p>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     )}
+                </div>
+            </div>
+
+            {/* CTA Section */}
+            <div className="container mx-auto px-4 pb-16">
+                <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-3xl p-8 md:p-12 text-center shadow-2xl">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-4">Need Emergency Refrigerator Repair?</h2>
+                    <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+                        Don't let spoiled food and inconvenience trouble you. Our experts are ready to help!
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a
+                            href="tel:+919810878908"
+                            className="bg-white text-blue-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+                        >
+                            <Phone size={24} />
+                            Call Now: +91 98108 78908
+                        </a>
+                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-center justify-center">
+                            <div className="text-center">
+                                <div className="text-sm">Visit Charge</div>
+                                <div className="text-2xl font-bold text-yellow-300">₹299</div>
+                                <div className="text-xs text-blue-200">(Adjustable in repair)</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

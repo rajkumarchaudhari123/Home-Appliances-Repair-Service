@@ -48,20 +48,12 @@ import {
     ThermometerSun,
     Package,
     Smartphone,
-    Tablet,
-    Headphones,
-    Speaker,
-    Radio,
-    Cpu,
-    HardDrive,
-    SmartphoneCharging,
-    BatteryCharging,
-    Plug,
-    Cloud,
-    Database,
-    Server,
-    Router,
-    Info
+    Gamepad2 as Remote,
+    Smartphone as SmartphoneIcon,
+    Info,
+    MessageCircle,
+    Award,
+    Truck
 } from 'lucide-react';
 
 export default function AllServicesPage() {
@@ -86,8 +78,6 @@ export default function AllServicesPage() {
                 'Control panel issues'
             ]
         },
-
-
         {
             id: 'refrigerator',
             name: 'Refrigerator',
@@ -122,7 +112,51 @@ export default function AllServicesPage() {
         }
     ];
 
-    // Service-specific data
+    // Testimonials
+    const testimonials = [
+        {
+            name: 'Rohit Verma',
+            location: 'Chandigarh, Sector 35',
+            rating: 5,
+            comment: 'Excellent washing machine repair service. Fixed my LG washing machine motor issue in just 2 hours. Highly professional!',
+            date: '15 Nov 2024',
+            service: 'Washing Machine Repair'
+        },
+        {
+            name: 'Priya Sharma',
+            location: 'Mohali, Phase 7',
+            rating: 5,
+            comment: 'My Samsung refrigerator stopped cooling. They arrived within 30 minutes and fixed the compressor issue. Great service!',
+            date: '10 Nov 2024',
+            service: 'Refrigerator Repair'
+        },
+        {
+            name: 'Amit Patel',
+            location: 'Panchkula, Sector 5',
+            rating: 5,
+            comment: 'Quick and professional microwave repair. The technician was knowledgeable and did proper safety testing. Recommended!',
+            date: '5 Nov 2024',
+            service: 'Microwave Oven Repair'
+        },
+        {
+            name: 'Sunita Mehta',
+            location: 'Zirakpur',
+            rating: 5,
+            comment: 'Very satisfied with the washing machine repair service. The team was punctual and did quality work with 90 days warranty.',
+            date: '28 Oct 2024',
+            service: 'Washing Machine Repair'
+        },
+    ];
+
+    // Stats
+    const stats = [
+        { value: '5000+', label: 'Appliances Repaired', icon: <Wrench size={20} />, color: 'text-blue-400' },
+        { value: '4.9/5', label: 'Customer Rating', icon: <Star size={20} />, color: 'text-yellow-400' },
+        { value: '30 Min', label: 'Avg Response Time', icon: <Clock size={20} />, color: 'text-green-400' },
+        { value: '90 Days', label: 'Warranty Period', icon: <Shield size={20} />, color: 'text-purple-400' },
+    ];
+
+    // Service-specific data (simplified version for this page)
     const serviceData = {
         'washing-machine': {
             problems: [
@@ -144,180 +178,8 @@ export default function AllServicesPage() {
                     severity: 'High',
                     commonCause: 'Hose or pump seal failure'
                 },
-                {
-                    icon: <Droplet size={24} />, // Changed from Water to Droplet
-                    title: 'Not Draining',
-                    description: 'Water doesn\'t drain from machine',
-                    symptoms: ['Water remains in drum', 'Drain pump noise', 'Error codes', 'Cycle stops'],
-                    fixTime: '1 hour',
-                    severity: 'Medium',
-                    commonCause: 'Drain pump clogged'
-                },
-                {
-                    icon: <Power size={24} />,
-                    title: 'No Power',
-                    description: 'Washing machine won\'t turn on',
-                    symptoms: ['No lights', 'No response', 'Dead control panel', 'Complete failure'],
-                    fixTime: '1-2 hours',
-                    severity: 'High',
-                    commonCause: 'Power supply or main board issue'
-                },
-                {
-                    icon: <Settings size={24} />,
-                    title: 'Control Panel Issues',
-                    description: 'Buttons not working or display problems',
-                    symptoms: ['Unresponsive buttons', 'Display errors', 'Wrong settings', 'Program errors'],
-                    fixTime: '1-2 hours',
-                    severity: 'Medium',
-                    commonCause: 'Membrane or PCB failure'
-                },
-                {
-                    icon: <AlertTriangle size={24} />,
-                    title: 'Noisy Operation',
-                    description: 'Loud noises during wash or spin',
-                    symptoms: ['Grinding noise', 'Knocking sounds', 'Vibration', 'Unbalanced load'],
-                    fixTime: '1-2 hours',
-                    severity: 'Medium',
-                    commonCause: 'Bearings or shock absorbers worn'
-                },
             ],
-            brands: ['LG', 'Samsung', 'Whirlpool', 'IFB', 'Bosch', 'Panasonic', 'Haier', 'Godrej', 'Onida', 'Videocon'],
-            pricing: [
-                { service: 'Motor Repair', price: '₹1,500 - ₹4,000' },
-                { service: 'Drain Pump', price: '₹800 - ₹2,000' },
-                { service: 'Control Panel', price: '₹1,000 - ₹3,000' },
-                { service: 'Drum Bearing', price: '₹2,000 - ₹5,000' },
-            ]
-        },
-        'tv': {
-            problems: [
-                {
-                    icon: <Monitor size={24} />,
-                    title: 'No Picture',
-                    description: 'TV has sound but no display',
-                    symptoms: ['Backlight works', 'Sound present', 'Black screen', 'Faint image'],
-                    fixTime: '2-3 hours',
-                    severity: 'High',
-                    commonCause: 'LED/LCD panel or T-Con board'
-                },
-                {
-                    icon: <Volume2 size={24} />,
-                    title: 'No Sound',
-                    description: 'Picture works but no audio',
-                    symptoms: ['Display works', 'Mute not active', 'No audio output', 'Speaker issues'],
-                    fixTime: '1-2 hours',
-                    severity: 'Medium',
-                    commonCause: 'Audio board or speaker failure'
-                },
-                {
-                    icon: <Power size={24} />,
-                    title: 'Power Issues',
-                    description: 'TV won\'t turn on or keeps restarting',
-                    symptoms: ['No power light', 'Keeps restarting', 'Standby only', 'Power cycles'],
-                    fixTime: '1-2 hours',
-                    severity: 'High',
-                    commonCause: 'Power supply board failure'
-                },
-                {
-                    icon: <Tv size={24} />, // Changed from Remote to Tv
-                    title: 'Remote Issues',
-                    description: 'Remote control not working',
-                    symptoms: ['Buttons unresponsive', 'IR sensor issue', 'Battery problem', 'Pairing lost'],
-                    fixTime: '30-60 mins',
-                    severity: 'Low',
-                    commonCause: 'IR sensor or remote failure'
-                },
-                {
-                    icon: <Gamepad2 size={24} />,
-                    title: 'Smart Features',
-                    description: 'Smart TV features not working',
-                    symptoms: ['Wi-Fi issues', 'Apps not loading', 'Slow performance', 'Update problems'],
-                    fixTime: '1-2 hours',
-                    severity: 'Medium',
-                    commonCause: 'Main board or software issue'
-                },
-                {
-                    icon: <Cable size={24} />,
-                    title: 'Input Problems',
-                    description: 'HDMI/AV ports not working',
-                    symptoms: ['No signal', 'Ports dead', 'Input switching issues', 'Connection drops'],
-                    fixTime: '1-2 hours',
-                    severity: 'Medium',
-                    commonCause: 'Input board or connection issue'
-                },
-            ],
-            brands: ['Samsung', 'LG', 'Sony', 'Panasonic', 'TCL', 'Mi', 'OnePlus', 'Vu', 'Thomson', 'Realme'],
-            pricing: [
-                { service: 'LED Panel', price: '₹3,000 - ₹8,000' },
-                { service: 'Power Board', price: '₹1,500 - ₹3,500' },
-                { service: 'Main Board', price: '₹2,000 - ₹5,000' },
-                { service: 'T-Con Board', price: '₹1,500 - ₹3,000' },
-            ]
-        },
-        'ac': {
-            problems: [
-                {
-                    icon: <Snowflake size={24} />,
-                    title: 'Not Cooling',
-                    description: 'AC runs but doesn\'t cool room',
-                    symptoms: ['Fan works', 'No cold air', 'Room temperature high', 'Weak airflow'],
-                    fixTime: '2-3 hours',
-                    severity: 'High',
-                    commonCause: 'Gas leakage or compressor issue'
-                },
-                {
-                    icon: <Droplet size={24} />,
-                    title: 'Water Leakage',
-                    description: 'Water dripping from AC unit',
-                    symptoms: ['Water puddles', 'Indoor leakage', 'Drain pipe blocked', 'Ice formation'],
-                    fixTime: '1-2 hours',
-                    severity: 'Medium',
-                    commonCause: 'Drain pipe clogged'
-                },
-                {
-                    icon: <Power size={24} />,
-                    title: 'No Power',
-                    description: 'AC unit not turning on',
-                    symptoms: ['No LED lights', 'Complete failure', 'Trip issues', 'Remote not working'],
-                    fixTime: '1-2 hours',
-                    severity: 'High',
-                    commonCause: 'PCB or capacitor failure'
-                },
-                {
-                    icon: <Fan size={24} />,
-                    title: 'Noisy Operation',
-                    description: 'Loud noises from AC unit',
-                    symptoms: ['Grinding sounds', 'Vibration', 'Rattling noise', 'Fan blade issue'],
-                    fixTime: '1-2 hours',
-                    severity: 'Medium',
-                    commonCause: 'Fan motor or blower issue'
-                },
-                {
-                    icon: <Tv size={24} />, // Changed from Remote to Tv
-                    title: 'Remote Issues',
-                    description: 'Remote control not working',
-                    symptoms: ['Buttons not responding', 'IR sensor problem', 'Display issues', 'Battery dead'],
-                    fixTime: '30-60 mins',
-                    severity: 'Low',
-                    commonCause: 'IR sensor or remote failure'
-                },
-                {
-                    icon: <Filter size={24} />,
-                    title: 'Poor Airflow',
-                    description: 'Weak or no airflow from vents',
-                    symptoms: ['Low air pressure', 'Dirty filters', 'Blower issues', 'Duct blockage'],
-                    fixTime: '1-2 hours',
-                    severity: 'Medium',
-                    commonCause: 'Filter clogged or blower motor'
-                },
-            ],
-            brands: ['Daikin', 'LG', 'Samsung', 'Voltas', 'Blue Star', 'Carrier', 'Hitachi', 'Panasonic', 'Mitsubishi', 'Haier'],
-            pricing: [
-                { service: 'Gas Refilling', price: '₹1,500 - ₹3,500' },
-                { service: 'PCB Repair', price: '₹2,000 - ₹4,500' },
-                { service: 'Compressor', price: '₹4,000 - ₹8,000' },
-                { service: 'Fan Motor', price: '₹1,500 - ₹3,500' },
-            ]
+            brands: ['LG', 'Samsung', 'Whirlpool', 'IFB', 'Bosch', 'Panasonic', 'Haier', 'Godrej'],
         },
         'refrigerator': {
             problems: [
@@ -339,50 +201,8 @@ export default function AllServicesPage() {
                     severity: 'Medium',
                     commonCause: 'Defrost system or drain blocked'
                 },
-                {
-                    icon: <ThermometerSun size={24} />,
-                    title: 'Freezer Issues',
-                    description: 'Freezer not freezing properly',
-                    symptoms: ['Ice melting', 'Temperature high', 'Frost buildup', 'Food thawing'],
-                    fixTime: '2-3 hours',
-                    severity: 'High',
-                    commonCause: 'Thermostat or defrost timer'
-                },
-                {
-                    icon: <Power size={24} />,
-                    title: 'No Power',
-                    description: 'Refrigerator not turning on',
-                    symptoms: ['No lights', 'Complete failure', 'Compressor silent', 'Control dead'],
-                    fixTime: '1-2 hours',
-                    severity: 'High',
-                    commonCause: 'Main board or relay issue'
-                },
-                {
-                    icon: <Package size={24} />,
-                    title: 'Ice Maker Problems',
-                    description: 'Ice maker not working',
-                    symptoms: ['No ice production', 'Ice stuck', 'Water not filling', 'Dispenser issues'],
-                    fixTime: '1-2 hours',
-                    severity: 'Medium',
-                    commonCause: 'Water inlet valve or motor'
-                },
-                {
-                    icon: <AlertTriangle size={24} />,
-                    title: 'Noisy Operation',
-                    description: 'Loud noises from refrigerator',
-                    symptoms: ['Buzzing sounds', 'Clicking noise', 'Compressor noise', 'Fan rattling'],
-                    fixTime: '1-2 hours',
-                    severity: 'Medium',
-                    commonCause: 'Compressor or fan motor'
-                },
             ],
-            brands: ['LG', 'Samsung', 'Whirlpool', 'Godrej', 'Haier', 'Panasonic', 'Voltas', 'Hitachi', 'Mitsubishi', 'Carrier'],
-            pricing: [
-                { service: 'Compressor', price: '₹4,000 - ₹8,000' },
-                { service: 'Gas Refilling', price: '₹1,500 - ₹3,000' },
-                { service: 'Thermostat', price: '₹800 - ₹2,000' },
-                { service: 'Main Board', price: '₹2,000 - ₹4,000' },
-            ]
+            brands: ['LG', 'Samsung', 'Whirlpool', 'Godrej', 'Haier', 'Panasonic', 'Voltas', 'Hitachi'],
         },
         'microwave': {
             problems: [
@@ -404,55 +224,8 @@ export default function AllServicesPage() {
                     severity: 'High',
                     commonCause: 'Power supply or fuse issue'
                 },
-                {
-                    icon: <Sparkles size={24} />,
-                    title: 'Spark Inside',
-                    description: 'Sparks or arcing inside microwave',
-                    symptoms: ['Visible sparks', 'Burning smell', 'Loud crackling', 'Damage marks'],
-                    fixTime: '1-2 hours',
-                    severity: 'High',
-                    commonCause: 'Waveguide cover damaged'
-                },
-                {
-                    icon: <RotateCw size={24} />,
-                    title: 'Turntable Issues',
-                    description: 'Turntable not rotating properly',
-                    symptoms: ['Not rotating', 'Stuck turntable', 'Uneven rotation', 'Noise'],
-                    fixTime: '30-60 mins',
-                    severity: 'Medium',
-                    commonCause: 'Motor or roller issue'
-                },
-                {
-                    icon: <Settings size={24} />,
-                    title: 'Control Panel Fault',
-                    description: 'Buttons not working or display issues',
-                    symptoms: ['Unresponsive buttons', 'Display errors', 'Random beeping', 'Settings lost'],
-                    fixTime: '1-2 hours',
-                    severity: 'Medium',
-                    commonCause: 'Membrane or PCB failure'
-                },
-                {
-                    icon: <AlertTriangle size={24} />,
-                    title: 'Door Problems',
-                    description: 'Door not closing properly',
-                    symptoms: ['Door won\'t latch', 'Gap in seal', 'Safety switch issue', 'Handle broken'],
-                    fixTime: '1 hour',
-                    severity: 'High',
-                    commonCause: 'Door latch or hinge failure'
-                },
             ],
-            brands: ['Samsung', 'LG', 'Whirlpool', 'IFB', 'Panasonic', 'Godrej', 'Haier', 'Morphy Richards', 'Bajaj', 'Prestige'],
-            pricing: [
-                { service: 'Magnetron', price: '₹1,500 - ₹3,500' },
-                {
-                    service: 'High Voltage', price: '₹1,000 - ₹2,500'
-                },
-
-                {
-                    service: 'Control Panel', price: '₹800 - ₹2,000'
-                },
-                { service: 'Door Mechanism', price: '₹500 - ₹1,500' },
-            ]
+            brands: ['Samsung', 'LG', 'Whirlpool', 'IFB', 'Panasonic', 'Godrej', 'Haier', 'Bajaj'],
         }
     };
 
@@ -495,12 +268,12 @@ export default function AllServicesPage() {
 
                         <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
                             One-stop solution for all your appliance repairs. Expert technicians, genuine parts, and same-day service
-                            for washing machines, TVs, ACs, refrigerators, and microwaves.
+                            for washing machines, refrigerators, and microwave ovens.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
-                                href="tel:+917678134697"
+                                href="tel:+919810878908"
                                 className="group bg-white text-blue-600 px-6 md:px-8 py-4 rounded-xl font-semibold text-base md:text-lg flex items-center justify-center gap-2 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
                             >
                                 <Phone size={22} />
@@ -508,19 +281,35 @@ export default function AllServicesPage() {
                                 <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
                             </a>
 
-                            <button
-                                onClick={() => {
-                                    const bookingSection = document.getElementById('booking-section');
-                                    if (bookingSection) {
-                                        bookingSection.scrollIntoView({ behavior: 'smooth' });
-                                    }
-                                }}
-                                className="group bg-transparent border-2 border-white text-white px-6 md:px-8 py-4 rounded-xl font-semibold text-base md:text-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-all duration-300"
-                            >
-                                <Calendar size={20} />
-                                <span>Book Service</span>
-                            </button>
+                            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 px-6 flex items-center justify-center">
+                                <div className="text-center">
+                                    <div className="text-sm">Visit Charge</div>
+                                    <div className="text-2xl font-bold text-yellow-300">₹299</div>
+                                    <div className="text-xs text-blue-200">(Included in repair)</div>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+
+                    {/* Stats Grid */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto">
+                        {stats.map((stat, index) => (
+                            <div
+                                key={index}
+                                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-white/20 transition-colors animate-fade-in"
+                                style={{ animationDelay: `${index * 100}ms` }}
+                            >
+                                <div className="flex items-center justify-center gap-2 mb-1">
+                                    <div className={stat.color}>
+                                        {stat.icon}
+                                    </div>
+                                    <div className="text-xl md:text-2xl font-bold text-yellow-300">
+                                        {stat.value}
+                                    </div>
+                                </div>
+                                <div className="text-blue-200 text-sm">{stat.label}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
@@ -541,7 +330,7 @@ export default function AllServicesPage() {
                         Select Your <span className="text-blue-600">Appliance</span>
                     </h2>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                         {services.map((service) => (
                             <button
                                 key={service.id}
@@ -549,30 +338,64 @@ export default function AllServicesPage() {
                                     setActiveService(service.id);
                                     setActiveTab('problems');
                                 }}
-                                className={`relative overflow-hidden rounded-2xl p-6 text-center transition-all duration-300 transform hover:scale-105 ${activeService === service.id
-                                    ? `bg-gradient-to-r ${service.color} text-white shadow-xl`
+                                className={`relative overflow-hidden rounded-2xl p-6 text-left transition-all duration-300 transform hover:scale-[1.02] ${activeService === service.id
+                                    ? `bg-gradient-to-r ${service.color} text-white shadow-2xl ring-4 ring-white/20`
                                     : 'bg-white text-gray-700 shadow-lg hover:shadow-xl'
                                     }`}
                             >
-                                <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${activeService === service.id ? 'bg-white/20' : 'bg-blue-50'
-                                    }`}>
-                                    <div className={activeService === service.id ? 'text-white' : 'text-blue-600'}>
-                                        {service.icon}
+                                <div className="flex items-start gap-4">
+                                    <div className={`w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 ${activeService === service.id ? 'bg-white/20' : 'bg-blue-50'
+                                        }`}>
+                                        <div className={activeService === service.id ? 'text-white' : 'text-blue-600'}>
+                                            {service.icon}
+                                        </div>
                                     </div>
-                                </div>
-                                <h3 className="font-bold text-lg mb-2">{service.name}</h3>
-                                <div className={`text-sm opacity-90 ${activeService === service.id ? 'text-blue-100' : 'text-gray-600'
-                                    }`}>
-                                    {service.commonProblems.length}+ common issues
+                                    <div className="flex-1">
+                                        <h3 className="font-bold text-xl mb-2">{service.name}</h3>
+                                        <p className={`text-sm mb-4 ${activeService === service.id ? 'text-blue-100' : 'text-gray-600'
+                                            }`}>
+                                            {service.description}
+                                        </p>
+                                        <div className="flex flex-wrap gap-2">
+                                            {service.commonProblems.slice(0, 3).map((problem, index) => (
+                                                <span key={index} className={`px-3 py-1 rounded-full text-xs ${activeService === service.id
+                                                    ? 'bg-white/20'
+                                                    : 'bg-blue-50 text-blue-700'
+                                                    }`}>
+                                                    {problem}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
 
                                 {activeService === service.id && (
-                                    <div className="absolute top-2 right-2">
+                                    <div className="absolute top-4 right-4">
                                         <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
                                     </div>
                                 )}
+
+                                <div className="mt-6 flex items-center justify-between">
+                                    <div className={`text-sm ${activeService === service.id ? 'text-blue-200' : 'text-gray-500'}`}>
+                                        {service.commonProblems.length}+ common issues
+                                    </div>
+                                    <div className={`${activeService === service.id ? 'text-white' : 'text-blue-600'}`}>
+                                        <ArrowRight size={20} />
+                                    </div>
+                                </div>
                             </button>
                         ))}
+                    </div>
+
+                    {/* View All Services Link */}
+                    <div className="text-center mt-8">
+                        <Link
+                            href={`/services/${currentService?.id}`}
+                            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700"
+                        >
+                            <span>View detailed {currentService?.name} repair page</span>
+                            <ChevronRight size={16} />
+                        </Link>
                     </div>
                 </div>
 
@@ -581,7 +404,7 @@ export default function AllServicesPage() {
                     {/* Service Header */}
                     <div className={`bg-gradient-to-r ${currentService?.color} text-white p-6 md:p-8`}>
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                            <div>
+                            <div className="flex-1">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
                                         {currentService?.icon}
@@ -603,7 +426,7 @@ export default function AllServicesPage() {
 
                             <div className="flex-shrink-0">
                                 <a
-                                    href="tel:+917678134697"
+                                    href="tel:+919810878908"
                                     className="inline-flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-xl font-bold hover:bg-blue-50 transition-colors shadow-lg"
                                 >
                                     <Phone size={20} />
@@ -620,10 +443,9 @@ export default function AllServicesPage() {
                             <div className="flex space-x-1 bg-blue-50 rounded-2xl p-1">
                                 {[
                                     { id: 'problems', label: 'Common Problems', icon: '⚠️' },
-                                    { id: 'brands', label: 'Brands We Service', icon: '🏷️' },
-                                    { id: 'pricing', label: 'Service Pricing', icon: '💰' },
-                                    { id: 'why-us', label: 'Why Choose Us', icon: '⭐' },
-                                    { id: 'booking', label: 'Book Service', icon: '📅' },
+                                    // { id: 'brands', label: 'Brands We Service', icon: '🏷️' },
+                                    { id: 'testimonials', label: 'Reviews', icon: '⭐' },
+                                    { id: 'why-us', label: 'Why Choose Us', icon: '🏆' },
                                 ].map((tab) => (
                                     <button
                                         key={tab.id}
@@ -650,7 +472,7 @@ export default function AllServicesPage() {
                                         Common {currentService?.name} Problems
                                     </h3>
 
-                                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    <div className="grid md:grid-cols-2 gap-6">
                                         {currentData?.problems.map((problem: any, index: number) => (
                                             <div
                                                 key={index}
@@ -697,18 +519,25 @@ export default function AllServicesPage() {
                                                                 <Clock size={16} className="mr-2" />
                                                                 Fix time: {problem.fixTime}
                                                             </div>
-                                                            <button
-                                                                onClick={() => setActiveTab('booking')}
-                                                                className="text-blue-600 font-medium hover:text-blue-700 text-sm flex items-center gap-1"
-                                                            >
-                                                                Book Repair
-                                                                <ArrowRight size={16} />
-                                                            </button>
+                                                            <span className="text-blue-600 text-sm font-medium">
+                                                                Call for expert solution
+                                                            </span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         ))}
+                                    </div>
+
+                                    {/* View More Link */}
+                                    <div className="text-center mt-8">
+                                        <Link
+                                            href={`/services/${currentService?.id}`}
+                                            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700"
+                                        >
+                                            <span>View all {currentService?.name} problems and solutions</span>
+                                            <ArrowRight size={16} />
+                                        </Link>
                                     </div>
                                 </div>
                             )}
@@ -721,7 +550,7 @@ export default function AllServicesPage() {
                                     </h3>
 
                                     <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-3xl p-6 md:p-8">
-                                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                                             {currentData?.brands.map((brand: string, index: number) => (
                                                 <div
                                                     key={index}
@@ -753,86 +582,71 @@ export default function AllServicesPage() {
                                 </div>
                             )}
 
-                            {/* Pricing Tab */}
-                            {activeTab === 'pricing' && (
+                            {/* Testimonials Tab */}
+                            {activeTab === 'testimonials' && (
                                 <div className="animate-fade-in">
                                     <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">
-                                        Service Pricing
+                                        Customer Reviews
                                     </h3>
 
-                                    <div className="grid lg:grid-cols-2 gap-8">
-                                        <div>
-                                            <div className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-6 border border-blue-200">
-                                                <h4 className="text-lg font-bold text-gray-900 mb-6">Common Repairs</h4>
+                                    <div className="grid md:grid-cols-2 gap-6 mb-8">
+                                        {testimonials.map((testimonial, index) => (
+                                            <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-blue-100">
+                                                <div className="flex items-start justify-between mb-4">
+                                                    <div>
+                                                        <h4 className="text-lg font-bold text-gray-900">{testimonial.name}</h4>
+                                                        <p className="text-gray-600 text-sm">{testimonial.location}</p>
+                                                    </div>
+                                                    <div className="text-sm text-gray-500">{testimonial.date}</div>
+                                                </div>
 
-                                                <div className="space-y-4">
-                                                    {currentData?.pricing.map((item: any, index: number) => (
-                                                        <div key={index} className="flex items-center justify-between p-4 bg-white rounded-xl border border-blue-100 hover:border-blue-300 transition-colors">
-                                                            <div>
-                                                                <div className="font-semibold text-gray-900">{item.service}</div>
-                                                            </div>
-                                                            <div className="text-xl font-bold text-blue-600">{item.price}</div>
-                                                        </div>
+                                                <div className="flex mb-4">
+                                                    {[...Array(5)].map((_, i) => (
+                                                        <Star
+                                                            key={i}
+                                                            size={18}
+                                                            className={`${i < testimonial.rating
+                                                                ? 'fill-yellow-400 text-yellow-400'
+                                                                : 'fill-gray-200 text-gray-200'
+                                                                }`}
+                                                        />
                                                     ))}
                                                 </div>
 
-                                                <div className="mt-6 p-4 bg-blue-50 rounded-xl">
-                                                    <div className="flex items-center gap-3">
-                                                        <Info size={20} className="text-blue-600" />
-                                                        <p className="text-sm text-gray-700">
-                                                            * Prices include labor, parts, and GST.
-                                                        </p>
-                                                    </div>
+                                                <blockquote className="text-gray-700 italic mb-6">
+                                                    "{testimonial.comment}"
+                                                </blockquote>
+
+                                                <div className="flex items-center pt-4 border-t border-blue-100">
+                                                    <Wrench size={16} className="text-blue-600 mr-2" />
+                                                    <span className="text-sm text-gray-600">{testimonial.service}</span>
                                                 </div>
                                             </div>
-                                        </div>
+                                        ))}
+                                    </div>
 
-                                        <div>
-                                            <div className="bg-gradient-to-br from-blue-600 to-cyan-600 text-white rounded-3xl p-8">
-                                                <h4 className="text-xl font-bold mb-6">Service Packages</h4>
-
-                                                <div className="space-y-6">
-                                                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                                                        <h5 className="font-bold text-lg mb-3">Basic Service</h5>
-                                                        <ul className="space-y-2 mb-4">
-                                                            <li className="flex items-center">
-                                                                <CheckCircle size={16} className="text-green-300 mr-3" />
-                                                                Complete cleaning
-                                                            </li>
-                                                            <li className="flex items-center">
-                                                                <CheckCircle size={16} className="text-green-300 mr-3" />
-                                                                Performance check
-                                                            </li>
-                                                            <li className="flex items-center">
-                                                                <CheckCircle size={16} className="text-green-300 mr-3" />
-                                                                Minor adjustments
-                                                            </li>
-                                                        </ul>
-                                                        <div className="text-2xl font-bold text-yellow-300">₹499</div>
-                                                    </div>
-
-                                                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                                                        <h5 className="font-bold text-lg mb-3">Premium Service</h5>
-                                                        <ul className="space-y-2 mb-4">
-                                                            <li className="flex items-center">
-                                                                <CheckCircle size={16} className="text-green-300 mr-3" />
-                                                                Everything in Basic
-                                                            </li>
-                                                            <li className="flex items-center">
-                                                                <CheckCircle size={16} className="text-green-300 mr-3" />
-                                                                Deep cleaning
-                                                            </li>
-                                                            <li className="flex items-center">
-                                                                <CheckCircle size={16} className="text-green-300 mr-3" />
-                                                                Gas pressure check
-                                                            </li>
-                                                            <li className="flex items-center">
-                                                                <CheckCircle size={16} className="text-green-300 mr-3" />
-                                                                30 days "
-                                                            </li>
-                                                        </ul>
-                                                        <div className="text-2xl font-bold text-yellow-300">₹999</div>
-                                                    </div>
+                                    {/* Overall Rating */}
+                                    <div className="mt-8 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-3xl p-8">
+                                        <div className="text-center">
+                                            <div className="text-5xl font-bold mb-2">4.9/5</div>
+                                            <div className="flex justify-center mb-4">
+                                                {[...Array(5)].map((_, i) => (
+                                                    <Star key={i} size={24} className="fill-yellow-300 text-yellow-300" />
+                                                ))}
+                                            </div>
+                                            <p className="text-lg mb-4">Based on 500+ customer reviews</p>
+                                            <div className="flex justify-center space-x-4">
+                                                <div className="text-center">
+                                                    <div className="text-2xl font-bold">98%</div>
+                                                    <div className="text-blue-200">Satisfaction Rate</div>
+                                                </div>
+                                                <div className="text-center">
+                                                    <div className="text-2xl font-bold">95%</div>
+                                                    <div className="text-blue-200">On-Time Service</div>
+                                                </div>
+                                                <div className="text-center">
+                                                    <div className="text-2xl font-bold">99%</div>
+                                                    <div className="text-blue-200">First Fix Success</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -850,11 +664,11 @@ export default function AllServicesPage() {
                                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                                         <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-200">
                                             <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                                                <Shield size={24} className="text-blue-600" />
+                                                <Users size={24} className="text-blue-600" />
                                             </div>
-                                            <h4 className="font-bold text-gray-900 mb-3">Certified Technicians</h4>
+                                            <h4 className="font-bold text-gray-900 mb-3">Expert Technicians</h4>
                                             <p className="text-gray-600">
-                                                All our technicians are certified and have 5+ years of experience in {currentService?.name.toLowerCase()} repair.
+                                                Certified technicians with 5+ years of experience in {currentService?.name.toLowerCase()} repair.
                                             </p>
                                         </div>
 
@@ -872,244 +686,60 @@ export default function AllServicesPage() {
                                             <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                                                 <CheckCircle size={24} className="text-blue-600" />
                                             </div>
-                                            <h4 className="font-bold text-gray-900 mb-3">Genuine Parts</h4>
+                                            <h4 className="font-bold text-gray-900 mb-3">Free Diagnosis</h4>
                                             <p className="text-gray-600">
-                                                We use only OEM or high-quality spare parts with ".
+                                                No charge for diagnosis if you don't proceed with repair.
                                             </p>
                                         </div>
 
-
+                                        <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-200">
+                                            <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                                                <Shield size={24} className="text-blue-600" />
+                                            </div>
+                                            <h4 className="font-bold text-gray-900 mb-3">Service Warranty</h4>
+                                            <p className="text-gray-600">
+                                                90 days warranty on all repairs and spare parts.
+                                            </p>
+                                        </div>
 
                                         <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-200">
                                             <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                                                 <Wrench size={24} className="text-blue-600" />
                                             </div>
-                                            <h4 className="font-bold text-gray-900 mb-3">" on Repairs</h4>
+                                            <h4 className="font-bold text-gray-900 mb-3">Genuine Parts</h4>
                                             <p className="text-gray-600">
-                                                90-180 days " on all repairs depending on the component.
+                                                We use only OEM or high-quality spare parts for all repairs.
                                             </p>
                                         </div>
 
                                         <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-200">
                                             <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                                                <Phone size={24} className="text-blue-600" />
+                                                <Truck size={24} className="text-blue-600" />
                                             </div>
-                                            <h4 className="font-bold text-gray-900 mb-3">24/7 Support</h4>
+                                            <h4 className="font-bold text-gray-900 mb-3">Free Home Service</h4>
                                             <p className="text-gray-600">
-                                                Round-the-clock customer support for emergency repairs.
+                                                Doorstep service across Chandigarh, Panchkula, and Mohali.
                                             </p>
                                         </div>
                                     </div>
 
-                                    {/* Stats */}
-                                    <div className="mt-12 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-3xl p-8">
-                                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                                    {/* Pricing Info */}
+                                    <div className="mt-8 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-3xl p-8">
+                                        <div className="grid md:grid-cols-3 gap-6">
                                             <div className="text-center">
-                                                <div className="text-3xl font-bold mb-2">5,000+</div>
-                                                <div className="text-blue-200">Happy Customers</div>
-                                            </div>
-                                            <div className="text-center">
-                                                <div className="text-3xl font-bold mb-2">98%</div>
-                                                <div className="text-blue-200">Success Rate</div>
+                                                <div className="text-3xl font-bold mb-2">₹299</div>
+                                                <div className="text-blue-200">Visit Charge</div>
+                                                <div className="text-sm text-blue-100 mt-1">(Adjustable in repair)</div>
                                             </div>
                                             <div className="text-center">
-                                                <div className="text-3xl font-bold mb-2">24/7</div>
-                                                <div className="text-blue-200">Service Available</div>
+                                                <div className="text-3xl font-bold mb-2">✓ Free</div>
+                                                <div className="text-blue-200">Diagnosis</div>
+                                                <div className="text-sm text-blue-100 mt-1">If repair not done</div>
                                             </div>
                                             <div className="text-center">
-                                                <div className="text-3xl font-bold mb-2">4.9★</div>
-                                                <div className="text-blue-200">Customer Rating</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-
-                            {/* Booking Tab */}
-                            {activeTab === 'booking' && (
-                                <div id="booking-section" className="animate-fade-in">
-                                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">
-                                        Book {currentService?.name} Repair
-                                    </h3>
-
-                                    <div className="grid lg:grid-cols-2 gap-8">
-                                        {/* Booking Form */}
-                                        <div className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-6 md:p-8 border border-blue-200">
-                                            <h4 className="text-lg font-bold text-gray-900 mb-6">Schedule Your Repair</h4>
-
-                                            <form className="space-y-6">
-                                                <div className="grid md:grid-cols-2 gap-6">
-                                                    <div>
-                                                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                            Your Name *
-                                                        </label>
-                                                        <input
-                                                            type="text"
-                                                            required
-                                                            className="w-full px-4 py-3 bg-white border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                                            placeholder="Enter your name"
-                                                        />
-                                                    </div>
-                                                    <div>
-                                                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                            Phone Number *
-                                                        </label>
-                                                        <input
-                                                            type="tel"
-                                                            required
-                                                            className="w-full px-4 py-3 bg-white border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                                            placeholder="Enter your phone"
-                                                        />
-                                                    </div>
-                                                </div>
-
-                                                <div>
-                                                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                        Full Address *
-                                                    </label>
-                                                    <textarea
-                                                        required
-                                                        rows={3}
-                                                        className="w-full px-4 py-3 bg-white border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
-                                                        placeholder="Enter your complete address"
-                                                    />
-                                                </div>
-
-                                                <div className="grid md:grid-cols-2 gap-6">
-                                                    <div>
-                                                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                            {currentService?.name} Brand *
-                                                        </label>
-                                                        <select
-                                                            required
-                                                            className="w-full px-4 py-3 bg-white border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                                        >
-                                                            <option value="">Select brand</option>
-                                                            {currentData?.brands.map((brand: string) => (
-                                                                <option key={brand} value={brand}>{brand}</option>
-                                                            ))}
-                                                        </select>
-                                                    </div>
-                                                    <div>
-                                                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                            Problem Type *
-                                                        </label>
-                                                        <select
-                                                            required
-                                                            className="w-full px-4 py-3 bg-white border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                                        >
-                                                            <option value="">Select problem</option>
-                                                            {currentData?.problems.map((problem: any) => (
-                                                                <option key={problem.title} value={problem.title}>{problem.title}</option>
-                                                            ))}
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                <div>
-                                                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                        Preferred Date & Time *
-                                                    </label>
-                                                    <div className="grid md:grid-cols-2 gap-4">
-                                                        <input
-                                                            type="date"
-                                                            required
-                                                            min={new Date().toISOString().split('T')[0]}
-                                                            className="px-4 py-3 bg-white border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                                        />
-                                                        <select
-                                                            required
-                                                            className="px-4 py-3 bg-white border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                                        >
-                                                            <option value="">Select time slot</option>
-                                                            <option value="9-12">9:00 AM - 12:00 PM</option>
-                                                            <option value="12-3">12:00 PM - 3:00 PM</option>
-                                                            <option value="3-6">3:00 PM - 6:00 PM</option>
-                                                            <option value="6-9">6:00 PM - 9:00 PM</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                <button
-                                                    type="submit"
-                                                    className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-colors shadow-lg"
-                                                >
-                                                    Book {currentService?.name} Repair
-                                                </button>
-
-                                                <p className="text-center text-sm text-gray-500">
-                                                    Our expert will call within 15 minutes to confirm your appointment.
-                                                </p>
-                                            </form>
-                                        </div>
-
-                                        {/* Contact Info */}
-                                        <div className="space-y-6">
-                                            <div className="bg-gradient-to-br from-blue-600 to-cyan-600 text-white rounded-3xl p-8">
-                                                <h4 className="text-xl font-bold mb-6">⚡ Immediate Assistance</h4>
-
-                                                <div className="space-y-6">
-                                                    <a href="tel:+917678134697" className="block">
-                                                        <div className="flex items-center justify-center gap-3 bg-white text-blue-600 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors">
-                                                            <Phone size={24} />
-                                                            Call Expert Now
-                                                        </div>
-                                                    </a>
-
-                                                    <div className="space-y-4">
-                                                        <div className="flex items-center gap-4 p-4 bg-white/10 rounded-xl">
-                                                            <Clock size={24} className="text-blue-200" />
-                                                            <div>
-                                                                <div className="font-bold">Service Hours</div>
-                                                                <div className="text-blue-200">Mon-Sun: 8 AM - 9 PM</div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div className="flex items-center gap-4 p-4 bg-white/10 rounded-xl">
-                                                            <Shield size={24} className="text-blue-200" />
-                                                            <div>
-                                                                <div className="font-bold">Emergency Service</div>
-                                                                <div className="text-blue-200">Available 24/7</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div className="bg-white rounded-3xl p-8 border border-blue-200 shadow-lg">
-                                                <h4 className="text-lg font-bold text-gray-900 mb-6">What to Expect</h4>
-
-                                                <div className="space-y-4">
-                                                    <div className="flex items-start gap-3">
-                                                        <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                                            <CheckCircle size={16} className="text-blue-600" />
-                                                        </div>
-                                                        <div>
-                                                            <div className="font-medium text-gray-900">Free Diagnosis</div>
-                                                            <p className="text-sm text-gray-600">No charge if repair not done</p>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="flex items-start gap-3">
-                                                        <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                                            <CheckCircle size={16} className="text-blue-600" />
-                                                        </div>
-                                                        <div>
-                                                            <div className="font-medium text-gray-900">Same Day Service</div>
-                                                            <p className="text-sm text-gray-600">Most repairs completed same day</p>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="flex items-start gap-3">
-                                                        <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                                            <CheckCircle size={16} className="text-blue-600" />
-                                                        </div>
-                                                        <div>
-                                                            <div className="font-medium text-gray-900">"</div>
-                                                            <p className="text-sm text-gray-600">90-180 days " on repairs</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <div className="text-3xl font-bold mb-2">90 Days</div>
+                                                <div className="text-blue-200">Warranty</div>
+                                                <div className="text-sm text-blue-100 mt-1">On all repairs</div>
                                             </div>
                                         </div>
                                     </div>
@@ -1148,18 +778,20 @@ export default function AllServicesPage() {
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
-                                href="tel:+917678134697"
-                                className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                                href="tel:+919810878908"
+                                className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-3"
                             >
-                                Call All Appliance Expert
+                                <Phone size={24} />
+                                Call Now: +91 98108 78908
                             </a>
                             <a
-                                href="https://wa.me/917678134697"
+                                href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition-all duration-300 shadow-lg"
+                                className="bg-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition-all duration-300 shadow-lg flex items-center justify-center gap-3"
                             >
-                                💬 WhatsApp Now
+                                <MessageCircle size={24} />
+                                WhatsApp Now
                             </a>
                         </div>
                     </div>
