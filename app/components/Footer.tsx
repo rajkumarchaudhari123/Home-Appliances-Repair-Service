@@ -52,7 +52,6 @@ export default function Footer() {
         { name: 'Refrigerator Repair', href: '/services/refrigerator' },
         { name: 'Washing Machine Repair', href: '/services/washing-machine' },
         { name: 'Microwave Repair', href: '/services/microwave' },
-        { name: 'Water Purifier Service', href: '/services/water-purifier' },
     ];
 
     // Service Areas
