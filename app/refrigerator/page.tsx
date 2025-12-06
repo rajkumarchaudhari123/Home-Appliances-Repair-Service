@@ -114,18 +114,18 @@ export default function RefrigeratorPage() {
 
     // Brands We Service with logo URLs
     const brands = [
-        { name: 'LG', logo: 'https://e7.pngegg.com/pngimages/796/910/png-clipart-lg-corp-lg-g2-logo-lg-electronics-lg-miscellaneous-text-thumbnail.png' },
-        { name: 'Samsung', logo: 'https://e7.pngegg.com/pngimages/990/838/png-clipart-samsung-electronics-samsung-galaxy-samsung-logo-text-logo-thumbnail.png' },
-        { name: 'Whirlpool', logo: 'https://e7.pngegg.com/pngimages/469/276/png-clipart-whirlpool-corporation-home-appliance-washing-machines-brand-maytag-others-thumbnail.png' },
-        { name: 'Godrej', logo: 'https://e7.pngegg.com/pngimages/1003/287/png-clipart-godrej-group-logo-advertising-godrej-properties-limited-business-mattresse-furniture-company-thumbnail.png' },
-        { name: 'Haier', logo: 'https://e7.pngegg.com/pngimages/592/697/png-clipart-brand-haier-electronics-refrigerator-home-appliance-refrigerator-blue-electronics-thumbnail.png' },
-        { name: 'Voltas', logo: 'https://e7.pngegg.com/pngimages/1002/349/png-clipart-logo-air-conditioning-voltas-evaporative-cooler-refrigeration-business-text-people-thumbnail.png' },
-        { name: 'Panasonic', logo: 'https://e7.pngegg.com/pngimages/726/161/png-clipart-panasonic-logo-panasonic-logo-slogan-business-watermark-purple-blue-thumbnail.png' },
-        { name: 'Hitachi', logo: 'https://e7.pngegg.com/pngimages/853/59/png-clipart-hitachi-construction-machinery-hitachi-chemical-company-ltd-otcmkts-hchmy-industry-hitachi-text-trademark-thumbnail.png' },
-        { name: 'Daikin', logo: 'https://e7.pngegg.com/pngimages/268/393/png-clipart-daikin-air-conditioning-heating-system-service-others-blue-text-thumbnail.png' },
-        { name: 'Blue Star', logo: 'https://e7.pngegg.com/pngimages/918/728/png-clipart-badge-chase-bank-patrol-drawing-paw-patrol-blue-and-yellow-star-logo-miscellaneous-emblem-thumbnail.png' },
-        { name: 'Carrier', logo: 'https://e7.pngegg.com/pngimages/733/35/png-clipart-carrier-corporation-air-conditioning-hvac-logo-carrier-turn-to-the-experts-business-blue-company-thumbnail.png' },
-        { name: 'IFB', logo: 'https://e7.pngegg.com/pngimages/291/103/png-clipart-logo-ifb-point-ifb-home-appliances-brand-logo-ifb-point-thumbnail.png' },
+        { name: 'LG', logo: 'https://tse4.mm.bing.net/th/id/OIP.xnCmeIubOmmCx9j5jcAd4QHaEK?pid=Api&P=0&h=180' },
+        { name: 'Samsung', logo: 'https://tse3.mm.bing.net/th/id/OIP.JknWfu1eKiHE6O5z5gZWCgHaEK?pid=Api&P=0&h=180' },
+        { name: 'Whirlpool', logo: 'https://logos-world.net/wp-content/uploads/2022/12/Whirlpool-Symbol.png' },
+        { name: 'Godrej', logo: 'https://static.vecteezy.com/system/resources/previews/020/336/120/non_2x/godrej-logo-godrej-icon-free-free-vector.jpg' },
+        { name: 'Haier', logo: 'https://tse3.mm.bing.net/th/id/OIP.yKPctZu_OlIuX4NOC3WzMgHaFc?pid=Api&P=0&h=180' },
+        { name: 'Voltas', logo: 'https://tse4.mm.bing.net/th/id/OIP.v0MYVk5KSzQDukkCz8TyUgHaBd?pid=Api&P=0&h=180' },
+        { name: 'Panasonic', logo: 'https://tse2.mm.bing.net/th/id/OIP.T1CzRle2_dGeHPOxtC8YLwHaEK?pid=Api&P=0&h=180' },
+        { name: 'Hitachi', logo: 'https://tse2.mm.bing.net/th/id/OIP.0r5ODKIPFwy9bH1vClq7HwHaEK?pid=Api&P=0&h=180' },
+        { name: 'Daikin', logo: 'https://tse3.mm.bing.net/th/id/OIP.bdz7SkBuU0hKJ3m5eLWcngHaCC?pid=Api&P=0&h=180' },
+        { name: 'Blue Star', logo: 'https://tse1.mm.bing.net/th/id/OIP.E97ifAR0LWF26GBzVVDq7AHaHa?pid=Api&P=0&h=180' },
+        { name: 'Carrier', logo: 'https://tse2.mm.bing.net/th/id/OIP.DAROR4sOoqldntwc3GFEbQHaEK?pid=Api&P=0&h=180' },
+        { name: 'IFB', logo: 'https://tse2.mm.bing.net/th/id/OIP.YcMTuv_IS_NsTleS4L12TwHaHa?pid=Api&P=0&h=180' },
     ];
 
     // Testimonials

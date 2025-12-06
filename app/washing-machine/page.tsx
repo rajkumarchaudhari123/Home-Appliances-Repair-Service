@@ -255,13 +255,13 @@ export default function WashingMachinePage() {
 
     // Brands We Service with real logos
     const brands = [
-        { name: 'LG', logo: 'https://e7.pngegg.com/pngimages/796/910/png-clipart-lg-corp-lg-g2-logo-lg-electronics-lg-miscellaneous-text-thumbnail.png' },
-        { name: 'Samsung', logo: 'https://e7.pngegg.com/pngimages/990/838/png-clipart-samsung-electronics-samsung-galaxy-samsung-logo-text-logo-thumbnail.png' },
-        { name: 'Whirlpool', logo: 'https://e7.pngegg.com/pngimages/469/276/png-clipart-whirlpool-corporation-home-appliance-washing-machines-brand-maytag-others-thumbnail.png' },
-        { name: 'IFB', logo: 'https://e7.pngegg.com/pngimages/291/103/png-clipart-logo-ifb-point-ifb-home-appliances-brand-logo-ifb-point-thumbnail.png' },
+        { name: 'LG', logo: 'https://tse4.mm.bing.net/th/id/OIP.xnCmeIubOmmCx9j5jcAd4QHaEK?pid=Api&P=0&h=180' },
+        { name: 'Samsung', logo: 'https://tse3.mm.bing.net/th/id/OIP.JknWfu1eKiHE6O5z5gZWCgHaEK?pid=Api&P=0&h=180' },
+        { name: 'Whirlpool', logo: 'https://logos-world.net/wp-content/uploads/2022/12/Whirlpool-Symbol.png' },
+        { name: 'IFB', logo: 'https://tse2.mm.bing.net/th/id/OIP.YcMTuv_IS_NsTleS4L12TwHaHa?pid=Api&P=0&h=180' },
         { name: 'Bosch', logo: 'https://e7.pngegg.com/pngimages/1006/243/png-clipart-logo-robert-bosch-gmbh-alternator-product-electric-battery-bosch-text-trademark-thumbnail.png' },
-        { name: 'Haier', logo: 'https://e7.pngegg.com/pngimages/592/697/png-clipart-brand-haier-electronics-refrigerator-home-appliance-refrigerator-blue-electronics-thumbnail.png' },
-        { name: 'Panasonic', logo: 'https://e7.pngegg.com/pngimages/726/161/png-clipart-panasonic-logo-panasonic-logo-slogan-business-watermark-purple-blue-thumbnail.png' },
+        { name: 'Haier', logo: 'https://tse3.mm.bing.net/th/id/OIP.yKPctZu_OlIuX4NOC3WzMgHaFc?pid=Api&P=0&h=180' },
+        { name: 'Panasonic', logo: 'https://tse2.mm.bing.net/th/id/OIP.T1CzRle2_dGeHPOxtC8YLwHaEK?pid=Api&P=0&h=180' },
         { name: 'Godrej', logo: 'https://e7.pngegg.com/pngimages/1003/287/png-clipart-godrej-group-logo-advertising-godrej-properties-limited-business-mattresse-furniture-company-thumbnail.png' },
         { name: 'Onida', logo: 'https://tse4.mm.bing.net/th/id/OIP.sAljIVc9a02L9B0HJF3t2QHaHa?pid=Api&P=0&h=180' },
         { name: 'Videocon', logo: 'https://e7.pngegg.com/pngimages/65/866/png-clipart-india-videocon-telecom-business-mobile-phones-india-text-service-thumbnail.png' },

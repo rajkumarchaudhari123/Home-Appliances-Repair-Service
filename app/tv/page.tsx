@@ -380,13 +380,7 @@ export default function TVPage() {
                                                         <Clock size={16} className="mr-2" />
                                                         Fix time: {problem.fixTime}
                                                     </div>
-                                                    <a
-                                                        href="#booking"
-                                                        className="text-cyan-400 font-medium hover:text-cyan-300 text-sm flex items-center gap-1"
-                                                    >
-                                                        Book Repair
-                                                        <ArrowRight size={16} />
-                                                    </a>
+
                                                 </div>
                                             </div>
                                         </div>

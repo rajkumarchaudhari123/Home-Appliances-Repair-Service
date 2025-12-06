@@ -66,17 +66,38 @@ const nextConfig = {
         pathname: "/**",
       },
 
-      // ⭐ Logowik (LG logo source)
+      // Logowik (LG logo)
       {
         protocol: "https",
         hostname: "logowik.com",
         pathname: "/**",
       },
 
-      // ⭐ Freepik (ornamental logo error)
+      // CookieLaw (Whirlpool 3D logo)
+      {
+        protocol: "https",
+        hostname: "cdn.cookielaw.org",
+        pathname: "/**",
+      },
+
+      // Freepik (ornamental logo)
       {
         protocol: "https",
         hostname: "img.freepik.com",
+        pathname: "/**",
+      },
+
+      // Vecteezy (Godrej logo)
+      {
+        protocol: "https",
+        hostname: "static.vecteezy.com",
+        pathname: "/**",
+      },
+
+      // Logos World (Whirlpool)
+      {
+        protocol: "https",
+        hostname: "logos-world.net",
         pathname: "/**",
       },
     ],

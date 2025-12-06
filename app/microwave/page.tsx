@@ -250,13 +250,13 @@ export default function MicrowaveOvenPage() {
 
     // Brands We Service with real logos
     const brands = [
-        { name: 'Samsung', logo: 'https://e7.pngegg.com/pngimages/990/838/png-clipart-samsung-electronics-samsung-galaxy-samsung-logo-text-logo-thumbnail.png' },
-        { name: 'LG', logo: 'https://e7.pngegg.com/pngimages/796/910/png-clipart-lg-corp-lg-g2-logo-lg-electronics-lg-miscellaneous-text-thumbnail.png' },
-        { name: 'Whirlpool', logo: 'https://e7.pngegg.com/pngimages/469/276/png-clipart-whirlpool-corporation-home-appliance-washing-machines-brand-maytag-others-thumbnail.png' },
-        { name: 'IFB', logo: 'https://e7.pngegg.com/pngimages/291/103/png-clipart-logo-ifb-point-ifb-home-appliances-brand-logo-ifb-point-thumbnail.png' },
+        { name: 'Samsung', logo: 'https://tse3.mm.bing.net/th/id/OIP.JknWfu1eKiHE6O5z5gZWCgHaEK?pid=Api&P=0&h=180' },
+        { name: 'LG', logo: 'https://tse4.mm.bing.net/th/id/OIP.xnCmeIubOmmCx9j5jcAd4QHaEK?pid=Api&P=0&h=180' },
+        { name: 'Whirlpool', logo: 'https://logos-world.net/wp-content/uploads/2022/12/Whirlpool-Symbol.png' },
+        { name: 'IFB', logo: 'https://tse2.mm.bing.net/th/id/OIP.YcMTuv_IS_NsTleS4L12TwHaHa?pid=Api&P=0&h=180' },
         { name: 'Panasonic', logo: 'https://tse2.mm.bing.net/th/id/OIP.C-w3dvIgGs4VdwPciqHwgwAAAA?pid=Api&P=0&h=180' },
-        { name: 'Godrej', logo: 'https://e7.pngegg.com/pngimages/1003/287/png-clipart-godrej-group-logo-advertising-godrej-properties-limited-business-mattresse-furniture-company-thumbnail.png' },
-        { name: 'Haier', logo: 'https://e7.pngegg.com/pngimages/592/697/png-clipart-brand-haier-electronics-refrigerator-home-appliance-refrigerator-blue-electronics-thumbnail.png' },
+        { name: 'Godrej', logo: 'https://tse4.mm.bing.net/th/id/OIP.7v6q6q6q6q6q6q6q6q6q6qHaHa?pid=Api&P=0&h=180' },
+        { name: 'Haier', logo: 'https://tse3.mm.bing.net/th/id/OIP.yKPctZu_OlIuX4NOC3WzMgHaFc?pid=Api&P=0&h=180' },
         { name: 'Bajaj', logo: 'https://tse3.mm.bing.net/th/id/OIP.igoFQE5zWYrBm2sQZlLD7QHaCi?pid=Api&P=0&h=180' },
         { name: 'Prestige', logo: 'https://img.freepik.com/free-vector/elegant-ornamental-logo_1057-2027.jpg' },
         { name: 'Morphy Richards', logo: 'https://tse2.mm.bing.net/th/id/OIP.fXhteMOS3CpgyYE3u1veJwHaBG?pid=Api&P=0&h=180' },
