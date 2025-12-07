@@ -49,9 +49,9 @@ export default function Footer() {
 
     // Services Links
     const serviceLinks = [
-        { name: 'Refrigerator Repair', href: '/services/refrigerator' },
-        { name: 'Washing Machine Repair', href: '/services/washing-machine' },
-        { name: 'Microwave Repair', href: '/services/microwave' },
+        { name: 'Refrigerator Repair', href: '/refrigerator' },
+        { name: 'Washing Machine Repair', href: '/washing-machine' },
+        { name: 'Microwave Repair', href: '/microwave' },
     ];
 
     // Service Areas
