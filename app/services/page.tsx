@@ -142,7 +142,7 @@ export default function AllServicesPage() {
             name: 'Sunita Mehta',
             location: 'Zirakpur',
             rating: 5,
-            comment: 'Very satisfied with the washing machine repair service. The team was punctual and did quality work with 90 days warranty.',
+            comment: 'Very satisfied with the washing machine repair service. The team was punctual and did quality work .',
             date: '28 Oct 2024',
             service: 'Washing Machine Repair'
         },
@@ -153,7 +153,6 @@ export default function AllServicesPage() {
         { value: '5000+', label: 'Appliances Repaired', icon: <Wrench size={20} />, color: 'text-blue-400' },
         { value: '4.9/5', label: 'Customer Rating', icon: <Star size={20} />, color: 'text-yellow-400' },
         { value: '30 Min', label: 'Avg Response Time', icon: <Clock size={20} />, color: 'text-green-400' },
-        { value: '90 Days', label: 'Warranty Period', icon: <Shield size={20} />, color: 'text-purple-400' },
     ];
 
     // Service-specific data (simplified version for this page)
@@ -696,10 +695,7 @@ export default function AllServicesPage() {
                                             <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                                                 <Shield size={24} className="text-blue-600" />
                                             </div>
-                                            <h4 className="font-bold text-gray-900 mb-3">Service Warranty</h4>
-                                            <p className="text-gray-600">
-                                                90 days warranty on all repairs and spare parts.
-                                            </p>
+
                                         </div>
 
                                         <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-200">
@@ -731,16 +727,7 @@ export default function AllServicesPage() {
                                                 <div className="text-blue-200">Visit Charge</div>
                                                 <div className="text-sm text-blue-100 mt-1">(Adjustable in repair)</div>
                                             </div>
-                                            <div className="text-center">
-                                                <div className="text-3xl font-bold mb-2">✓ Free</div>
-                                                <div className="text-blue-200">Diagnosis</div>
-                                                <div className="text-sm text-blue-100 mt-1">If repair not done</div>
-                                            </div>
-                                            <div className="text-center">
-                                                <div className="text-3xl font-bold mb-2">90 Days</div>
-                                                <div className="text-blue-200">Warranty</div>
-                                                <div className="text-sm text-blue-100 mt-1">On all repairs</div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

@@ -580,11 +580,7 @@ export default function HomePage() {
           </div>
 
           {/* Additional Info */}
-          <div className="text-center mt-8">
-            <p className="text-gray-600 text-sm sm:text-base">
-              <span className="font-semibold text-purple-600">Free Service Charge</span> within these areas • Same-day service available
-            </p>
-          </div>
+         
         </div>
       </section>
 
