@@ -1,4 +1,4 @@
-// app/page.tsx - Fixed Version
+// app/page.tsx - Fixed Version with Marquee and Animated Counters
 'use client';
 
 import React, { useEffect, useState, useCallback } from 'react';
@@ -31,25 +31,25 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 
-// Fixed CountUp component
-const CountUp = ({ end, duration = 2000 }: { end: number; duration?: number }) => {
-  const [count, setCount] = useState(0);
+// Fixed CountUp component with start parameter
+const CountUp = ({ start = 0, end, duration = 2000 }: { start?: number; end: number; duration?: number }) => {
+  const [count, setCount] = useState(start);
 
   useEffect(() => {
-    let start = 0;
-    const increment = end / (duration / 16);
+    let current = start;
+    const increment = (end - start) / (duration / 16);
     const timer = setInterval(() => {
-      start += increment;
-      if (start >= end) {
+      current += increment;
+      if (current >= end) {
         setCount(end);
         clearInterval(timer);
       } else {
-        setCount(Math.floor(start));
+        setCount(Math.floor(current));
       }
     }, 16);
 
     return () => clearInterval(timer);
-  }, [end, duration]);
+  }, [start, end, duration]);
 
   return <span>{count.toLocaleString()}</span>;
 };
@@ -142,8 +142,6 @@ export default function HomePage() {
       icon: <RefreshCw size={20} />,
       gradient: 'from-teal-500 to-green-500'
     },
-
-
     {
       image: 'https://images.unsplash.com/photo-1740803292349-c7e53f7125b2?q=80&w=1202&auto=format&fit=crop',
       title: 'Microwave Oven',
@@ -173,22 +171,44 @@ export default function HomePage() {
       desc: 'Most repairs completed in single visit',
       gradient: 'from-green-500 to-emerald-500'
     },
-
   ];
 
-  // Stats with icons
+  // Stats with icons - UPDATED with animated counters
   const stats = [
-    { value: '2000+', label: 'Repairs Done', icon: <Wrench size={20} />, color: 'text-blue-400' },
-    { value: '4.8/5', label: 'Customer Rating', icon: <Star size={20} />, color: 'text-yellow-400' },
-    { value: '45 Min', label: 'Response Time', icon: <Clock size={20} />, color: 'text-green-400' },
-    { value: '30+', label: 'Expert Techs', icon: <Users size={20} />, color: 'text-purple-400' },
+    {
+      value: <CountUp start={0} end={2000} duration={2500} />,
+      label: 'Repairs Done',
+      icon: <Wrench size={20} />,
+      color: 'text-blue-400'
+    },
+    {
+      value: '4.8/5',
+      label: 'Customer Rating',
+      icon: <Star size={20} />,
+      color: 'text-yellow-400'
+    },
+    {
+      value: '45 Min',
+      label: 'Response Time',
+      icon: <Clock size={20} />,
+      color: 'text-green-400'
+    },
+    {
+      value: <CountUp start={0} end={30} duration={2000} />,
+      label: 'Expert Techs',
+      icon: <Users size={20} />,
+      color: 'text-purple-400'
+    },
   ];
 
-  // Service areas
+  // Service areas - UPDATED with duplicate for seamless marquee
   const serviceAreas = [
     'Chandigarh', 'Panchkula', 'Mohali', 'Zirakpur', 'Kharar',
     'Derabassi', 'New Chandigarh'
   ];
+
+  // Duplicate array for seamless marquee effect
+  const marqueeAreas = [...serviceAreas, ...serviceAreas];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-blue-50">
@@ -271,7 +291,7 @@ export default function HomePage() {
                         {stat.icon}
                       </div>
                       <div className="text-lg sm:text-xl md:text-2xl font-bold text-yellow-300">
-                        {stat.value.includes('+') ? stat.value : stat.value}
+                        {stat.value}
                       </div>
                     </div>
                     <div className="text-blue-200 text-xs sm:text-sm md:text-base">{stat.label}</div>
@@ -507,7 +527,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Service Areas Section */}
+      {/* Service Areas Section - UPDATED with Marquee */}
       <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
@@ -523,19 +543,47 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
-            {serviceAreas.map((city, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg md:rounded-xl p-3 sm:p-4 text-center shadow hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-purple-300 hover:scale-[1.02] animate-service-area"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
-                  <Home size={18} className="text-purple-600" />
-                </div>
-                <span className="font-medium text-gray-900 text-sm sm:text-base">{city}</span>
+          {/* Marquee Container */}
+          <div className="relative overflow-hidden bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl md:rounded-3xl p-4 shadow-lg border border-purple-100">
+            {/* Marquee for Mobile */}
+            <div className="md:hidden">
+              <div className="flex animate-marquee-mobile whitespace-nowrap">
+                {marqueeAreas.map((city, index) => (
+                  <div
+                    key={`mobile-${index}`}
+                    className="mx-2 flex-shrink-0 bg-white rounded-xl p-3 text-center shadow hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-purple-300 min-w-[120px]"
+                  >
+                    <div className="w-8 h-8 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <Home size={16} className="text-purple-600" />
+                    </div>
+                    <span className="font-medium text-gray-900 text-sm">{city}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Grid for Desktop */}
+            <div className="hidden md:grid md:grid-cols-4 lg:grid-cols-5 gap-4">
+              {serviceAreas.map((city, index) => (
+                <div
+                  key={`desktop-${index}`}
+                  className="bg-white rounded-xl p-4 text-center shadow hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-purple-300 hover:scale-[1.02] animate-service-area"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className="w-10 h-10 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Home size={18} className="text-purple-600" />
+                  </div>
+                  <span className="font-medium text-gray-900 text-base">{city}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Additional Info */}
+          <div className="text-center mt-8">
+            <p className="text-gray-600 text-sm sm:text-base">
+              <span className="font-semibold text-purple-600">Free Service Charge</span> within these areas • Same-day service available
+            </p>
           </div>
         </div>
       </section>
@@ -576,8 +624,6 @@ export default function HomePage() {
 
           {/* Features */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
-
-
             <div className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 sm:p-6 hover:bg-white/20 transition-colors">
               <div className="text-2xl sm:text-3xl font-bold mb-2 text-yellow-300">30 Min</div>
               <div className="text-white/90 text-sm sm:text-base">Average Response Time</div>
@@ -677,6 +723,16 @@ export default function HomePage() {
           }
         }
 
+        /* NEW: Marquee animation for mobile */
+        @keyframes marquee-mobile {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
         .animate-slide-up {
           animation: slide-up 0.6s ease-out forwards;
         }
@@ -729,6 +785,18 @@ export default function HomePage() {
         .animate-service-area {
           opacity: 0;
           animation: fade-in 0.4s ease-out forwards;
+        }
+
+        /* NEW: Marquee animation class */
+        .animate-marquee-mobile {
+          animation: marquee-mobile 20s linear infinite;
+          display: flex;
+          width: max-content;
+        }
+
+        /* Pause animation on hover */
+        .animate-marquee-mobile:hover {
+          animation-play-state: paused;
         }
 
         .line-clamp-1 {
