@@ -129,7 +129,7 @@ export default function HomePage() {
       gradient: 'from-purple-500 to-pink-500'
     },
     {
-      image: 'https://tse4.mm.bing.net/th/id/OIP.OSXwZQkH9KHYqCOMBEpfCgHaHa?pid=Api&P=0&h=180',
+      image: 'https://images.unsplash.com/photo-1556185781-a47769abb7ee?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG9tZSUyMGFwcGxpYW5jZXxlbnwwfHwwfHx8MA%3D%3D',
       title: 'Top Load Washing Machine',
       desc: 'Drainage issues, agitator repair, motor problems',
       icon: <RefreshCw size={20} />,
@@ -306,7 +306,7 @@ export default function HomePage() {
                 {/* Main Image */}
                 <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.01] transition-transform duration-700">
                   <Image
-                    src="https://images.unsplash.com/photo-1613405685219-5b5ac1c21fef?q=80&w=1170&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1636855793164-c0ae4ee65a89?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Appliance Repair Technician"
                     width={800}
                     height={600}
@@ -502,7 +502,7 @@ export default function HomePage() {
                     <div className="flex items-center mb-3">
                       <div className="relative w-10 h-10 rounded-full overflow-hidden mr-3 flex-shrink-0">
                         <Image
-                          src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face"
+                          src="https://tse2.mm.bing.net/th/id/OIP.MnDi3z9FWDHQXnBO-stHcAHaE8?pid=Api&P=0&h=180"
                           alt="Customer"
                           width={40}
                           height={40}
@@ -580,7 +580,7 @@ export default function HomePage() {
           </div>
 
           {/* Additional Info */}
-         
+
         </div>
       </section>
 
