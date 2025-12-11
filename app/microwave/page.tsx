@@ -383,7 +383,6 @@ export default function MicrowaveOvenPage() {
                                     <div className="text-center">
                                         <div className="text-sm">Visit Charge</div>
                                         <div className="text-2xl font-bold text-yellow-300">₹299</div>
-                                        <div className="text-xs text-red-200">(Included in repair)</div>
                                     </div>
                                 </div>
                             </div>

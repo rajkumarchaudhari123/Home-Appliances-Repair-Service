@@ -380,7 +380,6 @@ export default function WashingMachinePage() {
                                     <div className="text-center">
                                         <div className="text-sm">Visit Charge</div>
                                         <div className="text-2xl font-bold text-yellow-300">₹299</div>
-                                        <div className="text-xs text-blue-200">(Included in repair)</div>
                                     </div>
                                 </div>
                             </div>
@@ -902,8 +901,6 @@ export default function WashingMachinePage() {
                                             </div>
                                             <div className="pt-3 border-t border-gray-100">
                                                 <div className="flex justify-between font-bold text-gray-900">
-                                                    <span>If you proceed with repair:</span>
-                                                    <span className="text-blue-600">₹299 will be adjusted</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1002,7 +999,7 @@ export default function WashingMachinePage() {
                     <div className="text-center mb-6 sm:mb-8">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">Ready to Fix Your Washing Machine?</h2>
                         <p className="text-blue-100 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-                            Get instant service booking with our 24/7 customer support. Free diagnosis on first visit.
+                            Get instant service booking with our 24/7 customer support.
                         </p>
                     </div>
 
@@ -1033,9 +1030,7 @@ export default function WashingMachinePage() {
                         </div>
 
                     </div>
-                    <p className="text-center text-blue-200 text-sm mt-4">
-                        *₹299 visit charge will be adjusted if you proceed with repair
-                    </p>
+                 
                 </div>
             </div>
 

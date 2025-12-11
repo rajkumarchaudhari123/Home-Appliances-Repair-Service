@@ -59,7 +59,7 @@ export default function ContactPage() {
         duration: number;
     }>>([]);
     const [offers, setOffers] = useState([
-        { id: 1, title: '20% OFF', desc: 'First Time Customers', icon: <Tag />, color: 'from-purple-500 to-pink-500' },
+        { id: 1, title: 'Best Service', desc: 'we provide best service', icon: <Tag />, color: 'from-purple-500 to-pink-500' },
         { id: 4, title: 'Same Day', desc: 'Service Available', icon: <Zap />, color: 'from-orange-500 to-red-500' }
     ]);
 
