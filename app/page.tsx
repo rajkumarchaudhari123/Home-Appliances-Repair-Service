@@ -115,21 +115,21 @@ export default function HomePage() {
   // Services data with high-quality attractive images
   const services = [
     {
-      image: 'https://images.unsplash.com/photo-1630459065645-549fe5a56db4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      image: '/refrigerator-repair.jpg',
       title: 'Refrigerator Repair',
       desc: 'Cooling issues, gas charging, compressor repair',
       icon: <Droplets size={20} />,
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
-      image: 'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1170&auto=format&fit=crop',
+      image: '/washing-machine1.jpg',
       title: 'Front Load Washing Machine',
       desc: 'Motor repair, leakage, spin problems, PCB issues',
       icon: <RefreshCw size={20} />,
       gradient: 'from-purple-500 to-pink-500'
     },
     {
-      image: 'https://images.unsplash.com/photo-1556185781-a47769abb7ee?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG9tZSUyMGFwcGxpYW5jZXxlbnwwfHwwfHx8MA%3D%3D',
+      image: '/washing-machine2.jpg',
       title: 'Top Load Washing Machine',
       desc: 'Drainage issues, agitator repair, motor problems',
       icon: <RefreshCw size={20} />,
@@ -306,7 +306,7 @@ export default function HomePage() {
                 {/* Main Image */}
                 <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.01] transition-transform duration-700">
                   <Image
-                    src="https://images.unsplash.com/photo-1636855793164-c0ae4ee65a89?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="/appliance.jpg"
                     alt="Appliance Repair Technician"
                     width={800}
                     height={600}
