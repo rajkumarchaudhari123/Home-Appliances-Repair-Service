@@ -174,10 +174,11 @@ export default function ContactPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50">
+        <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50 overflow-x-hidden">
+            {/* Mobile स्क्रीन पर overflow को रोकने के लिए overflow-x-hidden जोड़ा गया */}
 
             {/* Hero Section with Particles */}
-            <section className="relative overflow-hidden bg-gradient-to-r from-blue-500 via-sky-500 to-cyan-500 text-white py-20 md:py-28">
+            <section className="relative overflow-hidden bg-gradient-to-r from-blue-500 via-sky-500 to-cyan-500 text-white py-12 md:py-28 px-4">
                 {/* Animated Background Particles - Client Side Only */}
                 <div className="absolute inset-0">
                     {particles.map((particle, i) => (
@@ -200,76 +201,71 @@ export default function ContactPage() {
                     <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow delay-1000"></div>
                 </div>
 
-                <div className="relative container mx-auto px-4">
-                    <div className={`max-w-5xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                <div className="relative max-w-7xl mx-auto">
+                    <div className={`w-full mx-auto text-center transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
 
                         {/* Floating Badge */}
-                        <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full mb-6 animate-pulse-once">
-                            <Sparkles size={18} className="text-yellow-300" />
-                            <span className="font-semibold">🎯 100% Satisfaction Guarantee</span>
+                        <div className="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-white/20 backdrop-blur-sm rounded-full mb-6 animate-pulse-once">
+                            <Sparkles size={16} className="text-yellow-300" />
+                            <span className="font-semibold text-sm md:text-base">🎯 100% Satisfaction Guarantee</span>
                         </div>
 
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight px-2">
                             Get <span className="text-yellow-300">Instant Repair</span> Service
                         </h1>
 
-                        <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                        <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-blue-100 mb-6 md:mb-8 max-w-3xl mx-auto px-2">
                             Connect with certified technicians for all your appliance repairs.
-                            <span className="block text-yellow-200 font-semibold mt-2">Same-day service • Free diagnosis • </span>
+                            <span className="block text-yellow-200 font-semibold mt-1 md:mt-2">Same-day service • </span>
                         </p>
 
                         {/* Stats Grid */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8">
-                            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-white/20 transition-colors">
-                                <div className="text-2xl md:text-3xl font-bold text-yellow-300">30<span className="text-white">min</span></div>
-                                <div className="text-blue-200 text-sm">Response Time</div>
-                            </div>
-                            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-white/20 transition-colors">
-                                <div className="text-2xl md:text-3xl font-bold text-yellow-300">4.9<span className="text-white text-lg">/5</span></div>
-                                <div className="text-blue-200 text-sm">Customer Rating</div>
-                            </div>
-                            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-white/20 transition-colors">
-                                <div className="text-2xl md:text-3xl font-bold text-yellow-300">5000<span className="text-white">+</span></div>
-                                <div className="text-blue-200 text-sm">Happy Customers</div>
-                            </div>
-                            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-white/20 transition-colors">
-                                <div className="text-2xl md:text-3xl font-bold text-yellow-300">24<span className="text-white">/7</span></div>
-                                <div className="text-blue-200 text-sm">Service Available</div>
-                            </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-4 max-w-3xl mx-auto mb-6 md:mb-8 px-2">
+                            {[
+                                { value: '30min', label: 'Response Time' },
+                                { value: '4.9/5', label: 'Customer Rating' },
+                                { value: '5000+', label: 'Happy Customers' },
+                                { value: '24/7', label: 'Service Available' }
+                            ].map((stat, index) => (
+                                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg md:rounded-xl p-2 md:p-4 text-center hover:bg-white/20 transition-colors">
+                                    <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-yellow-300">{stat.value}</div>
+                                    <div className="text-blue-200 text-xs md:text-sm">{stat.label}</div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
 
                 {/* Wave Divider */}
                 <div className="absolute bottom-0 left-0 right-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full h-16 md:h-24">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full h-12 md:h-24">
                         <path fill="#f0f9ff" fillOpacity="1" d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,74.7C1120,75,1280,53,1360,42.7L1440,32L1440,320L1392,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
                     </svg>
                 </div>
             </section>
 
             {/* Main Content */}
-            <div className="container mx-auto px-4 py-12 md:py-20 -mt-8">
-                <div className="grid lg:grid-cols-3 gap-8">
+            <div className="max-w-7xl mx-auto px-4 py-8 md:py-12 lg:py-20 -mt-4 md:-mt-8">
+                <div className="flex flex-col lg:grid lg:grid-cols-3 gap-6 md:gap-8">
 
                     {/* Left Column - Contact Form */}
-                    <div className="lg:col-span-2 space-y-8">
+                    <div className="lg:col-span-2 space-y-6 md:space-y-8">
 
                         {/* Special Offers Carousel */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
                             {offers.map((offer, index) => (
                                 <div
                                     key={offer.id}
-                                    className={`bg-gradient-to-br ${offer.color} text-white rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 animate-fade-in`}
+                                    className={`bg-gradient-to-br ${offer.color} text-white rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 animate-fade-in`}
                                     style={{ animationDelay: `${index * 200}ms` }}
                                 >
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                                            {offer.icon}
+                                    <div className="flex items-center gap-2 md:gap-3">
+                                        <div className="w-8 h-8 md:w-10 md:h-10 bg-white/20 rounded-lg md:rounded-xl flex items-center justify-center">
+                                            {React.cloneElement(offer.icon, { size: 16 })}
                                         </div>
-                                        <div>
-                                            <div className="text-xl font-bold">{offer.title}</div>
-                                            <div className="text-white/90 text-sm">{offer.desc}</div>
+                                        <div className="flex-1 min-w-0">
+                                            <div className="text-sm md:text-base font-bold truncate">{offer.title}</div>
+                                            <div className="text-white/90 text-xs md:text-sm truncate">{offer.desc}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -277,54 +273,54 @@ export default function ContactPage() {
                         </div>
 
                         {/* Booking Form */}
-                        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-blue-100">
+                        <div className="bg-white rounded-xl md:rounded-3xl shadow-lg md:shadow-2xl overflow-hidden border border-blue-100">
 
-                            {/* Progress Steps */}
-                            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 px-8 py-6">
+                            {/* Progress Steps - Mobile के लिए छोटा किया गया */}
+                            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 px-4 md:px-8 py-4 md:py-6">
                                 <div className="flex items-center justify-between">
                                     {[1, 2, 3, 4].map((step) => (
                                         <div key={step} className="flex items-center">
-                                            <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all duration-300 ${currentStep >= step
-                                                ? 'bg-blue-600 text-white shadow-lg scale-110'
+                                            <div className={`w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 rounded-full flex items-center justify-center font-bold transition-all duration-300 text-xs md:text-base ${currentStep >= step
+                                                ? 'bg-blue-600 text-white shadow-md md:shadow-lg scale-105'
                                                 : 'bg-gray-200 text-gray-400'
                                                 }`}>
-                                                {currentStep > step ? <CheckCircle size={20} /> : step}
+                                                {currentStep > step ? <CheckCircle size={14} className="md:size-5" /> : step}
                                             </div>
                                             {step < 4 && (
-                                                <div className={`w-16 md:w-24 h-1 mx-2 md:mx-4 transition-all duration-300 ${currentStep > step ? 'bg-blue-600' : 'bg-gray-200'}`} />
+                                                <div className={`w-4 md:w-8 lg:w-16 h-1 mx-1 md:mx-2 lg:mx-4 transition-all duration-300 ${currentStep > step ? 'bg-blue-600' : 'bg-gray-200'}`} />
                                             )}
                                         </div>
                                     ))}
                                 </div>
-                                <div className="flex justify-between mt-4 text-sm">
-                                    <span className={currentStep >= 1 ? 'text-blue-600 font-bold' : 'text-gray-500'}>Select Service</span>
-                                    <span className={currentStep >= 2 ? 'text-blue-600 font-bold' : 'text-gray-500'}>Contact Info</span>
-                                    <span className={currentStep >= 3 ? 'text-blue-600 font-bold' : 'text-gray-500'}>Schedule</span>
-                                    <span className={currentStep >= 4 ? 'text-blue-600 font-bold' : 'text-gray-500'}>Confirm</span>
+                                <div className="flex justify-between mt-2 md:mt-4 text-xs md:text-sm">
+                                    <span className={`text-center ${currentStep >= 1 ? 'text-blue-600 font-bold' : 'text-gray-500'}`}>Service</span>
+                                    <span className={`text-center ${currentStep >= 2 ? 'text-blue-600 font-bold' : 'text-gray-500'}`}>Contact</span>
+                                    <span className={`text-center ${currentStep >= 3 ? 'text-blue-600 font-bold' : 'text-gray-500'}`}>Schedule</span>
+                                    <span className={`text-center ${currentStep >= 4 ? 'text-blue-600 font-bold' : 'text-gray-500'}`}>Confirm</span>
                                 </div>
                             </div>
 
                             {/* Form Content */}
-                            <div className="p-6 md:p-8">
+                            <div className="p-4 md:p-6 lg:p-8">
                                 {isSubmitted ? (
-                                    <div className="text-center py-12 animate-fade-in">
-                                        <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-scale-in">
-                                            <CheckCircle size={40} className="text-green-600" />
+                                    <div className="text-center py-8 md:py-12 animate-fade-in">
+                                        <div className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 animate-scale-in">
+                                            <CheckCircle size={24} className="md:size-8 lg:size-10 text-green-600" />
                                         </div>
-                                        <h3 className="text-2xl font-bold text-gray-900 mb-3">🎉 Request Submitted Successfully!</h3>
-                                        <p className="text-gray-600 mb-6 max-w-md mx-auto">
+                                        <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-3">🎉 Request Submitted Successfully!</h3>
+                                        <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base max-w-md mx-auto">
                                             Thank you for choosing our service! Our expert technician will call you within <span className="font-bold text-blue-600">15 minutes</span> to confirm your appointment.
                                         </p>
-                                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                                             <a
                                                 href="tel:+91 98108 78908"
-                                                className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg"
+                                                className="bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg text-sm md:text-base"
                                             >
                                                 📞 Call Now for Immediate Assistance
                                             </a>
                                             <button
                                                 onClick={() => setIsSubmitted(false)}
-                                                className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-all"
+                                                className="border-2 border-blue-600 text-blue-600 px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl font-semibold hover:bg-blue-50 transition-all text-sm md:text-base"
                                             >
                                                 Submit Another Request
                                             </button>
@@ -335,35 +331,35 @@ export default function ContactPage() {
 
                                         {/* Step 1: Service Selection */}
                                         {currentStep === 1 && (
-                                            <div className="space-y-8">
+                                            <div className="space-y-6 md:space-y-8">
                                                 <div>
-                                                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                                                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2">
                                                         What appliance needs repair? 🛠️
                                                     </h3>
-                                                    <p className="text-gray-600 mb-6">Select the appliance that requires service</p>
+                                                    <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">Select the appliance that requires service</p>
 
-                                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mb-6 md:mb-8">
                                                         {services.map((service) => (
                                                             <button
                                                                 key={service.id}
                                                                 type="button"
                                                                 onClick={() => handleServiceSelect(service.id)}
-                                                                className={`p-6 rounded-2xl border-2 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 ${formData.service === service.id
+                                                                className={`p-3 md:p-4 lg:p-6 rounded-lg md:rounded-xl border-2 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 ${formData.service === service.id
                                                                     ? `border-blue-600 ${service.color} text-white scale-105`
                                                                     : 'border-gray-200 hover:border-blue-400 hover:bg-blue-50'
                                                                     }`}
                                                             >
-                                                                <div className={`mb-3 ${formData.service === service.id ? 'text-white' : 'text-gray-600'}`}>
-                                                                    {service.icon}
+                                                                <div className={`mb-2 ${formData.service === service.id ? 'text-white' : 'text-gray-600'}`}>
+                                                                    {React.cloneElement(service.icon, { size: 20 })}
                                                                 </div>
-                                                                <span className="font-semibold text-center">{service.name}</span>
+                                                                <span className="font-semibold text-center text-xs md:text-sm">{service.name}</span>
                                                             </button>
                                                         ))}
                                                     </div>
 
-                                                    <div className="mb-6">
-                                                        <label className="block text-gray-700 font-semibold mb-3 flex items-center gap-2">
-                                                            <AlertCircle size={18} />
+                                                    <div className="mb-4 md:mb-6">
+                                                        <label className="block text-gray-700 font-semibold mb-2 md:mb-3 flex items-center gap-1 md:gap-2 text-sm md:text-base">
+                                                            <AlertCircle size={14} className="md:size-5" />
                                                             Describe the issue (optional)
                                                         </label>
                                                         <textarea
@@ -372,7 +368,7 @@ export default function ContactPage() {
                                                             onChange={handleChange}
                                                             rows={3}
                                                             placeholder="e.g., Fridge not cooling, AC making noise, Washing machine leaking water, TV no display..."
-                                                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                                                            className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg md:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none text-sm md:text-base"
                                                         />
                                                     </div>
                                                 </div>
@@ -382,13 +378,13 @@ export default function ContactPage() {
                                                         type="button"
                                                         onClick={nextStep}
                                                         disabled={!formData.service}
-                                                        className={`px-8 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${formData.service
+                                                        className={`px-4 md:px-6 lg:px-8 py-2 md:py-3 rounded-lg md:rounded-xl font-semibold transition-all flex items-center gap-1 md:gap-2 text-sm md:text-base ${formData.service
                                                             ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700 hover:scale-105 shadow-lg'
                                                             : 'bg-gray-100 text-gray-400 cursor-not-allowed'
                                                             }`}
                                                     >
                                                         Next Step
-                                                        <ChevronRight className="inline" />
+                                                        <ChevronRight className="inline size-4 md:size-5" />
                                                     </button>
                                                 </div>
                                             </div>
@@ -396,21 +392,21 @@ export default function ContactPage() {
 
                                         {/* Step 2: Contact Details */}
                                         {currentStep === 2 && (
-                                            <div className="space-y-8">
+                                            <div className="space-y-6 md:space-y-8">
                                                 <div>
-                                                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                                                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2">
                                                         📋 Your Contact Information
                                                     </h3>
-                                                    <p className="text-gray-600 mb-6">We'll use this to schedule your service</p>
+                                                    <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">We'll use this to schedule your service</p>
                                                 </div>
 
-                                                <div className="grid md:grid-cols-2 gap-6">
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                                                     <div>
-                                                        <label className="block text-gray-700 font-semibold mb-2">
+                                                        <label className="block text-gray-700 font-semibold mb-1 md:mb-2 text-sm md:text-base">
                                                             Full Name *
                                                         </label>
                                                         <div className="relative">
-                                                            <User className="absolute left-4 top-3.5 text-gray-400" />
+                                                            <User className="absolute left-3 top-2.5 md:top-3.5 text-gray-400 size-4 md:size-5" />
                                                             <input
                                                                 type="text"
                                                                 name="name"
@@ -418,17 +414,17 @@ export default function ContactPage() {
                                                                 onChange={handleChange}
                                                                 required
                                                                 placeholder="John Doe"
-                                                                className="w-full pl-12 pr-4 py-3.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                                                className="w-full pl-10 md:pl-12 pr-3 md:pr-4 py-2.5 md:py-3.5 border border-gray-300 rounded-lg md:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm md:text-base"
                                                             />
                                                         </div>
                                                     </div>
 
                                                     <div>
-                                                        <label className="block text-gray-700 font-semibold mb-2">
+                                                        <label className="block text-gray-700 font-semibold mb-1 md:mb-2 text-sm md:text-base">
                                                             Phone Number *
                                                         </label>
                                                         <div className="relative">
-                                                            <Phone className="absolute left-4 top-3.5 text-gray-400" />
+                                                            <Phone className="absolute left-3 top-2.5 md:top-3.5 text-gray-400 size-4 md:size-5" />
                                                             <input
                                                                 type="tel"
                                                                 name="phone"
@@ -436,34 +432,34 @@ export default function ContactPage() {
                                                                 onChange={handleChange}
                                                                 required
                                                                 placeholder="+91 98765 43210"
-                                                                className="w-full pl-12 pr-4 py-3.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                                                className="w-full pl-10 md:pl-12 pr-3 md:pr-4 py-2.5 md:py-3.5 border border-gray-300 rounded-lg md:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm md:text-base"
                                                             />
                                                         </div>
                                                     </div>
 
                                                     <div>
-                                                        <label className="block text-gray-700 font-semibold mb-2">
+                                                        <label className="block text-gray-700 font-semibold mb-1 md:mb-2 text-sm md:text-base">
                                                             Email Address
                                                         </label>
                                                         <div className="relative">
-                                                            <Mail className="absolute left-4 top-3.5 text-gray-400" />
+                                                            <Mail className="absolute left-3 top-2.5 md:top-3.5 text-gray-400 size-4 md:size-5" />
                                                             <input
                                                                 type="email"
                                                                 name="email"
                                                                 value={formData.email}
                                                                 onChange={handleChange}
                                                                 placeholder="john@example.com"
-                                                                className="w-full pl-12 pr-4 py-3.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                                                className="w-full pl-10 md:pl-12 pr-3 md:pr-4 py-2.5 md:py-3.5 border border-gray-300 rounded-lg md:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm md:text-base"
                                                             />
                                                         </div>
                                                     </div>
 
                                                     <div>
-                                                        <label className="block text-gray-700 font-semibold mb-2">
+                                                        <label className="block text-gray-700 font-semibold mb-1 md:mb-2 text-sm md:text-base">
                                                             Address *
                                                         </label>
                                                         <div className="relative">
-                                                            <MapPin className="absolute left-4 top-3.5 text-gray-400" />
+                                                            <MapPin className="absolute left-3 top-2.5 md:top-3.5 text-gray-400 size-4 md:size-5" />
                                                             <input
                                                                 type="text"
                                                                 name="address"
@@ -471,17 +467,17 @@ export default function ContactPage() {
                                                                 onChange={handleChange}
                                                                 required
                                                                 placeholder="Complete address with landmark"
-                                                                className="w-full pl-12 pr-4 py-3.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                                                className="w-full pl-10 md:pl-12 pr-3 md:pr-4 py-2.5 md:py-3.5 border border-gray-300 rounded-lg md:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm md:text-base"
                                                             />
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="flex justify-between pt-6">
+                                                <div className="flex justify-between pt-4 md:pt-6">
                                                     <button
                                                         type="button"
                                                         onClick={prevStep}
-                                                        className="px-8 py-3 rounded-xl font-semibold border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+                                                        className="px-4 md:px-6 lg:px-8 py-2 md:py-3 rounded-lg md:rounded-xl font-semibold border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors text-sm md:text-base"
                                                     >
                                                         ← Back
                                                     </button>
@@ -489,13 +485,13 @@ export default function ContactPage() {
                                                         type="button"
                                                         onClick={nextStep}
                                                         disabled={!formData.name || !formData.phone || !formData.address}
-                                                        className={`px-8 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${formData.name && formData.phone && formData.address
+                                                        className={`px-4 md:px-6 lg:px-8 py-2 md:py-3 rounded-lg md:rounded-xl font-semibold transition-all flex items-center gap-1 md:gap-2 text-sm md:text-base ${formData.name && formData.phone && formData.address
                                                             ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700 hover:scale-105 shadow-lg'
                                                             : 'bg-gray-100 text-gray-400 cursor-not-allowed'
                                                             }`}
                                                     >
                                                         Next Step
-                                                        <ChevronRight className="inline" />
+                                                        <ChevronRight className="inline size-4 md:size-5" />
                                                     </button>
                                                 </div>
                                             </div>
@@ -503,21 +499,21 @@ export default function ContactPage() {
 
                                         {/* Step 3: Schedule */}
                                         {currentStep === 3 && (
-                                            <div className="space-y-8">
+                                            <div className="space-y-6 md:space-y-8">
                                                 <div>
-                                                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                                                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2">
                                                         📅 Schedule Your Service
                                                     </h3>
-                                                    <p className="text-gray-600 mb-6">Choose convenient date and time slot</p>
+                                                    <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">Choose convenient date and time slot</p>
                                                 </div>
 
-                                                <div className="grid md:grid-cols-2 gap-6">
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                                                     <div>
-                                                        <label className="block text-gray-700 font-semibold mb-2">
+                                                        <label className="block text-gray-700 font-semibold mb-1 md:mb-2 text-sm md:text-base">
                                                             Preferred Date *
                                                         </label>
                                                         <div className="relative">
-                                                            <Calendar className="absolute left-4 top-3.5 text-gray-400" />
+                                                            <Calendar className="absolute left-3 top-2.5 md:top-3.5 text-gray-400 size-4 md:size-5" />
                                                             <input
                                                                 type="date"
                                                                 name="date"
@@ -525,13 +521,13 @@ export default function ContactPage() {
                                                                 onChange={handleChange}
                                                                 required
                                                                 min={new Date().toISOString().split('T')[0]}
-                                                                className="w-full pl-12 pr-4 py-3.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                                                className="w-full pl-10 md:pl-12 pr-3 md:pr-4 py-2.5 md:py-3.5 border border-gray-300 rounded-lg md:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm md:text-base"
                                                             />
                                                         </div>
                                                     </div>
 
                                                     <div>
-                                                        <label className="block text-gray-700 font-semibold mb-2">
+                                                        <label className="block text-gray-700 font-semibold mb-1 md:mb-2 text-sm md:text-base">
                                                             Time Slot *
                                                         </label>
                                                         <select
@@ -539,7 +535,7 @@ export default function ContactPage() {
                                                             value={formData.time}
                                                             onChange={handleChange}
                                                             required
-                                                            className="w-full px-4 py-3.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                                            className="w-full px-3 md:px-4 py-2.5 md:py-3.5 border border-gray-300 rounded-lg md:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm md:text-base"
                                                         >
                                                             <option value="">Select time slot</option>
                                                             {timeSlots.map((slot) => (
@@ -549,23 +545,23 @@ export default function ContactPage() {
                                                     </div>
                                                 </div>
 
-                                                <div className="bg-blue-50 rounded-2xl p-6">
-                                                    <div className="flex items-start gap-4">
-                                                        <Clock className="text-blue-600 mt-1" />
+                                                <div className="bg-blue-50 rounded-lg md:rounded-xl p-4 md:p-6">
+                                                    <div className="flex items-start gap-3 md:gap-4">
+                                                        <Clock className="text-blue-600 mt-1 size-4 md:size-5" />
                                                         <div>
-                                                            <h4 className="font-bold text-blue-900 mb-2">📢 Same Day Service Available!</h4>
-                                                            <p className="text-blue-700">
+                                                            <h4 className="font-bold text-blue-900 mb-1 md:mb-2 text-sm md:text-base">📢 Same Day Service Available!</h4>
+                                                            <p className="text-blue-700 text-xs md:text-sm">
                                                                 Select today's date for emergency service. Our technician will arrive within 2 hours.
                                                             </p>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="flex justify-between pt-6">
+                                                <div className="flex justify-between pt-4 md:pt-6">
                                                     <button
                                                         type="button"
                                                         onClick={prevStep}
-                                                        className="px-8 py-3 rounded-xl font-semibold border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+                                                        className="px-4 md:px-6 lg:px-8 py-2 md:py-3 rounded-lg md:rounded-xl font-semibold border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors text-sm md:text-base"
                                                     >
                                                         ← Back
                                                     </button>
@@ -573,13 +569,13 @@ export default function ContactPage() {
                                                         type="button"
                                                         onClick={nextStep}
                                                         disabled={!formData.date || !formData.time}
-                                                        className={`px-8 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${formData.date && formData.time
+                                                        className={`px-4 md:px-6 lg:px-8 py-2 md:py-3 rounded-lg md:rounded-xl font-semibold transition-all flex items-center gap-1 md:gap-2 text-sm md:text-base ${formData.date && formData.time
                                                             ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700 hover:scale-105 shadow-lg'
                                                             : 'bg-gray-100 text-gray-400 cursor-not-allowed'
                                                             }`}
                                                     >
                                                         Next Step
-                                                        <ChevronRight className="inline" />
+                                                        <ChevronRight className="inline size-4 md:size-5" />
                                                     </button>
                                                 </div>
                                             </div>
@@ -587,55 +583,55 @@ export default function ContactPage() {
 
                                         {/* Step 4: Confirmation */}
                                         {currentStep === 4 && (
-                                            <div className="space-y-8">
+                                            <div className="space-y-6 md:space-y-8">
                                                 <div>
-                                                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                                                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2">
                                                         ✅ Confirm Your Details
                                                     </h3>
-                                                    <p className="text-gray-600 mb-6">Review and submit your service request</p>
+                                                    <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">Review and submit your service request</p>
                                                 </div>
 
-                                                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 mb-6 border border-blue-200">
-                                                    <div className="grid md:grid-cols-2 gap-6">
+                                                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg md:rounded-2xl p-4 md:p-6 mb-4 md:mb-6 border border-blue-200">
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                                                         <div>
-                                                            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                                                                <Wrench size={20} />
+                                                            <h4 className="font-bold text-gray-900 mb-2 md:mb-3 flex items-center gap-1 md:gap-2 text-sm md:text-base">
+                                                                <Wrench size={16} className="md:size-5" />
                                                                 Service Details
                                                             </h4>
-                                                            <div className="space-y-3">
+                                                            <div className="space-y-2 md:space-y-3">
                                                                 <div className="flex items-center">
-                                                                    <span className="text-gray-600 w-32">Service:</span>
-                                                                    <span className="font-semibold text-blue-700">
+                                                                    <span className="text-gray-600 w-20 md:w-32 text-xs md:text-sm">Service:</span>
+                                                                    <span className="font-semibold text-blue-700 text-sm md:text-base">
                                                                         {services.find(s => s.id === formData.service)?.name || 'Not selected'}
                                                                     </span>
                                                                 </div>
                                                                 {formData.message && (
                                                                     <div className="flex">
-                                                                        <span className="text-gray-600 w-32">Issue:</span>
-                                                                        <span className="text-gray-700">{formData.message}</span>
+                                                                        <span className="text-gray-600 w-20 md:w-32 text-xs md:text-sm">Issue:</span>
+                                                                        <span className="text-gray-700 text-sm md:text-base truncate">{formData.message}</span>
                                                                     </div>
                                                                 )}
                                                             </div>
                                                         </div>
 
                                                         <div>
-                                                            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                                                                <User size={20} />
+                                                            <h4 className="font-bold text-gray-900 mb-2 md:mb-3 flex items-center gap-1 md:gap-2 text-sm md:text-base">
+                                                                <User size={16} className="md:size-5" />
                                                                 Contact Information
                                                             </h4>
-                                                            <div className="space-y-3">
+                                                            <div className="space-y-2 md:space-y-3">
                                                                 <div className="flex items-center">
-                                                                    <span className="text-gray-600 w-32">Name:</span>
-                                                                    <span className="font-semibold">{formData.name}</span>
+                                                                    <span className="text-gray-600 w-20 md:w-32 text-xs md:text-sm">Name:</span>
+                                                                    <span className="font-semibold text-sm md:text-base">{formData.name}</span>
                                                                 </div>
                                                                 <div className="flex items-center">
-                                                                    <span className="text-gray-600 w-32">Phone:</span>
-                                                                    <span className="font-semibold">{formData.phone}</span>
+                                                                    <span className="text-gray-600 w-20 md:w-32 text-xs md:text-sm">Phone:</span>
+                                                                    <span className="font-semibold text-sm md:text-base">{formData.phone}</span>
                                                                 </div>
                                                                 {formData.address && (
                                                                     <div className="flex items-center">
-                                                                        <span className="text-gray-600 w-32">Address:</span>
-                                                                        <span className="text-sm">{formData.address}</span>
+                                                                        <span className="text-gray-600 w-20 md:w-32 text-xs md:text-sm">Address:</span>
+                                                                        <span className="text-xs md:text-sm truncate">{formData.address}</span>
                                                                     </div>
                                                                 )}
                                                             </div>
@@ -643,54 +639,44 @@ export default function ContactPage() {
                                                     </div>
 
                                                     {/* Schedule Details */}
-                                                    <div className="mt-6 pt-6 border-t border-blue-200">
-                                                        <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                                                            <Calendar size={20} />
+                                                    <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-blue-200">
+                                                        <h4 className="font-bold text-gray-900 mb-2 md:mb-3 flex items-center gap-1 md:gap-2 text-sm md:text-base">
+                                                            <Calendar size={16} className="md:size-5" />
                                                             Schedule
                                                         </h4>
-                                                        <div className="flex items-center gap-4">
-                                                            <div className="bg-white rounded-xl p-3 border border-blue-100">
-                                                                <div className="text-sm text-gray-600">Date</div>
-                                                                <div className="font-semibold">{formData.date || 'Not selected'}</div>
+                                                        <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+                                                            <div className="bg-white rounded-lg md:rounded-xl p-2 md:p-3 border border-blue-100 flex-1">
+                                                                <div className="text-xs md:text-sm text-gray-600">Date</div>
+                                                                <div className="font-semibold text-sm md:text-base">{formData.date || 'Not selected'}</div>
                                                             </div>
-                                                            <div className="bg-white rounded-xl p-3 border border-blue-100">
-                                                                <div className="text-sm text-gray-600">Time Slot</div>
-                                                                <div className="font-semibold">{formData.time || 'Not selected'}</div>
+                                                            <div className="bg-white rounded-lg md:rounded-xl p-2 md:p-3 border border-blue-100 flex-1">
+                                                                <div className="text-xs md:text-sm text-gray-600">Time Slot</div>
+                                                                <div className="font-semibold text-sm md:text-base">{formData.time || 'Not selected'}</div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 {/* Benefits Card */}
-                                                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-6 mb-6">
+                                                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg md:rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
                                                     <div className="flex items-start">
-                                                        <ThumbsUp className="text-green-600 mr-3 mt-1" size={24} />
-                                                        <div>
-                                                            <h4 className="font-bold text-green-800 mb-2 text-lg">✅ What You Get:</h4>
-                                                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                                                <div className="text-center">
-                                                                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                                                                        <Headphones size={20} className="text-green-600" />
+                                                        <ThumbsUp className="text-green-600 mr-2 md:mr-3 mt-1 size-4 md:size-6" />
+                                                        <div className="flex-1">
+                                                            <h4 className="font-bold text-green-800 mb-2 md:mb-3 text-sm md:text-base">✅ What You Get:</h4>
+                                                            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+                                                                {[
+                                                                    { icon: <Headphones size={14} className="md:size-5 text-green-600" />, text: 'Free Diagnosis' },
+                                                                    { icon: <BadgeCheck size={14} className="md:size-5 text-green-600" />, text: 'Warranty' },
+                                                                    { icon: <Clock size={14} className="md:size-5 text-green-600" />, text: 'Same Day Service' },
+                                                                    { icon: <Percent size={14} className="md:size-5 text-green-600" />, text: 'Best Price' }
+                                                                ].map((benefit, index) => (
+                                                                    <div key={index} className="text-center">
+                                                                        <div className="w-8 h-8 md:w-10 md:h-10 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-1 md:mb-2">
+                                                                            {benefit.icon}
+                                                                        </div>
+                                                                        <div className="text-xs md:text-sm font-semibold text-green-700">{benefit.text}</div>
                                                                     </div>
-                                                                    <div className="text-sm font-semibold text-green-700">Free Diagnosis</div>
-                                                                </div>
-                                                                <div className="text-center">
-                                                                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                                                                        <BadgeCheck size={20} className="text-green-600" />
-                                                                    </div>
-                                                                </div>
-                                                                <div className="text-center">
-                                                                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                                                                        <Clock size={20} className="text-green-600" />
-                                                                    </div>
-                                                                    <div className="text-sm font-semibold text-green-700">Same Day Service</div>
-                                                                </div>
-                                                                <div className="text-center">
-                                                                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                                                                        <Percent size={20} className="text-green-600" />
-                                                                    </div>
-                                                                    <div className="text-sm font-semibold text-green-700">Best Price</div>
-                                                                </div>
+                                                                ))}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -700,23 +686,23 @@ export default function ContactPage() {
                                                     <button
                                                         type="button"
                                                         onClick={prevStep}
-                                                        className="px-8 py-3 rounded-xl font-semibold border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+                                                        className="px-4 md:px-6 lg:px-8 py-2 md:py-3 rounded-lg md:rounded-xl font-semibold border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors text-sm md:text-base"
                                                     >
                                                         ← Edit Details
                                                     </button>
                                                     <button
                                                         type="submit"
                                                         disabled={isSubmitting}
-                                                        className="px-8 py-3 rounded-xl font-semibold bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"
+                                                        className="px-4 md:px-6 lg:px-8 py-2 md:py-3 rounded-lg md:rounded-xl font-semibold bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-1 md:gap-2 text-sm md:text-base"
                                                     >
                                                         {isSubmitting ? (
                                                             <>
-                                                                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                                                <div className="w-3 h-3 md:w-4 md:h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                                                                 Submitting...
                                                             </>
                                                         ) : (
                                                             <>
-                                                                <Send size={20} />
+                                                                <Send size={14} className="md:size-5" />
                                                                 Submit Service Request
                                                             </>
                                                         )}
@@ -731,19 +717,19 @@ export default function ContactPage() {
                     </div>
 
                     {/* Right Column - Contact Info */}
-                    <div className="space-y-8">
+                    <div className="space-y-6 md:space-y-8">
 
                         {/* Emergency Contacts */}
-                        <div className="space-y-6">
-                            <h3 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                                <Zap className="text-yellow-500" />
+                        <div className="space-y-4 md:space-y-6">
+                            <h3 className="text-lg md:text-xl font-bold text-gray-900 flex items-center gap-1 md:gap-2">
+                                <Zap className="text-yellow-500 size-5 md:size-6" />
                                 Emergency Contacts
                             </h3>
 
                             {emergencyContacts.map((contact, index) => (
                                 <div
                                     key={index}
-                                    className={`bg-gradient-to-br ${contact.color} text-white rounded-2xl p-6 transform transition-all duration-500 hover:scale-105 shadow-lg cursor-pointer animate-fade-in`}
+                                    className={`bg-gradient-to-br ${contact.color} text-white rounded-xl md:rounded-2xl p-4 md:p-6 transform transition-all duration-500 hover:scale-105 shadow-lg cursor-pointer animate-fade-in`}
                                     style={{ animationDelay: `${index * 200}ms` }}
                                     onClick={() => {
                                         if (contact.title.includes('Email')) {
@@ -755,14 +741,14 @@ export default function ContactPage() {
                                         }
                                     }}
                                 >
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
-                                            {contact.icon}
+                                    <div className="flex items-center gap-3 md:gap-4">
+                                        <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-lg md:rounded-xl flex items-center justify-center backdrop-blur-sm flex-shrink-0">
+                                            {React.cloneElement(contact.icon, { size: 20 })}
                                         </div>
-                                        <div className="flex-1">
-                                            <div className="font-bold text-lg mb-1">{contact.title}</div>
-                                            <div className="text-white/90 text-sm mb-3">{contact.description}</div>
-                                            <div className="text-xl font-bold tracking-wide">{contact.number}</div>
+                                        <div className="flex-1 min-w-0">
+                                            <div className="font-bold text-sm md:text-base mb-1 truncate">{contact.title}</div>
+                                            <div className="text-white/90 text-xs md:text-sm mb-2 line-clamp-2">{contact.description}</div>
+                                            <div className="text-base md:text-lg font-bold tracking-wide truncate">{contact.number}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -770,34 +756,34 @@ export default function ContactPage() {
                         </div>
 
                         {/* Office Info */}
-                        <div className="bg-white rounded-2xl shadow-xl border border-blue-100 p-6">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                                <MapPin className="text-blue-600" />
+                        <div className="bg-white rounded-xl md:rounded-2xl shadow-lg border border-blue-100 p-4 md:p-6">
+                            <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 md:mb-6 flex items-center gap-1 md:gap-2">
+                                <MapPin className="text-blue-600 size-5 md:size-6" />
                                 Office Information
                             </h3>
 
-                            <div className="space-y-6">
+                            <div className="space-y-4 md:space-y-6">
                                 <div className="flex items-start">
-                                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                        <MapPin className="text-blue-600" />
+                                    <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
+                                        <MapPin className="text-blue-600 size-4 md:size-5" />
                                     </div>
-                                    <div>
-                                        <div className="font-bold text-gray-900 mb-1">Our Office Address</div>
-                                        <div className="text-gray-600">
+                                    <div className="flex-1">
+                                        <div className="font-bold text-gray-900 mb-1 text-sm md:text-base">Our Office Address</div>
+                                        <div className="text-gray-600 text-xs md:text-sm">
                                             123 Tech Park, Sector 62<br />
                                             Chandigarh, 160062<br />
-                                            <span className="text-sm text-blue-500">📍 Near DLF Mall</span>
+                                            <span className="text-blue-500 text-xs">📍 Near DLF Mall</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="flex items-start">
-                                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                        <Clock className="text-blue-600" />
+                                    <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
+                                        <Clock className="text-blue-600 size-4 md:size-5" />
                                     </div>
-                                    <div>
-                                        <div className="font-bold text-gray-900 mb-1">Working Hours</div>
-                                        <div className="text-gray-600 space-y-1">
+                                    <div className="flex-1">
+                                        <div className="font-bold text-gray-900 mb-1 text-sm md:text-base">Working Hours</div>
+                                        <div className="text-gray-600 space-y-1 text-xs md:text-sm">
                                             <div className="flex justify-between">
                                                 <span>Mon - Fri:</span>
                                                 <span className="font-semibold">8:00 AM - 10:00 PM</span>
@@ -806,7 +792,7 @@ export default function ContactPage() {
                                                 <span>Sat - Sun:</span>
                                                 <span className="font-semibold">9:00 AM - 9:00 PM</span>
                                             </div>
-                                            <div className="text-green-600 font-semibold mt-2">
+                                            <div className="text-green-600 font-semibold mt-2 text-xs md:text-sm">
                                                 ⚡ 24/7 Emergency Service Available
                                             </div>
                                         </div>
@@ -815,60 +801,60 @@ export default function ContactPage() {
                             </div>
 
                             {/* Quick Action Buttons */}
-                            <div className="mt-8 space-y-3">
+                            <div className="mt-6 md:mt-8 space-y-2 md:space-y-3">
                                 <a
                                     href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3.5 rounded-xl font-semibold hover:from-green-600 hover:to-emerald-700 transition-all transform hover:scale-105 shadow-lg"
+                                    className="flex items-center justify-center gap-2 md:gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-2.5 md:py-3.5 rounded-lg md:rounded-xl font-semibold hover:from-green-600 hover:to-emerald-700 transition-all transform hover:scale-105 shadow-lg text-sm md:text-base"
                                 >
-                                    <MessageSquare size={20} />
+                                    <MessageSquare size={16} className="md:size-5" />
                                     Start WhatsApp Chat
                                 </a>
                                 <a
                                     href="tel:+919810878908"
-                                    className="flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white py-3.5 rounded-xl font-semibold hover:from-blue-600 hover:to-cyan-700 transition-all transform hover:scale-105 shadow-lg"
+                                    className="flex items-center justify-center gap-2 md:gap-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white py-2.5 md:py-3.5 rounded-lg md:rounded-xl font-semibold hover:from-blue-600 hover:to-cyan-700 transition-all transform hover:scale-105 shadow-lg text-sm md:text-base"
                                 >
-                                    <Phone size={20} />
+                                    <Phone size={16} className="md:size-5" />
                                     Request Callback
                                 </a>
                             </div>
                         </div>
 
                         {/* Service Areas */}
-                        <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl p-6 text-white">
-                            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                                <Globe className="text-yellow-300" />
+                        <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl md:rounded-2xl p-4 md:p-6 text-white">
+                            <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 flex items-center gap-1 md:gap-2">
+                                <Globe className="text-yellow-300 size-4 md:size-5" />
                                 Service Areas
                             </h3>
-                            <div className="flex flex-wrap gap-2 mb-4">
+                            <div className="flex flex-wrap gap-1 md:gap-2 mb-3 md:mb-4">
                                 {serviceAreas.map((area, index) => (
                                     <span
                                         key={index}
-                                        className="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm hover:bg-white/30 transition-colors cursor-pointer"
+                                        className="bg-white/20 backdrop-blur-sm px-2 py-1 md:px-3 md:py-1.5 rounded-full text-xs md:text-sm hover:bg-white/30 transition-colors cursor-pointer"
                                     >
                                         {area}
                                     </span>
                                 ))}
                             </div>
-                            <p className="text-blue-100 text-sm">
+                            <p className="text-blue-100 text-xs md:text-sm">
                                 We serve Chandigarh Tricity and nearby areas.
-                                <span className="block text-yellow-200 font-semibold mt-1">✓ Free home service available in all areas</span>
+                                <span className="block text-yellow-200 font-semibold mt-1 text-sm md:text-base">Visit charges Rs 299</span>
                             </p>
                         </div>
 
                         {/* Customer Support Card */}
-                        <div className="bg-gradient-to-br from-purple-500 to-pink-500 text-white rounded-2xl p-6">
-                            <div className="flex items-center gap-4 mb-4">
-                                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                                    <Headphones size={24} />
+                        <div className="bg-gradient-to-br from-purple-500 to-pink-500 text-white rounded-xl md:rounded-2xl p-4 md:p-6">
+                            <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                                <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <Headphones size={18} className="md:size-6" />
                                 </div>
-                                <div>
-                                    <div className="font-bold text-lg">Customer Support</div>
-                                    <div className="text-white/90 text-sm">Always here to help you</div>
+                                <div className="flex-1 min-w-0">
+                                    <div className="font-bold text-base md:text-lg truncate">Customer Support</div>
+                                    <div className="text-white/90 text-xs md:text-sm">Always here to help you</div>
                                 </div>
                             </div>
-                            <div className="space-y-2">
+                            <div className="space-y-1 md:space-y-2 text-xs md:text-sm">
                                 <div className="flex items-center justify-between">
                                     <span>Response Time:</span>
                                     <span className="font-bold">15-30 mins</span>
@@ -888,13 +874,13 @@ export default function ContactPage() {
             </div>
 
             {/* Testimonials Section */}
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 py-16">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 py-8 md:py-12 lg:py-16 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-center mb-6 md:mb-8 lg:mb-12 text-gray-900">
                         What Our <span className="text-blue-600">Customers Say</span>
                     </h2>
 
-                    <div className="grid md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                         {[
                             {
                                 name: 'Rahul Sharma',
@@ -911,32 +897,32 @@ export default function ContactPage() {
                             {
                                 name: 'Amit Kumar',
                                 rating: 5,
-                                comment: 'Refrigerator display issue resolved perfectly. . Will definitely call again if needed.',
+                                comment: 'Refrigerator display issue resolved perfectly. Will definitely call again if needed.',
                                 service: 'Refrigerator Repair'
                             }
                         ].map((review, index) => (
                             <div
                                 key={index}
-                                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border border-blue-100"
+                                className="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border border-blue-100"
                             >
-                                <div className="flex items-center justify-between mb-4">
+                                <div className="flex items-center justify-between mb-3 md:mb-4">
                                     <div className="flex items-center">
-                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                                            <User className="text-blue-600" />
+                                        <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3 md:mr-4">
+                                            <User className="text-blue-600 size-4 md:size-5" />
                                         </div>
-                                        <div>
-                                            <div className="font-bold text-gray-900">{review.name}</div>
-                                            <div className="text-sm text-gray-500">{review.service}</div>
+                                        <div className="flex-1 min-w-0">
+                                            <div className="font-bold text-gray-900 text-sm md:text-base truncate">{review.name}</div>
+                                            <div className="text-gray-500 text-xs md:text-sm truncate">{review.service}</div>
                                         </div>
                                     </div>
                                     <div className="flex">
                                         {[...Array(5)].map((_, i) => (
-                                            <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+                                            <Star key={i} size={12} className="md:size-4 fill-yellow-400 text-yellow-400" />
                                         ))}
                                     </div>
                                 </div>
-                                <p className="text-gray-600 mb-4">{review.comment}</p>
-                                <div className="text-sm text-gray-500">Verified Customer • 2 days ago</div>
+                                <p className="text-gray-600 mb-3 md:mb-4 text-xs md:text-sm line-clamp-3">{review.comment}</p>
+                                <div className="text-gray-500 text-xs md:text-sm">Verified Customer • 2 days ago</div>
                             </div>
                         ))}
                     </div>
@@ -944,25 +930,24 @@ export default function ContactPage() {
             </div>
 
             {/* CTA Section */}
-            <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-16">
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-8 md:py-12 lg:py-16 px-4">
+                <div className="max-w-7xl mx-auto text-center">
+                    <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6">
                         Ready to Get Your Appliance Fixed?
                     </h2>
-                    <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                    <p className="text-sm md:text-base lg:text-lg text-blue-100 mb-4 md:mb-6 lg:mb-8 max-w-2xl mx-auto">
                         Don't wait! Get instant service booking with our 24/7 customer support.
-                        <span className="block text-yellow-200 font-semibold mt-2">Free diagnosis • Same-day service </span>
+                        <span className="block text-yellow-200 font-semibold mt-1 md:mt-2 text-sm md:text-base">Same-day service</span>
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                         <a
                             href="tel:+919810878908"
-                            className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center gap-3"
+                            className="bg-white text-blue-600 px-4 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl font-bold text-sm md:text-base hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                         >
-                            <Phone size={24} />
-                            Call Now:  +91 9810878908
+                            <Phone size={16} className="md:size-5" />
+                            Call Now: +91 9810878908
                         </a>
-
                     </div>
                 </div>
             </div>
@@ -1057,6 +1042,20 @@ export default function ContactPage() {
                 
                 input:focus, textarea:focus, select:focus {
                     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+                }
+                
+                .line-clamp-2 {
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                }
+                
+                .line-clamp-3 {
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 3;
                 }
             `}</style>
         </div>

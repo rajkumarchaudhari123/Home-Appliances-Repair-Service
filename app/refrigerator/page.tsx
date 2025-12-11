@@ -92,7 +92,7 @@ export default function RefrigeratorPage() {
         {
             step: 2,
             title: 'Cost Estimation',
-            description: 'We provide transparent pricing with no hidden charges. Free diagnosis included.',
+            description: 'We provide transparent pricing with no hidden charges. Visit charges Rs 299 included.',
             time: '5-10 mins',
             icon: '💰'
         },
@@ -213,7 +213,6 @@ export default function RefrigeratorPage() {
                                     <div className="text-center">
                                         <div className="text-lg font-bold">Visit Charge</div>
                                         <div className="text-2xl font-bold text-yellow-300">₹299</div>
-                                        <div className="text-sm text-blue-200">(Included in repair)</div>
                                     </div>
                                 </div>
                             </div>
@@ -222,7 +221,8 @@ export default function RefrigeratorPage() {
                         <div className="relative">
                             <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-2 shadow-2xl">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1716193696093-9c54b6a290e5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    src="/refrigeratorrepair.jpg"
+
                                     alt="Refrigerator Repair"
                                     width={600}
                                     height={400}
@@ -344,7 +344,7 @@ export default function RefrigeratorPage() {
                                                         <Clock size={16} className="mr-2" />
                                                         Fix time: {problem.fixTime}
                                                     </div>
-                                                    <span className="text-blue-600 font-medium text-sm">
+                                                    <span className="text-white/80 font-medium text-sm">
                                                         Call for expert solution
                                                     </span>
                                                 </div>
@@ -416,22 +416,13 @@ export default function RefrigeratorPage() {
                                         <h4 className="font-bold text-gray-900 mb-2">Same Day Service</h4>
                                         <p className="text-gray-600 text-sm">Most repairs completed in single visit</p>
                                     </div>
-                                    <div className="text-center">
-                                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                            <CheckCircle size={28} className="text-blue-600" />
-                                        </div>
 
-                                    </div>
                                 </div>
 
                                 <div className="mt-8 pt-8 border-t border-gray-100">
                                     <div className="bg-gradient-to-r from-blue-50 to-white rounded-2xl p-6 text-center">
-                                        <h4 className="text-xl font-bold text-gray-900 mb-3">Special Offer</h4>
                                         <div className="text-3xl font-bold text-blue-600 mb-2">Visit Charge: ₹299</div>
-                                        <p className="text-gray-600">(Fully refundable if you proceed with repair)</p>
-                                        <div className="mt-4 text-sm text-gray-500">
-                                            *Free diagnosis included | *Transparent pricing
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -634,10 +625,7 @@ export default function RefrigeratorPage() {
                                                     <span>Visit Charge</span>
                                                     <span className="font-medium">₹299</span>
                                                 </div>
-                                                <div className="flex justify-between">
-                                                    <span>Free Diagnosis</span>
-                                                    <span className="text-green-600 font-medium">Included</span>
-                                                </div>
+
                                                 <div className="pt-3 border-t border-blue-100">
                                                     <div className="flex justify-between font-bold text-gray-900">
                                                         <span>If you proceed with repair:</span>
@@ -762,7 +750,7 @@ export default function RefrigeratorPage() {
                                         </button>
 
                                         <p className="text-gray-500 text-sm text-center">
-                                            * ₹299 visit charge applicable | Free diagnosis included
+                                            * ₹299 visit charge applicable
                                         </p>
                                     </form>
                                 </div>
@@ -791,7 +779,7 @@ export default function RefrigeratorPage() {
                             <div className="text-center">
                                 <div className="text-sm">Visit Charge</div>
                                 <div className="text-2xl font-bold text-yellow-300">₹299</div>
-                                <div className="text-xs text-blue-200">(Adjustable in repair)</div>
+                                <div className="text-xs text-blue-200"></div>
                             </div>
                         </div>
                     </div>

@@ -129,7 +129,7 @@ export default function TVPage() {
         {
             step: 2,
             title: 'Cost Estimation',
-            description: 'Transparent pricing with no hidden charges. Free diagnosis included.',
+            description: 'Transparent pricing with no hidden charges. Visit charges Rs 299 included.',
             time: '5-10 mins',
             icon: '💰'
         },
@@ -942,7 +942,7 @@ export default function TVPage() {
 
                                         <p className="text-gray-400 text-sm text-center">
                                             <CheckCircle size={16} className="inline mr-2 text-green-400" />
-                                            Free diagnosis on first visit
+                                            We respect your privacy. Your information is safe with us.
                                         </p>
                                     </form>
                                 </div>

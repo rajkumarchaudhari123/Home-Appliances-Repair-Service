@@ -107,7 +107,7 @@ export default function AboutPage() {
             title: 'Integrity First',
             description: '100% transparent pricing with no hidden charges. We believe in honest service.',
             color: 'from-blue-500 to-cyan-500',
-            points: ['No hidden charges', 'Free diagnosis', 'Upfront pricing']
+            points: ['No hidden charges', 'Upfront pricing']
         },
         {
             icon: <Zap size={32} />,

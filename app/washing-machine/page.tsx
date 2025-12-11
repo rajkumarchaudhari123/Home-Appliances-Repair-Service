@@ -227,7 +227,7 @@ export default function WashingMachinePage() {
         {
             step: 2,
             title: 'Cost Estimation',
-            description: 'Transparent pricing with free diagnosis. Get detailed quote with part-wise breakdown.',
+            description: 'Transparent pricing with visit charges Rs 299. Get detailed quote with part-wise breakdown.',
             time: '10-15 mins',
             icon: '💰',
             color: 'bg-gradient-to-r from-green-500 to-emerald-500',
@@ -534,9 +534,12 @@ export default function WashingMachinePage() {
                                                         <Clock size={14} className="mr-2" />
                                                         {problem.fixTime}
                                                     </div>
-                                                    <span className="text-white/80 font-medium text-sm">
+                                                    <a
+                                                        href="tel:+919810878908"
+                                                        className="text-white/80 font-medium text-sm underline hover:text-white transition-colors"
+                                                    >
                                                         Call for expert solution
-                                                    </span>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -895,7 +898,6 @@ export default function WashingMachinePage() {
                                                 <span className="font-medium">₹299</span>
                                             </div>
                                             <div className="flex justify-between">
-                                                <span>Free Diagnosis</span>
                                                 <span className="text-green-600 font-medium">Included</span>
                                             </div>
                                             <div className="pt-3 border-t border-gray-100">

@@ -415,7 +415,7 @@ export default function MicrowaveOvenPage() {
                             <div className="relative">
                                 <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-2 shadow-2xl transform hover:scale-[1.01] transition-transform duration-700">
                                     <Image
-                                        src="https://images.unsplash.com/photo-1655354438845-561bc349a1a4?q=80&w=687&auto=format&fit=crop"
+                                        src="/microwave-oven.jpg"
                                         alt="Microwave Oven Repair"
                                         width={600}
                                         height={400}
@@ -554,9 +554,12 @@ export default function MicrowaveOvenPage() {
                                                         <Clock size={14} className="mr-2" />
                                                         {problem.fixTime}
                                                     </div>
-                                                    <span className="text-white/80 font-medium text-sm">
+                                                    <a
+                                                        href="tel:+919810878908"
+                                                        className="text-white/80 font-medium text-sm underline hover:text-white transition-colors"
+                                                    >
                                                         Call for expert solution
-                                                    </span>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -778,12 +781,7 @@ export default function MicrowaveOvenPage() {
                                             icon: <Clock size={20} />,
                                             color: 'from-green-500 to-emerald-500'
                                         },
-                                        {
-                                            title: 'Free Diagnosis',
-                                            desc: 'No charge if you don\'t proceed with repair',
-                                            icon: <CheckCircle size={20} />,
-                                            color: 'from-purple-500 to-pink-500'
-                                        },
+
                                         {
                                             title: 'Genuine Parts',
                                             desc: 'We use only OEM or certified spare parts',
@@ -899,16 +897,8 @@ export default function MicrowaveOvenPage() {
                                                 <span>Visit Charge</span>
                                                 <span className="font-medium">₹299</span>
                                             </div>
-                                            <div className="flex justify-between">
-                                                <span>Free Safety Check</span>
-                                                <span className="text-green-600 font-medium">Included</span>
-                                            </div>
-                                            <div className="pt-3 border-t border-gray-100">
-                                                <div className="flex justify-between font-bold text-gray-900">
-                                                    <span>If you proceed with repair:</span>
-                                                    <span className="text-red-600">₹299 will be adjusted</span>
-                                                </div>
-                                            </div>
+
+
                                         </div>
                                         <a
                                             href="tel:+919810878908"
@@ -1029,10 +1019,7 @@ export default function MicrowaveOvenPage() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 max-w-3xl mx-auto">
-                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div className="text-xl sm:text-2xl font-bold mb-2 text-yellow-300">✓ Free</div>
-                            <div className="text-red-100 text-sm">Safety Check</div>
-                        </div>
+
                         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
                             <div className="text-xl sm:text-2xl font-bold mb-2 text-yellow-300">₹299</div>
                             <div className="text-red-100 text-sm">Visit Charge*</div>
@@ -1042,9 +1029,7 @@ export default function MicrowaveOvenPage() {
                             <div className="text-red-100 text-sm">Testing</div>
                         </div>
                     </div>
-                    <p className="text-center text-red-200 text-sm mt-4">
-                        *₹299 visit charge will be adjusted if you proceed with repair
-                    </p>
+
                 </div>
             </div>
 

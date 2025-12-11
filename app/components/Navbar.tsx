@@ -80,7 +80,7 @@ export default function Navbar() {
                             🔴 24/7 Emergency Service
                         </a>
                         <a href="#quote" className="bg-yellow-500 text-blue-900 px-4 py-1 rounded-full text-sm font-semibold hover:bg-yellow-400 transition-colors">
-                            Get Free Quote
+                            Get  Quote
                         </a>
                     </div>
                 </div>

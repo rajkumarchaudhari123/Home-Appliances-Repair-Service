@@ -284,7 +284,7 @@ export default function AllServicesPage() {
                                 <div className="text-center">
                                     <div className="text-sm">Visit Charge</div>
                                     <div className="text-2xl font-bold text-yellow-300">₹299</div>
-                                    <div className="text-xs text-blue-200">(Included in repair)</div>
+                                    <div className="text-xs text-blue-200">Visit charge applicable</div>
                                 </div>
                             </div>
                         </div>
@@ -386,16 +386,7 @@ export default function AllServicesPage() {
                         ))}
                     </div>
 
-                    {/* View All Services Link */}
-                    <div className="text-center mt-8">
-                        <Link
-                            href={`/services/${currentService?.id}`}
-                            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700"
-                        >
-                            <span>View detailed {currentService?.name} repair page</span>
-                            <ChevronRight size={16} />
-                        </Link>
-                    </div>
+
                 </div>
 
                 {/* Service Details */}
@@ -518,9 +509,18 @@ export default function AllServicesPage() {
                                                                 <Clock size={16} className="mr-2" />
                                                                 Fix time: {problem.fixTime}
                                                             </div>
-                                                            <span className="text-blue-600 text-sm font-medium">
-                                                                Call for expert solution
+                                                            <span className="text-blue-600 text-sm font-medium hover:underline">
+
+                                                                <a
+
+                                                                    href="tel:+919810878908"
+                                                                    className="text-blue-800 font-semibold ml-1 hover:underline"
+                                                                >
+                                                                    Call for expert solution                                                                </a>
                                                             </span>
+
+
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -685,10 +685,7 @@ export default function AllServicesPage() {
                                             <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                                                 <CheckCircle size={24} className="text-blue-600" />
                                             </div>
-                                            <h4 className="font-bold text-gray-900 mb-3">Free Diagnosis</h4>
-                                            <p className="text-gray-600">
-                                                No charge for diagnosis if you don't proceed with repair.
-                                            </p>
+
                                         </div>
 
                                         <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-200">
@@ -712,7 +709,7 @@ export default function AllServicesPage() {
                                             <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                                                 <Truck size={24} className="text-blue-600" />
                                             </div>
-                                            <h4 className="font-bold text-gray-900 mb-3">Free Home Service</h4>
+                                            <h4 className="font-bold text-gray-900 mb-3"> Home Service</h4>
                                             <p className="text-gray-600">
                                                 Doorstep service across Chandigarh, Panchkula, and Mohali.
                                             </p>

@@ -606,7 +606,7 @@ export default function HomePage() {
               className="group bg-white text-blue-600 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl flex items-center justify-center gap-3 active:scale-95"
             >
               <Phone size={20} />
-              Call For Free Consultation
+              Call For  Consultation
             </a>
 
             <a
