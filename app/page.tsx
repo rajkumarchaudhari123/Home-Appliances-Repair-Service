@@ -115,7 +115,7 @@ export default function HomePage() {
   // Services data with high-quality attractive images
   const services = [
     {
-      image: '/refrigerator-repair.jpg',
+      image: '/refrigeratorrepair.jpg',
       title: 'Refrigerator Repair',
       desc: 'Cooling issues, gas charging, compressor repair',
       icon: <Droplets size={20} />,
@@ -129,7 +129,7 @@ export default function HomePage() {
       gradient: 'from-purple-500 to-pink-500'
     },
     {
-      image: '/washing-machine2.jpg',
+      image: '/washingmachine2.jpg',
       title: 'Top Load Washing Machine',
       desc: 'Drainage issues, agitator repair, motor problems',
       icon: <RefreshCw size={20} />,
