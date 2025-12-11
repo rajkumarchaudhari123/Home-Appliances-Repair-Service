@@ -136,14 +136,14 @@ export default function HomePage() {
       gradient: 'from-indigo-500 to-blue-500'
     },
     {
-      image: 'https://images.unsplash.com/photo-1532916697008-5bc24f95592a?q=80&w=1090&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      image: '/washing-machine3.jpg',
       title: 'Semi-Automatic Washing Machine',
       desc: 'Timer issues, motor repair, water filling problems',
       icon: <RefreshCw size={20} />,
       gradient: 'from-teal-500 to-green-500'
     },
     {
-      image: 'https://images.unsplash.com/photo-1740803292349-c7e53f7125b2?q=80&w=1202&auto=format&fit=crop',
+      image: '/microwave-oven.jpg',
       title: 'Microwave Oven',
       desc: 'Heating issues, panel repair, magnetron replacement',
       icon: <Microwave size={20} />,
