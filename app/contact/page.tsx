@@ -153,7 +153,7 @@ export default function ContactPage() {
     const emergencyContacts = [
         {
             title: '📱 24/7 Emergency Hotline',
-            number: ' +91 9810878908',
+            number: ' +91 07206904101',
             description: 'Immediate assistance for urgent repairs',
             color: 'from-red-500 to-orange-500',
             icon: <Phone size={28} className="text-white" />
@@ -313,7 +313,7 @@ export default function ContactPage() {
                                         </p>
                                         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                                             <a
-                                                href="tel:+91 98108 78908"
+                                                href="tel:+91 07206904101"
                                                 className="bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg text-sm md:text-base"
                                             >
                                                 📞 Call Now for Immediate Assistance
@@ -803,7 +803,7 @@ export default function ContactPage() {
                             {/* Quick Action Buttons */}
                             <div className="mt-6 md:mt-8 space-y-2 md:space-y-3">
                                 <a
-                                    href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
+                                    href="https://wa.me/9107206904101?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center justify-center gap-2 md:gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-2.5 md:py-3.5 rounded-lg md:rounded-xl font-semibold hover:from-green-600 hover:to-emerald-700 transition-all transform hover:scale-105 shadow-lg text-sm md:text-base"
@@ -812,7 +812,7 @@ export default function ContactPage() {
                                     Start WhatsApp Chat
                                 </a>
                                 <a
-                                    href="tel:+919810878908"
+                                    href="tel:+9107206904101"
                                     className="flex items-center justify-center gap-2 md:gap-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white py-2.5 md:py-3.5 rounded-lg md:rounded-xl font-semibold hover:from-blue-600 hover:to-cyan-700 transition-all transform hover:scale-105 shadow-lg text-sm md:text-base"
                                 >
                                     <Phone size={16} className="md:size-5" />
@@ -942,11 +942,11 @@ export default function ContactPage() {
 
                     <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                         <a
-                            href="tel:+919810878908"
+                            href="tel:+9107206904101"
                             className="bg-white text-blue-600 px-4 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl font-bold text-sm md:text-base hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                         >
                             <Phone size={16} className="md:size-5" />
-                            Call Now: +91 9810878908
+                            Call Now: +91 07206904101
                         </a>
                     </div>
                 </div>

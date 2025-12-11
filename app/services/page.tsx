@@ -306,7 +306,7 @@ export default function AllServicesPage() {
 
                         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                             <a
-                                href="tel:+919810878908"
+                                href="tel:+9107206904101"
                                 className="group bg-white text-blue-600 px-4 md:px-6 py-3 md:py-4 rounded-lg md:rounded-xl font-semibold text-sm md:text-base lg:text-lg flex items-center justify-center gap-2 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
                             >
                                 <Phone size={18} />
@@ -453,7 +453,7 @@ export default function AllServicesPage() {
 
                             <div className="flex-shrink-0 mt-4 md:mt-0">
                                 <a
-                                    href="tel:+919810878908"
+                                    href="tel:+9107206904101"
                                     className="inline-flex items-center gap-1.5 md:gap-2 bg-white text-blue-600 px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl font-bold hover:bg-blue-50 transition-colors shadow-lg text-sm md:text-base whitespace-nowrap"
                                 >
                                     <Phone size={16} className="md:size-5" />
@@ -548,7 +548,7 @@ export default function AllServicesPage() {
                                                                 Fix time: {problem.fixTime}
                                                             </div>
                                                             <a
-                                                                href="tel:+919810878908"
+                                                                href="tel:+9107206904101"
                                                                 className="text-blue-600 text-xs md:text-sm font-medium hover:underline flex items-center"
                                                             >
                                                                 Expert Solution
@@ -564,7 +564,7 @@ export default function AllServicesPage() {
                                     {/* Action Button */}
                                     <div className="text-center mt-6 md:mt-8">
                                         <a
-                                            href="tel:+919810878908"
+                                            href="tel:+9107206904101"
                                             className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg text-sm md:text-base"
                                         >
                                             <Phone size={16} className="md:size-5" />
@@ -767,14 +767,14 @@ export default function AllServicesPage() {
 
                         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                             <a
-                                href="tel:+919810878908"
+                                href="tel:+9107206904101"
                                 className="bg-white text-blue-600 px-4 py-3 md:px-6 md:py-4 rounded-lg md:rounded-xl font-bold text-sm md:text-base lg:text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2 md:gap-3"
                             >
                                 <Phone size={18} className="md:size-6" />
-                                Call Now: +91 98108 78908
+                                Call Now: +91 07206904101
                             </a>
                             <a
-                                href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
+                                href="https://wa.me/9107206904101?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-green-600 text-white px-4 py-3 md:px-6 md:py-4 rounded-lg md:rounded-xl font-bold text-sm md:text-base lg:text-lg hover:bg-green-700 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 md:gap-3"

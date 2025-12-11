@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import {
     Phone,
@@ -11,40 +11,17 @@ import {
     Wrench,
     Home,
     MessageSquare,
-    Facebook,
-    Twitter,
-    Instagram,
-    Youtube,
-    Linkedin,
     ChevronRight,
-    Send,
-    CheckCircle,
     Award,
     Users,
     Heart
 } from 'lucide-react';
 
 export default function Footer() {
-    const [email, setEmail] = useState('');
-    const [subscribed, setSubscribed] = useState(false);
-
-    const handleSubscribe = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (email) {
-            // Here you would typically call your API
-            console.log('Subscribed:', email);
-            setSubscribed(true);
-            setEmail('');
-            setTimeout(() => setSubscribed(false), 3000);
-        }
-    };
-
     // Quick Links
     const quickLinks = [
         { name: 'Home', href: '/' },
-        { name: 'About Us', href: '/about' },
         { name: 'Services', href: '/services' },
-        { name: 'Contact', href: '/contact' },
     ];
 
     // Services Links
@@ -63,16 +40,6 @@ export default function Footer() {
         'Kharar',
         'Derabassi',
         'New Chandigarh'
-
-    ];
-
-    // Social Media
-    const socialLinks = [
-        { icon: <Facebook size={20} />, href: '#', label: 'Facebook' },
-        { icon: <Twitter size={20} />, href: '#', label: 'Twitter' },
-        { icon: <Instagram size={20} />, href: '#', label: 'Instagram' },
-        { icon: <Youtube size={20} />, href: '#', label: 'YouTube' },
-        { icon: <Linkedin size={20} />, href: '#', label: 'LinkedIn' },
     ];
 
     // Certifications
@@ -83,104 +50,64 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="bg-gradient-to-b from-gray-900 to-gray-950 text-white">
+        <footer className="bg-gradient-to-b from-gray-900 via-gray-900 to-black text-white relative overflow-hidden">
+            {/* Animated Background Elements */}
+            <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+                <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-700/5 rounded-full blur-3xl"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-green-500/3 rounded-full blur-3xl"></div>
+            </div>
+
             {/* Top Wave Decoration */}
-            <div className="overflow-hidden">
+            <div className="relative overflow-hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full">
-                    <path fill="#111827" fillOpacity="1" d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,74.7C1120,75,1280,53,1360,42.7L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+                    <path
+                        fill="#111827"
+                        fillOpacity="1"
+                        d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,74.7C1120,75,1280,53,1360,42.7L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+                    ></path>
                 </svg>
             </div>
 
             {/* Main Footer Content */}
-            <div className="container mx-auto px-4 py-12">
+            <div className="container mx-auto px-4 py-12 relative z-10">
 
-                {/* Top Section - Contact & Newsletter */}
-                <div className="grid lg:grid-cols-3 gap-8 mb-12">
-
+                {/* Top Section - Contact Info */}
+                <div className="grid lg:grid-cols-1 gap-8 mb-12">
                     {/* Brand & Contact Info */}
-                    <div className="space-y-6">
-                        <Link href="/" className="flex items-center space-x-3 group">
-                            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                <Wrench size={28} className="text-white" />
+                    <div className="space-y-6 text-center lg:text-left">
+                        <Link href="/" className="inline-flex items-center space-x-3 group mx-auto lg:mx-0">
+                            <div className="w-14 h-14 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-500/20">
+                                <Wrench size={30} className="text-white" />
                             </div>
                             <div>
-                                <div className="text-2xl font-bold tracking-tight">FixIt Repair</div>
-                                <div className="text-blue-300 text-sm">Professional Appliance Services</div>
+                                <div className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                                    FixIt Repair
+                                </div>
+                                <div className="text-blue-300 text-sm font-medium mt-1">Professional Appliance Services</div>
                             </div>
                         </Link>
 
-                        <p className="text-gray-300 leading-relaxed">
-                            Your trusted partner for all home appliance repairs.
-                            24/7 emergency .
+                        <p className="text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-lg">
+                            Your trusted partner for all home appliance repairs .
+                            Professional, reliable, and affordable solutions.
                         </p>
 
-                        <div className="space-y-4">
-                            <a href="tel:+919876543210" className="flex items-center space-x-3 text-lg hover:text-blue-300 transition-colors group">
-                                <div className="w-10 h-10 bg-blue-900/50 rounded-lg flex items-center justify-center group-hover:bg-blue-800 transition-colors">
-                                    <Phone size={20} />
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+                            <a
+                                href="tel:+9107206904101"
+                                className="flex items-center space-x-3 text-lg hover:text-blue-300 transition-all duration-300 group bg-gray-800/50 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 max-w-md"
+                            >
+                                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform group-hover:shadow-lg">
+                                    <Phone size={22} className="text-white" />
                                 </div>
                                 <div>
-                                    <div className="text-sm text-gray-400">Call Us Anytime</div>
-                                    <div className="font-bold">+91  98108 78908  </div>
+                                    <div className="text-sm text-gray-400 font-medium">call now</div>
+                                    <div className="font-bold text-xl tracking-tight">+91 07206904101</div>
                                 </div>
                             </a>
 
-                            <a href="mailto:service@fixit.com" className="flex items-center space-x-3 text-lg hover:text-blue-300 transition-colors group">
-                                <div className="w-10 h-10 bg-blue-900/50 rounded-lg flex items-center justify-center group-hover:bg-blue-800 transition-colors">
-                                    <Mail size={20} />
-                                </div>
-                                <div>
-                                    <div className="text-sm text-gray-400">Email Us</div>
-                                    <div className="font-bold">service@fixit.com</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Newsletter Subscription */}
-                    <div className="lg:col-span-2 bg-gradient-to-r from-blue-900/30 to-blue-800/20 rounded-2xl p-8 border border-blue-800/30 backdrop-blur-sm">
-                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                            <div className="flex-1">
-                                <h3 className="text-2xl font-bold mb-2">Stay Updated</h3>
-                                <p className="text-gray-300">
-                                    Subscribe to get maintenance tips, special offers, and appliance care guides.
-                                </p>
-                            </div>
-
-                            <form onSubmit={handleSubscribe} className="flex-1">
-                                <div className="flex flex-col sm:flex-row gap-3">
-                                    <div className="relative flex-1">
-                                        <Mail size={20} className="absolute left-4 top-3.5 text-gray-400" />
-                                        <input
-                                            type="email"
-                                            value={email}
-                                            onChange={(e) => setEmail(e.target.value)}
-                                            placeholder="Your email address"
-                                            className="w-full pl-12 pr-4 py-3.5 bg-gray-800 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
-                                            required
-                                        />
-                                    </div>
-                                    <button
-                                        type="submit"
-                                        className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-6 py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 shadow-lg"
-                                    >
-                                        {subscribed ? (
-                                            <>
-                                                <CheckCircle size={20} />
-                                                Subscribed!
-                                            </>
-                                        ) : (
-                                            <>
-                                                <Send size={20} />
-                                                Subscribe
-                                            </>
-                                        )}
-                                    </button>
-                                </div>
-                                <p className="text-gray-400 text-sm mt-3">
-                                    We respect your privacy. Unsubscribe at any time.
-                                </p>
-                            </form>
+                          
                         </div>
                     </div>
                 </div>
@@ -189,20 +116,23 @@ export default function Footer() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
 
                     {/* Quick Links */}
-                    <div>
-                        <h3 className="text-xl font-bold mb-6 pb-3 border-b border-blue-800/30 flex items-center">
-                            <ChevronRight className="text-blue-400 mr-2" />
+                    <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
+                        <h3 className="text-xl font-bold mb-6 pb-4 border-b border-blue-800/30 flex items-center">
+                            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-3">
+                                <Home size={18} className="text-white" />
+                            </div>
                             Quick Links
                         </h3>
                         <ul className="space-y-3">
-                            {quickLinks.map((link) => (
+                            {quickLinks.map((link, index) => (
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className="flex items-center text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 group"
+                                        className="flex items-center text-gray-300 hover:text-white py-2.5 px-3 rounded-lg hover:bg-gray-700/50 transition-all duration-300 group relative overflow-hidden"
                                     >
-                                        <ChevronRight size={16} className="text-blue-500 opacity-0 group-hover:opacity-100 mr-2 transition-opacity" />
-                                        {link.name}
+                                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        <ChevronRight size={18} className="text-blue-500 mr-3 group-hover:translate-x-1 transition-transform" />
+                                        <span>{link.name}</span>
                                     </Link>
                                 </li>
                             ))}
@@ -210,9 +140,11 @@ export default function Footer() {
                     </div>
 
                     {/* Services */}
-                    <div>
-                        <h3 className="text-xl font-bold mb-6 pb-3 border-b border-blue-800/30 flex items-center">
-                            <Wrench className="text-blue-400 mr-2" />
+                    <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
+                        <h3 className="text-xl font-bold mb-6 pb-4 border-b border-blue-800/30 flex items-center">
+                            <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mr-3">
+                                <Wrench size={18} className="text-white" />
+                            </div>
                             Our Services
                         </h3>
                         <ul className="space-y-3">
@@ -220,10 +152,11 @@ export default function Footer() {
                                 <li key={service.name}>
                                     <Link
                                         href={service.href}
-                                        className="flex items-center text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 group"
+                                        className="flex items-center text-gray-300 hover:text-white py-2.5 px-3 rounded-lg hover:bg-gray-700/50 transition-all duration-300 group relative overflow-hidden"
                                     >
-                                        <ChevronRight size={16} className="text-blue-500 opacity-0 group-hover:opacity-100 mr-2 transition-opacity" />
-                                        {service.name}
+                                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        <ChevronRight size={18} className="text-green-500 mr-3 group-hover:translate-x-1 transition-transform" />
+                                        <span>{service.name}</span>
                                     </Link>
                                 </li>
                             ))}
@@ -231,16 +164,18 @@ export default function Footer() {
                     </div>
 
                     {/* Service Areas */}
-                    <div>
-                        <h3 className="text-xl font-bold mb-6 pb-3 border-b border-blue-800/30 flex items-center">
-                            <MapPin className="text-blue-400 mr-2" />
+                    <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
+                        <h3 className="text-xl font-bold mb-6 pb-4 border-b border-blue-800/30 flex items-center">
+                            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-3">
+                                <MapPin size={18} className="text-white" />
+                            </div>
                             Service Areas
                         </h3>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2.5">
                             {serviceAreas.map((area, index) => (
                                 <span
                                     key={index}
-                                    className="px-3 py-1.5 bg-blue-900/30 hover:bg-blue-800/50 rounded-lg text-sm text-gray-300 hover:text-white transition-all duration-300 cursor-pointer border border-blue-800/20 hover:border-blue-700/40"
+                                    className="px-4 py-2 bg-gray-700/50 hover:bg-gray-600/70 rounded-lg text-sm text-gray-300 hover:text-white transition-all duration-300 cursor-pointer border border-gray-600 hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/10 backdrop-blur-sm"
                                 >
                                     {area}
                                 </span>
@@ -248,101 +183,89 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Emergency Contact */}
-                    <div className="bg-gradient-to-br from-blue-900/40 to-blue-800/20 rounded-2xl p-6 border border-blue-800/30">
+                    {/* WhatsApp Support */}
+                    <div className="bg-gradient-to-br from-green-900/40 via-green-800/30 to-emerald-900/20 backdrop-blur-sm rounded-2xl p-6 border border-green-800/30 shadow-lg">
                         <div className="flex items-center mb-4">
-                            <div className="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center mr-3">
-                                <Phone size={20} className="text-red-400" />
+                            <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mr-4 shadow-lg">
+                                {/* WhatsApp Logo - Official Colors */}
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.198.297-.767.967-.94 1.165-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51-.173-.008-.371-.012-.57-.012-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347z"
+                                        fill="white"
+                                    />
+                                    <path
+                                        d="M12 0C5.373 0 0 5.373 0 12c0 2.126.56 4.125 1.544 5.858L0 24l6.335-1.651A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"
+                                        fill="#25D366"
+                                    />
+                                </svg>
                             </div>
                             <div>
-                                <div className="text-sm text-gray-400">Emergency Service</div>
-                                <div className="text-xl font-bold">24/7 Available</div>
+                                <div className="text-sm text-green-300 font-medium">Instant WhatsApp Support</div>
+                                <div className="text-xl font-bold text-white">Quick Response</div>
                             </div>
                         </div>
 
                         <a
-                            href="tel:+91 98108 78908"
-                            className="block w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white text-center py-3 rounded-xl font-bold text-lg mb-4 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                            href="https://wa.me/9107206904101?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
+                            className="flex items-center justify-center gap-3 w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3.5 rounded-xl font-semibold transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-green-500/20 group"
                         >
-                            Emergency Call Now
-                        </a>
-
-                        <a
-                            href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
-                            className="flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-semibold transition-all duration-300"
-                        >
-                            <MessageSquare size={20} />
-                            WhatsApp Support
+                            {/* WhatsApp Logo */}
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="group-hover:scale-110 transition-transform">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.198.297-.767.967-.94 1.165-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51-.173-.008-.371-.012-.57-.012-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347z"
+                                    fill="white"
+                                />
+                                <path
+                                    d="M12 0C5.373 0 0 5.373 0 12c0 2.126.56 4.125 1.544 5.858L0 24l6.335-1.651A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"
+                                    fill="white"
+                                    className="opacity-20"
+                                />
+                            </svg>
+                            <span>Chat on WhatsApp</span>
                         </a>
                     </div>
                 </div>
 
-                {/* Certifications & Social */}
+                {/* Certifications */}
                 <div className="border-t border-blue-800/30 pt-8">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
 
                         {/* Certifications */}
-                        <div className="flex flex-wrap gap-4">
+                        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                             {certifications.map((cert, index) => (
                                 <div
                                     key={index}
-                                    className="flex items-center space-x-2 px-4 py-2 bg-blue-900/20 rounded-lg border border-blue-800/30"
+                                    className="flex items-center space-x-3 px-5 py-3 bg-gray-800/50 hover:bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-blue-500/30 transition-all duration-300 group hover:shadow-lg hover:shadow-blue-500/10"
                                 >
-                                    {cert.icon}
-                                    <span className="text-sm">{cert.text}</span>
+                                    <div className="text-blue-400 group-hover:scale-110 transition-transform">
+                                        {cert.icon}
+                                    </div>
+                                    <span className="text-sm font-medium">{cert.text}</span>
                                 </div>
                             ))}
-                        </div>
-
-                        {/* Social Media */}
-                        <div className="flex items-center space-x-4">
-                            <span className="text-gray-400">Follow Us:</span>
-                            <div className="flex space-x-3">
-                                {socialLinks.map((social) => (
-                                    <a
-                                        key={social.label}
-                                        href={social.href}
-                                        aria-label={social.label}
-                                        className="w-10 h-10 bg-gray-800 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
-                                    >
-                                        {social.icon}
-                                    </a>
-                                ))}
-                            </div>
                         </div>
                     </div>
 
                     {/* Bottom Bar */}
                     <div className="border-t border-blue-800/30 pt-8">
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                            <div className="text-gray-400 text-sm">
-                                <Clock size={16} className="inline mr-2" />
-                                Working Hours: Mon-Sun • 24/7 Emergency Service Available
-                            </div>
-
-                            <div className="flex items-center space-x-6 text-sm">
-                                <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
-                                    Privacy Policy
-                                </Link>
-                                <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">
-                                    Terms & Conditions
-                                </Link>
-                                <Link href="/refund" className="text-gray-400 hover:text-white transition-colors">
-                                    Refund Policy
-                                </Link>
+                            <div className="text-gray-400 text-sm flex items-center justify-center md:justify-start bg-gray-800/30 backdrop-blur-sm rounded-xl px-4 py-3">
+                                <Clock size={18} className="mr-3 text-blue-400" />
+                                <span>Working Hours: <span className="text-white font-medium">Mon-Sun </span></span>
                             </div>
                         </div>
 
                         {/* Copyright */}
-                        <div className="mt-8 pt-6 border-t border-blue-800/20 text-center">
-                            <div className="flex flex-col md:flex-row md:items-center justify-center gap-2 text-gray-400 text-sm">
-                                <div>© {new Date().getFullYear()} FixIt Appliance Repair Services. All rights reserved.</div>
-                                <div className="hidden md:block">•</div>
-                                <div className="flex items-center justify-center">
-                                    Made with <Heart size={14} className="mx-1 text-red-400 fill-red-400" /> for our customers
+                        <div className="mt-8 pt-8 border-t border-blue-800/20 text-center">
+                            <div className="flex flex-col md:flex-row md:items-center justify-center gap-3 text-gray-400 text-sm">
+                                <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl px-4 py-2">
+                                    © {new Date().getFullYear()} FixIt Appliance Repair Services. All rights reserved.
+                                </div>
+                                <div className="hidden md:block text-blue-400">•</div>
+                                <div className="flex items-center justify-center bg-gray-800/30 backdrop-blur-sm rounded-xl px-4 py-2">
+                                    Made with <Heart size={14} className="mx-2 text-red-400 fill-red-400 animate-pulse" /> for our customers
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -350,23 +273,32 @@ export default function Footer() {
 
             {/* Floating WhatsApp Button */}
             <a
-                href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
-                className="fixed bottom-6 right-6 z-40 bg-green-600 text-white p-4 rounded-full shadow-2xl hover:bg-green-700 transition-all duration-300 transform hover:scale-110 animate-bounce-slow"
+                href="https://wa.me/9107206904101?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
+                className="fixed bottom-6 right-6 z-50 bg-gradient-to-br from-green-500 to-emerald-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 animate-bounce-slow group"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <MessageSquare size={28} />
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
-                    Live
-                </span>
+                {/* Official WhatsApp Logo */}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.198.297-.767.967-.94 1.165-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51-.173-.008-.371-.012-.57-.012-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347z"
+                        fill="white"
+                    />
+                    <path
+                        d="M12 0C5.373 0 0 5.373 0 12c0 2.126.56 4.125 1.544 5.858L0 24l6.335-1.651A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"
+                        fill="white"
+                        className="opacity-20"
+                    />
+                </svg>
+           
             </a>
 
             {/* Floating Call Button */}
             <a
-                href="tel:+91 98108 78908  "
-                className="fixed bottom-24 right-6 z-40 bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-110"
+                href="tel:+9107206904101"
+                className="fixed bottom-24 right-6 z-50 bg-gradient-to-br from-blue-500 to-blue-700 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 group"
             >
-                <Phone size={28} />
+                <Phone size={28} className="group-hover:rotate-12 transition-transform" />
             </a>
 
             {/* Animation Styles */}
@@ -381,7 +313,7 @@ export default function Footer() {
         }
         
         .animate-bounce-slow {
-          animation: bounce-slow 2s infinite;
+          animation: bounce-slow 2s ease-in-out infinite;
         }
       `}</style>
         </footer>

@@ -275,7 +275,7 @@ export default function AboutPage() {
 
 
                             <a
-                                href="tel:+91 98108 78908"
+                                href="tel:+91 07206904101"
                                 className="group bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
                             >
                                 <Phone size={22} />
@@ -758,11 +758,11 @@ export default function AboutPage() {
 
                     <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
                         <a
-                            href="tel:+91 98108 78908"
+                            href="tel:+91 07206904101"
                             className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center gap-3"
                         >
                             <Phone size={24} />
-                            Call Now:  +91 9810878908
+                            Call Now:  +91 07206904101
                         </a>
 
 

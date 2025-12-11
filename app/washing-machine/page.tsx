@@ -72,7 +72,6 @@ export default function WashingMachinePage() {
             title: 'Not Spinning',
             description: 'Drum not rotating, clothes remain wet after cycle',
             symptoms: ['No spinning action', 'Clothes soaking wet', 'Motor humming', 'Error codes E4/E5'],
-            fixTime: '1-2 hours',
             severity: 'High',
             commonCause: 'Motor issues, broken belt, faulty lid switch',
             gradient: 'from-orange-500 to-red-500'
@@ -82,7 +81,6 @@ export default function WashingMachinePage() {
             title: 'Water Leakage',
             description: 'Water leaking from machine during wash',
             symptoms: ['Puddles under machine', 'Water dripping from sides', 'Floor damage', 'Mold smell'],
-            fixTime: '1-2 hours',
             severity: 'High',
             commonCause: 'Damaged hoses, pump seal, door gasket',
             gradient: 'from-blue-500 to-cyan-500'
@@ -92,7 +90,6 @@ export default function WashingMachinePage() {
             title: 'Not Draining',
             description: 'Water stays in drum after wash cycle',
             symptoms: ['Water in drum', 'Drainage error', 'Musty smell', 'Water overflow'],
-            fixTime: '1-1.5 hours',
             severity: 'Medium',
             commonCause: 'Clogged drain pump, blocked filter, hose issues',
             gradient: 'from-purple-500 to-pink-500'
@@ -102,7 +99,6 @@ export default function WashingMachinePage() {
             title: 'Not Starting',
             description: 'Machine won\'t power on or start cycle',
             symptoms: ['No power', 'No response to buttons', 'Error lights blinking', 'Dead display'],
-            fixTime: '1-2 hours',
             severity: 'High',
             commonCause: 'Power supply issues, faulty PCB, door lock failure',
             gradient: 'from-red-500 to-rose-500'
@@ -112,7 +108,6 @@ export default function WashingMachinePage() {
             title: 'Loud Noises',
             description: 'Unusual sounds during wash/spin cycle',
             symptoms: ['Grinding noise', 'Banging sounds', 'Squeaking/screeching', 'Vibration'],
-            fixTime: '1.5-2.5 hours',
             severity: 'Medium',
             commonCause: 'Worn bearings, foreign objects, unbalanced drum',
             gradient: 'from-yellow-500 to-amber-500'
@@ -122,7 +117,6 @@ export default function WashingMachinePage() {
             title: 'Excessive Vibration',
             description: 'Machine shakes violently during spin',
             symptoms: ['Machine "walking"', 'Loud vibrations', 'Floor damage', 'Unbalanced loads'],
-            fixTime: '30-60 mins',
             severity: 'Low',
             commonCause: 'Unlevel machine, suspension springs, worn dampers',
             gradient: 'from-green-500 to-emerald-500'
@@ -132,7 +126,6 @@ export default function WashingMachinePage() {
             title: 'Not Heating Water',
             description: 'Water remains cold in hot wash cycles',
             symptoms: ['Cold washes', 'Heater error codes', 'Long cycle times', 'Poor cleaning'],
-            fixTime: '1.5-2 hours',
             severity: 'Medium',
             commonCause: 'Faulty heater element, thermostat, wiring issues',
             gradient: 'from-orange-500 to-red-500'
@@ -142,7 +135,6 @@ export default function WashingMachinePage() {
             title: 'Stuck on Cycle',
             description: 'Machine stops mid-cycle or won\'t progress',
             symptoms: ['Cycle doesn\'t advance', 'Stuck timer', 'Error codes', 'Infinite loop'],
-            fixTime: '1-2 hours',
             severity: 'Medium',
             commonCause: 'Faulty timer, control board, sensor issues',
             gradient: 'from-indigo-500 to-purple-500'
@@ -309,14 +301,14 @@ export default function WashingMachinePage() {
     const stats = [
         { value: '2000+', label: 'Machines Repaired', icon: <Wrench size={20} />, color: 'text-blue-400' },
         { value: '4.8/5', label: 'Customer Rating', icon: <Star size={20} />, color: 'text-yellow-400' },
-        { value: '45 Min', label: 'Avg Response Time', icon: <Clock size={20} />, color: 'text-green-400' },
+        { value: '30 Min', label: 'Avg Response Time', icon: <Clock size={20} />, color: 'text-green-400' },
     ];
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-blue-50">
             {/* Floating WhatsApp Button - Mobile Only */}
             <a
-                href="https://wa.me/919810878908"
+                href="https://wa.me/9107206904101"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="fixed bottom-6 right-6 z-50 md:hidden bg-gradient-to-r from-green-500 to-emerald-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 animate-bounce-slow"
@@ -368,7 +360,7 @@ export default function WashingMachinePage() {
                             {/* CTA Buttons */}
                             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                                 <a
-                                    href="tel:+919810878908"
+                                    href="tel:+9107206904101"
                                     className="group bg-white text-blue-700 px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg flex items-center justify-center gap-2 hover:bg-blue-50 transition-all duration-300 transform hover:scale-[1.02] shadow-lg active:scale-95"
                                 >
                                     <Phone size={20} />
@@ -427,9 +419,6 @@ export default function WashingMachinePage() {
                                     <AlertCircle size={14} className="inline mr-1 sm:mr-2" />
                                     24/7 Emergency
                                 </div>
-
-                                {/* Floating Badge */}
-
                             </div>
                         </div>
                     </div>
@@ -451,8 +440,8 @@ export default function WashingMachinePage() {
                     <div className="flex overflow-x-auto pb-4 scrollbar-hide md:justify-center">
                         <div className="flex space-x-1 bg-white/50 backdrop-blur-sm rounded-2xl p-1">
                             {[
-                                { id: 'problems', label: 'Problems', icon: '⚠️', color: 'from-red-500 to-orange-500' },
-                                { id: 'types', label: 'Types', icon: '🧺', color: 'from-blue-500 to-cyan-500' },
+                                { id: 'problems', label: 'Problems', icon: '⚠️', color: 'from-blue-500 to-cyan-500' },
+                                { id: 'types', label: 'Types', icon: '🧺', color: 'from-blue-500 to-indigo-500' },
                                 { id: 'process', label: 'Process', icon: '🔧', color: 'from-green-500 to-emerald-500' },
                                 { id: 'brands', label: 'Brands', icon: '🏷️', color: 'from-purple-500 to-pink-500' },
                                 { id: 'testimonials', label: 'Reviews', icon: '⭐', color: 'from-yellow-500 to-amber-500' },
@@ -485,7 +474,7 @@ export default function WashingMachinePage() {
                         <div className="animate-fade-in">
                             <div className="text-center sm:text-left mb-6 sm:mb-8">
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                                    Common <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">Problems & Solutions</span>
+                                    Common <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">Problems & Solutions</span>
                                 </h2>
                                 <p className="text-gray-600 max-w-3xl text-sm sm:text-base">
                                     These are the most frequent washing machine issues we fix daily. Our experts can diagnose and repair any problem quickly and efficiently.
@@ -530,14 +519,14 @@ export default function WashingMachinePage() {
 
                                                 <div className="flex items-center justify-between pt-3 border-t border-white/20">
                                                     <div className="flex items-center text-sm">
-                                                        <Clock size={14} className="mr-2" />
-                                                        {problem.fixTime}
+                                                        <Phone size={14} className="mr-2" />
+                                                        Expert Repair Available
                                                     </div>
                                                     <a
-                                                        href="tel:+919810878908"
+                                                        href="tel:+9107206904101"
                                                         className="text-white/80 font-medium text-sm underline hover:text-white transition-colors"
                                                     >
-                                                        Call for expert solution
+                                                        Call Now
                                                     </a>
                                                 </div>
                                             </div>
@@ -600,7 +589,7 @@ export default function WashingMachinePage() {
                         <div className="animate-fade-in">
                             <div className="text-center sm:text-left mb-6 sm:mb-8">
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                                    Types of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">Washing Machines</span>
+                                    Types of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500">Washing Machines</span>
                                 </h2>
                                 <p className="text-gray-600 max-w-3xl text-sm sm:text-base">
                                     We service all types of washing machines. Each type has unique features, common issues, and specific repair methods.
@@ -654,12 +643,12 @@ export default function WashingMachinePage() {
                                             {/* Common Issues */}
                                             <div className="mb-4">
                                                 <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                                                    <AlertTriangle size={16} className="text-red-500" />
+                                                    <AlertTriangle size={16} className="text-blue-500" />
                                                     Common Issues
                                                 </h4>
                                                 <div className="flex flex-wrap gap-1.5">
                                                     {machine.commonIssues.map((issue, i) => (
-                                                        <span key={i} className="px-2 py-1 bg-red-50 text-red-700 rounded-full text-xs">
+                                                        <span key={i} className="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">
                                                             {issue}
                                                         </span>
                                                     ))}
@@ -859,7 +848,7 @@ export default function WashingMachinePage() {
                                 <div className="mt-8 text-center">
                                     <p className="text-gray-600 mb-4 text-sm sm:text-base">Don't see your brand? Contact us anyway!</p>
                                     <a
-                                        href="tel:+919810878908"
+                                        href="tel:+9107206904101"
                                         className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors"
                                     >
                                         <Phone size={20} className="mr-2" />
@@ -905,7 +894,7 @@ export default function WashingMachinePage() {
                                             </div>
                                         </div>
                                         <a
-                                            href="tel:+919810878908"
+                                            href="tel:+9107206904101"
                                             className="block bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 sm:py-4 rounded-xl text-center font-bold text-sm sm:text-base hover:from-blue-700 hover:to-cyan-700 transition-all transform hover:scale-[1.02] shadow-lg"
                                         >
                                             Book Service Now
@@ -1005,14 +994,14 @@ export default function WashingMachinePage() {
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
-                            href="tel:+919810878908"
+                            href="tel:+9107206904101"
                             className="bg-white text-blue-700 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl flex items-center justify-center gap-3"
                         >
                             <Phone size={20} />
-                            Call Now: +91 9810878908
+                            Call Now: +91 07206904101
                         </a>
                         <a
-                            href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
+                            href="https://wa.me/9107206904101?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl flex items-center justify-center gap-3"
@@ -1030,7 +1019,7 @@ export default function WashingMachinePage() {
                         </div>
 
                     </div>
-                 
+
                 </div>
             </div>
 

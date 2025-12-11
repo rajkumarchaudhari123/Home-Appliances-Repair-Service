@@ -35,7 +35,6 @@ export default function RefrigeratorPage() {
             title: 'Not Cooling Properly',
             description: 'Weak cooling, food spoiling quickly',
             symptoms: ['Warm interior', 'Ice melting', 'Food spoiling fast'],
-            fixTime: '1-2 hours',
             severity: 'High'
         },
         {
@@ -43,7 +42,6 @@ export default function RefrigeratorPage() {
             title: 'Compressor Issues',
             description: 'Loud noise, frequent cycling',
             symptoms: ['Clicking sound', 'Continuous running', 'Tripping breaker'],
-            fixTime: '2-3 hours',
             severity: 'High'
         },
         {
@@ -51,7 +49,6 @@ export default function RefrigeratorPage() {
             title: 'Water Leakage',
             description: 'Water pooling under or inside fridge',
             symptoms: ['Water on floor', 'Ice buildup', 'Dripping sounds'],
-            fixTime: '1 hour',
             severity: 'Medium'
         },
         {
@@ -59,7 +56,6 @@ export default function RefrigeratorPage() {
             title: 'Defrost System Failure',
             description: 'Ice buildup in freezer',
             symptoms: ['Thick ice layer', 'Poor cooling', 'Fan noise'],
-            fixTime: '1-2 hours',
             severity: 'Medium'
         },
         {
@@ -67,7 +63,6 @@ export default function RefrigeratorPage() {
             title: 'Thermostat Problems',
             description: 'Inconsistent temperature',
             symptoms: ['Temperature fluctuations', 'Over cooling', 'Under cooling'],
-            fixTime: '1 hour',
             severity: 'Low'
         },
         {
@@ -75,7 +70,6 @@ export default function RefrigeratorPage() {
             title: 'Door Seal Issues',
             description: 'Cold air escaping',
             symptoms: ['Warm air entering', 'Condensation', 'Frost on edges'],
-            fixTime: '1-2 hours',
             severity: 'Low'
         },
     ];
@@ -86,28 +80,24 @@ export default function RefrigeratorPage() {
             step: 1,
             title: 'Diagnosis',
             description: 'Our technician will inspect your refrigerator thoroughly to identify the exact problem.',
-            time: '15-30 mins',
             icon: '🔍'
         },
         {
             step: 2,
             title: 'Cost Estimation',
             description: 'We provide transparent pricing with no hidden charges. Visit charges Rs 299 included.',
-            time: '5-10 mins',
             icon: '💰'
         },
         {
             step: 3,
             title: 'Repair Work',
             description: 'Our expert will fix the issue using genuine parts and professional tools.',
-            time: '1-3 hours',
             icon: '🔧'
         },
         {
             step: 4,
             title: 'Testing & Quality Check',
             description: 'We test the repair thoroughly and provide best service guarantee.',
-            time: '15-20 mins',
             icon: '✅'
         },
     ];
@@ -134,7 +124,7 @@ export default function RefrigeratorPage() {
             name: 'Rohit Verma',
             location: 'Chandigarh, Sector 35',
             rating: 5,
-            comment: 'My LG refrigerator stopped cooling suddenly. Called these guys and they arrived within 45 minutes. Technician was professional, diagnosed the compressor issue, and fixed it in 2 hours. Great service!',
+            comment: 'My LG refrigerator stopped cooling suddenly. Called these guys and they arrived within 30 minutes. Technician was professional, diagnosed the compressor issue, and fixed it in 2 hours. Great service!',
             date: '15 Nov 2024'
         },
         {
@@ -201,7 +191,7 @@ export default function RefrigeratorPage() {
 
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <a
-                                    href="tel:+919810878908"
+                                    href="tel:+9107206904101"
                                     className="group bg-white text-blue-700 px-6 md:px-8 py-4 rounded-xl font-semibold text-base md:text-lg flex items-center justify-center gap-2 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
                                 >
                                     <Phone size={22} />
@@ -341,8 +331,6 @@ export default function RefrigeratorPage() {
 
                                                 <div className="flex items-center justify-between pt-3 border-t border-gray-100">
                                                     <div className="flex items-center text-sm text-gray-600">
-                                                        <Clock size={16} className="mr-2" />
-                                                        Fix time: {problem.fixTime}
                                                     </div>
                                                     <span className="text-white/80 font-medium text-sm">
                                                         Call for expert solution
@@ -378,7 +366,6 @@ export default function RefrigeratorPage() {
                                                 <p className="text-gray-600 mb-4">{step.description}</p>
                                                 <div className="flex items-center text-sm text-blue-600 font-medium">
                                                     <Clock size={16} className="mr-2" />
-                                                    Time: {step.time}
                                                 </div>
                                             </div>
                                             {step.step < 4 && (
@@ -470,7 +457,7 @@ export default function RefrigeratorPage() {
                                 <div className="mt-8 text-center">
                                     <p className="text-gray-600 mb-4">Don't see your brand? Contact us anyway!</p>
                                     <a
-                                        href="tel:+919810878908"
+                                        href="tel:+9107206904101"
                                         className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors"
                                     >
                                         <Phone size={20} className="mr-2" />
@@ -593,17 +580,17 @@ export default function RefrigeratorPage() {
 
                                         <div className="grid md:grid-cols-2 gap-6 mb-8">
                                             <a
-                                                href="tel:+919810878908"
+                                                href="tel:+9107206904101"
                                                 className="bg-blue-600 text-white p-6 rounded-2xl hover:bg-blue-700 transition-colors text-center group"
                                             >
                                                 <Phone size={32} className="mx-auto mb-4" />
-                                                <div className="text-2xl font-bold">+91 98108 78908</div>
+                                                <div className="text-2xl font-bold">+91 07206904101</div>
                                                 <div className="text-blue-100 mt-2">Call for Appointment</div>
                                                 <div className="text-sm text-blue-200 mt-2">(30 mins response time)</div>
                                             </a>
 
                                             <a
-                                                href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
+                                                href="https://wa.me/9107206904101?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="bg-green-600 text-white p-6 rounded-2xl hover:bg-green-700 transition-colors text-center group"
@@ -661,10 +648,10 @@ export default function RefrigeratorPage() {
                                                         <span className="font-bold">All Days</span>
                                                     </div>
                                                     <a
-                                                        href="tel:+919810878908"
+                                                        href="tel:+9107206904101"
                                                         className="inline-block bg-white text-blue-700 px-4 py-2 rounded-lg font-bold hover:bg-blue-50 transition-colors"
                                                     >
-                                                        Emergency: +91 98108 78908
+                                                        Emergency: +91 07206904101
                                                     </a>
                                                 </div>
                                             </div>
@@ -769,11 +756,11 @@ export default function RefrigeratorPage() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
-                            href="tel:+919810878908"
+                            href="tel:+9107206904101"
                             className="bg-white text-blue-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                         >
                             <Phone size={24} />
-                            Call Now: +91 98108 78908
+                            Call Now: +91 07206904101
                         </a>
                         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-center justify-center">
                             <div className="text-center">

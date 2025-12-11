@@ -67,7 +67,6 @@ export default function MicrowaveOvenPage() {
             title: 'Not Heating',
             description: 'Microwave runs but food remains cold',
             symptoms: ['Turntable spins', 'Light works', 'No heat', 'Cold food after cycle'],
-            fixTime: '1-2 hours',
             severity: 'High',
             commonCause: 'Magnetron failure, high voltage issues',
             gradient: 'from-red-500 to-orange-500'
@@ -77,7 +76,6 @@ export default function MicrowaveOvenPage() {
             title: 'No Power',
             description: 'Microwave completely dead, no response',
             symptoms: ['No display', 'No lights', 'No sounds', 'Circuit breaker trips'],
-            fixTime: '1-2 hours',
             severity: 'High',
             commonCause: 'Power supply, fuse, main board failure',
             gradient: 'from-blue-500 to-cyan-500'
@@ -87,7 +85,6 @@ export default function MicrowaveOvenPage() {
             title: 'Sparks Inside',
             description: 'Visible sparking or arcing during operation',
             symptoms: ['Blue sparks', 'Burning smell', 'Loud crackling', 'Damage marks'],
-            fixTime: '1-2 hours',
             severity: 'High',
             commonCause: 'Waveguide cover damaged, metal objects',
             gradient: 'from-purple-500 to-pink-500'
@@ -97,7 +94,6 @@ export default function MicrowaveOvenPage() {
             title: 'Turntable Issues',
             description: 'Turntable not rotating or stuck',
             symptoms: ['Stuck turntable', 'Uneven rotation', 'Grinding noise', 'Motor hum'],
-            fixTime: '30-60 mins',
             severity: 'Medium',
             commonCause: 'Turntable motor, roller guide, obstruction',
             gradient: 'from-green-500 to-emerald-500'
@@ -107,7 +103,6 @@ export default function MicrowaveOvenPage() {
             title: 'Control Panel Fault',
             description: 'Buttons unresponsive or display errors',
             symptoms: ['Dead touchpad', 'Display flickers', 'Random beeping', 'Error codes'],
-            fixTime: '1-2 hours',
             severity: 'Medium',
             commonCause: 'Membrane switch, PCB failure, moisture',
             gradient: 'from-indigo-500 to-purple-500'
@@ -117,7 +112,6 @@ export default function MicrowaveOvenPage() {
             title: 'Door Problems',
             description: 'Door won\'t close or seal properly',
             symptoms: ['Door won\'t latch', 'Gap in seal', 'Handle broken', 'Safety switch'],
-            fixTime: '1 hour',
             severity: 'High',
             commonCause: 'Door latch, hinge, interlock switch',
             gradient: 'from-yellow-500 to-amber-500'
@@ -127,7 +121,6 @@ export default function MicrowaveOvenPage() {
             title: 'Loud Noise',
             description: 'Unusual loud sounds during operation',
             symptoms: ['Humming/vibration', 'Grinding noise', 'Buzzing sound', 'Rattling'],
-            fixTime: '1-2 hours',
             severity: 'Medium',
             commonCause: 'Cooling fan, magnetron fan, loose parts',
             gradient: 'from-teal-500 to-cyan-500'
@@ -137,7 +130,6 @@ export default function MicrowaveOvenPage() {
             title: 'Overheating',
             description: 'Microwave gets too hot or shuts off',
             symptoms: ['Trips circuit', 'Automatic shutoff', 'Excessive heat', 'Burn marks'],
-            fixTime: '1.5-2 hours',
             severity: 'High',
             commonCause: 'Cooling system, ventilation blocked',
             gradient: 'from-orange-500 to-red-500'
@@ -317,10 +309,10 @@ export default function MicrowaveOvenPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-red-50">
+        <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-blue-50">
             {/* Floating WhatsApp Button - Mobile Only */}
             <a
-                href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
+                href="https://wa.me/9107206904101?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="fixed bottom-6 right-6 z-50 md:hidden bg-gradient-to-r from-green-500 to-emerald-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 animate-bounce-slow"
@@ -329,11 +321,11 @@ export default function MicrowaveOvenPage() {
             </a>
 
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-gradient-to-br from-red-600 via-orange-600 to-red-700 text-white">
+            <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white">
                 {/* Animated Background */}
                 <div className="absolute inset-0">
-                    <div className="absolute top-10 left-10 w-64 h-64 bg-red-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow"></div>
-                    <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow delay-1000"></div>
+                    <div className="absolute top-10 left-10 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow"></div>
+                    <div className="absolute bottom-10 right-10 w-96 h-96 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow delay-1000"></div>
                 </div>
 
                 <div className="relative container mx-auto px-4 sm:px-6 py-8 md:py-16 lg:py-20">
@@ -341,7 +333,7 @@ export default function MicrowaveOvenPage() {
                     <div className="mb-4 sm:mb-6">
                         <Link
                             href="/services"
-                            className="inline-flex items-center text-red-100 hover:text-white transition-colors group text-sm sm:text-base"
+                            className="inline-flex items-center text-blue-100 hover:text-white transition-colors group text-sm sm:text-base"
                         >
                             <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
                             Back to All Services
@@ -363,7 +355,7 @@ export default function MicrowaveOvenPage() {
                             </h1>
 
                             {/* Description */}
-                            <p className="text-base sm:text-lg md:text-xl text-red-100 leading-relaxed">
+                            <p className="text-base sm:text-lg md:text-xl text-blue-100 leading-relaxed">
                                 Expert repair services for all microwave types - Solo, Grill, Convection & Smart.
                                 Safe, certified repairs with radiation leakage testing included.
                             </p>
@@ -371,8 +363,8 @@ export default function MicrowaveOvenPage() {
                             {/* CTA Buttons */}
                             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                                 <a
-                                    href="tel:+919810878908"
-                                    className="group bg-white text-red-700 px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg flex items-center justify-center gap-2 hover:bg-red-50 transition-all duration-300 transform hover:scale-[1.02] shadow-lg active:scale-95"
+                                    href="tel:+9107206904101"
+                                    className="group bg-white text-blue-700 px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg flex items-center justify-center gap-2 hover:bg-blue-50 transition-all duration-300 transform hover:scale-[1.02] shadow-lg active:scale-95"
                                 >
                                     <Phone size={20} />
                                     <span>Emergency Call Now</span>
@@ -403,7 +395,7 @@ export default function MicrowaveOvenPage() {
                                                 {stat.value}
                                             </div>
                                         </div>
-                                        <div className="text-red-200 text-xs sm:text-sm">{stat.label}</div>
+                                        <div className="text-blue-200 text-xs sm:text-sm">{stat.label}</div>
                                     </div>
                                 ))}
                             </div>
@@ -422,11 +414,11 @@ export default function MicrowaveOvenPage() {
                                         priority
                                         sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 50vw"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 via-transparent to-transparent rounded-xl sm:rounded-2xl"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent rounded-xl sm:rounded-2xl"></div>
                                 </div>
 
                                 {/* Safety Badge */}
-                                <div className="absolute -top-2 right-2 sm:-top-3 sm:right-3 bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-bold shadow-lg animate-pulse text-xs sm:text-sm">
+                                <div className="absolute -top-2 right-2 sm:-top-3 sm:right-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-bold shadow-lg animate-pulse text-xs sm:text-sm">
                                     <Shield size={14} className="inline mr-1 sm:mr-2" />
                                     Certified Safety
                                 </div>
@@ -444,7 +436,7 @@ export default function MicrowaveOvenPage() {
                 {/* Wave Divider */}
                 <div className="absolute bottom-0 left-0 right-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full h-12 sm:h-16 md:h-20">
-                        <path fill="#fef3c7" fillOpacity="1" d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,74.7C1120,75,1280,53,1360,42.7L1440,32L1440,320L1392,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+                        <path fill="#dbeafe" fillOpacity="1" d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,74.7C1120,75,1280,53,1360,42.7L1440,32L1440,320L1392,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
                     </svg>
                 </div>
             </section>
@@ -453,7 +445,7 @@ export default function MicrowaveOvenPage() {
             <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16 -mt-4">
 
                 {/* Safety Warning Banner */}
-                <div className="mb-6 sm:mb-8 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-xl p-4 sm:p-6 shadow-lg">
+                <div className="mb-6 sm:mb-8 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl p-4 sm:p-6 shadow-lg">
                     <div className="flex items-start gap-3 sm:gap-4">
                         <AlertTriangle size={20} className="text-yellow-300 flex-shrink-0 mt-1" />
                         <div>
@@ -471,8 +463,8 @@ export default function MicrowaveOvenPage() {
                     <div className="flex overflow-x-auto pb-4 scrollbar-hide md:justify-center">
                         <div className="flex space-x-1 bg-white/50 backdrop-blur-sm rounded-2xl p-1">
                             {[
-                                { id: 'problems', label: 'Problems', icon: '⚠️', color: 'from-red-500 to-orange-500' },
-                                { id: 'types', label: 'Types', icon: '🍲', color: 'from-blue-500 to-cyan-500' },
+                                { id: 'problems', label: 'Problems', icon: '⚠️', color: 'from-blue-500 to-cyan-500' },
+                                { id: 'types', label: 'Types', icon: '🍲', color: 'from-blue-500 to-indigo-500' },
                                 { id: 'process', label: 'Process', icon: '🔧', color: 'from-green-500 to-emerald-500' },
                                 { id: 'brands', label: 'Brands', icon: '🏷️', color: 'from-purple-500 to-pink-500' },
                                 { id: 'testimonials', label: 'Reviews', icon: '⭐', color: 'from-yellow-500 to-amber-500' },
@@ -482,7 +474,7 @@ export default function MicrowaveOvenPage() {
                                     onClick={() => setActiveTab(tab.id)}
                                     className={`px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 rounded-xl font-medium text-sm sm:text-base whitespace-nowrap transition-all duration-300 flex items-center gap-2 ${activeTab === tab.id
                                         ? `bg-gradient-to-r ${tab.color} text-white shadow-lg scale-[1.02]`
-                                        : 'text-gray-700 hover:bg-white hover:text-red-600'
+                                        : 'text-gray-700 hover:bg-white hover:text-blue-600'
                                         }`}
                                 >
                                     <span>{tab.icon}</span>
@@ -505,7 +497,7 @@ export default function MicrowaveOvenPage() {
                         <div className="animate-fade-in">
                             <div className="text-center sm:text-left mb-6 sm:mb-8">
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                                    Common <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">Problems & Solutions</span>
+                                    Common <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">Problems & Solutions</span>
                                 </h2>
                                 <p className="text-gray-600 max-w-3xl text-sm sm:text-base">
                                     These are the most frequent microwave oven issues we fix daily. Our certified technicians handle all repairs safely.
@@ -550,14 +542,14 @@ export default function MicrowaveOvenPage() {
 
                                                 <div className="flex items-center justify-between pt-3 border-t border-white/20">
                                                     <div className="flex items-center text-sm">
-                                                        <Clock size={14} className="mr-2" />
-                                                        {problem.fixTime}
+                                                        <Phone size={14} className="mr-2" />
+                                                        Expert Repair Available
                                                     </div>
                                                     <a
-                                                        href="tel:+919810878908"
+                                                        href="tel:+9107206904101"
                                                         className="text-white/80 font-medium text-sm underline hover:text-white transition-colors"
                                                     >
-                                                        Call for expert solution
+                                                        Call Now
                                                     </a>
                                                 </div>
                                             </div>
@@ -567,7 +559,7 @@ export default function MicrowaveOvenPage() {
                             </div>
 
                             {/* Safety Tips */}
-                            <div className="mt-8 sm:mt-12 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border border-red-200">
+                            <div className="mt-8 sm:mt-12 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border border-blue-200">
                                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">🔒 Microwave Safety Tips</h3>
                                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                                     {safetyWarnings.map((warning, index) => (
@@ -577,8 +569,8 @@ export default function MicrowaveOvenPage() {
                                             style={{ animationDelay: `${300 + index * 100}ms` }}
                                         >
                                             <div className="flex items-center gap-3 mb-3">
-                                                <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
-                                                    <AlertTriangle size={20} className="text-red-600" />
+                                                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                                                    <AlertTriangle size={20} className="text-blue-600" />
                                                 </div>
                                                 <h4 className="font-bold text-gray-900 text-sm sm:text-base">Safety Tip</h4>
                                             </div>
@@ -595,7 +587,7 @@ export default function MicrowaveOvenPage() {
                         <div className="animate-fade-in">
                             <div className="text-center sm:text-left mb-6 sm:mb-8">
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                                    Types of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">Microwave Ovens</span>
+                                    Types of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500">Microwave Ovens</span>
                                 </h2>
                                 <p className="text-gray-600 max-w-3xl text-sm sm:text-base">
                                     We repair all types of microwave ovens. Each type has unique features, common issues, and specific repair methods.
@@ -649,12 +641,12 @@ export default function MicrowaveOvenPage() {
                                             {/* Common Issues */}
                                             <div className="mb-4">
                                                 <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                                                    <AlertTriangle size={16} className="text-red-500" />
+                                                    <AlertTriangle size={16} className="text-blue-500" />
                                                     Common Issues
                                                 </h4>
                                                 <div className="flex flex-wrap gap-1.5">
                                                     {microwave.commonIssues.map((issue, i) => (
-                                                        <span key={i} className="px-2 py-1 bg-red-50 text-red-700 rounded-full text-xs">
+                                                        <span key={i} className="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">
                                                             {issue}
                                                         </span>
                                                     ))}
@@ -675,7 +667,7 @@ export default function MicrowaveOvenPage() {
                             </div>
 
                             {/* Components We Repair */}
-                            <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8">
+                            <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8">
                                 <h3 className="text-xl sm:text-2xl font-bold mb-6">🔧 Microwave Components We Repair</h3>
                                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
                                     {[
@@ -697,7 +689,7 @@ export default function MicrowaveOvenPage() {
                                                 {item.icon}
                                             </div>
                                             <h4 className="font-bold text-lg mb-1">{item.part}</h4>
-                                            <p className="text-red-100 text-xs">{item.desc}</p>
+                                            <p className="text-blue-100 text-xs">{item.desc}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -727,7 +719,7 @@ export default function MicrowaveOvenPage() {
                                                     <div className={`w-10 h-10 sm:w-12 sm:h-12 ${step.color} rounded-lg sm:rounded-xl flex items-center justify-center text-lg sm:text-xl`}>
                                                         {step.icon}
                                                     </div>
-                                                    <div className="text-2xl sm:text-3xl font-bold text-red-600">0{step.step}</div>
+                                                    <div className="text-2xl sm:text-3xl font-bold text-blue-600">0{step.step}</div>
                                                 </div>
                                                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{step.title}</h3>
                                                 <p className="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">{step.description}</p>
@@ -736,13 +728,13 @@ export default function MicrowaveOvenPage() {
                                                     <ul className="space-y-1">
                                                         {step.details.map((detail, i) => (
                                                             <li key={i} className="flex items-center text-gray-600 text-xs sm:text-sm">
-                                                                <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2"></div>
+                                                                <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
                                                                 {detail}
                                                             </li>
                                                         ))}
                                                     </ul>
                                                 </div>
-                                                <div className="flex items-center text-sm text-red-600 font-medium">
+                                                <div className="flex items-center text-sm text-blue-600 font-medium">
                                                     <Clock size={14} className="mr-2" />
                                                     Time: {step.time}
                                                 </div>
@@ -766,13 +758,13 @@ export default function MicrowaveOvenPage() {
                                             title: 'Certified Safety',
                                             desc: 'Technicians certified in microwave safety procedures',
                                             icon: <ShieldCheck size={20} />,
-                                            color: 'from-red-500 to-orange-500'
+                                            color: 'from-blue-500 to-cyan-500'
                                         },
                                         {
                                             title: 'Radiation Testing',
                                             desc: 'Complete radiation leakage test after every repair',
                                             icon: <Zap size={20} />,
-                                            color: 'from-blue-500 to-cyan-500'
+                                            color: 'from-blue-500 to-indigo-500'
                                         },
                                         {
                                             title: 'Same Day Service',
@@ -791,7 +783,7 @@ export default function MicrowaveOvenPage() {
                                             title: '24/7 Emergency',
                                             desc: 'Available for urgent microwave repairs',
                                             icon: <Phone size={20} />,
-                                            color: 'from-indigo-500 to-purple-500'
+                                            color: 'from-purple-500 to-pink-500'
                                         },
                                     ].map((feature, index) => (
                                         <div
@@ -832,7 +824,7 @@ export default function MicrowaveOvenPage() {
                                     {brands.map((brand, index) => (
                                         <div
                                             key={index}
-                                            className="bg-gray-50 hover:bg-red-50 rounded-xl p-3 sm:p-4 text-center transition-colors border border-gray-100 hover:border-red-200 group animate-fade-in"
+                                            className="bg-gray-50 hover:bg-blue-50 rounded-xl p-3 sm:p-4 text-center transition-colors border border-gray-100 hover:border-blue-200 group animate-fade-in"
                                             style={{ animationDelay: `${index * 50}ms` }}
                                         >
                                             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-sm overflow-hidden">
@@ -846,12 +838,12 @@ export default function MicrowaveOvenPage() {
                                                         onError={(e) => {
                                                             const target = e.target as HTMLImageElement;
                                                             target.style.display = 'none';
-                                                            target.parentElement!.innerHTML = '<Wrench size={20} className="text-red-600" />';
+                                                            target.parentElement!.innerHTML = '<Wrench size={20} className="text-blue-600" />';
                                                         }}
                                                     />
                                                 </div>
                                             </div>
-                                            <span className="font-semibold text-gray-900 group-hover:text-red-600 text-sm sm:text-base">{brand.name}</span>
+                                            <span className="font-semibold text-gray-900 group-hover:text-blue-600 text-sm sm:text-base">{brand.name}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -859,8 +851,8 @@ export default function MicrowaveOvenPage() {
                                 <div className="mt-8 text-center">
                                     <p className="text-gray-600 mb-4 text-sm sm:text-base">Don't see your brand? Contact us anyway!</p>
                                     <a
-                                        href="tel:+919810878908"
-                                        className="inline-flex items-center bg-red-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-red-700 transition-colors"
+                                        href="tel:+9107206904101"
+                                        className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors"
                                     >
                                         <Phone size={20} className="mr-2" />
                                         Call to check service for your brand
@@ -869,7 +861,7 @@ export default function MicrowaveOvenPage() {
                             </div>
 
                             {/* Service Areas */}
-                            <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8">
+                            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8">
                                 <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
                                     <div>
                                         <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">📍 Service Areas</h3>
@@ -879,7 +871,7 @@ export default function MicrowaveOvenPage() {
                                                     key={index}
                                                     className="flex items-center bg-white rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-shadow"
                                                 >
-                                                    <MapPin size={18} className="text-red-600 mr-2 sm:mr-3" />
+                                                    <MapPin size={18} className="text-blue-600 mr-2 sm:mr-3" />
                                                     <span className="font-medium text-gray-900 text-sm sm:text-base">{city}</span>
                                                 </div>
                                             ))}
@@ -889,7 +881,7 @@ export default function MicrowaveOvenPage() {
                                     <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg">
                                         <div className="flex items-center justify-between mb-4">
                                             <h3 className="text-lg sm:text-xl font-bold text-gray-900">Service Charges</h3>
-                                            <div className="text-2xl font-bold text-red-600">₹299</div>
+                                            <div className="text-2xl font-bold text-blue-600">₹299</div>
                                         </div>
                                         <div className="space-y-3 text-sm text-gray-600 mb-4">
                                             <div className="flex justify-between">
@@ -900,8 +892,8 @@ export default function MicrowaveOvenPage() {
 
                                         </div>
                                         <a
-                                            href="tel:+919810878908"
-                                            className="block bg-gradient-to-r from-red-600 to-orange-600 text-white py-3 sm:py-4 rounded-xl text-center font-bold text-sm sm:text-base hover:from-red-700 hover:to-orange-700 transition-all transform hover:scale-[1.02] shadow-lg"
+                                            href="tel:+9107206904101"
+                                            className="block bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 sm:py-4 rounded-xl text-center font-bold text-sm sm:text-base hover:from-blue-700 hover:to-cyan-700 transition-all transform hover:scale-[1.02] shadow-lg"
                                         >
                                             Book Service Now
                                         </a>
@@ -952,7 +944,7 @@ export default function MicrowaveOvenPage() {
                                         </blockquote>
 
                                         <div className="flex items-center pt-4 border-t border-gray-100">
-                                            <Microwave size={16} className="text-red-600 mr-2" />
+                                            <Microwave size={16} className="text-blue-600 mr-2" />
                                             <span className="text-sm text-gray-600">{testimonial.microwave}</span>
                                         </div>
                                     </div>
@@ -960,7 +952,7 @@ export default function MicrowaveOvenPage() {
                             </div>
 
                             {/* Overall Rating */}
-                            <div className="mt-8 bg-gradient-to-r from-red-500 to-orange-600 text-white rounded-3xl p-8">
+                            <div className="mt-8 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-3xl p-8">
                                 <div className="text-center">
                                     <div className="text-5xl font-bold mb-2">4.9/5</div>
                                     <div className="flex justify-center mb-4">
@@ -972,15 +964,15 @@ export default function MicrowaveOvenPage() {
                                     <div className="flex justify-center space-x-4">
                                         <div className="text-center">
                                             <div className="text-2xl font-bold">99%</div>
-                                            <div className="text-red-200">Safety Record</div>
+                                            <div className="text-blue-200">Safety Record</div>
                                         </div>
                                         <div className="text-center">
                                             <div className="text-2xl font-bold">98%</div>
-                                            <div className="text-red-200">Satisfaction Rate</div>
+                                            <div className="text-blue-200">Satisfaction Rate</div>
                                         </div>
                                         <div className="text-center">
                                             <div className="text-2xl font-bold">95%</div>
-                                            <div className="text-red-200">Same Day Service</div>
+                                            <div className="text-blue-200">Same Day Service</div>
                                         </div>
                                     </div>
                                 </div>
@@ -990,24 +982,24 @@ export default function MicrowaveOvenPage() {
                 </div>
 
                 {/* Booking Section */}
-                <div id="booking" className="mt-12 sm:mt-16 md:mt-20 bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8">
+                <div id="booking" className="mt-12 sm:mt-16 md:mt-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8">
                     <div className="text-center mb-6 sm:mb-8">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">Ready to Fix Your Microwave?</h2>
-                        <p className="text-red-100 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+                        <p className="text-blue-100 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
                             Get safe, certified microwave repair with radiation testing included. Emergency service available.
                         </p>
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
-                            href="tel:+919810878908"
-                            className="bg-white text-red-700 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-red-50 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl flex items-center justify-center gap-3"
+                            href="tel:+9107206904101"
+                            className="bg-white text-blue-700 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl flex items-center justify-center gap-3"
                         >
                             <Phone size={20} />
-                            Call Now: +91 98108 78908
+                            Call Now: +91 07206904101
                         </a>
                         <a
-                            href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
+                            href="https://wa.me/9107206904101?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl flex items-center justify-center gap-3"
@@ -1021,12 +1013,9 @@ export default function MicrowaveOvenPage() {
 
                         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
                             <div className="text-xl sm:text-2xl font-bold mb-2 text-yellow-300">₹299</div>
-                            <div className="text-red-100 text-sm">Visit Charge*</div>
+                            <div className="text-blue-100 text-sm">Visit Charge*</div>
                         </div>
-                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div className="text-xl sm:text-2xl font-bold mb-2 text-yellow-300">Radiation</div>
-                            <div className="text-red-100 text-sm">Testing</div>
-                        </div>
+
                     </div>
 
                 </div>
