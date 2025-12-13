@@ -1,11 +1,6 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-// import SchemaMarkup from "./components/SchemaMarkup";
-import SchemaMarkup from "./components/ServiceSchema";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,48 +12,70 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const baseUrl = "https://home-appliances-repair-service.vercel.app";
+// Dynamic base URL
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 
+  (process.env.NODE_ENV === 'production' 
+    ? 'https://yourappliancerepair.com' 
+    : 'http://localhost:3000');
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Home Appliances Clinic Service |  Fridge, Washing Machine Repair",
+    default: "Home Appliances Repair Service |  Fridge, Washing Machine Repair",
     template: "%s | Appliance Repair Service"
   },
-  description: "Professional home appliances clinic service. AC repair, fridge repair, washing machine repair, microwave repair. Fast, affordable & reliable technicians.",
+  description: "Professional home appliances repair service.  fridge repair, washing machine repair, microwave repair, and more. Fast, affordable & reliable technicians.",
   keywords: [
-    "home appliances repair",  "fridge repair", "washing machine repair", 
-    "microwave repair", "technician near me",  "refrigerator service",
+    "home appliances repair",
+    "fridge repair",
+    "washing machine repair",
+    "microwave repair",
+    "technician near me",
+    "refrigerator service",
   ],
   authors: [{ name: "Home Appliances Repair Experts" }],
+  creator: "Home Appliances Repair Service",
+  publisher: "Home Appliances Repair Service",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: "Home Appliances Clinic Service – Fast & Trusted Technicians",
-    description: "Get expert  fridge, and washing machine repair service at your doorstep.",
+    type: "website",
+    locale: "en_US",
     url: baseUrl,
-    siteName: "Home Appliances Clinic Service",
+    title: "Home Appliances Repair Service – Fast & Trusted Technicians",
+    description: "Get expert , fridge, and washing machine repair service at your doorstep. Quick, reliable, and affordable service.",
+    siteName: "Home Appliances Repair Service",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg", // Resolved to full URL
         width: 1200,
         height: 630,
-        alt: "Appliance Repair Technician",
+        alt: "Appliance Repair Technician fixing washing machine",
       },
     ],
-    locale: "en_US",
-    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Home Appliances Repair Service",
-    description: "Top-rated home appliance repair service",
-    images: ["/og-image.png"],
+    title: "Home Appliances Repair Service |  Fridge, Washing Machine",
+    description: "Top-rated home appliance repair — fridge, washing machine & more.",
+    creator: "@appliancerepair",
+    images: ["/og-image.jpg"], // Resolved to full URL
   },
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.svg", type: "image/svg+xml" }
-    ],
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        url: "/favicon-32x32.png",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -68,14 +85,13 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
+  alternates: {
+    canonical: baseUrl,
+  },
 };
-
-// ✅ Add caching headers middleware
-export function generateStaticParams() {
-  return [];
-}
 
 export default function RootLayout({
   children,
@@ -84,21 +100,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <SchemaMarkup />
-        {/* Preconnect to external domains */}
-        <link rel="preconnect" href="https://images.unsplash.com" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        {/* Preload critical CSS */}
-        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
-      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-          <Navbar />
-          <main className="min-h-[calc(100vh-140px)]">
-            {children}
-          </main>
-          <Footer />
+          {children}
         </div>
       </body>
     </html>
