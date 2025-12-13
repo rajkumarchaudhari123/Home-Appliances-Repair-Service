@@ -392,10 +392,7 @@ export default function HomePage() {
                     {service.desc}
                   </p>
 
-                  <div className="flex items-center text-blue-600 font-medium text-sm sm:text-base">
-                    <span>Learn More</span>
-                    <ChevronRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                  </div>
+                
                 </div>
               </div>
             ))}
