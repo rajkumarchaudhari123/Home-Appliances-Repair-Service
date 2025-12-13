@@ -21,21 +21,21 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ||
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Home Appliances Repair Service |  Fridge, Washing Machine Repair",
-    template: "%s | Appliance Repair Service"
+    default: "Home Appliances Repair - |  Fridge, Washing Machine Repair",
+    template: "%s | Appliance Repair -"
   },
-  description: "Professional home appliances repair service.  fridge repair, washing machine repair, microwave repair, and more. Fast, affordable & reliable technicians.",
+  description: "Professional home appliances repair -.  fridge repair, washing machine repair, microwave repair, and more. Fast, affordable & reliable technicians.",
   keywords: [
     "home appliances repair",
     "fridge repair",
     "washing machine repair",
     "microwave repair",
     "technician near me",
-    "refrigerator service",
+    "refrigerator -",
   ],
   authors: [{ name: "Home Appliances Repair Experts" }],
-  creator: "Home Appliances Repair Service",
-  publisher: "Home Appliances Repair Service",
+  creator: "Home Appliances Repair -",
+  publisher: "Home Appliances Repair -",
   formatDetection: {
     email: false,
     address: false,
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: baseUrl,
-    title: "Home Appliances Repair Service – Fast & Trusted Technicians",
-    description: "Get expert , fridge, and washing machine repair service at your doorstep. Quick, reliable, and affordable service.",
-    siteName: "Home Appliances Repair Service",
+    title: "Home Appliances Repair - – Fast & Trusted Technicians",
+    description: "Get expert , fridge, and washing machine repair - at your doorstep. Quick, reliable, and affordable -.",
+    siteName: "Home Appliances Repair -",
     images: [
       {
         url: "/og-image.jpg", // Resolved to full URL
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Home Appliances Repair Service |  Fridge, Washing Machine",
+    title: "Home Appliances Repair - |  Fridge, Washing Machine",
     description: "Top-rated home appliance repair — fridge, washing machine & more.",
     creator: "@appliancerepair",
     images: ["/og-image.jpg"], // Resolved to full URL
