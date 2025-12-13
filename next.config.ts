@@ -1,6 +1,4 @@
 // next.config.js
-const baseUrl = 'https://yourappliancerepair.com';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -94,16 +92,17 @@ const nextConfig = {
       },
     ],
     
-    // Add caching for Next.js Image Optimization
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days for optimized images
-    formats: ['image/webp'],
+    // Cache optimization for Next.js Image component
+    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
+    formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
-  // Cache-Control for static assets (your own images in /public folder)
+  // Cache-Control headers for ALL static assets
   async headers() {
     return [
+      // Cache Next.js optimized images
       {
         source: '/_next/image',
         headers: [
@@ -113,15 +112,39 @@ const nextConfig = {
           },
         ],
       },
+      // Cache Next.js static files
       {
-        source: '/:path*\\.(jpg|jpeg|png|gif|webp|svg|ico|avif)',
-        has: [
+        source: '/_next/static/:path*',
+        headers: [
           {
-            type: 'header',
-            key: 'referer',
-            value: `^${baseUrl}`, // Only cache when referred from your domain
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
+      },
+      // Cache your own images in public folder
+      {
+        source: '/:path*\\.(jpg|jpeg|png|gif|webp|svg|ico|avif)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // Cache CSS, JS files
+      {
+        source: '/:path*\\.(css|js)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // Cache fonts
+      {
+        source: '/:path*\\.(woff|woff2|ttf|eot)',
         headers: [
           {
             key: 'Cache-Control',
