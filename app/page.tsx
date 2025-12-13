@@ -1,35 +1,28 @@
-// app/page.tsx - Fixed Version with Marquee and Animated Counters
+// app/page.tsx - Fixed with visible navbar
 'use client';
 
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Phone,
   Wrench,
-  Shield,
   Clock,
   Star,
   CheckCircle,
   ArrowRight,
-  Home,
-  Tv,
-  Wind,
   Droplets,
   Microwave,
   RefreshCw,
-  Sparkles,
   Zap,
   Award,
   Users,
-  AlertCircle,
   ShieldCheck,
-  Truck,
-  HeadphonesIcon,
-  BatteryCharging,
   ThumbsUp,
   MapPin,
-  ChevronRight
+  ChevronRight,
+  Home
 } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Fixed CountUp component with start parameter
 const CountUp = ({ start = 0, end, duration = 2000 }: { start?: number; end: number; duration?: number }) => {
@@ -55,99 +48,52 @@ const CountUp = ({ start = 0, end, duration = 2000 }: { start?: number; end: num
 };
 
 export default function HomePage() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const [particles, setParticles] = useState<Array<{
-    left: number;
-    top: number;
-    delay: number;
-    duration: number;
-  }>>([]);
-
-  // Initialize particles only on client side - FIXED useEffect
-  useEffect(() => {
-    setIsVisible(true);
-
-    const checkMobile = () => {
-      const mobile = window.innerWidth < 768;
-      setIsMobile(mobile);
-
-      // Generate particles based on screen size
-      const particleCount = mobile ? 12 : 25;
-      const newParticles = Array.from({ length: particleCount }, () => ({
-        left: Math.random() * 100,
-        top: Math.random() * 100,
-        delay: Math.random() * 5,
-        duration: 2 + Math.random() * 3
-      }));
-      setParticles(newParticles);
-    };
-
-    // Initial check
-    checkMobile();
-
-    // Add resize listener
-    const handleResize = () => {
-      checkMobile();
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []); // Empty dependency array - runs only once on mount
-
-  // Separate effect for handling window resize
-  useEffect(() => {
-    const handleResize = () => {
-      const mobile = window.innerWidth < 768;
-      setIsMobile(mobile);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []); // Empty dependency array - runs only once
-
-  // Services data with high-quality attractive images
+  // Services data
   const services = [
     {
+      id: 'refrigerator',
       image: '/refrigeratorrepair.jpg',
       title: 'Refrigerator Repair',
       desc: 'Cooling issues, gas charging, compressor repair',
       icon: <Droplets size={20} className="text-white" />,
-      gradient: 'from-blue-500 to-cyan-500'
+      gradient: 'from-blue-500 to-cyan-500',
+      features: ['Cooling problems', 'Gas leakage', 'Compressor issues', 'Temperature control']
     },
     {
+      id: 'washing-machine',
       image: '/washing-machine1.jpg',
       title: 'Front Load Washing Machine',
       desc: 'Motor repair, leakage, spin problems, PCB issues',
       icon: <RefreshCw size={20} className="text-white" />,
-      gradient: 'from-purple-500 to-pink-500'
+      gradient: 'from-purple-500 to-pink-500',
+      features: ['Motor problems', 'Water leakage', 'Spinning issues', 'PCB faults']
     },
     {
+      id: 'washing-machine',
       image: '/washingmachine2.jpg',
       title: 'Top Load Washing Machine',
       desc: 'Drainage issues, agitator repair, motor problems',
       icon: <RefreshCw size={20} className="text-white" />,
-      gradient: 'from-indigo-500 to-blue-500'
+      gradient: 'from-indigo-500 to-blue-500',
+      features: ['Drainage problems', 'Agitator issues', 'Timer faults', 'Motor repair']
     },
     {
+      id: 'washing-machine',
       image: '/washing-machine3.jpg',
       title: 'Semi-Automatic Washing Machine',
       desc: 'Timer issues, motor repair, water filling problems',
       icon: <RefreshCw size={20} className="text-white" />,
-      gradient: 'from-teal-500 to-green-500'
+      gradient: 'from-teal-500 to-green-500',
+      features: ['Timer problems', 'Motor failure', 'Water filling', 'Pulley issues']
     },
     {
+      id: 'microwave-oven',
       image: '/microwave-oven.jpg',
       title: 'Microwave Oven',
       desc: 'Heating issues, panel repair, magnetron replacement',
       icon: <Microwave size={20} className="text-white" />,
-      gradient: 'from-amber-500 to-orange-500'
+      gradient: 'from-amber-500 to-orange-500',
+      features: ['Not heating', 'Control panel', 'Magnetron issues', 'Turntable problems']
     },
   ];
 
@@ -171,9 +117,10 @@ export default function HomePage() {
       desc: 'Most repairs completed in single visit',
       gradient: 'from-green-500 to-emerald-500'
     },
+
   ];
 
-  // Stats with icons - UPDATED with animated counters
+  // Stats with icons
   const stats = [
     {
       value: <CountUp start={0} end={2000} duration={2500} />,
@@ -201,14 +148,11 @@ export default function HomePage() {
     },
   ];
 
-  // Service areas - UPDATED with duplicate for seamless marquee
+  // Service areas
   const serviceAreas = [
     'Chandigarh', 'Panchkula', 'Mohali', 'Zirakpur', 'Kharar',
     'Derabassi', 'New Chandigarh'
   ];
-
-  // Duplicate array for seamless marquee effect
-  const marqueeAreas = [...serviceAreas, ...serviceAreas];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-blue-50">
@@ -221,25 +165,9 @@ export default function HomePage() {
           <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse-slow delay-500"></div>
         </div>
 
-        {/* Floating Particles */}
-        <div className="absolute inset-0 overflow-hidden">
-          {particles.map((particle, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-white/30 rounded-full animate-float-particle"
-              style={{
-                left: `${particle.left}%`,
-                top: `${particle.top}%`,
-                animationDelay: `${particle.delay}s`,
-                animationDuration: `${particle.duration}s`
-              }}
-            />
-          ))}
-        </div>
-
-        <div className="relative container mx-auto px-4 sm:px-6 py-8 md:py-16 lg:py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            {/* Left Content - Optimized for Mobile */}
+            {/* Left Content */}
             <div className="space-y-4 sm:space-y-6 md:space-y-8 text-center lg:text-left">
               {/* Main Heading */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
@@ -251,6 +179,31 @@ export default function HomePage() {
                 Fast, reliable, and affordable repair services for all your home appliances.
                 Serving 2000+ happy customers with 99% satisfaction rate.
               </p>
+
+              {/* Internal Navigation Links */}
+              <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                <Link
+                  href="#services"
+                  className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-lg text-white hover:bg-white/30 transition-colors text-sm"
+                >
+                  <Wrench size={16} className="mr-2" />
+                  Our Services
+                </Link>
+                <Link
+                  href="#why-choose-us"
+                  className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-lg text-white hover:bg-white/30 transition-colors text-sm"
+                >
+                  <Star size={16} className="mr-2" />
+                  Why Choose Us
+                </Link>
+                <Link
+                  href="#service-areas"
+                  className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-lg text-white hover:bg-white/30 transition-colors text-sm"
+                >
+                  <MapPin size={16} className="mr-2" />
+                  Service Areas
+                </Link>
+              </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
@@ -272,13 +225,12 @@ export default function HomePage() {
                 </a>
               </div>
 
-              {/* Stats Grid - Mobile Optimized */}
+              {/* Stats Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4">
                 {stats.map((stat, index) => (
                   <div
                     key={index}
-                    className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 text-center hover:bg-white/20 transition-colors animate-fade-in"
-                    style={{ animationDelay: `${300 + index * 100}ms` }}
+                    className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 text-center hover:bg-white/20 transition-colors"
                   >
                     <div className="flex items-center justify-center gap-2 mb-1">
                       <div className={stat.color}>
@@ -301,7 +253,7 @@ export default function HomePage() {
                 <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.01] transition-transform duration-700">
                   <Image
                     src="/appliance.jpg"
-                    alt="Appliance Repair Technician"
+                    alt="Appliance Repair Technician fixing washing machine in Chandigarh"
                     width={800}
                     height={600}
                     className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
@@ -311,19 +263,25 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent"></div>
 
                   {/* Floating Badge */}
-                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white text-blue-600 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-bold shadow-lg animate-bounce-slow text-xs sm:text-sm">
+                  <div
+                    className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white text-blue-600 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-bold shadow-lg animate-bounce-slow text-xs sm:text-sm"
+                  >
                     <Zap className="inline mr-1 sm:mr-2" size={14} />
                     Expert Technician
                   </div>
                 </div>
 
                 {/* Floating Cards */}
-                <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 bg-white text-blue-700 p-3 sm:p-4 rounded-xl shadow-lg animate-float-left hidden sm:block">
+                <div
+                  className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 bg-white text-blue-700 p-3 sm:p-4 rounded-xl shadow-lg animate-float-left hidden sm:block"
+                >
                   <Award size={20} className="text-yellow-500 mb-1" />
                   <div className="text-xs sm:text-sm font-bold">Best Service<br />Award 2024</div>
                 </div>
 
-                <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-white text-blue-700 p-3 sm:p-4 rounded-xl shadow-lg animate-float-right hidden sm:block">
+                <div
+                  className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-white text-blue-700 p-3 sm:p-4 rounded-xl shadow-lg animate-float-right hidden sm:block"
+                >
                   <Users size={20} className="text-green-500 mb-1" />
                   <div className="text-xs sm:text-sm font-bold">5000+<br />Happy Customers</div>
                 </div>
@@ -341,8 +299,8 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6">
+      <section id="services" className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white text-xs sm:text-sm font-medium mb-3">
               <Wrench size={14} className="mr-2" />
@@ -360,18 +318,16 @@ export default function HomePage() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200 cursor-pointer animate-service-card"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="group bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200 cursor-pointer"
               >
                 {/* Image Container */}
                 <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={`${service.title} repair service in Chandigarh`}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    priority={index < 3}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
 
@@ -392,17 +348,36 @@ export default function HomePage() {
                     {service.desc}
                   </p>
 
-                
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {service.features.map((feature, idx) => (
+                      <span key={idx} className="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+
+               
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* View All Services Link */}
+          <div className="text-center mt-10">
+            <Link
+              href="/services"
+              className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-lg"
+            >
+              <span>View All Services</span>
+              <ArrowRight size={20} className="ml-2" />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto px-4 sm:px-6">
+      <section id="why-choose-us" className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-gray-50 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content */}
             <div className="text-center lg:text-left">
@@ -423,8 +398,7 @@ export default function HomePage() {
                 {features.map((feature, index) => (
                   <div
                     key={index}
-                    className={`bg-gradient-to-br ${feature.gradient} text-white rounded-xl p-4 md:p-5 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] animate-feature-item`}
-                    style={{ animationDelay: `${index * 150}ms` }}
+                    className={`bg-gradient-to-br ${feature.gradient} text-white rounded-xl p-4 md:p-5 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]`}
                   >
                     <div className="flex items-start gap-3 md:gap-4">
                       <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -442,11 +416,29 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
+
+              {/* Internal Links to Service Pages */}
+              <div className="mt-8 grid grid-cols-2 gap-4">
+                <Link
+                  href="/refrigerator"
+                  className="bg-blue-50 hover:bg-blue-100 rounded-lg p-3 text-center transition-colors"
+                >
+                  <div className="font-medium text-blue-700">Refrigerator Repair</div>
+                  <div className="text-xs text-gray-600">Cooling issues, gas leakage</div>
+                </Link>
+                <Link
+                  href="/washing-machine"
+                  className="bg-purple-50 hover:bg-purple-100 rounded-lg p-3 text-center transition-colors"
+                >
+                  <div className="font-medium text-purple-700">Washing Machine Repair</div>
+                  <div className="text-xs text-gray-600">Drainage, spinning problems</div>
+                </Link>
+              </div>
             </div>
 
             {/* Right Content - Testimonials */}
             <div className="mt-12 lg:mt-0">
-              <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-2xl border border-gray-200 animate-scale-in">
+              <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-2xl border border-gray-200">
                 <div className="text-center mb-6 md:mb-8">
                   <div className="w-16 h-16 md:w-20 md:h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Star size={28} className="text-yellow-500" />
@@ -467,7 +459,7 @@ export default function HomePage() {
                       <div className="relative w-10 h-10 rounded-full overflow-hidden mr-3 flex-shrink-0">
                         <Image
                           src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
-                          alt="Customer"
+                          alt="Manpreet Singh - Satisfied customer from Chandigarh"
                           width={40}
                           height={40}
                           className="object-cover"
@@ -490,7 +482,7 @@ export default function HomePage() {
                       <div className="relative w-10 h-10 rounded-full overflow-hidden mr-3 flex-shrink-0">
                         <Image
                           src="https://tse2.mm.bing.net/th/id/OIP.MnDi3z9FWDHQXnBO-stHcAHaE8?pid=Api&P=0&h=180"
-                          alt="Customer"
+                          alt="Gurvinder Kaur - Happy washing machine repair customer"
                           width={40}
                           height={40}
                           className="object-cover"
@@ -514,9 +506,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Service Areas Section - UPDATED with Marquee */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6">
+      {/* Service Areas Section */}
+      <section id="service-areas" className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white text-xs sm:text-sm font-medium mb-3">
               <MapPin size={14} className="mr-2" />
@@ -530,39 +522,73 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Marquee Container */}
-          <div className="relative overflow-hidden bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl md:rounded-3xl p-4 shadow-lg border border-purple-100">
-            {/* Marquee for Mobile */}
-            <div className="md:hidden">
-              <div className="flex animate-marquee-mobile whitespace-nowrap">
-                {marqueeAreas.map((city, index) => (
-                  <div
-                    key={`mobile-${index}`}
-                    className="mx-2 flex-shrink-0 bg-white rounded-xl p-3 text-center shadow hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-purple-300 min-w-[120px]"
-                  >
-                    <div className="w-8 h-8 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <Home size={16} className="text-purple-600" />
-                    </div>
-                    <span className="font-medium text-gray-900 text-sm">{city}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Grid for Desktop */}
-            <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {/* Service Areas Grid */}
+          <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl md:rounded-3xl p-6 shadow-lg border border-purple-100">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {serviceAreas.map((city, index) => (
                 <div
-                  key={`desktop-${index}`}
-                  className="bg-white rounded-xl p-4 text-center shadow hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-purple-300 hover:scale-[1.02] animate-service-area"
-                  style={{ animationDelay: `${index * 50}ms` }}
+                  key={index}
+                  className="bg-white rounded-xl p-4 text-center shadow hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-purple-300 hover:scale-[1.02]"
                 >
                   <div className="w-10 h-10 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Home size={18} className="text-purple-600" />
                   </div>
                   <span className="font-medium text-gray-900 text-base">{city}</span>
+                  <div className="mt-2">
+                    <Link
+                      href={`/services?area=${city.toLowerCase()}`}
+                      className="text-sm text-blue-600 hover:text-blue-700"
+                    >
+                      Services in {city}
+                    </Link>
+                  </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Additional Information */}
+          <div className="mt-12 grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-xl p-6 shadow border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Common Appliance Problems</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center text-gray-700">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                  Refrigerator not cooling properly
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                  Washing machine not spinning
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                  Microwave not heating food
+                </li>
+                <li>
+                  <Link href="/services" className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium mt-4">
+                    View all common problems
+                    <ArrowRight size={16} className="ml-2" />
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Quick Contact</h3>
+              <div className="space-y-4">
+                <a href="tel:+9107206904101" className="flex items-center text-gray-700 hover:text-blue-600">
+                  <Phone size={20} className="mr-3 text-blue-500" />
+                  <div>
+                    <div className="font-semibold">+91 07206904101</div>
+                    <div className="text-sm text-gray-500">24/7 Emergency Service</div>
+                  </div>
+                </a>
+                <div className="pt-4 border-t border-gray-200">
+                  <p className="text-sm text-gray-600">
+                    Serving Chandigarh, Panchkula, Mohali, Zirakpur and surrounding areas.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -576,7 +602,7 @@ export default function HomePage() {
           <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative container mx-auto px-4 sm:px-6 text-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Need Appliance Repair? <span className="text-yellow-300">We're Here to Help!</span>
           </h2>
@@ -596,6 +622,8 @@ export default function HomePage() {
             <a
               href="https://wa.me/917206904101?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
               className="group bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl active:scale-95 flex items-center justify-center gap-3"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <span>WhatsApp Now</span>
               <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
@@ -612,212 +640,26 @@ export default function HomePage() {
               <div className="text-2xl sm:text-3xl font-bold mb-2 text-yellow-300">₹299</div>
               <div className="text-white/90 text-sm sm:text-base">Visit Charge</div>
             </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 hover:bg-white/20 transition-colors">
+              <div className="text-2xl sm:text-3xl font-bold mb-2 text-yellow-300">90 Days</div>
+              <div className="text-white/90 text-sm sm:text-base">Service Warranty</div>
+            </div>
+          </div>
 
+          {/* Quick Navigation Links */}
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
+            <Link href="/services/refrigerator" className="px-4 py-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors">
+              Refrigerator Repair
+            </Link>
+            <Link href="/services/washing-machine" className="px-4 py-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors">
+              Washing Machine Repair
+            </Link>
+            <Link href="/services/microwave-oven" className="px-4 py-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors">
+              Microwave Repair
+            </Link>
           </div>
         </div>
       </section>
-
-      {/* CSS Animations */}
-      <style jsx global>{`
-        @keyframes slide-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        @keyframes scale-in {
-          from {
-            opacity: 0;
-            transform: scale(0.95);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
-        @keyframes float-particle {
-          0%, 100% {
-            transform: translateY(0) translateX(0);
-            opacity: 0;
-          }
-          10%, 90% {
-            opacity: 1;
-          }
-          50% {
-            transform: translateY(-80px) translateX(15px);
-          }
-        }
-
-        @keyframes float-left {
-          0%, 100% {
-            transform: translateY(0) translateX(0);
-          }
-          50% {
-            transform: translateY(-8px) translateX(-4px);
-          }
-        }
-
-        @keyframes float-right {
-          0%, 100% {
-            transform: translateY(0) translateX(0);
-          }
-          50% {
-            transform: translateY(-8px) translateX(4px);
-          }
-        }
-
-        @keyframes bounce-slow {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-8px);
-          }
-        }
-
-        @keyframes pulse-once {
-          0%, 100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.05);
-          }
-        }
-
-        @keyframes pulse-slow {
-          0%, 100% {
-            opacity: 0.15;
-          }
-          50% {
-            opacity: 0.3;
-          }
-        }
-
-        /* NEW: Marquee animation for mobile */
-        @keyframes marquee-mobile {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .animate-slide-up {
-          animation: slide-up 0.6s ease-out forwards;
-        }
-
-        .animate-fade-in {
-          opacity: 0;
-          animation: fade-in 0.8s ease-out forwards;
-        }
-
-        .animate-scale-in {
-          opacity: 0;
-          animation: scale-in 0.6s ease-out forwards;
-        }
-
-        .animate-float-particle {
-          animation: float-particle linear infinite;
-        }
-
-        .animate-float-left {
-          animation: float-left 3s ease-in-out infinite;
-        }
-
-        .animate-float-right {
-          animation: float-right 3s ease-in-out infinite;
-          animation-delay: 1s;
-        }
-
-        .animate-bounce-slow {
-          animation: bounce-slow 2s ease-in-out infinite;
-        }
-
-        .animate-pulse-once {
-          animation: pulse-once 2s ease-in-out;
-        }
-
-        .animate-pulse-slow {
-          animation: pulse-slow 4s ease-in-out infinite;
-        }
-
-        .animate-service-card {
-          opacity: 0;
-          animation: slide-up 0.5s ease-out forwards;
-        }
-
-        .animate-feature-item {
-          opacity: 0;
-          animation: fade-in 0.5s ease-out forwards;
-        }
-
-        .animate-service-area {
-          opacity: 0;
-          animation: fade-in 0.4s ease-out forwards;
-        }
-
-        /* NEW: Marquee animation class */
-        .animate-marquee-mobile {
-          animation: marquee-mobile 20s linear infinite;
-          display: flex;
-          width: max-content;
-        }
-
-        /* Pause animation on hover */
-        .animate-marquee-mobile:hover {
-          animation-play-state: paused;
-        }
-
-        /* Mobile touch optimization */
-        @media (max-width: 640px) {
-          .container {
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-          
-          button, a {
-            min-height: 48px;
-            min-width: 48px;
-          }
-        }
-
-        /* Improve text readability on mobile */
-        @media (max-width: 768px) {
-          h1, h2, h3 {
-            line-height: 1.2;
-          }
-          
-          p {
-            line-height: 1.6;
-          }
-        }
-
-        /* Smooth scrolling */
-        html {
-          scroll-behavior: smooth;
-        }
-
-        /* Remove blue highlight on mobile tap */
-        * {
-          -webkit-tap-highlight-color: transparent;
-        }
-      `}</style>
     </div>
   );
 }

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import SchemaMarkup from "./components/ServiceSchema";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 // Dynamic base URL
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 
-  (process.env.NODE_ENV === 'production' 
-    ? 'https://yourappliancerepair.com' 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.NODE_ENV === 'production'
+    ? 'https://yourappliancerepair.com'
     : 'http://localhost:3000');
 
 export const metadata: Metadata = {
@@ -102,7 +105,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-          {children}
+          <Navbar />
+          <div
+            className="min-h-screen w-full 
+"
+          >
+            {children}
+          </div>
+          <Footer />
+
         </div>
       </body>
     </html>
