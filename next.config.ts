@@ -93,13 +93,35 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    
+    // Add caching for Next.js Image Optimization
+    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days for optimized images
+    formats: ['image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
-  // Cache-Control for all static images
+  // Cache-Control for static assets (your own images in /public folder)
   async headers() {
     return [
       {
+        source: '/_next/image',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
         source: '/:path*\\.(jpg|jpeg|png|gif|webp|svg|ico|avif)',
+        has: [
+          {
+            type: 'header',
+            key: 'referer',
+            value: `^${baseUrl}`, // Only cache when referred from your domain
+          },
+        ],
         headers: [
           {
             key: 'Cache-Control',
