@@ -68,76 +68,76 @@ export default function WashingMachinePage() {
     // Common Problems
     const problems = [
         {
-            icon: <RotateCw size={20} />,
+            icon: <RotateCw size={20} className="text-blue-500" />,
             title: 'Not Spinning',
             description: 'Drum not rotating, clothes remain wet after cycle',
             symptoms: ['No spinning action', 'Clothes soaking wet', 'Motor humming', 'Error codes E4/E5'],
             severity: 'High',
             commonCause: 'Motor issues, broken belt, faulty lid switch',
-            gradient: 'from-orange-500 to-red-500'
+            severityColor: 'bg-red-100 text-red-700'
         },
         {
-            icon: <Droplets size={20} />,
+            icon: <Droplets size={20} className="text-blue-500" />,
             title: 'Water Leakage',
             description: 'Water leaking from machine during wash',
             symptoms: ['Puddles under machine', 'Water dripping from sides', 'Floor damage', 'Mold smell'],
             severity: 'High',
             commonCause: 'Damaged hoses, pump seal, door gasket',
-            gradient: 'from-blue-500 to-cyan-500'
+            severityColor: 'bg-red-100 text-red-700'
         },
         {
-            icon: <Zap size={20} />,
+            icon: <Zap size={20} className="text-blue-500" />,
             title: 'Not Draining',
             description: 'Water stays in drum after wash cycle',
             symptoms: ['Water in drum', 'Drainage error', 'Musty smell', 'Water overflow'],
             severity: 'Medium',
             commonCause: 'Clogged drain pump, blocked filter, hose issues',
-            gradient: 'from-purple-500 to-pink-500'
+            severityColor: 'bg-amber-100 text-amber-700'
         },
         {
-            icon: <Power size={20} />,
+            icon: <Power size={20} className="text-blue-500" />,
             title: 'Not Starting',
             description: 'Machine won\'t power on or start cycle',
             symptoms: ['No power', 'No response to buttons', 'Error lights blinking', 'Dead display'],
             severity: 'High',
             commonCause: 'Power supply issues, faulty PCB, door lock failure',
-            gradient: 'from-red-500 to-rose-500'
+            severityColor: 'bg-red-100 text-red-700'
         },
         {
-            icon: <Volume2 size={20} />,
+            icon: <Volume2 size={20} className="text-blue-500" />,
             title: 'Loud Noises',
             description: 'Unusual sounds during wash/spin cycle',
             symptoms: ['Grinding noise', 'Banging sounds', 'Squeaking/screeching', 'Vibration'],
             severity: 'Medium',
             commonCause: 'Worn bearings, foreign objects, unbalanced drum',
-            gradient: 'from-yellow-500 to-amber-500'
+            severityColor: 'bg-amber-100 text-amber-700'
         },
         {
-            icon: <Vibrate size={20} />,
+            icon: <Vibrate size={20} className="text-blue-500" />,
             title: 'Excessive Vibration',
             description: 'Machine shakes violently during spin',
             symptoms: ['Machine "walking"', 'Loud vibrations', 'Floor damage', 'Unbalanced loads'],
             severity: 'Low',
             commonCause: 'Unlevel machine, suspension springs, worn dampers',
-            gradient: 'from-green-500 to-emerald-500'
+            severityColor: 'bg-green-100 text-green-700'
         },
         {
-            icon: <Thermometer size={20} />,
+            icon: <Thermometer size={20} className="text-blue-500" />,
             title: 'Not Heating Water',
             description: 'Water remains cold in hot wash cycles',
             symptoms: ['Cold washes', 'Heater error codes', 'Long cycle times', 'Poor cleaning'],
             severity: 'Medium',
             commonCause: 'Faulty heater element, thermostat, wiring issues',
-            gradient: 'from-orange-500 to-red-500'
+            severityColor: 'bg-amber-100 text-amber-700'
         },
         {
-            icon: <Loader size={20} />,
+            icon: <Loader size={20} className="text-blue-500" />,
             title: 'Stuck on Cycle',
             description: 'Machine stops mid-cycle or won\'t progress',
             symptoms: ['Cycle doesn\'t advance', 'Stuck timer', 'Error codes', 'Infinite loop'],
             severity: 'Medium',
             commonCause: 'Faulty timer, control board, sensor issues',
-            gradient: 'from-indigo-500 to-purple-500'
+            severityColor: 'bg-amber-100 text-amber-700'
         },
     ];
 
@@ -155,8 +155,7 @@ export default function WashingMachinePage() {
             ],
             commonIssues: ['Door seal leakage', 'Drum bearing failure', 'Heater problems', 'PCB faults'],
             brands: ['LG', 'Samsung', 'Bosch', 'IFB', 'Whirlpool'],
-            gradient: 'from-blue-500 to-indigo-500',
-            icon: <RefreshCw size={20} />
+            icon: <RefreshCw size={20} className="text-blue-500" />
         },
         {
             type: 'Top Load Washing Machine',
@@ -170,8 +169,7 @@ export default function WashingMachinePage() {
             ],
             commonIssues: ['Agitator problems', 'Lid switch failure', 'Timer issues', 'Motor belt wear'],
             brands: ['Whirlpool', 'LG', 'Samsung', 'Haier', 'Onida'],
-            gradient: 'from-green-500 to-emerald-500',
-            icon: <Loader size={20} />
+            icon: <Loader size={20} className="text-blue-500" />
         },
         {
             type: 'Semi-Automatic Washing Machine',
@@ -185,8 +183,7 @@ export default function WashingMachinePage() {
             ],
             commonIssues: ['Timer problems', 'Motor failure', 'Drainage issues', 'Pulley/belt wear'],
             brands: ['Godrej', 'Videocon', 'Lloyd', 'Kenstar', 'Candy'],
-            gradient: 'from-orange-500 to-amber-500',
-            icon: <Settings size={20} />
+            icon: <Settings size={20} className="text-blue-500" />
         },
         {
             type: 'Fully Automatic Washing Machine',
@@ -200,8 +197,7 @@ export default function WashingMachinePage() {
             ],
             commonIssues: ['PCB/sensor faults', 'Display problems', 'Motor control issues', 'Software glitches'],
             brands: ['LG ThinQ', 'Samsung Smart Care', 'Whirlpool 6th Sense', 'IFB Neptune', 'Bosch Home Connect'],
-            gradient: 'from-purple-500 to-pink-500',
-            icon: <Smartphone size={20} />
+            icon: <Smartphone size={20} className="text-blue-500" />
         },
     ];
 
@@ -213,7 +209,8 @@ export default function WashingMachinePage() {
             description: 'Our expert technician performs comprehensive diagnosis using specialized tools to identify the exact issue.',
             time: '20-30 mins',
             icon: '🔍',
-            color: 'bg-gradient-to-r from-blue-500 to-cyan-500',
+            iconColor: 'text-blue-500',
+            borderColor: 'border-blue-200',
             details: ['Visual inspection', 'Error code analysis', 'Electrical testing', 'Performance check']
         },
         {
@@ -222,7 +219,8 @@ export default function WashingMachinePage() {
             description: 'Transparent pricing with visit charges Rs 299. Get detailed quote with part-wise breakdown.',
             time: '10-15 mins',
             icon: '💰',
-            color: 'bg-gradient-to-r from-green-500 to-emerald-500',
+            iconColor: 'text-green-500',
+            borderColor: 'border-green-200',
             details: ['Part cost breakdown', 'Labor charges', 'Warranty details', 'Time estimation']
         },
         {
@@ -231,7 +229,8 @@ export default function WashingMachinePage() {
             description: 'Professional repair using genuine/OEM parts with manufacturer-approved techniques.',
             time: '1-3 hours',
             icon: '🔧',
-            color: 'bg-gradient-to-r from-orange-500 to-red-500',
+            iconColor: 'text-orange-500',
+            borderColor: 'border-orange-200',
             details: ['Genuine spare parts', 'Specialized tools', 'Manufacturer methods', 'Quality workmanship']
         },
         {
@@ -240,7 +239,8 @@ export default function WashingMachinePage() {
             description: 'Complete test run with performance verification. Handover with maintenance tips.',
             time: '20-30 mins',
             icon: '✅',
-            color: 'bg-gradient-to-r from-purple-500 to-pink-500',
+            iconColor: 'text-purple-500',
+            borderColor: 'border-purple-200',
             details: ['Full cycle test', 'Performance verification', 'Customer demo', 'Warranty certificate']
         },
     ];
@@ -299,16 +299,16 @@ export default function WashingMachinePage() {
 
     // Stats
     const stats = [
-        { value: '2000+', label: 'Machines Repaired', icon: <Wrench size={20} />, color: 'text-blue-400' },
-        { value: '4.8/5', label: 'Customer Rating', icon: <Star size={20} />, color: 'text-yellow-400' },
-        { value: '30 Min', label: 'Avg Response Time', icon: <Clock size={20} />, color: 'text-green-400' },
+        { value: '2000+', label: 'Machines Repaired', icon: <Wrench size={20} className="text-blue-500" />, color: 'text-blue-500' },
+        { value: '4.8/5', label: 'Customer Rating', icon: <Star size={20} className="text-yellow-500" />, color: 'text-yellow-500' },
+        { value: '30 Min', label: 'Avg Response Time', icon: <Clock size={20} className="text-green-500" />, color: 'text-green-500' },
     ];
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-blue-50">
             {/* Floating WhatsApp Button - Mobile Only */}
             <a
-                href="https://wa.me/9107206904101"
+                href="https://wa.me/919810878908"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="fixed bottom-6 right-6 z-50 md:hidden bg-gradient-to-r from-green-500 to-emerald-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 animate-bounce-slow"
@@ -347,12 +347,12 @@ export default function WashingMachinePage() {
                             </div>
 
                             {/* Main Heading */}
-                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-left">
                                 Professional <span className="text-yellow-300 drop-shadow-lg">Washing Machine</span> Repair
                             </h1>
 
                             {/* Description */}
-                            <p className="text-base sm:text-lg md:text-xl text-blue-100 leading-relaxed">
+                            <p className="text-base sm:text-lg md:text-xl text-blue-100 leading-relaxed text-center lg:text-left">
                                 Expert repair services for all washing machine types - Front Load, Top Load, Semi-Automatic & Fully Automatic.
                                 Same-day service with 90-day warranty on all repairs.
                             </p>
@@ -360,7 +360,7 @@ export default function WashingMachinePage() {
                             {/* CTA Buttons */}
                             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                                 <a
-                                    href="tel:+9107206904101"
+                                    href="tel:+919810878908"
                                     className="group bg-white text-blue-700 px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg flex items-center justify-center gap-2 hover:bg-blue-50 transition-all duration-300 transform hover:scale-[1.02] shadow-lg active:scale-95"
                                 >
                                     <Phone size={20} />
@@ -437,7 +437,7 @@ export default function WashingMachinePage() {
 
                 {/* Tabs Navigation - Mobile Optimized */}
                 <div className="relative mb-6 sm:mb-8 md:mb-12">
-                    <div className="flex overflow-x-auto pb-4 scrollbar-hide md:justify-center">
+                    <div className="flex overflow-x-auto pb-4 scrollbar-hide justify-center">
                         <div className="flex space-x-1 bg-white/50 backdrop-blur-sm rounded-2xl p-1">
                             {[
                                 { id: 'problems', label: 'Problems', icon: '⚠️', color: 'from-blue-500 to-cyan-500' },
@@ -472,11 +472,11 @@ export default function WashingMachinePage() {
                     {/* Common Problems Tab */}
                     {activeTab === 'problems' && (
                         <div className="animate-fade-in">
-                            <div className="text-center sm:text-left mb-6 sm:mb-8">
+                            <div className="text-center mb-6 sm:mb-8">
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
                                     Common <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">Problems & Solutions</span>
                                 </h2>
-                                <p className="text-gray-600 max-w-3xl text-sm sm:text-base">
+                                <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base">
                                     These are the most frequent washing machine issues we fix daily. Our experts can diagnose and repair any problem quickly and efficiently.
                                 </p>
                             </div>
@@ -485,27 +485,27 @@ export default function WashingMachinePage() {
                                 {problems.map((problem, index) => (
                                     <div
                                         key={index}
-                                        className={`bg-gradient-to-br ${problem.gradient} text-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] group animate-fade-in`}
+                                        className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] group animate-fade-in border border-gray-100"
                                         style={{ animationDelay: `${index * 100}ms` }}
                                     >
                                         <div className="flex items-start gap-3 sm:gap-4">
-                                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+                                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-50 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
                                                 {problem.icon}
                                             </div>
                                             <div className="flex-1">
                                                 <div className="flex justify-between items-start mb-2">
-                                                    <h3 className="text-lg sm:text-xl font-bold">{problem.title}</h3>
-                                                    <span className="px-2 py-1 rounded text-xs font-bold bg-white/20 backdrop-blur-sm">
+                                                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">{problem.title}</h3>
+                                                    <span className={`px-2 py-1 rounded text-xs font-bold ${problem.severityColor}`}>
                                                         {problem.severity}
                                                     </span>
                                                 </div>
-                                                <p className="text-white/90 mb-3 text-sm sm:text-base">{problem.description}</p>
+                                                <p className="text-gray-600 mb-3 text-sm sm:text-base">{problem.description}</p>
 
                                                 <div className="mb-3">
-                                                    <h4 className="font-semibold mb-2 text-sm sm:text-base">Symptoms:</h4>
+                                                    <h4 className="font-semibold mb-2 text-sm sm:text-base text-gray-900">Symptoms:</h4>
                                                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
                                                         {problem.symptoms.map((symptom, i) => (
-                                                            <span key={i} className="px-2 py-1 bg-white/20 rounded-full text-xs">
+                                                            <span key={i} className="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">
                                                                 {symptom}
                                                             </span>
                                                         ))}
@@ -513,21 +513,8 @@ export default function WashingMachinePage() {
                                                 </div>
 
                                                 <div className="mb-4">
-                                                    <h4 className="font-semibold mb-1 text-sm sm:text-base">Common Cause:</h4>
-                                                    <p className="text-white/80 text-sm">{problem.commonCause}</p>
-                                                </div>
-
-                                                <div className="flex items-center justify-between pt-3 border-t border-white/20">
-                                                    <div className="flex items-center text-sm">
-                                                        <Phone size={14} className="mr-2" />
-                                                        Expert Repair Available
-                                                    </div>
-                                                    <a
-                                                        href="tel:+9107206904101"
-                                                        className="text-white/80 font-medium text-sm underline hover:text-white transition-colors"
-                                                    >
-                                                        Call Now
-                                                    </a>
+                                                    <h4 className="font-semibold mb-1 text-sm sm:text-base text-gray-900">Common Cause:</h4>
+                                                    <p className="text-gray-600 text-sm">{problem.commonCause}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -536,47 +523,47 @@ export default function WashingMachinePage() {
                             </div>
 
                             {/* Quick Tips */}
-                            <div className="mt-8 sm:mt-12 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8">
-                                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">⚡ Quick Maintenance Tips</h3>
+                            <div className="mt-8 sm:mt-12 bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-gray-200">
+                                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">⚡ Quick Maintenance Tips</h3>
                                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                                     {[
                                         {
                                             title: 'Clean Filter Monthly',
                                             desc: 'Remove lint and debris from filter to prevent drainage issues',
-                                            icon: <Filter size={20} />,
-                                            color: 'from-blue-500 to-cyan-500'
+                                            icon: <Filter size={20} className="text-blue-500" />,
+                                            bgColor: 'bg-blue-50'
                                         },
                                         {
                                             title: 'Balance Load Properly',
                                             desc: 'Distribute clothes evenly to reduce vibration and noise',
-                                            icon: <Loader size={20} />,
-                                            color: 'from-green-500 to-emerald-500'
+                                            icon: <Loader size={20} className="text-green-500" />,
+                                            bgColor: 'bg-green-50'
                                         },
                                         {
                                             title: 'Use Right Detergent',
                                             desc: 'Use HE detergent for front load machines to prevent suds overflow',
-                                            icon: <Droplet size={20} />,
-                                            color: 'from-purple-500 to-pink-500'
+                                            icon: <Droplet size={20} className="text-purple-500" />,
+                                            bgColor: 'bg-purple-50'
                                         },
                                         {
                                             title: 'Leave Door Open',
                                             desc: 'Prevent mold and mildew by keeping door open between washes',
-                                            icon: <Wind size={20} />,
-                                            color: 'from-orange-500 to-red-500'
+                                            icon: <Wind size={20} className="text-orange-500" />,
+                                            bgColor: 'bg-orange-50'
                                         },
                                     ].map((tip, index) => (
                                         <div
                                             key={index}
-                                            className={`bg-gradient-to-br ${tip.color} text-white rounded-xl p-4 sm:p-5 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] animate-fade-in`}
+                                            className={`rounded-xl p-4 sm:p-5 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] animate-fade-in border border-gray-100 ${tip.bgColor}`}
                                             style={{ animationDelay: `${300 + index * 100}ms` }}
                                         >
                                             <div className="flex items-center gap-3 mb-3">
-                                                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                                                <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm">
                                                     {tip.icon}
                                                 </div>
-                                                <h4 className="font-bold text-lg">{tip.title}</h4>
+                                                <h4 className="font-bold text-lg text-gray-900">{tip.title}</h4>
                                             </div>
-                                            <p className="text-white/90 text-sm">{tip.desc}</p>
+                                            <p className="text-gray-600 text-sm">{tip.desc}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -587,20 +574,20 @@ export default function WashingMachinePage() {
                     {/* Machine Types Tab */}
                     {activeTab === 'types' && (
                         <div className="animate-fade-in">
-                            <div className="text-center sm:text-left mb-6 sm:mb-8">
+                            <div className="text-center mb-6 sm:mb-8">
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
                                     Types of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500">Washing Machines</span>
                                 </h2>
-                                <p className="text-gray-600 max-w-3xl text-sm sm:text-base">
+                                <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base">
                                     We service all types of washing machines. Each type has unique features, common issues, and specific repair methods.
                                 </p>
                             </div>
 
-                            <div className="grid md:grid-cols-2 gap-6 mb-8 sm:mb-12">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                                 {machineTypes.map((machine, index) => (
                                     <div
                                         key={index}
-                                        className="bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-gray-100"
+                                        className="bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-gray-200"
                                     >
                                         {/* Image Header */}
                                         <div className="relative h-48 sm:h-56 overflow-hidden">
@@ -608,16 +595,16 @@ export default function WashingMachinePage() {
                                                 src={machine.image}
                                                 alt={machine.type}
                                                 fill
-                                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
                                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 50vw"
                                             />
-                                            <div className={`absolute inset-0 bg-gradient-to-t ${machine.gradient} opacity-80`}></div>
-                                            <div className="absolute bottom-4 left-4 right-4">
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                            <div className="absolute bottom-0 left-0 right-0 p-4">
                                                 <div className="flex items-center gap-3">
                                                     <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
                                                         {machine.icon}
                                                     </div>
-                                                    <h3 className="text-xl font-bold text-white">{machine.type}</h3>
+                                                    <h3 className="text-lg sm:text-xl font-bold text-white">{machine.type}</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -626,15 +613,15 @@ export default function WashingMachinePage() {
                                         <div className="p-4 sm:p-6">
                                             {/* Features */}
                                             <div className="mb-4">
-                                                <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                                                <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm sm:text-base">
                                                     <CheckCircle size={16} className="text-green-500" />
                                                     Key Features
                                                 </h4>
                                                 <ul className="space-y-2">
-                                                    {machine.features.slice(0, 3).map((feature, i) => (
-                                                        <li key={i} className="flex items-center text-sm text-gray-600">
-                                                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></div>
-                                                            {feature}
+                                                    {machine.features.map((feature, i) => (
+                                                        <li key={i} className="flex items-start text-xs sm:text-sm text-gray-600">
+                                                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-1.5 flex-shrink-0"></div>
+                                                            <span>{feature}</span>
                                                         </li>
                                                     ))}
                                                 </ul>
@@ -642,7 +629,7 @@ export default function WashingMachinePage() {
 
                                             {/* Common Issues */}
                                             <div className="mb-4">
-                                                <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                                                <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm sm:text-base">
                                                     <AlertTriangle size={16} className="text-blue-500" />
                                                     Common Issues
                                                 </h4>
@@ -657,11 +644,11 @@ export default function WashingMachinePage() {
 
                                             {/* Brands */}
                                             <div>
-                                                <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                                                <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-sm sm:text-base">
                                                     <Award size={16} className="text-blue-500" />
                                                     Popular Brands
                                                 </h4>
-                                                <p className="text-gray-600 text-sm">{machine.brands.join(', ')}</p>
+                                                <p className="text-gray-600 text-xs sm:text-sm">{machine.brands.join(', ')}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -669,29 +656,29 @@ export default function WashingMachinePage() {
                             </div>
 
                             {/* Parts We Repair */}
-                            <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8">
-                                <h3 className="text-xl sm:text-2xl font-bold mb-6">🔧 Parts We Repair & Replace</h3>
-                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+                            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 mt-8 sm:mt-12 shadow-lg border border-gray-200">
+                                <h3 className="text-xl sm:text-2xl font-bold mb-6 text-center text-gray-900">🔧 Parts We Repair & Replace</h3>
+                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
                                     {[
-                                        { part: 'Motor', icon: <RotateCw size={24} />, issues: 'Brushes, bearings, windings' },
-                                        { part: 'Pump', icon: <Droplets size={24} />, issues: 'Drain & inlet pumps' },
-                                        { part: 'PCB', icon: <Cpu size={24} />, issues: 'Control boards & displays' },
-                                        { part: 'Heater', icon: <Thermometer size={24} />, issues: 'Heating element' },
-                                        { part: 'Bearings', icon: <Settings size={24} />, issues: 'Drum & motor bearings' },
-                                        { part: 'Belts', icon: <RefreshCw size={24} />, issues: 'Drive belts & pulleys' },
-                                        { part: 'Sensors', icon: <Zap size={24} />, issues: 'Water level, temperature' },
-                                        { part: 'Door Lock', icon: <ShieldIcon size={24} />, issues: 'Lock mechanism' },
+                                        { part: 'Motor', icon: <RotateCw size={24} className="text-blue-500" />, issues: 'Brushes, bearings, windings' },
+                                        { part: 'Pump', icon: <Droplets size={24} className="text-blue-500" />, issues: 'Drain & inlet pumps' },
+                                        { part: 'PCB', icon: <Cpu size={24} className="text-indigo-500" />, issues: 'Control boards & displays' },
+                                        { part: 'Heater', icon: <Thermometer size={24} className="text-orange-500" />, issues: 'Heating element' },
+                                        { part: 'Bearings', icon: <Settings size={24} className="text-gray-500" />, issues: 'Drum & motor bearings' },
+                                        { part: 'Belts', icon: <RefreshCw size={24} className="text-green-500" />, issues: 'Drive belts & pulleys' },
+                                        { part: 'Sensors', icon: <Zap size={24} className="text-yellow-500" />, issues: 'Water level, temperature' },
+                                        { part: 'Door Lock', icon: <ShieldIcon size={24} className="text-red-500" />, issues: 'Lock mechanism' },
                                     ].map((item, index) => (
                                         <div
                                             key={index}
-                                            className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-white/20 transition-colors animate-fade-in"
+                                            className="bg-white rounded-xl p-3 sm:p-4 text-center hover:shadow-md transition-all duration-300 animate-fade-in border border-gray-100 flex flex-col items-center justify-center"
                                             style={{ animationDelay: `${index * 100}ms` }}
                                         >
-                                            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-50 rounded-full flex items-center justify-center mb-2 sm:mb-3">
                                                 {item.icon}
                                             </div>
-                                            <h4 className="font-bold text-lg mb-1">{item.part}</h4>
-                                            <p className="text-blue-100 text-xs">{item.issues}</p>
+                                            <h4 className="font-bold text-base sm:text-lg mb-1 text-gray-900">{item.part}</h4>
+                                            <p className="text-gray-600 text-xs sm:text-sm">{item.issues}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -702,23 +689,23 @@ export default function WashingMachinePage() {
                     {/* Repair Process Tab */}
                     {activeTab === 'process' && (
                         <div className="animate-fade-in">
-                            <div className="text-center sm:text-left mb-6 sm:mb-8">
+                            <div className="text-center mb-6 sm:mb-8">
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
                                     Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500">Repair Process</span>
                                 </h2>
-                                <p className="text-gray-600 max-w-3xl text-sm sm:text-base">
+                                <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base">
                                     From diagnosis to delivery, we follow a systematic 4-step process to ensure quality repairs every time.
                                 </p>
                             </div>
 
                             {/* Process Steps */}
                             <div className="relative mb-8 sm:mb-12">
-                                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                                     {repairSteps.map((step) => (
                                         <div key={step.step} className="relative">
-                                            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg h-full hover:shadow-xl transition-all duration-300 group">
+                                            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg h-full hover:shadow-xl transition-all duration-300 group border border-gray-100">
                                                 <div className="flex items-center gap-3 sm:gap-4 mb-4">
-                                                    <div className={`w-10 h-10 sm:w-12 sm:h-12 ${step.color} rounded-lg sm:rounded-xl flex items-center justify-center text-lg sm:text-xl`}>
+                                                    <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gray-50 rounded-lg sm:rounded-xl flex items-center justify-center text-lg sm:text-xl ${step.iconColor} border ${step.borderColor}`}>
                                                         {step.icon}
                                                     </div>
                                                     <div className="text-2xl sm:text-3xl font-bold text-blue-600">0{step.step}</div>
@@ -752,48 +739,46 @@ export default function WashingMachinePage() {
                             </div>
 
                             {/* Why Choose Us */}
-                            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg">
-                                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">⭐ Why Choose Our Washing Machine Repair?</h3>
-                                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-gray-200">
+                                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 text-center">⭐ Why Choose Our Washing Machine Repair?</h3>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                                     {[
                                         {
                                             title: 'Expert Technicians',
                                             desc: 'Certified with 5+ years washing machine repair experience',
-                                            icon: <Users size={20} />,
-                                            color: 'from-blue-500 to-cyan-500'
+                                            icon: <Users size={20} className="text-blue-500" />,
+                                            bgColor: 'bg-blue-50'
                                         },
-
                                         {
                                             title: 'Same Day Service',
                                             desc: 'Most repairs completed in single visit',
-                                            icon: <Clock size={20} />,
-                                            color: 'from-orange-500 to-red-500'
+                                            icon: <Clock size={20} className="text-green-500" />,
+                                            bgColor: 'bg-green-50'
                                         },
-
                                         {
                                             title: 'Genuine Parts',
                                             desc: 'We use only OEM or high-quality spare parts',
-                                            icon: <Wrench size={20} />,
-                                            color: 'from-yellow-500 to-amber-500'
+                                            icon: <Wrench size={20} className="text-amber-500" />,
+                                            bgColor: 'bg-amber-50'
                                         },
                                         {
                                             title: '24/7 Support',
                                             desc: 'Emergency service available round the clock',
-                                            icon: <Phone size={20} />,
-                                            color: 'from-indigo-500 to-purple-500'
+                                            icon: <Phone size={20} className="text-purple-500" />,
+                                            bgColor: 'bg-purple-50'
                                         },
                                     ].map((feature, index) => (
                                         <div
                                             key={index}
-                                            className={`bg-gradient-to-br ${feature.color} text-white rounded-xl p-4 sm:p-5 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]`}
+                                            className={`rounded-xl p-4 sm:p-5 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] border border-gray-100 ${feature.bgColor}`}
                                         >
                                             <div className="flex items-start gap-3">
-                                                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
                                                     {feature.icon}
                                                 </div>
                                                 <div>
-                                                    <h4 className="font-bold text-lg mb-1">{feature.title}</h4>
-                                                    <p className="text-white/90 text-sm">{feature.desc}</p>
+                                                    <h4 className="font-bold text-base sm:text-lg mb-1 text-gray-900">{feature.title}</h4>
+                                                    <p className="text-gray-600 text-xs sm:text-sm">{feature.desc}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -806,32 +791,32 @@ export default function WashingMachinePage() {
                     {/* Brands Tab */}
                     {activeTab === 'brands' && (
                         <div className="animate-fade-in">
-                            <div className="text-center sm:text-left mb-6 sm:mb-8">
+                            <div className="text-center mb-6 sm:mb-8">
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
                                     Brands We <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Service</span>
                                 </h2>
-                                <p className="text-gray-600 max-w-3xl text-sm sm:text-base">
+                                <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base">
                                     We repair all major washing machine brands with genuine spare parts and manufacturer-approved techniques.
                                 </p>
                             </div>
 
                             {/* Brands Grid */}
-                            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg mb-6 sm:mb-8">
+                            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg mb-6 sm:mb-8 border border-gray-200">
                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
                                     {brands.map((brand, index) => (
                                         <div
                                             key={index}
-                                            className="bg-gray-50 hover:bg-blue-50 rounded-xl p-3 sm:p-4 text-center transition-colors border border-gray-100 hover:border-blue-200 group animate-fade-in"
+                                            className="bg-white rounded-xl p-3 sm:p-4 text-center transition-all duration-300 border border-gray-100 hover:border-blue-200 hover:shadow-md group animate-fade-in flex flex-col items-center justify-center"
                                             style={{ animationDelay: `${index * 50}ms` }}
                                         >
-                                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-sm overflow-hidden">
-                                                <div className="relative w-10 h-10 flex items-center justify-center">
+                                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-50 rounded-full flex items-center justify-center mb-2 sm:mb-3 shadow-sm overflow-hidden">
+                                                <div className="relative w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center">
                                                     <Image
                                                         src={brand.logo}
                                                         alt={`${brand.name} logo`}
                                                         width={40}
                                                         height={40}
-                                                        className="object-contain max-h-8"
+                                                        className="object-contain max-h-6 sm:max-h-8"
                                                         onError={(e) => {
                                                             const target = e.target as HTMLImageElement;
                                                             target.style.display = 'none';
@@ -840,7 +825,7 @@ export default function WashingMachinePage() {
                                                     />
                                                 </div>
                                             </div>
-                                            <span className="font-semibold text-gray-900 group-hover:text-blue-600 text-sm sm:text-base">{brand.name}</span>
+                                            <span className="font-semibold text-gray-900 group-hover:text-blue-600 text-xs sm:text-sm md:text-base">{brand.name}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -848,8 +833,8 @@ export default function WashingMachinePage() {
                                 <div className="mt-8 text-center">
                                     <p className="text-gray-600 mb-4 text-sm sm:text-base">Don't see your brand? Contact us anyway!</p>
                                     <a
-                                        href="tel:+9107206904101"
-                                        className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors"
+                                        href="tel:+919810878908"
+                                        className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors text-sm sm:text-base"
                                     >
                                         <Phone size={20} className="mr-2" />
                                         Call to check service for your brand
@@ -858,43 +843,36 @@ export default function WashingMachinePage() {
                             </div>
 
                             {/* Service Areas */}
-                            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8">
+                            <div className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-gray-200">
                                 <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
                                     <div>
-                                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">📍 Service Areas</h3>
-                                        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 text-center lg:text-left">📍 Service Areas</h3>
+                                        <div className="grid grid-cols-2 gap-2 sm:gap-3">
                                             {['Chandigarh', 'Panchkula', 'Mohali', 'Zirakpur', 'Kharar', 'Derabassi', 'New Chandigarh', 'Banur'].map((city, index) => (
                                                 <div
                                                     key={index}
-                                                    className="flex items-center bg-white rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-shadow"
+                                                    className="flex items-center bg-gray-50 rounded-xl p-2 sm:p-3 hover:bg-blue-50 transition-colors"
                                                 >
-                                                    <MapPin size={18} className="text-blue-600 mr-2 sm:mr-3" />
-                                                    <span className="font-medium text-gray-900 text-sm sm:text-base">{city}</span>
+                                                    <MapPin size={16} className="text-blue-600 mr-2 sm:mr-3 flex-shrink-0" />
+                                                    <span className="font-medium text-gray-900 text-xs sm:text-sm md:text-base">{city}</span>
                                                 </div>
                                             ))}
                                         </div>
                                     </div>
 
-                                    <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg">
+                                    <div className="bg-blue-50 rounded-xl p-4 sm:p-6 border border-blue-100">
                                         <div className="flex items-center justify-between mb-4">
-                                            <h3 className="text-lg sm:text-xl font-bold text-gray-900">Service Charges</h3>
-                                            <div className="text-2xl font-bold text-blue-600">₹299</div>
+                                            <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900">Service Charges</h3>
+                                            <div className="text-xl sm:text-2xl font-bold text-blue-600">₹299</div>
                                         </div>
-                                        <div className="space-y-3 text-sm text-gray-600 mb-4">
+                                        <div className="space-y-2 text-sm text-gray-600 mb-4">
                                             <div className="flex justify-between">
                                                 <span>Visit Charge</span>
                                                 <span className="font-medium">₹299</span>
                                             </div>
-                                            <div className="flex justify-between">
-                                                <span className="text-green-600 font-medium">Included</span>
-                                            </div>
-                                            <div className="pt-3 border-t border-gray-100">
-                                                <div className="flex justify-between font-bold text-gray-900">
-                                                </div>
-                                            </div>
                                         </div>
                                         <a
-                                            href="tel:+9107206904101"
+                                            href="tel:+919810878908"
                                             className="block bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 sm:py-4 rounded-xl text-center font-bold text-sm sm:text-base hover:from-blue-700 hover:to-cyan-700 transition-all transform hover:scale-[1.02] shadow-lg"
                                         >
                                             Book Service Now
@@ -908,31 +886,31 @@ export default function WashingMachinePage() {
                     {/* Testimonials Tab */}
                     {activeTab === 'testimonials' && (
                         <div className="animate-fade-in">
-                            <div className="text-center sm:text-left mb-6 sm:mb-8">
+                            <div className="text-center mb-6 sm:mb-8">
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
                                     Customer <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-amber-500">Testimonials</span>
                                 </h2>
-                                <p className="text-gray-600 max-w-3xl text-sm sm:text-base">
+                                <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base">
                                     Hear what our satisfied customers have to say about our washing machine repair services.
                                 </p>
                             </div>
 
-                            <div className="grid md:grid-cols-2 gap-6 mb-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                                 {testimonials.map((testimonial, index) => (
-                                    <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                                        <div className="flex items-start justify-between mb-4">
+                                    <div key={index} className="bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-100">
+                                        <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-3 sm:mb-4">
                                             <div>
-                                                <h3 className="text-lg font-bold text-gray-900">{testimonial.name}</h3>
-                                                <p className="text-gray-600 text-sm">{testimonial.location}</p>
+                                                <h3 className="text-base sm:text-lg font-bold text-gray-900">{testimonial.name}</h3>
+                                                <p className="text-gray-600 text-xs sm:text-sm">{testimonial.location}</p>
                                             </div>
-                                            <div className="text-sm text-gray-500">{testimonial.date}</div>
+                                            <div className="text-xs sm:text-sm text-gray-500 mt-1 sm:mt-0">{testimonial.date}</div>
                                         </div>
 
-                                        <div className="flex mb-4">
+                                        <div className="flex mb-3 sm:mb-4">
                                             {[...Array(5)].map((_, i) => (
                                                 <Star
                                                     key={i}
-                                                    size={18}
+                                                    size={16}
                                                     className={`${i < testimonial.rating
                                                         ? 'fill-yellow-400 text-yellow-400'
                                                         : 'fill-gray-200 text-gray-200'
@@ -941,40 +919,40 @@ export default function WashingMachinePage() {
                                             ))}
                                         </div>
 
-                                        <blockquote className="text-gray-700 italic mb-6">
+                                        <blockquote className="text-gray-700 italic mb-4 sm:mb-6 text-sm sm:text-base">
                                             "{testimonial.comment}"
                                         </blockquote>
 
-                                        <div className="flex items-center pt-4 border-t border-gray-100">
-                                            <Wrench size={16} className="text-blue-600 mr-2" />
-                                            <span className="text-sm text-gray-600">{testimonial.machine}</span>
+                                        <div className="flex items-center pt-3 sm:pt-4 border-t border-gray-100">
+                                            <Wrench size={14} className="text-blue-600 mr-2" />
+                                            <span className="text-xs sm:text-sm text-gray-600">{testimonial.machine}</span>
                                         </div>
                                     </div>
                                 ))}
                             </div>
 
                             {/* Overall Rating */}
-                            <div className="mt-8 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-3xl p-8">
+                            <div className="mt-8 bg-white text-gray-900 rounded-xl md:rounded-3xl p-6 sm:p-8 shadow-lg border border-gray-200">
                                 <div className="text-center">
-                                    <div className="text-5xl font-bold mb-2">4.8/5</div>
-                                    <div className="flex justify-center mb-4">
+                                    <div className="text-4xl sm:text-5xl font-bold mb-2">4.8/5</div>
+                                    <div className="flex justify-center mb-3 sm:mb-4">
                                         {[...Array(5)].map((_, i) => (
-                                            <Star key={i} size={24} className="fill-yellow-300 text-yellow-300" />
+                                            <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
                                         ))}
                                     </div>
-                                    <p className="text-lg mb-4">Based on 500+ customer reviews</p>
-                                    <div className="flex justify-center space-x-4">
-                                        <div className="text-center">
-                                            <div className="text-2xl font-bold">98%</div>
-                                            <div className="text-blue-200">Satisfaction Rate</div>
+                                    <p className="text-base sm:text-lg mb-4 text-gray-700">Based on 500+ customer reviews</p>
+                                    <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto">
+                                        <div className="text-center p-3 sm:p-4 bg-blue-50 rounded-xl">
+                                            <div className="text-xl sm:text-2xl font-bold text-blue-600">98%</div>
+                                            <div className="text-gray-600 text-xs sm:text-sm">Satisfaction Rate</div>
                                         </div>
-                                        <div className="text-center">
-                                            <div className="text-2xl font-bold">95%</div>
-                                            <div className="text-blue-200">On-Time Service</div>
+                                        <div className="text-center p-3 sm:p-4 bg-green-50 rounded-xl">
+                                            <div className="text-xl sm:text-2xl font-bold text-green-600">95%</div>
+                                            <div className="text-gray-600 text-xs sm:text-sm">On-Time Service</div>
                                         </div>
-                                        <div className="text-center">
-                                            <div className="text-2xl font-bold">99%</div>
-                                            <div className="text-blue-200">First Fix Success</div>
+                                        <div className="text-center p-3 sm:p-4 bg-purple-50 rounded-xl">
+                                            <div className="text-xl sm:text-2xl font-bold text-purple-600">99%</div>
+                                            <div className="text-gray-600 text-xs sm:text-sm">First Fix Success</div>
                                         </div>
                                     </div>
                                 </div>
@@ -992,130 +970,127 @@ export default function WashingMachinePage() {
                         </p>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                         <a
-                            href="tel:+9107206904101"
-                            className="bg-white text-blue-700 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl flex items-center justify-center gap-3"
+                            href="tel:+919810878908"
+                            className="bg-white text-blue-700 px-4 sm:px-6 py-3 rounded-xl font-bold text-sm sm:text-base md:text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl flex items-center justify-center gap-2"
                         >
-                            <Phone size={20} />
-                            Call Now: +91 07206904101
+                            <Phone size={18} />
+                            Call Now: +91 9810878908
                         </a>
                         <a
-                            href="https://wa.me/9107206904101?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
+                            href="https://wa.me/919810878908?text=Hello%2C%20I%20need%20help%20with%20appliance%20repair.%20Please%20assist%20me%20with%20the%20service%20details."
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl flex items-center justify-center gap-3"
+                            className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 sm:px-6 py-3 rounded-xl font-bold text-sm sm:text-base md:text-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl flex items-center justify-center gap-2"
                         >
-                            <MessageCircle size={20} />
+                            <MessageCircle size={18} />
                             WhatsApp Now
                         </a>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 max-w-3xl mx-auto">
-
-                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div className="text-xl sm:text-2xl font-bold mb-2 text-yellow-300">₹299</div>
-                            <div className="text-blue-100 text-sm">Visit Charge*</div>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-6 sm:mt-8 max-w-3xl mx-auto">
+                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 text-center">
+                            <div className="text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2 text-yellow-300">₹299</div>
+                            <div className="text-blue-100 text-xs sm:text-sm">Visit Charge*</div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
 
             {/* Animation Styles */}
             <style jsx global>{`
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes pulse-once {
-          0%, 100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.05);
-          }
-        }
-        
-        @keyframes pulse-slow {
-          0%, 100% {
-            opacity: 0.15;
-          }
-          50% {
-            opacity: 0.3;
-          }
-        }
-        
-        @keyframes bounce-slow {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-        
-        @keyframes float-left {
-          0%, 100% {
-            transform: translateY(0) translateX(0);
-          }
-          50% {
-            transform: translateY(-8px) translateX(-4px);
-          }
-        }
-        
-        .animate-fade-in {
-          opacity: 0;
-          animation: fade-in 0.5s ease-out forwards;
-        }
-        
-        .animate-pulse-once {
-          animation: pulse-once 2s ease-in-out;
-        }
-        
-        .animate-pulse-slow {
-          animation: pulse-slow 4s ease-in-out infinite;
-        }
-        
-        .animate-bounce-slow {
-          animation: bounce-slow 2s ease-in-out infinite;
-        }
-        
-        .animate-float-left {
-          animation: float-left 3s ease-in-out infinite;
-        }
-        
-        /* Hide scrollbar for Chrome, Safari and Opera */
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        
-        /* Hide scrollbar for IE, Edge and Firefox */
-        .scrollbar-hide {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-        }
-        
-        /* Touch optimization */
-        @media (hover: none) and (pointer: coarse) {
-          button, a {
-            min-height: 44px;
-            min-width: 44px;
-          }
-          
-          .active\:scale-95:active {
-            transform: scale(0.95);
-          }
-        }
-      `}</style>
+                @keyframes fade-in {
+                    from {
+                        opacity: 0;
+                        transform: translateY(10px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                @keyframes pulse-once {
+                    0%, 100% {
+                        transform: scale(1);
+                    }
+                    50% {
+                        transform: scale(1.05);
+                    }
+                }
+                
+                @keyframes pulse-slow {
+                    0%, 100% {
+                        opacity: 0.15;
+                    }
+                    50% {
+                        opacity: 0.3;
+                    }
+                }
+                
+                @keyframes bounce-slow {
+                    0%, 100% {
+                        transform: translateY(0);
+                    }
+                    50% {
+                        transform: translateY(-10px);
+                    }
+                }
+                
+                @keyframes float-left {
+                    0%, 100% {
+                        transform: translateY(0) translateX(0);
+                    }
+                    50% {
+                        transform: translateY(-8px) translateX(-4px);
+                    }
+                }
+                
+                .animate-fade-in {
+                    opacity: 0;
+                    animation: fade-in 0.5s ease-out forwards;
+                }
+                
+                .animate-pulse-once {
+                    animation: pulse-once 2s ease-in-out;
+                }
+                
+                .animate-pulse-slow {
+                    animation: pulse-slow 4s ease-in-out infinite;
+                }
+                
+                .animate-bounce-slow {
+                    animation: bounce-slow 2s ease-in-out infinite;
+                }
+                
+                .animate-float-left {
+                    animation: float-left 3s ease-in-out infinite;
+                }
+                
+                /* Hide scrollbar for Chrome, Safari and Opera */
+                .scrollbar-hide::-webkit-scrollbar {
+                    display: none;
+                }
+                
+                /* Hide scrollbar for IE, Edge and Firefox */
+                .scrollbar-hide {
+                    -ms-overflow-style: none;  /* IE and Edge */
+                    scrollbar-width: none;  /* Firefox */
+                }
+                
+                /* Touch optimization */
+                @media (hover: none) and (pointer: coarse) {
+                    button, a {
+                        min-height: 44px;
+                        min-width: 44px;
+                    }
+                    
+                    .active\:scale-95:active {
+                        transform: scale(0.95);
+                    }
+                }
+            `}</style>
         </div>
     );
 }

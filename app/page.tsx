@@ -118,35 +118,35 @@ export default function HomePage() {
       image: '/refrigeratorrepair.jpg',
       title: 'Refrigerator Repair',
       desc: 'Cooling issues, gas charging, compressor repair',
-      icon: <Droplets size={20} />,
+      icon: <Droplets size={20} className="text-white" />,
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
       image: '/washing-machine1.jpg',
       title: 'Front Load Washing Machine',
       desc: 'Motor repair, leakage, spin problems, PCB issues',
-      icon: <RefreshCw size={20} />,
+      icon: <RefreshCw size={20} className="text-white" />,
       gradient: 'from-purple-500 to-pink-500'
     },
     {
       image: '/washingmachine2.jpg',
       title: 'Top Load Washing Machine',
       desc: 'Drainage issues, agitator repair, motor problems',
-      icon: <RefreshCw size={20} />,
+      icon: <RefreshCw size={20} className="text-white" />,
       gradient: 'from-indigo-500 to-blue-500'
     },
     {
       image: '/washing-machine3.jpg',
       title: 'Semi-Automatic Washing Machine',
       desc: 'Timer issues, motor repair, water filling problems',
-      icon: <RefreshCw size={20} />,
+      icon: <RefreshCw size={20} className="text-white" />,
       gradient: 'from-teal-500 to-green-500'
     },
     {
       image: '/microwave-oven.jpg',
       title: 'Microwave Oven',
       desc: 'Heating issues, panel repair, magnetron replacement',
-      icon: <Microwave size={20} />,
+      icon: <Microwave size={20} className="text-white" />,
       gradient: 'from-amber-500 to-orange-500'
     },
   ];
@@ -154,19 +154,19 @@ export default function HomePage() {
   // Why Choose Us points
   const features = [
     {
-      icon: <Clock size={24} />,
+      icon: <Clock size={24} className="text-white" />,
       title: '24/7 Emergency Service',
       desc: 'Available round the clock',
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
-      icon: <Wrench size={24} />,
+      icon: <Wrench size={24} className="text-white" />,
       title: 'Expert Technicians',
       desc: 'Certified and experienced professionals',
       gradient: 'from-purple-500 to-pink-500'
     },
     {
-      icon: <CheckCircle size={24} />,
+      icon: <CheckCircle size={24} className="text-white" />,
       title: 'Same Day Service',
       desc: 'Most repairs completed in single visit',
       gradient: 'from-green-500 to-emerald-500'
@@ -178,26 +178,26 @@ export default function HomePage() {
     {
       value: <CountUp start={0} end={2000} duration={2500} />,
       label: 'Repairs Done',
-      icon: <Wrench size={20} />,
-      color: 'text-blue-400'
+      icon: <Wrench size={20} className="text-blue-500" />,
+      color: 'text-blue-500'
     },
     {
       value: '4.8/5',
       label: 'Customer Rating',
-      icon: <Star size={20} />,
-      color: 'text-yellow-400'
+      icon: <Star size={20} className="text-yellow-500" />,
+      color: 'text-yellow-500'
     },
     {
       value: '30 Min',
       label: 'Response Time',
-      icon: <Clock size={20} />,
-      color: 'text-green-400'
+      icon: <Clock size={20} className="text-green-500" />,
+      color: 'text-green-500'
     },
     {
       value: <CountUp start={0} end={15} duration={2000} />,
       label: 'Expert Techs',
-      icon: <Users size={20} />,
-      color: 'text-purple-400'
+      icon: <Users size={20} className="text-purple-500" />,
+      color: 'text-purple-500'
     },
   ];
 
@@ -240,29 +240,26 @@ export default function HomePage() {
         <div className="relative container mx-auto px-4 sm:px-6 py-8 md:py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content - Optimized for Mobile */}
-            <div className="space-y-4 sm:space-y-6 md:space-y-8">
-              {/* Badge */}
-
-
+            <div className="space-y-4 sm:space-y-6 md:space-y-8 text-center lg:text-left">
               {/* Main Heading */}
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
                 Professional <span className="text-yellow-300 drop-shadow-lg">Appliance Repair</span> Service
               </h1>
 
               {/* Description */}
-              <p className="text-base sm:text-lg md:text-xl text-blue-100 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-blue-100 leading-relaxed mx-auto lg:mx-0 max-w-2xl">
                 Fast, reliable, and affordable repair services for all your home appliances.
                 Serving 2000+ happy customers with 99% satisfaction rate.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <a
-                  href="tel:+91 07206904101"
+                  href="tel:+9107206904101"
                   className="group bg-white text-blue-600 px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl font-semibold text-sm sm:text-base md:text-lg flex items-center justify-center gap-2 hover:bg-blue-50 transition-all duration-300 transform hover:scale-[1.02] shadow-lg active:scale-95"
                 >
                   <Phone size={20} />
-                  <span>Call Now:  +91 07206904101</span>
+                  <span>Call Now: +91 07206904101</span>
                   <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
                 </a>
 
@@ -291,14 +288,14 @@ export default function HomePage() {
                         {stat.value}
                       </div>
                     </div>
-                    <div className="text-blue-200 text-xs sm:text-sm md:text-base">{stat.label}</div>
+                    <div className="text-blue-200 text-xs sm:text-sm">{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Right Side - Image */}
-            <div className="relative mt-8 lg:mt-0">
+            <div className="relative mt-12 lg:mt-0">
               <div className="relative">
                 {/* Main Image */}
                 <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.01] transition-transform duration-700">
@@ -351,19 +348,19 @@ export default function HomePage() {
               <Wrench size={14} className="mr-2" />
               Our Services
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Expert <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Repair Services</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
+            <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg">
               Professional repair services for all major home appliances with genuine spare parts
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2 border border-gray-200 cursor-pointer animate-service-card"
+                className="group bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200 cursor-pointer animate-service-card"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* Image Container */}
@@ -381,14 +378,9 @@ export default function HomePage() {
                   {/* Service Icon Badge */}
                   <div className="absolute top-4 right-4">
                     <div className={`w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r ${service.gradient} rounded-full flex items-center justify-center shadow-lg`}>
-                      <div className="text-white">
-                        {service.icon}
-                      </div>
+                      {service.icon}
                     </div>
                   </div>
-
-                  {/* Overlay Gradient */}
-                  <div className={`absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-${service.gradient.split(' ')[1].replace('to-', '')}/20 via-transparent to-transparent`}></div>
                 </div>
 
                 {/* Content */}
@@ -396,10 +388,14 @@ export default function HomePage() {
                   <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 text-sm sm:text-base mb-4 line-clamp-2">
+                  <p className="text-gray-600 text-sm sm:text-base mb-4">
                     {service.desc}
                   </p>
 
+                  <div className="flex items-center text-blue-600 font-medium text-sm sm:text-base">
+                    <span>Learn More</span>
+                    <ChevronRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </div>
             ))}
@@ -412,16 +408,16 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content */}
-            <div>
+            <div className="text-center lg:text-left">
               <div className="mb-8">
                 <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full text-white text-xs sm:text-sm font-medium mb-3">
                   <ThumbsUp size={14} className="mr-2" />
                   Why Choose Us
                 </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                   Trusted <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">Appliance Repair</span> Service
                 </h2>
-                <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-6 md:mb-8">
+                <p className="text-gray-600 text-base sm:text-lg mb-6">
                   We are committed to providing the best appliance repair service with transparency, quality, and customer satisfaction.
                 </p>
               </div>
@@ -430,18 +426,18 @@ export default function HomePage() {
                 {features.map((feature, index) => (
                   <div
                     key={index}
-                    className={`bg-gradient-to-br ${feature.gradient} text-white rounded-xl p-4 md:p-6 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] animate-feature-item`}
+                    className={`bg-gradient-to-br ${feature.gradient} text-white rounded-xl p-4 md:p-5 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] animate-feature-item`}
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
                     <div className="flex items-start gap-3 md:gap-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+                      <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
                         {feature.icon}
                       </div>
                       <div>
-                        <h4 className="text-base md:text-lg font-semibold mb-1 md:mb-2">
+                        <h4 className="text-base md:text-lg font-semibold mb-1">
                           {feature.title}
                         </h4>
-                        <p className="text-white/90 text-sm md:text-base">
+                        <p className="text-white/90 text-sm">
                           {feature.desc}
                         </p>
                       </div>
@@ -453,23 +449,23 @@ export default function HomePage() {
 
             {/* Right Content - Testimonials */}
             <div className="mt-12 lg:mt-0">
-              <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl md:rounded-3xl p-6 md:p-8 text-white shadow-2xl animate-scale-in">
+              <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-2xl border border-gray-200 animate-scale-in">
                 <div className="text-center mb-6 md:mb-8">
-                  <div className="w-16 h-16 md:w-20 md:h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-                    <Star size={28} className="text-yellow-300" />
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Star size={28} className="text-yellow-500" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-2">Customer Reviews</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Customer Reviews</h3>
                   <div className="flex items-center justify-center gap-1 mb-2">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={16} className="fill-yellow-300 text-yellow-300" />
+                      <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-blue-100 text-sm md:text-base">4.8/5 from 500+ reviews</p>
+                  <p className="text-gray-600 text-base">4.8/5 from 500+ reviews</p>
                 </div>
 
                 {/* Testimonials */}
                 <div className="space-y-4">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-colors">
+                  <div className="bg-blue-50 rounded-xl p-4 hover:bg-blue-100 transition-colors">
                     <div className="flex items-center mb-3">
                       <div className="relative w-10 h-10 rounded-full overflow-hidden mr-3 flex-shrink-0">
                         <Image
@@ -481,18 +477,18 @@ export default function HomePage() {
                         />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-sm md:text-base">Manpreet Singh</h4>
+                        <h4 className="font-semibold text-gray-900 text-sm">Manpreet Singh</h4>
                         <div className="flex">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} size={14} className="fill-yellow-300 text-yellow-300" />
+                            <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" />
                           ))}
                         </div>
                       </div>
                     </div>
-                    <p className="text-blue-100 text-sm md:text-base italic">"Excellent fridge repair service. Technician was on time and fixed the cooling issue within an hour."</p>
+                    <p className="text-gray-600 text-sm italic">"Excellent fridge repair service. Technician was on time and fixed the cooling issue within an hour."</p>
                   </div>
 
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-colors">
+                  <div className="bg-blue-50 rounded-xl p-4 hover:bg-blue-100 transition-colors">
                     <div className="flex items-center mb-3">
                       <div className="relative w-10 h-10 rounded-full overflow-hidden mr-3 flex-shrink-0">
                         <Image
@@ -504,15 +500,15 @@ export default function HomePage() {
                         />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-sm md:text-base">Gurvinder Kaur</h4>
+                        <h4 className="font-semibold text-gray-900 text-sm">Gurvinder Kaur</h4>
                         <div className="flex">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} size={14} className="fill-yellow-300 text-yellow-300" />
+                            <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" />
                           ))}
                         </div>
                       </div>
                     </div>
-                    <p className="text-blue-100 text-sm md:text-base italic">"Front load washing machine repair was done professionally. They provided genuine parts with warranty."</p>
+                    <p className="text-gray-600 text-sm italic">"Front load washing machine repair was done professionally. They provided genuine parts with warranty."</p>
                   </div>
                 </div>
               </div>
@@ -529,10 +525,10 @@ export default function HomePage() {
               <MapPin size={14} className="mr-2" />
               Service Coverage
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">Service Areas</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
+            <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg">
               We provide expert appliance repair services across Chandigarh and surrounding areas
             </p>
           </div>
@@ -557,7 +553,7 @@ export default function HomePage() {
             </div>
 
             {/* Grid for Desktop */}
-            <div className="hidden md:grid md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-4">
               {serviceAreas.map((city, index) => (
                 <div
                   key={`desktop-${index}`}
@@ -572,9 +568,6 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-
-          {/* Additional Info */}
-
         </div>
       </section>
 
@@ -587,20 +580,20 @@ export default function HomePage() {
         </div>
 
         <div className="relative container mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Need Appliance Repair? <span className="text-yellow-300">We're Here to Help!</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-2xl mx-auto text-white/90">
-            Get instant service booking with our 24/7 customer support.  ₹ 299 visit.
+            Get instant service booking with our 24/7 customer support. ₹299 visit charge only.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-8 sm:mb-12">
             <a
-              href="tel:+91 07206904101"
+              href="tel:+9107206904101"
               className="group bg-white text-blue-600 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl flex items-center justify-center gap-3 active:scale-95"
             >
               <Phone size={20} />
-              Call For  Consultation
+              Call For Consultation
             </a>
 
             <a
@@ -614,10 +607,15 @@ export default function HomePage() {
 
           {/* Features */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 sm:p-6 hover:bg-white/20 transition-colors">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 hover:bg-white/20 transition-colors">
               <div className="text-2xl sm:text-3xl font-bold mb-2 text-yellow-300">30 Min</div>
               <div className="text-white/90 text-sm sm:text-base">Average Response Time</div>
             </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 hover:bg-white/20 transition-colors">
+              <div className="text-2xl sm:text-3xl font-bold mb-2 text-yellow-300">₹299</div>
+              <div className="text-white/90 text-sm sm:text-base">Visit Charge</div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -787,20 +785,6 @@ export default function HomePage() {
         /* Pause animation on hover */
         .animate-marquee-mobile:hover {
           animation-play-state: paused;
-        }
-
-        .line-clamp-1 {
-          display: -webkit-box;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-
-        .line-clamp-2 {
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
         }
 
         /* Mobile touch optimization */

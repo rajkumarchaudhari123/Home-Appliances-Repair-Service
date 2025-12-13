@@ -82,9 +82,9 @@ export default function Footer() {
                             </div>
                             <div>
                                 <div className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                                    FixIt Repair
+                                    Home
                                 </div>
-                                <div className="text-blue-300 text-sm font-medium mt-1">Professional Appliance Services</div>
+                                <div className="text-blue-300 text-sm font-medium mt-1"> Appliance Clinic</div>
                             </div>
                         </Link>
 
