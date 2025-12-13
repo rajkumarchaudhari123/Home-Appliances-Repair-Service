@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: baseUrl,
     title: "Home Appliances Repair - – Fast & Trusted Technicians",
-    description: "Get expert , fridge, and washing machine repair - at your doorstep. Quick, reliable, and affordable -.",
+    description: "Get expert , refrigerator, and washing machine repair - at your doorstep. Quick, reliable, and affordable -.",
     siteName: "Home Appliances Repair -",
     images: [
       {
