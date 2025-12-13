@@ -1,0 +1,70 @@
+# public/robots.txt
+User-agent: *
+Allow: /
+
+# Don't crawl search pages or filters
+Disallow: /search/
+Disallow: /*?*
+Disallow: /*&*
+
+# Don't crawl admin/login pages
+Disallow: /admin/
+Disallow: /login/
+Disallow: /dashboard/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+
+# Don't crawl API routes
+Disallow: /api/
+
+# Don't crawl temporary or utility pages
+Disallow: /temp/
+Disallow: /private/
+Disallow: /test/
+Disallow: /staging/
+
+# Sitemaps
+Sitemap: https://https://home-appliances-repair-service.vercel.app//sitemap.xml
+Sitemap: https://https://home-appliances-repair-service.vercel.app//sitemap-0.xml
+
+# Crawl delay (optional - for heavy sites)
+# Crawl-delay: 1
+
+# Host (optional)
+# Host: yourappliancerepair.com
+
+# For specific search engines
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Googlebot-Image
+Allow: /
+Disallow: /admin/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+
+User-agent: Baiduspider
+Allow: /
+Disallow: /admin/
+
+User-agent: Slurp
+Allow: /
+Disallow: /admin/
+
+# Block AI crawlers (optional)
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
